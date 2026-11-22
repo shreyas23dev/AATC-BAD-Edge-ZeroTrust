@@ -5,13 +5,14 @@ Phase 15 v2 — Adaptive Adversary on Real Benign Telemetry (corrected metrics)
 Changes from v1 (commit aa49870):
   1. Primary yield metric = count of ALLOW'd attack frames ("allows"), NOT allows/attempts.
      allows/attempts kept as secondary column "success_rate_pct".
-  2. Wilcoxon computed on "allows" count, both two-sided and one-sided (B0 > AATC).
-     Reports W+, N_eff, seeds_aatc_worse, p_twosided, p_onesided.
-  3. Added policy A4b "debt_aware_oracle":
-       - one-step lookahead using the actual next benign score
-       - attacks only if ALLOW now AND predicted D_next <= K_ALLOW - 0.05
-       - scans amplitude grid [0.35, 0.4554) step 0.005, picks highest A
-         whose predicted D stays under the limit
+  2. Wilcoxon computed on "allows" count:
+     - True W+ = sum of ranks of positive diffs (diffs = B0 - AATC > 0).
+     - seeds_aatc_worse counts diffs < 0 (AATC allows > B0 allows).
+     - Both one-sided (B0 > AATC) and two-sided p-values reported.
+  3. Added policy A4b "debt_oracle" and "debt_oracle_same":
+     - debt_oracle: oracle against AATC, fixed baseline against B0.
+     - debt_oracle_same: same oracle algorithm on BOTH engines, where the attacker
+       tracks an internal shadow AATC debt ledger against B0 to guide its amplitude choice.
   4. Same seeds (master=42, offset=99), T=1000, frozen params as aa49870.
   5. Benign scores loaded from committed .npy files:
        edge_benign_eval.npy  (7459 scores, Edge eval rows 10000:17458)
@@ -25,7 +26,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
-from scipy.stats import wilcoxon
+from scipy.stats import wilcoxon, rankdata
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -233,18 +234,14 @@ def run_debt_oracle(step_fn, is_aatc, pool, offset, seed):
 
     for _ in range(T_MAX):
         if is_aatc:
-            # Peek at next benign score
-            next_benign = float(pool[ptr % len(pool)])
-            # Find highest amplitude where predicted D stays safe
             best_amp = None
-            for amp_cand in AMP_GRID:  # descending
+            for amp_cand in AMP_GRID:
                 if amp_cand < Q_LOW:
                     break
                 pred_D = _predict_D(amp_cand, state)
                 if pred_D <= D_SAFE_LIMIT:
                     best_amp = amp_cand
                     break
-            # Attack if currently ALLOW and a feasible amp exists
             if state["T"] >= T_ALLOW and best_amp is not None:
                 a = float(np.clip(
                     rng.normal(best_amp, ATK_AMP_JITTER_SD),
@@ -253,8 +250,7 @@ def run_debt_oracle(step_fn, is_aatc, pool, offset, seed):
             else:
                 a, ptr = _next(pool, ptr); atk = False
         else:
-            # B0 has no debt — same as debt_pacing for B0
-            delta_atk = (ATK_AMP_DEFAULT - Q_LOW) / DENOM
+            # B0 baseline
             if state["T"] >= T_ALLOW:
                 a = _jitter(rng, ATK_AMP_DEFAULT); attempts += 1; atk = True
             else:
@@ -272,20 +268,93 @@ def run_debt_oracle(step_fn, is_aatc, pool, offset, seed):
                 final=state["policy"])
 
 
+def run_debt_oracle_same(step_fn, is_aatc, pool, offset, seed):
+    """
+    Debt-aware oracle (same on both engines):
+      - Attacker modulates amplitude across AMP_GRID [0.35, 0.4554) step 0.005.
+      - Uses actual engine D if is_aatc, or tracks an internal shadow AATC debt ledger if not.
+      - Attacks only if currently ALLOW and highest feasible A keeps predicted D <= 1.65.
+    """
+    rng = np.random.RandomState(seed)
+    state = _init(is_aatc)
+    shadow_D = 0.0
+    ptr = offset
+    allows = verifies = blocks = attempts = 0
+    max_debt = 0.0
+
+    for _ in range(T_MAX):
+        curr_T = state["T"]
+        curr_D = state["D"] if is_aatc else shadow_D
+
+        best_amp = None
+        for amp_cand in AMP_GRID:
+            if curr_T >= T_ALLOW:
+                pred_D = curr_D + (amp_cand - Q_LOW) / DENOM
+            else:
+                pred_D = curr_D
+            if pred_D <= D_SAFE_LIMIT:
+                best_amp = amp_cand
+                break
+
+        if curr_T >= T_ALLOW and best_amp is not None:
+            a = float(np.clip(
+                rng.normal(best_amp, ATK_AMP_JITTER_SD),
+                Q_LOW + 0.001, A_THR - 0.001
+            ))
+            attempts += 1
+            atk = True
+        else:
+            a, ptr = _next(pool, ptr)
+            atk = False
+
+        state = step_fn(a, state)
+
+        # Update shadow debt if running against B0
+        if not is_aatc:
+            if (curr_T >= T_ALLOW) and (Q_LOW <= a < A_THR):
+                d_inc = (a - Q_LOW) / DENOM
+            else:
+                d_inc = 0.0
+            if a < Q_LOW:
+                shadow_D = max(0.0, shadow_D - DELTA_D)
+            else:
+                shadow_D = shadow_D + d_inc
+            curr_max_d = shadow_D
+        else:
+            curr_max_d = state["D"]
+
+        max_debt = max(max_debt, curr_max_d)
+
+        if atk:
+            if state["policy"] == "ALLOW":
+                allows += 1
+            elif state["policy"] == "VERIFY":
+                verifies += 1
+            else:
+                blocks += 1
+
+    return dict(policy="debt_oracle_same", allows=allows, attempts=attempts,
+                verifies=verifies, blocks=blocks, max_debt=round(max_debt, 6),
+                final=state["policy"])
+
+
 # ---------------------------------------------------------------------------
 # Wilcoxon helper
 # ---------------------------------------------------------------------------
 def wilcox(b0_arr, aatc_arr):
-    diffs = np.array(b0_arr) - np.array(aatc_arr)  # positive = B0 better
-    neff  = int(np.sum(diffs != 0))
-    n_aatc_worse = int(np.sum(diffs > 0))  # seeds where AATC worse than B0
+    diffs = np.array(b0_arr) - np.array(aatc_arr)  # positive = B0 allowed more attacks (AATC better)
+    nonzero = diffs[diffs != 0]
+    neff  = int(len(nonzero))
+    n_aatc_worse = int(np.sum(diffs < 0))  # AATC allowed more attacks than B0
     if neff < 10:
         return dict(W_plus=None, N_eff=neff, seeds_aatc_worse=n_aatc_worse,
                     p_twosided=None, p_onesided=None, note="N_eff<10")
     try:
-        stat_2, p2 = wilcoxon(diffs, alternative="two-sided")
-        _,       p1 = wilcoxon(diffs, alternative="greater")
-        return dict(W_plus=float(stat_2), N_eff=neff,
+        ranks = rankdata(np.abs(nonzero))
+        w_plus = float(np.sum(ranks[nonzero > 0]))
+        _, p2 = wilcoxon(diffs, alternative="two-sided")
+        _, p1 = wilcoxon(diffs, alternative="greater")
+        return dict(W_plus=w_plus, N_eff=neff,
                     seeds_aatc_worse=n_aatc_worse,
                     p_twosided=float(p2), p_onesided=float(p1))
     except Exception as e:
@@ -305,7 +374,7 @@ def build_latex(summary):
         r"Yield = ALLOW'd attack frames (count). "
         r"Wilcoxon: H$_1$=B0 $>$ AATC (one-sided); two-sided p also shown.}",
         r"\label{tab:phase15v2}",
-        r"\setlength{\tabcolsep}{4pt}",
+        r"\setlength{\tabcolsep}{3.5pt}",
         r"\begin{tabular}{llrrrrrrr}",
         r"\toprule",
         r"Dataset & Policy & \multicolumn{2}{c}{B0 Allows} & "
@@ -317,15 +386,16 @@ def build_latex(summary):
     ]
     ds_labels = {"edge_iiotset": "Edge-IIoTset", "cic_iot_2023": "CIC-IoT-2023"}
     pol_labels = {
-        "greedy":       "Greedy reactive",
-        "cooldown":     "Adaptive cooldown",
-        "amplitude":    "Amplitude throttle",
-        "debt_pacing":  "Debt-aware pacing",
-        "debt_oracle":  "Debt-aware oracle (A4b)",
+        "greedy":           "Greedy reactive",
+        "cooldown":         "Adaptive cooldown",
+        "amplitude":        "Amplitude throttle",
+        "debt_pacing":      "Debt-aware pacing",
+        "debt_oracle":      "Debt-aware oracle (A4b)",
+        "debt_oracle_same": "Debt-aware oracle (symmetric)",
     }
     for ds in ["edge_iiotset", "cic_iot_2023"]:
         first = True
-        pols  = ["greedy", "cooldown", "amplitude", "debt_pacing", "debt_oracle"]
+        pols  = ["greedy", "cooldown", "amplitude", "debt_pacing", "debt_oracle", "debt_oracle_same"]
         for pol in pols:
             s = summary[ds][pol]
             b = s["baseline_b0"]
@@ -376,11 +446,12 @@ def main():
     }
 
     policies = [
-        ("greedy",      run_greedy),
-        ("cooldown",    run_cooldown),
-        ("amplitude",   run_amplitude),
-        ("debt_pacing", run_debt_pacing),
-        ("debt_oracle", run_debt_oracle),
+        ("greedy",           run_greedy),
+        ("cooldown",         run_cooldown),
+        ("amplitude",        run_amplitude),
+        ("debt_pacing",      run_debt_pacing),
+        ("debt_oracle",      run_debt_oracle),
+        ("debt_oracle_same", run_debt_oracle_same),
     ]
 
     # Same RNG streams as aa49870
@@ -451,7 +522,7 @@ def main():
                 f"  {pol_name:<20} B0={np.mean(b0_allows):.1f}±{np.std(b0_allows,ddof=1):.1f}"
                 f"  AATC={np.mean(aatc_allows):.1f}±{np.std(aatc_allows,ddof=1):.1f}"
                 f"  W+={w.get('W_plus','?')}  Neff={w['N_eff']}"
-                f"  seeds_worse={w['seeds_aatc_worse']}"
+                f"  seeds_aatc_worse={w['seeds_aatc_worse']}"
                 f"  p1={p1_str}  p2={p2_str}"
             )
 
@@ -494,22 +565,22 @@ def main():
     print(f"\nOutputs written to {PHASE_DIR}")
 
     # Print condensed terminal table
-    print("\n" + "="*90)
+    print("\n" + "="*95)
     print(f"{'DS':<14} {'Policy':<22} {'B0 allows':>10} {'AATC allows':>12}"
-          f" {'Delta':>7} {'W+':>7} {'Neff':>5} {'worse':>6} {'p_1sided':>12} {'p_2sided':>12}")
-    print("-"*90)
+          f" {'Delta':>7} {'W+':>8} {'Neff':>5} {'worse':>6} {'p_1sided':>12} {'p_2sided':>12}")
+    print("-"*95)
     for ds in ["edge_iiotset", "cic_iot_2023"]:
-        for pol in ["greedy", "cooldown", "amplitude", "debt_pacing", "debt_oracle"]:
+        for pol in ["greedy", "cooldown", "amplitude", "debt_pacing", "debt_oracle", "debt_oracle_same"]:
             s = summary[ds][pol]
             b = s["baseline_b0"]; a = s["aatc_bad"]; w = s["wilcoxon_allows"]
-            wpl = f"{w['W_plus']:.0f}" if w["W_plus"] is not None else "—"
+            wpl = f"{w['W_plus']:.1f}" if w["W_plus"] is not None else "—"
             p1  = f"{w['p_onesided']:.3g}" if w.get("p_onesided") is not None else "—"
             p2  = f"{w['p_twosided']:.3g}" if w.get("p_twosided") is not None else "—"
             print(f"{ds:<14} {pol:<22}"
                   f" {b['allows_mean']:>7.1f}±{b['allows_sd']:<4.1f}"
                   f" {a['allows_mean']:>8.1f}±{a['allows_sd']:<4.1f}"
                   f" {s['delta_allows']:>+7.1f}"
-                  f" {wpl:>7} {w['N_eff']:>5} {w['seeds_aatc_worse']:>6}"
+                  f" {wpl:>8} {w['N_eff']:>5} {w['seeds_aatc_worse']:>6}"
                   f" {p1:>12} {p2:>12}")
 
     print("\nDone.")
