@@ -1,0 +1,179 @@
+{
+  "title": "Closed-Loop Adaptive Adversary Benchmark",
+  "parameters": {
+    "A_thr": 0.4554,
+    "beta": 0.4,
+    "gamma": 0.335,
+    "theta": 1.0,
+    "lambda": 0.55,
+    "delta": 0.05,
+    "P_pen": 0.25,
+    "alpha_0": 0.2057,
+    "T_allow": 0.8,
+    "T_quar": 0.3,
+    "q_low": 0.35,
+    "delta_D": 0.1,
+    "K_allow": 1.7,
+    "eta_C": 0.3,
+    "C_floor": 0.7
+  },
+  "comparative_policies": [
+    {
+      "strategy": "Greedy Reactive Pacer",
+      "baseline_cdtm": {
+        "strategy": "Greedy Reactive Pacer",
+        "attempts": 253,
+        "allows": 169,
+        "verifies": 84,
+        "blocks": 0,
+        "allow_rate_pct": 66.8,
+        "effective_duty_pct": 25.3,
+        "t_quench": null
+      },
+      "aatc_bad": {
+        "strategy": "Greedy Reactive Pacer",
+        "attempts": 98,
+        "allows": 2,
+        "verifies": 96,
+        "blocks": 0,
+        "allow_rate_pct": 2.04,
+        "effective_duty_pct": 9.8,
+        "t_quench": 3
+      }
+    },
+    {
+      "strategy": "Multi-Burst Pacer (m=2)",
+      "baseline_cdtm": {
+        "strategy": "Multi-Burst Pacer (m=2)",
+        "attempts": 172,
+        "allows": 87,
+        "verifies": 85,
+        "blocks": 0,
+        "allow_rate_pct": 50.58,
+        "effective_duty_pct": 17.2,
+        "t_quench": null
+      },
+      "aatc_bad": {
+        "strategy": "Multi-Burst Pacer (m=2)",
+        "attempts": 176,
+        "allows": 2,
+        "verifies": 174,
+        "blocks": 0,
+        "allow_rate_pct": 1.14,
+        "effective_duty_pct": 17.6,
+        "t_quench": 3
+      }
+    },
+    {
+      "strategy": "Adaptive Cooldown Backoff",
+      "baseline_cdtm": {
+        "strategy": "Adaptive Cooldown Backoff",
+        "attempts": 200,
+        "allows": 200,
+        "verifies": 0,
+        "blocks": 0,
+        "allow_rate_pct": 100.0,
+        "effective_duty_pct": 20.0,
+        "final_tau_r": 4
+      },
+      "aatc_bad": {
+        "strategy": "Adaptive Cooldown Backoff",
+        "attempts": 81,
+        "allows": 77,
+        "verifies": 4,
+        "blocks": 0,
+        "allow_rate_pct": 95.06,
+        "effective_duty_pct": 8.1,
+        "final_tau_r": 12
+      }
+    },
+    {
+      "strategy": "Online Amplitude Throttling",
+      "baseline_cdtm": {
+        "strategy": "Online Amplitude Throttling",
+        "attempts": 143,
+        "allows": 143,
+        "verifies": 0,
+        "blocks": 0,
+        "allow_rate_pct": 100.0,
+        "effective_duty_pct": 14.3,
+        "final_amplitude": 0.45
+      },
+      "aatc_bad": {
+        "strategy": "Online Amplitude Throttling",
+        "attempts": 143,
+        "allows": 140,
+        "verifies": 3,
+        "blocks": 0,
+        "allow_rate_pct": 97.9,
+        "effective_duty_pct": 14.3,
+        "final_amplitude": 0.39
+      }
+    }
+  ],
+  "recovery_sweep": [
+    {
+      "tau_r": 5,
+      "duty_cycle_pct": 16.67,
+      "max_debt": 3.0408,
+      "exceeds_K_allow": true,
+      "attack_attempts": 100,
+      "attack_allows": 10,
+      "attack_allow_pct": 10.0
+    },
+    {
+      "tau_r": 6,
+      "duty_cycle_pct": 14.29,
+      "max_debt": 3.0118,
+      "exceeds_K_allow": true,
+      "attack_attempts": 86,
+      "attack_allows": 13,
+      "attack_allow_pct": 15.12
+    },
+    {
+      "tau_r": 8,
+      "duty_cycle_pct": 11.11,
+      "max_debt": 3.0118,
+      "exceeds_K_allow": true,
+      "attack_attempts": 67,
+      "attack_allows": 24,
+      "attack_allow_pct": 35.82
+    },
+    {
+      "tau_r": 10,
+      "duty_cycle_pct": 9.09,
+      "max_debt": 0.9488,
+      "exceeds_K_allow": false,
+      "attack_attempts": 55,
+      "attack_allows": 55,
+      "attack_allow_pct": 100.0
+    },
+    {
+      "tau_r": 15,
+      "duty_cycle_pct": 6.25,
+      "max_debt": 0.9488,
+      "exceeds_K_allow": false,
+      "attack_attempts": 38,
+      "attack_allows": 38,
+      "attack_allow_pct": 100.0
+    },
+    {
+      "tau_r": 20,
+      "duty_cycle_pct": 4.76,
+      "max_debt": 0.9488,
+      "exceeds_K_allow": false,
+      "attack_attempts": 29,
+      "attack_allows": 29,
+      "attack_allow_pct": 100.0
+    },
+    {
+      "tau_r": 69,
+      "duty_cycle_pct": 1.43,
+      "max_debt": 0.9488,
+      "exceeds_K_allow": false,
+      "attack_attempts": 9,
+      "attack_allows": 9,
+      "attack_allow_pct": 100.0
+    }
+  ]
+}

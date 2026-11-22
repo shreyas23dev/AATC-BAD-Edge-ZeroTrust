@@ -1,0 +1,32 @@
+\begin{table}[!htbp]
+\centering
+\caption{Closed-Loop Adaptive Adversary Performance Against Baseline CDTM and AATC-BAD ($T = 1{,}000$ Epochs)}
+\label{tab:adaptive_closed_loop}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccc}
+\toprule
+\textbf{Adversary Strategy} & \textbf{Metric} & \makecell{\textbf{Baseline}\\\textbf{CDTM}} & \makecell{\textbf{Proposed}\\\textbf{AATC-BAD}} & \makecell{\textbf{Mitigation}\\\textbf{Gain}} & \textbf{Trilemma Branch Realized} \\
+\midrule
+\multirow{3}{*}{\shortstack[l]{\textbf{Greedy Reactive}\\\textbf{Pacer}}}
+& Attack Attempts & $253$ & $98$ & --- & \multirow{3}{*}{\shortstack[c]{\textbf{Branch 2: Demoted Quenching} \\ ($C_t \le \Tallow \implies$ Trapped in \VERIFY{})}} \\
+& Granted \ALLOW{} & $169$ ($66.8\%$) & $\mathbf{2}$ ($\mathbf{2.04\%}$) & $\mathbf{-98.82\%}$ & \\
+& Effective Duty Cycle & $25.3\%$ & $\mathbf{9.8\%}$ & $-61.3\%$ & \\
+\midrule
+\multirow{3}{*}{\shortstack[l]{\textbf{Multi-Burst}\\\textbf{Pacer} ($m = 2$)}}
+& Attack Attempts & $172$ & $176$ & --- & \multirow{3}{*}{\shortstack[c]{\textbf{Branch 2: Demoted Quenching} \\ ($98.86\%$ Intercepted in \VERIFY{})}} \\
+& Granted \ALLOW{} & $87$ ($50.6\%$) & $\mathbf{2}$ ($\mathbf{1.14\%}$) & $\mathbf{-97.70\%}$ & \\
+& Effective Duty Cycle & $17.2\%$ & $17.6\%$ & $+0.4\%$ & \\
+\midrule
+\multirow{3}{*}{\shortstack[l]{\textbf{Adaptive Cooldown}\\\textbf{Backoff} ($\tau_r$ Learner)}}
+& Attack Attempts & $200$ & $81$ & --- & \multirow{3}{*}{\shortstack[c]{\textbf{Branch 3a: Temporal Throttling} \\ ($\tau_r \to 12 \implies \eta_{\mathrm{duty}} \le 8.1\%$)}} \\
+& Granted \ALLOW{} & $200$ ($100.0\%$) & $\mathbf{77}$ ($95.1\%$) & $\mathbf{-61.50\%}$ & \\
+& Effective Duty Cycle & $20.0\%$ & $\mathbf{8.1\%}$ & $\mathbf{-59.5\%}$ & \\
+\midrule
+\multirow{3}{*}{\shortstack[l]{\textbf{Online Amplitude}\\\textbf{Throttling} ($A_t$ Learner)}}
+& Attack Attempts & $143$ & $143$ & --- & \multirow{3}{*}{\shortstack[c]{\textbf{Branch 3b: Signal Dilution} \\ ($A_t \to 0.39 \to \qlow \implies$ Noise Bounded)}} \\
+& Injected Perturbation & $0.450$ & $\mathbf{0.390}$ & $\mathbf{-13.3\%}$ & \\
+& Effective Duty Cycle & $14.3\%$ & $14.3\%$ & $0.0\%$ & \\
+\bottomrule
+\end{tabular}
+\end{table}

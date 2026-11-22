@@ -58,7 +58,8 @@ AATC-BAD-Edge-ZeroTrust/
 │   │   ├── phase8_failure_diagnosis/          # Empirical demonstration of CDTM moral hazard
 │   │   ├── phase9_countermeasure/             # AATC-BAD parameter calibration
 │   │   ├── phase10_countermeasure_evaluation/ # Comparative replay evaluation across 46k frames
-│   │   └── phase11_envelope_analysis/         # 20-configuration sensitivity grid
+│   │   ├── phase11_envelope_analysis/         # 20-configuration sensitivity grid
+│   │   └── adaptive_adversary/                # Closed-loop adaptive adversary evaluation (Table 8)
 │   └── data/                       # Dataset schema & preparation scripts for Edge-IIoTset & CIC-IoT-2023
 ├── .gitignore                      # Excludes raw datasets, build caches, and local drafts
 ├── LICENSE                         # MIT License
@@ -92,6 +93,12 @@ cargo bench
 ```bash
 cd TON_IoT_project/rust-edge/xai
 python benchmark_monte_carlo_pulsing.py
+```
+
+### 4. Running Closed-Loop Adaptive Adversary Simulations
+```bash
+cd TON_IoT_project/experiments/candidate5/adaptive_adversary
+python run_adaptive_adversary.py
 ```
 
 ---
