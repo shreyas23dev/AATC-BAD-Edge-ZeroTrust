@@ -1,0 +1,25 @@
+\begin{table}[t]
+\centering
+\caption{Phase~15v2 adaptive adversary on real benign telemetry (100 seeds, $T{=}1000$, frozen AATC-BAD parameters). Yield = ALLOW'd attack frames (count). Wilcoxon: H$_1$=B0 $>$ AATC (one-sided); two-sided p also shown.}
+\label{tab:phase15v2}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrrr}
+\toprule
+Dataset & Policy & \multicolumn{2}{c}{B0 Allows} & \multicolumn{2}{c}{AATC Allows} & $\Delta$ & W$^+$ & $p$ (1-/2-sided) \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+& & mean & SD & mean & SD & & & \\
+\midrule
+Edge-IIoTset & Greedy reactive & 52.1 & 14.8 & 5.8 & 5.1 & -46.3 & 2 & 2.02e-18 / 4.04e-18 \\
+ & Adaptive cooldown & 45.8 & 22.4 & 23.9 & 8.2 & -21.8 & 30 & 1.13e-15 / 2.26e-15 \\
+ & Amplitude throttle & 100.2 & 42.9 & 98.7 & 41.9 & -1.5 & 363 & 1.97e-07 / 3.94e-07 \\
+ & Debt-aware pacing & 52.1 & 14.8 & 44.1 & 9.0 & -8.0 & 1244 & 8.57e-06 / 1.71e-05 \\
+ & Debt-aware oracle (A4b) & 52.1 & 14.8 & 177.3 & 59.7 & +125.2 & 0 & 1.00e+00 / 3.89e-18 \\
+\midrule
+CIC-IoT-2023 & Greedy reactive & 53.0 & 24.0 & 6.1 & 2.8 & -46.9 & 0 & 1.94e-18 / 3.88e-18 \\
+ & Adaptive cooldown & 40.5 & 29.4 & 22.0 & 13.2 & -18.5 & 0 & 5.78e-16 / 1.16e-15 \\
+ & Amplitude throttle & 71.5 & 37.8 & 69.4 & 37.1 & -2.1 & 338 & 3.35e-10 / 6.71e-10 \\
+ & Debt-aware pacing & 53.0 & 24.0 & 47.1 & 20.6 & -5.9 & 602 & 8.18e-11 / 1.64e-10 \\
+ & Debt-aware oracle (A4b) & 53.0 & 24.0 & 251.5 & 112.6 & +198.5 & 0 & 1.00e+00 / 3.89e-18 \\
+\bottomrule
+\end{tabular}
+\end{table}

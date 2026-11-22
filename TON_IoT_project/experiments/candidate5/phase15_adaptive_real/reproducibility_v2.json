@@ -1,0 +1,26 @@
+{
+  "script": "run_phase15_v2.py",
+  "parent_commit": "aa49870",
+  "parity_reference_sha256": "6485238517d11f1a13d0ffb660688c37ad47e950e9f09c1bcfdde7564bb1c2ba",
+  "edge_npy_sha256": "26a184b95748954aa190f272f221d341c0afb1397545d0eaa62a9ed9b11a594d",
+  "cic_npy_sha256": "bbc718d787fc71dbdc4ede84c39fe9aa8a7df13d7fa8d56c379553466b623b4f",
+  "edge_npy_rows": "benign_chronological_scores.csv[10000:17459]",
+  "cic_npy_source": "decisions_ciciot_expanded.jsonl Normal class (N=10000)",
+  "master_seed": 42,
+  "offset_seed": 99,
+  "n_seeds": 100,
+  "T_max": 1000,
+  "frozen_params": {
+    "A_THR": 0.4554,
+    "Q_LOW": 0.35,
+    "K_ALLOW": 1.7,
+    "DELTA_D": 0.1,
+    "ETA_C": 0.3,
+    "C_FLOOR": 0.7,
+    "T_ALLOW": 0.8,
+    "T_QUAR": 0.3,
+    "ATK_AMP_DEFAULT": 0.45,
+    "ATK_AMP_JITTER_SD": 0.005,
+    "D_SAFE_LIMIT": 1.65
+  }
+}

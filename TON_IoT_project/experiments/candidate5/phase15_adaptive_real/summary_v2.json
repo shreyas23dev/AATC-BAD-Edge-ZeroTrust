@@ -1,0 +1,256 @@
+{
+  "edge_iiotset": {
+    "greedy": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 52.1,
+        "allows_sd": 14.81,
+        "attempts_mean": 97.75,
+        "duty_mean": 9.77,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 5.78,
+        "allows_sd": 5.1,
+        "attempts_mean": 77.87,
+        "duty_mean": 7.79,
+        "max_debt_mean": 3.1948
+      },
+      "delta_allows": -46.32,
+      "wilcoxon_allows": {
+        "W_plus": 1.5,
+        "N_eff": 100,
+        "seeds_aatc_worse": 99,
+        "p_twosided": 4.0350127731868954e-18,
+        "p_onesided": 2.0175063865934477e-18
+      }
+    },
+    "cooldown": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 45.76,
+        "allows_sd": 22.36,
+        "attempts_mean": 58.13,
+        "duty_mean": 5.81,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 23.93,
+        "allows_sd": 8.16,
+        "attempts_mean": 40.97,
+        "duty_mean": 4.1,
+        "max_debt_mean": 2.9427
+      },
+      "delta_allows": -21.83,
+      "wilcoxon_allows": {
+        "W_plus": 30.0,
+        "N_eff": 86,
+        "seeds_aatc_worse": 81,
+        "p_twosided": 2.2617485619305564e-15,
+        "p_onesided": 1.1308742809652782e-15
+      }
+    },
+    "amplitude": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 100.15,
+        "allows_sd": 42.85,
+        "attempts_mean": 143.0,
+        "duty_mean": 14.3,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 98.68,
+        "allows_sd": 41.91,
+        "attempts_mean": 143.0,
+        "duty_mean": 14.3,
+        "max_debt_mean": 2.5776
+      },
+      "delta_allows": -1.47,
+      "wilcoxon_allows": {
+        "W_plus": 363.0,
+        "N_eff": 69,
+        "seeds_aatc_worse": 59,
+        "p_twosided": 3.9400424636990273e-07,
+        "p_onesided": 1.9700212318495137e-07
+      }
+    },
+    "debt_pacing": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 52.1,
+        "allows_sd": 14.81,
+        "attempts_mean": 97.75,
+        "duty_mean": 9.77,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 44.06,
+        "allows_sd": 9.04,
+        "attempts_mean": 44.86,
+        "duty_mean": 4.49,
+        "max_debt_mean": 2.8586
+      },
+      "delta_allows": -8.04,
+      "wilcoxon_allows": {
+        "W_plus": 1243.5,
+        "N_eff": 99,
+        "seeds_aatc_worse": 68,
+        "p_twosided": 1.7142689226284545e-05,
+        "p_onesided": 8.571344613142272e-06
+      }
+    },
+    "debt_oracle": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 52.1,
+        "allows_sd": 14.81,
+        "attempts_mean": 97.75,
+        "duty_mean": 9.77,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 177.31,
+        "allows_sd": 59.66,
+        "attempts_mean": 206.61,
+        "duty_mean": 20.66,
+        "max_debt_mean": 2.562
+      },
+      "delta_allows": 125.21,
+      "wilcoxon_allows": {
+        "W_plus": 0.0,
+        "N_eff": 100,
+        "seeds_aatc_worse": 0,
+        "p_twosided": 3.890848669938197e-18,
+        "p_onesided": 1.0
+      }
+    }
+  },
+  "cic_iot_2023": {
+    "greedy": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 53.02,
+        "allows_sd": 23.99,
+        "attempts_mean": 94.6,
+        "duty_mean": 9.46,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 6.13,
+        "allows_sd": 2.76,
+        "attempts_mean": 57.85,
+        "duty_mean": 5.79,
+        "max_debt_mean": 3.1504
+      },
+      "delta_allows": -46.89,
+      "wilcoxon_allows": {
+        "W_plus": 0.0,
+        "N_eff": 100,
+        "seeds_aatc_worse": 100,
+        "p_twosided": 3.8781369372366785e-18,
+        "p_onesided": 1.9390684686183393e-18
+      }
+    },
+    "cooldown": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 40.48,
+        "allows_sd": 29.42,
+        "attempts_mean": 59.99,
+        "duty_mean": 6.0,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 21.98,
+        "allows_sd": 13.23,
+        "attempts_mean": 42.9,
+        "duty_mean": 4.29,
+        "max_debt_mean": 2.9291
+      },
+      "delta_allows": -18.5,
+      "wilcoxon_allows": {
+        "W_plus": 0.0,
+        "N_eff": 85,
+        "seeds_aatc_worse": 85,
+        "p_twosided": 1.1559242509877898e-15,
+        "p_onesided": 5.779621254938949e-16
+      }
+    },
+    "amplitude": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 71.48,
+        "allows_sd": 37.82,
+        "attempts_mean": 143.0,
+        "duty_mean": 14.3,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 69.38,
+        "allows_sd": 37.07,
+        "attempts_mean": 143.0,
+        "duty_mean": 14.3,
+        "max_debt_mean": 2.6573
+      },
+      "delta_allows": -2.1,
+      "wilcoxon_allows": {
+        "W_plus": 337.5,
+        "N_eff": 80,
+        "seeds_aatc_worse": 65,
+        "p_twosided": 6.706154095851543e-10,
+        "p_onesided": 3.3530770479257714e-10
+      }
+    },
+    "debt_pacing": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 53.02,
+        "allows_sd": 23.99,
+        "attempts_mean": 94.6,
+        "duty_mean": 9.46,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 47.15,
+        "allows_sd": 20.65,
+        "attempts_mean": 47.47,
+        "duty_mean": 4.75,
+        "max_debt_mean": 2.7862
+      },
+      "delta_allows": -5.87,
+      "wilcoxon_allows": {
+        "W_plus": 601.5,
+        "N_eff": 97,
+        "seeds_aatc_worse": 80,
+        "p_twosided": 1.6355394263645125e-10,
+        "p_onesided": 8.177697131822563e-11
+      }
+    },
+    "debt_oracle": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "allows_mean": 53.02,
+        "allows_sd": 23.99,
+        "attempts_mean": 94.6,
+        "duty_mean": 9.46,
+        "max_debt_mean": 0.0
+      },
+      "aatc_bad": {
+        "allows_mean": 251.5,
+        "allows_sd": 112.6,
+        "attempts_mean": 271.12,
+        "duty_mean": 27.11,
+        "max_debt_mean": 2.276
+      },
+      "delta_allows": 198.48,
+      "wilcoxon_allows": {
+        "W_plus": 0.0,
+        "N_eff": 100,
+        "seeds_aatc_worse": 0,
+        "p_twosided": 3.892385512934327e-18,
+        "p_onesided": 1.0
+      }
+    }
+  }
+}
