@@ -1,0 +1,33 @@
+{
+  "script": "run_phase15_adaptive_real.py",
+  "parity_reference_sha256": "6485238517d11f1a13d0ffb660688c37ad47e950e9f09c1bcfdde7564bb1c2ba",
+  "edge_scores_sha256": "2cdff07903f89e94f4667b87e805748af4579268e3c49095dace82853c9c65ef",
+  "cic_scores_sha256": "f40a7a9018281c0ea2e97fe12fb6af408e458120732d22711acf50aa6b51a409",
+  "edge_scores_path": "C:\\Users\\Shreyas A\\PROJECTS\\BAZT-TON_IoT\\TON_IoT_project\\experiments\\candidate5\\chronological_validation\\benign_chronological_scores.csv",
+  "cic_jsonl_path": "C:\\Users\\Shreyas A\\PROJECTS\\BAZT-TON_IoT\\TON_IoT_project\\rust-edge\\decisions_ciciot_expanded.jsonl",
+  "cic_csv_path": "C:\\Users\\Shreyas A\\PROJECTS\\BAZT-TON_IoT\\TON_IoT_project\\data\\ciciot2023\\ciciot_eval_expanded_44.csv",
+  "edge_eval_rows": "10000:17459  (N=7459)",
+  "cic_normal_frames": 10000,
+  "master_seed": 42,
+  "offset_seed": 99,
+  "n_seeds": 100,
+  "T_max": 1000,
+  "frozen_params": {
+    "A_THR": 0.4554,
+    "Q_LOW": 0.35,
+    "K_ALLOW": 1.7,
+    "DELTA_D": 0.1,
+    "ETA_C": 0.3,
+    "C_FLOOR": 0.7,
+    "T_ALLOW": 0.8,
+    "T_QUAR": 0.3,
+    "ATK_AMP_DEFAULT": 0.45,
+    "ATK_AMP_JITTER_SD": 0.005
+  },
+  "benign_score_file_sha256": {
+    "benign_chronological_scores_csv": "b4babfa3723c17fbe71e4b96994af927b3fa69b25d1dfd5bba6d66f1a88bf617",
+    "decisions_ciciot_expanded_jsonl": "9d450e7c458e75c1905f6500aa5be6016e1dc7735d0bb4e3f7545c026500e4ef",
+    "parity_reference_json": "6485238517d11f1a13d0ffb660688c37ad47e950e9f09c1bcfdde7564bb1c2ba"
+  },
+  "regeneration_note": "benign_chronological_scores.csv: run TON_IoT_project/experiments/candidate5/chronological_validation/run_chronological_validation.py with same repo and dataset. decisions_ciciot_expanded.jsonl: run TON_IoT_project/rust-edge/xai/benchmark_guard_evaluation.py on ciciot_eval_expanded_44.csv with AATC-BAD engine commit b930ded."
+}

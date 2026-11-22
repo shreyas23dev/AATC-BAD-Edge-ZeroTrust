@@ -1,0 +1,206 @@
+{
+  "edge_iiotset": {
+    "greedy": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 53.7159,
+        "yield_sd": 2.3983,
+        "duty_mean": 9.775,
+        "duty_sd": 2.8305,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 10.0553,
+        "yield_sd": 12.8938,
+        "duty_mean": 7.787,
+        "duty_sd": 1.7111,
+        "max_debt_mean": 3.1948,
+        "max_debt_sd": 0.0782
+      },
+      "yield_reduction_pp": 43.6606,
+      "wilcoxon": {
+        "W_plus": 5050.0,
+        "N_eff": 100,
+        "p_value": 1.9482799225479542e-18
+      }
+    },
+    "cooldown": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 73.2432,
+        "yield_sd": 23.104,
+        "duty_mean": 5.813,
+        "duty_sd": 1.6887,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 56.8063,
+        "yield_sd": 16.2649,
+        "duty_mean": 4.097,
+        "duty_sd": 0.4534,
+        "max_debt_mean": 2.9427,
+        "max_debt_sd": 0.3789
+      },
+      "yield_reduction_pp": 16.4369,
+      "wilcoxon": {
+        "W_plus": 3860.0,
+        "N_eff": 88,
+        "p_value": 1.2467681535930582e-15
+      }
+    },
+    "amplitude": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 70.035,
+        "yield_sd": 29.9648,
+        "duty_mean": 14.3,
+        "duty_sd": 0.0,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 69.007,
+        "yield_sd": 29.3055,
+        "duty_mean": 14.3,
+        "duty_sd": 0.0,
+        "max_debt_mean": 2.5776,
+        "max_debt_sd": 0.5095
+      },
+      "yield_reduction_pp": 1.028,
+      "wilcoxon": {
+        "W_plus": 2057.0,
+        "N_eff": 69,
+        "p_value": 1.8160447133700757e-07
+      }
+    },
+    "debt_aware": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 53.7159,
+        "yield_sd": 2.3983,
+        "duty_mean": 9.775,
+        "duty_sd": 2.8305,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 98.2904,
+        "yield_sd": 2.5481,
+        "duty_mean": 4.486,
+        "duty_sd": 0.9422,
+        "max_debt_mean": 2.8586,
+        "max_debt_sd": 0.2198
+      },
+      "yield_reduction_pp": -44.5745,
+      "wilcoxon": {
+        "W_plus": 0.0,
+        "N_eff": 100,
+        "p_value": 1.0
+      }
+    }
+  },
+  "cic_iot_2023": {
+    "greedy": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 56.0307,
+        "yield_sd": 2.5045,
+        "duty_mean": 9.242,
+        "duty_sd": 4.2149,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 13.2041,
+        "yield_sd": 7.6329,
+        "duty_mean": 5.74,
+        "duty_sd": 2.2592,
+        "max_debt_mean": 3.1402,
+        "max_debt_sd": 0.0771
+      },
+      "yield_reduction_pp": 42.8266,
+      "wilcoxon": {
+        "W_plus": 5050.0,
+        "N_eff": 100,
+        "p_value": 1.9482799225479542e-18
+      }
+    },
+    "cooldown": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 58.3564,
+        "yield_sd": 22.9302,
+        "duty_mean": 5.946,
+        "duty_sd": 2.8577,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 46.6535,
+        "yield_sd": 20.0519,
+        "duty_mean": 4.274,
+        "duty_sd": 0.9054,
+        "max_debt_mean": 2.8779,
+        "max_debt_sd": 0.3851
+      },
+      "yield_reduction_pp": 11.7029,
+      "wilcoxon": {
+        "W_plus": 3647.0,
+        "N_eff": 85,
+        "p_value": 7.767410994231838e-16
+      }
+    },
+    "amplitude": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 48.951,
+        "yield_sd": 25.2199,
+        "duty_mean": 14.3,
+        "duty_sd": 0.0,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 47.4615,
+        "yield_sd": 24.8487,
+        "duty_mean": 14.3,
+        "duty_sd": 0.0,
+        "max_debt_mean": 2.5921,
+        "max_debt_sd": 0.5433
+      },
+      "yield_reduction_pp": 1.4895,
+      "wilcoxon": {
+        "W_plus": 2632.5,
+        "N_eff": 75,
+        "p_value": 8.876407968376394e-11
+      }
+    },
+    "debt_aware": {
+      "n_seeds": 100,
+      "baseline_b0": {
+        "yield_mean": 56.0307,
+        "yield_sd": 2.5045,
+        "duty_mean": 9.242,
+        "duty_sd": 4.2149,
+        "max_debt_mean": 0.0,
+        "max_debt_sd": 0.0
+      },
+      "aatc_bad": {
+        "yield_mean": 99.0393,
+        "yield_sd": 1.7933,
+        "duty_mean": 4.687,
+        "duty_sd": 1.9629,
+        "max_debt_mean": 2.8037,
+        "max_debt_sd": 0.3527
+      },
+      "yield_reduction_pp": -43.0087,
+      "wilcoxon": {
+        "W_plus": 0.0,
+        "N_eff": 100,
+        "p_value": 1.0
+      }
+    }
+  }
+}
