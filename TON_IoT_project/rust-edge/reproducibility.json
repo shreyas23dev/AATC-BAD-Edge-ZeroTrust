@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-11-22T14:15:00+05:30",
+  "git_commit": "46f628d19fb8392826581aab962f0fdcadb7d415",
+  "random_seeds": {
+    "stream_order": 42,
+    "evaluation_sampling": 42,
+    "deterministic_execution": true
+  },
+  "environment": {
+    "python_version": "3.12.3",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "numpy_version": "2.5.4",
+    "pandas_version": "3.1.1"
+  },
+  "parameters": {
+    "A_THR": 0.4554,
+    "Q_LOW": 0.35,
+    "K_ALLOW": 1.7,
+    "DELTA_D": 0.1,
+    "ETA_C": 0.3,
+    "C_FLOOR": 0.7,
+    "ALPHA_0": 0.2057,
+    "T_ALLOW": 0.8,
+    "T_QUAR": 0.3,
+    "BETA": 0.4,
+    "GAMMA": 0.335,
+    "THETA": 1.0,
+    "LAMBDA": 0.55,
+    "DELTA": 0.05,
+    "P_PEN": 0.25
+  },
+  "calibrated_guard_thresholds": {
+    "theta_num": 10.0,
+    "theta_rate": 626015.5223880596
+  },
+  "dataset_sha256": {
+    "multi_attack_eval.csv": "01636e85b5d27b104c65b68472065709030405d46cac6747195bcfac660d9f7b",
+    "decisions_multi_attack_new.jsonl": "1505095a2233b4dfcf20c8f1f1090b40597d11fbfd978ef6d13ee31d40eeaa10",
+    "decisions_edge_verified.jsonl": "640d96a89a2855cd7cbe7d8def22d0d2ac6d23a4f6cb1a51193d7638a79f69ba",
+    "table4_edge.txt": "81d8f8fd16094860f41769883cd30359f75064d8d22d290bcecff25eef1179ed",
+    "ciciot_train_benign_44.csv": "422bf653531cc16d2aaa95369e27b7c4dfeab73451250e2a084fd9c12c6072fa",
+    "ciciot_eval_expanded_44.csv": "5d27c72042b6323501755f69c0bed0e8a1a4a7edf80da453d568c5747f7e5d92",
+    "decisions_ciciot_expanded.jsonl": "9d450e7c458e75c1905f6500aa5be6016e1dc7735d0bb4e3f7545c026500e4ef",
+    "decisions_cic_verified.jsonl": "4c216f37c7c4b22eaaad932fbd92948c713549dab2b75f57e050ccf1f19e156e",
+    "table5_cic.txt": "6204f9c9cd5c3fbc23c7bbaf62e5c6695ddd1b4324a9594e9ab40c671cff883e"
+  },
+  "verification_status": {
+    "edge_table4_parity": "EXACT_BIT_FOR_BIT_MATCH (0 mismatches / 20,000 frames)",
+    "cic_table5_parity": "EXACT_BIT_FOR_BIT_MATCH (0 mismatches / 26,011 frames)",
+    "benign_calibration_false_alarms": "0.00% (0 / 10,000)"
+  }
+}
