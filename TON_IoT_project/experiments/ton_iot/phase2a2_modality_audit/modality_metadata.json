@@ -1,0 +1,13 @@
+{
+  "selected_modality": "IoT_Weather",
+  "csv_filename": "IoT_Weather.csv",
+  "total_rows": 650242,
+  "features": [
+    "temperature",
+    "pressure",
+    "humidity"
+  ],
+  "target_column": "label",
+  "type_column": "type",
+  "selection_rationale": "Identified as primary candidate in ToN-IoT audit inventory; continuous environmental sensor telemetry (temperature, pressure, humidity) with identical UNSW testbed execution dates and attack campaigns."
+}

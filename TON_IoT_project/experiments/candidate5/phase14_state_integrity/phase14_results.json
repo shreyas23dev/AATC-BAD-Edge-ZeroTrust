@@ -1,0 +1,110 @@
+{
+  "mechanism": "Hash-Chained State Ledger (HCSL)",
+  "hash_function": "BLAKE2b-256",
+  "threat_model": {
+    "I_trust_inflation": "Zero debt + set T_t=0.95",
+    "II_ceiling_reset": "Reset C_t=1.0 (remove debt suppression)",
+    "III_debt_erasure": "Zero debt only (D_t=0)",
+    "IV_full_replacement": "Full state: T_t=0.95, D_t=0, C_t=1.0"
+  },
+  "E1_injection_gain": {
+    "I_trust_inflation": {
+      "attack_type": "I_trust_inflation",
+      "inject_step": 150,
+      "steps_measured": 150,
+      "clean_allows_after": 0,
+      "tampered_allows_after": 0,
+      "unauthorized_allow_gain": 0,
+      "unauthorized_gain_pct": 0.0,
+      "hcsl_detection_step": 150,
+      "hcsl_detected_within_1_step": true
+    },
+    "II_ceiling_reset": {
+      "attack_type": "II_ceiling_reset",
+      "inject_step": 150,
+      "steps_measured": 150,
+      "clean_allows_after": 0,
+      "tampered_allows_after": 21,
+      "unauthorized_allow_gain": 21,
+      "unauthorized_gain_pct": 14.0,
+      "hcsl_detection_step": 150,
+      "hcsl_detected_within_1_step": true
+    },
+    "III_debt_erasure": {
+      "attack_type": "III_debt_erasure",
+      "inject_step": 150,
+      "steps_measured": 150,
+      "clean_allows_after": 0,
+      "tampered_allows_after": 0,
+      "unauthorized_allow_gain": 0,
+      "unauthorized_gain_pct": 0.0,
+      "hcsl_detection_step": 150,
+      "hcsl_detected_within_1_step": true
+    },
+    "IV_full_replacement": {
+      "attack_type": "IV_full_replacement",
+      "inject_step": 150,
+      "steps_measured": 150,
+      "clean_allows_after": 0,
+      "tampered_allows_after": 39,
+      "unauthorized_allow_gain": 39,
+      "unauthorized_gain_pct": 26.0,
+      "hcsl_detection_step": 150,
+      "hcsl_detected_within_1_step": true
+    }
+  },
+  "E2_detection_rate": {
+    "I_trust_inflation": {
+      "attack_type": "I_trust_inflation",
+      "n_trials": 100,
+      "detected_total": 100,
+      "detection_rate_pct": 100.0,
+      "detected_within_1_step": 100,
+      "within_1_step_rate_pct": 100.0
+    },
+    "II_ceiling_reset": {
+      "attack_type": "II_ceiling_reset",
+      "n_trials": 100,
+      "detected_total": 100,
+      "detection_rate_pct": 100.0,
+      "detected_within_1_step": 100,
+      "within_1_step_rate_pct": 100.0
+    },
+    "III_debt_erasure": {
+      "attack_type": "III_debt_erasure",
+      "n_trials": 100,
+      "detected_total": 100,
+      "detection_rate_pct": 100.0,
+      "detected_within_1_step": 100,
+      "within_1_step_rate_pct": 100.0
+    },
+    "IV_full_replacement": {
+      "attack_type": "IV_full_replacement",
+      "n_trials": 100,
+      "detected_total": 100,
+      "detection_rate_pct": 100.0,
+      "detected_within_1_step": 100,
+      "within_1_step_rate_pct": 100.0
+    }
+  },
+  "E3_false_positive": {
+    "n_steps": 500,
+    "chain_breaks": 0,
+    "false_positive_rate_pct": 0.0
+  },
+  "E4_overhead": {
+    "commitment_hash_bytes": 32,
+    "state_vector_bytes": 32,
+    "decision_bytes": 8,
+    "prev_hash_bytes": 32,
+    "total_overhead_per_step_bytes": 104,
+    "overhead_per_1000_steps_kb": 101.56,
+    "overhead_per_million_steps_mb": 99.18
+  },
+  "summary": {
+    "all_attack_types_detected_within_1_step": true,
+    "false_positive_rate_pct": 0.0,
+    "overhead_per_step_bytes": 104,
+    "max_unauthorized_gain_steps": 39
+  }
+}

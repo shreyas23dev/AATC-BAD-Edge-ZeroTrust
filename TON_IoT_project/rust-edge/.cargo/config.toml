@@ -1,0 +1,8 @@
+# .cargo/config.toml
+# Persistent build environment for WSL2 (Ubuntu x86_64).
+# Avoids having to prefix every `cargo build` with OPENSSL_* vars.
+
+[env]
+OPENSSL_DIR         = "/usr"
+OPENSSL_LIB_DIR     = "/usr/lib/x86_64-linux-gnu"
+OPENSSL_INCLUDE_DIR = "/usr/include/openssl"

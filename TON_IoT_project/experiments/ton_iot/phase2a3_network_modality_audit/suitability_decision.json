@@ -1,0 +1,5 @@
+{
+  "stage_a_decision": "NETWORK_MODALITY_VALID_FOR_DETECTOR_AUDIT",
+  "stage_b_verdict": "NETWORK_SIGNAL_INSUFFICIENT",
+  "rationale": "Network flow telemetry exhibits severe pathological inversion (ROC-AUC=0.0919, score separation=-0.3178). The Isolation Forest isolates high-variance normal traffic as anomalous (mean A=0.3883) while assigning ultra-low anomaly scores to dense scanning probe bursts (mean A=0.0705). Without IP/port identity leakage, point-level Isolation Forest completely fails on network flows."
+}

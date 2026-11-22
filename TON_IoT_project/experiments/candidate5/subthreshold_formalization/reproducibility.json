@@ -1,0 +1,15 @@
+{
+  "phase": 5,
+  "description": "Reproducibility record for Phase 5 formal artifact generation. No empirical experiments; all values are deterministic closed-form computations from frozen Paper 1 parameters. Re-running this script produces identical JSON files.",
+  "execution_date": "2026-09-29T07:48:06Z",
+  "frozen_parameters_source": "Paper 1 (frozen, verbatim from Phase 2A protocol)",
+  "experiment_type": "ANALYTICAL_FORMALIZATION_ONLY",
+  "empirical_data_used": null,
+  "hashes": {
+    "subthreshold_region.json": "816836de71d7ac95ef301a37c278d2ad306cd65b8fd05a61467e77a72db4307a",
+    "temporal_evidence_families.json": "9223115e59c0267f03331c2495204975fda2597f3f9f4ac4dc727fb7cd0d5e5d",
+    "state_aliasing_examples.json": "cc55db2b83d58ba5938e1039394b638e8952b7e5654c27acdb1dce0ec41eb315",
+    "rq_refinement.json": "0ed7b05f1980447424876e7157b3076da71f939a2fb268cd7043783159c0daef"
+  },
+  "verification_status": "DETERMINISTIC_ANALYTICAL"
+}

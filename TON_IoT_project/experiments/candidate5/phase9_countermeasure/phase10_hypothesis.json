@@ -1,0 +1,13 @@
+{
+  "hypothesis_id": "H_PHASE10_AATC_EFFECTIVENESS",
+  "formal_statement": "Under controlled empirical attack-score replay into chronological Edge-IIoTset telemetry, the Adaptive Asymptotic Trust Ceiling with Borderline Authorization Debt (AATC-BAD) will reduce cumulative malicious access (M_cum) under Cycle A (1:10 schedule) by at least 20% relative to Baseline B0 (from M_cum = 8.5 to M_cum <= 6.5) by demoting cyclic attack pulses to VERIFY policy, while maintaining uncompromised benign device ALLOW availability above 70% and false BLOCK rate below 1.0% on the untouched chronological evaluation stream.",
+  "testable_predictions": {
+    "prediction_1_security": "Cycle A cumulative access M_cum will decrease from 8.5 to <= 6.5 due to ceiling attenuation below T_allow = 0.80.",
+    "prediction_2_availability": "On the untouched 7,459-row chronological benign evaluation stream, ALLOW rate will remain >= 70.0% and BLOCK rate will remain <= 1.0%.",
+    "prediction_3_recovery": "Legitimate devices experiencing isolated overt false alarms will recover to ALLOW within 10 steps once debt clears."
+  },
+  "falsification_criteria": {
+    "falsified_if_no_security_gain": "If Cycle A M_cum remains >= 8.0 (meaning the ceiling failed to prevent ALLOW access during attack pulses).",
+    "falsified_if_availability_collapses": "If benign ALLOW rate drops below 70.0% or false BLOCK rate exceeds 2.0% on the untouched evaluation stream."
+  }
+}

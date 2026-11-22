@@ -1,0 +1,346 @@
+{
+  "security": {
+    "Cycle_A": {
+      "mechanism": "B0",
+      "schedule": "Cycle_A",
+      "tau_a": 1,
+      "tau_r": 10,
+      "survived_cycles_S": 8,
+      "attack_steps_delivered": 9,
+      "attack_steps_allow": 8,
+      "attack_steps_verify": 1,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 8.5,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 9,
+        "phase": "REST",
+        "step": 9
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 8,
+      "residual_evidence_last_cycle": 1.5,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.926182,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 2,
+          "T_post_atk": 0.941367,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.994139,
+          "SB_post_rst": 0.1,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 3,
+          "T_post_atk": 0.995344,
+          "SB_post_atk": 0.05,
+          "T_post_rst": 0.999535,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 4,
+          "T_post_atk": 0.99963,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.999963,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 5,
+          "T_post_atk": 0.999971,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.999997,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 6,
+          "T_post_atk": 0.999998,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 1.0,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 7,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.711079,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "VERIFY",
+          "extra_state": {}
+        },
+        {
+          "cycle": 8,
+          "T_post_atk": 0.77051,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.977059,
+          "SB_post_rst": 0.1,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 9,
+          "T_post_atk": 0.981778,
+          "SB_post_atk": 0.05,
+          "T_post_rst": 0.232119,
+          "SB_post_rst": 1.5,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 9,
+          "end_policy": "BLOCK",
+          "extra_state": {}
+        }
+      ]
+    },
+    "Cycle_B": {
+      "mechanism": "B0",
+      "schedule": "Cycle_B",
+      "tau_a": 1,
+      "tau_r": 25,
+      "survived_cycles_S": 3,
+      "attack_steps_delivered": 4,
+      "attack_steps_allow": 4,
+      "attack_steps_verify": 0,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 4.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 4,
+        "phase": "REST",
+        "step": 14
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 3,
+      "residual_evidence_last_cycle": 1.5,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.997667,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 2,
+          "T_post_atk": 0.998147,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.999994,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 3,
+          "T_post_atk": 0.999995,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.908651,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 4,
+          "T_post_atk": 0.927442,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.231994,
+          "SB_post_rst": 1.5,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 14,
+          "end_policy": "BLOCK",
+          "extra_state": {}
+        }
+      ]
+    },
+    "Cycle_C": {
+      "mechanism": "B0",
+      "schedule": "Cycle_C",
+      "tau_a": 1,
+      "tau_r": 50,
+      "survived_cycles_S": 1,
+      "attack_steps_delivered": 2,
+      "attack_steps_allow": 2,
+      "attack_steps_verify": 0,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 2.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 2,
+        "phase": "REST",
+        "step": 39
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 1,
+      "residual_evidence_last_cycle": 1.5,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.999993,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {}
+        },
+        {
+          "cycle": 2,
+          "T_post_atk": 0.999994,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.231836,
+          "SB_post_rst": 1.5,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 39,
+          "end_policy": "BLOCK",
+          "extra_state": {}
+        }
+      ]
+    },
+    "Cycle_D": {
+      "mechanism": "B0",
+      "schedule": "Cycle_D",
+      "tau_a": 5,
+      "tau_r": 25,
+      "survived_cycles_S": 0,
+      "attack_steps_delivered": 5,
+      "attack_steps_allow": 3,
+      "attack_steps_verify": 2,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 4.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 1,
+        "phase": "REST",
+        "step": 2
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 0,
+      "residual_evidence_last_cycle": 2.15,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 0.571805,
+          "SB_post_atk": 1.65,
+          "T_post_rst": 0.239931,
+          "SB_post_rst": 2.15,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 2,
+          "end_policy": "BLOCK",
+          "extra_state": {}
+        }
+      ]
+    },
+    "Cycle_E": {
+      "mechanism": "B0",
+      "schedule": "Cycle_E",
+      "tau_a": 5,
+      "tau_r": 50,
+      "survived_cycles_S": 0,
+      "attack_steps_delivered": 5,
+      "attack_steps_allow": 3,
+      "attack_steps_verify": 2,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 4.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 1,
+        "phase": "REST",
+        "step": 2
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 0,
+      "residual_evidence_last_cycle": 2.15,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 0.571805,
+          "SB_post_atk": 1.65,
+          "T_post_rst": 0.239931,
+          "SB_post_rst": 2.15,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 2,
+          "end_policy": "BLOCK",
+          "extra_state": {}
+        }
+      ]
+    }
+  },
+  "availability": {
+    "mechanism": "B0",
+    "total_benign_observations": 17459,
+    "allow_fraction": 0.6224,
+    "verify_fraction": 0.1372,
+    "block_fraction": 0.2404,
+    "allow_count": 10866,
+    "false_verify_count": 2396,
+    "false_block_count": 4197,
+    "block_transitions": 42,
+    "longest_continuous_block_duration": 3686,
+    "mean_recovery_time_steps": 14.18,
+    "median_recovery_time_steps": 4.0,
+    "final_trust": 0.999429,
+    "final_state": {
+      "T": 0.999429,
+      "E": 0.227168,
+      "SB": 0.0,
+      "I": 0,
+      "policy": "ALLOW",
+      "branch": "BENIGN_RECOVERY"
+    }
+  }
+}

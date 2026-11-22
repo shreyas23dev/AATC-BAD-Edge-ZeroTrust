@@ -1,0 +1,9 @@
+{
+  "benign_sequence_sha256": "736dad0ffc20d55fc00c9150a6cec263e4f4563bd0c6fc4b550eb20928567c1f",
+  "attack_sequence_sha256": "694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c",
+  "t_post_rest_hash_run1": "1de8a13b5061f37be5d4d2dbe41590711f3d143e14994697f1cb7be2841fe226",
+  "t_post_rest_hash_run2": "1de8a13b5061f37be5d4d2dbe41590711f3d143e14994697f1cb7be2841fe226",
+  "sb_post_rest_hash_run1": "69e32fd7e44d3adad5fa7c00171c28893c4a5ecf6f3e8a5e1b0d29dca67f73a2",
+  "sb_post_rest_hash_run2": "69e32fd7e44d3adad5fa7c00171c28893c4a5ecf6f3e8a5e1b0d29dca67f73a2",
+  "exact_equality_verified": true
+}

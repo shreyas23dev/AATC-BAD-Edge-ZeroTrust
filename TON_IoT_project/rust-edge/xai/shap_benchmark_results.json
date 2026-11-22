@@ -1,0 +1,39 @@
+{
+  "single_pass_rust": {
+    "sampling_overhead": 0,
+    "latency_ms": 0.115,
+    "throughput_fps": 8687
+  },
+  "single_pass_python": {
+    "sampling_overhead": 0,
+    "latency_ms": 0.0712,
+    "throughput_fps": 14041.6
+  },
+  "tree_shap": {
+    "sampling_overhead": "Tree traversal",
+    "latency_ms": 0.9459,
+    "throughput_fps": 1057.2
+  },
+  "kernel_shap_25": {
+    "sampling_overhead": 2500,
+    "latency_ms": 12.79,
+    "throughput_fps": 78.2
+  },
+  "kernel_shap_50": {
+    "sampling_overhead": 5000,
+    "latency_ms": 11.79,
+    "throughput_fps": 84.8
+  },
+  "kernel_shap_100": {
+    "sampling_overhead": 10000,
+    "latency_ms": 12.78,
+    "throughput_fps": 78.3
+  },
+  "fidelity": {
+    "top3_jaccard_treeshap": 0.1617,
+    "top5_jaccard_treeshap": 0.1546,
+    "spearman_corr_treeshap": 0.7466,
+    "top3_jaccard_kernel": 0.21,
+    "spearman_corr_kernel": 0.3739
+  }
+}

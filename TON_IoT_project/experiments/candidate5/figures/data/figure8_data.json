@@ -1,0 +1,69 @@
+{
+  "source_artifact": "experiments\\candidate5\\phase11_envelope_analysis\\envelope_sweep.json",
+  "tau_r": [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    55,
+    60
+  ],
+  "B0_survived": [
+    17,
+    8,
+    5,
+    4,
+    3,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "AATC_survived": [
+    17,
+    8,
+    5,
+    4,
+    3,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+  ],
+  "Delta_M": [
+    4.5,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "regimes": {
+    "AATC_Intervention_Regime": {
+      "tau_r_max": 12,
+      "description": "B0 slow burn ineffective; AATC ratchets debt and caps trust"
+    },
+    "B0_Quarantine_Regime": {
+      "tau_r_min": 15,
+      "description": "Ambient noise pushes slow burn over threshold; B0 catches attacker directly"
+    }
+  }
+}

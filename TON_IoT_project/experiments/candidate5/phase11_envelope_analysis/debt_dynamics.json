@@ -1,0 +1,17 @@
+{
+  "phase": 11,
+  "part": "C",
+  "title": "Closed-Form Debt Dynamics Characterisation",
+  "calibration_partition_rows": "0-4999 (N=5000)",
+  "calibration_fractions": {
+    "p_nominal": 0.8288,
+    "p_borderline": 0.1322,
+    "p_overt": 0.039,
+    "mean_f_borderline": 0.479696
+  },
+  "E_delta_D_benign": -0.019464,
+  "D_per_attack_pulse": 0.56926,
+  "D_net_per_cycle_A": 0.374619,
+  "predicted_cycles_to_engage": 4.54,
+  "tau_r_upper_bound_pure_shed": 6.87
+}

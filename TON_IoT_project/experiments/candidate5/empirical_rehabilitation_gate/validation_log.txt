@@ -1,0 +1,57 @@
+======================================================================
+CANDIDATE 5 — PASS VALIDATION / TEMPORAL AND ATTACK-PROFILE AUDIT LOG
+Date: 2026-09-29T11:02:00
+======================================================================
+
+[STEP 1] BENIGN STREAM TEMPORAL AUDIT
+  Source file: C:\Users\Shreyas A\PROJECTS\Behavior-Adaptive-Zero-Trust-IoT\edge-iiot-anomaly-detection\data\raw\DNN-EdgeIIoT-dataset.csv
+  Split method: train_test_split(..., test_size=0.15, random_state=42)
+  Total observations: 15,000
+  Timestamp column: frame.time
+  Min timestamp: 2021-01-01 11:44:10.193938
+  Max timestamp: 2021-01-01 13:28:32.127756
+  Monotonic increasing: FALSE
+  Negative timestamp jumps: 7,548 out of 14,999 transitions (50.32%)
+  Median timestamp delta: -21.23 seconds
+  Min delta: -6204.47 seconds
+  Max delta: +6128.46 seconds
+  Classification: BENIGN_SEQUENCE_NOT_TEMPORALLY_CONTIGUOUS
+  Finding: Observations were randomly sampled by train_test_split rather than sliced consecutively.
+
+[STEP 2] ATTACK-SCORE PROFILE PROVENANCE AUDIT
+  Source artifact: experiments\evaluate_adaptive_adversaries.py (line 157) & scripts\generate_ieee_conference_figures.py (line 134)
+  Provenance: Authoritative Paper 1 empirical sub-threshold attack profile from Edge-IIoTset test partition (Table 6 DDoS_HTTP sub-threshold trace)
+  Attack type: DDoS_HTTP (sub-threshold pacing)
+  Number of observations: 10
+  Values: [0.4100, 0.3900, 0.4200, 0.3800, 0.4000, 0.4300, 0.3900, 0.4100, 0.4000, 0.4200]
+  SHA-256: 694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c
+  Min: 0.3800, Max: 0.4300, Mean: 0.4050, Median: 0.4050, Std: 0.0150
+  Fraction below A_thr (0.4554): 100.0% (10/10)
+  Values modified: FALSE
+  Synthetic/Gaussian: FALSE
+  Status: VERIFIED_EMPIRICAL_PROFILE
+
+[STEP 3] POST-HOC SELECTION AUDIT
+  Cycle schedules tested:
+    Cycle A: 1 attack / 10 rest
+    Cycle B: 1 attack / 25 rest
+    Cycle C: 1 attack / 50 rest
+    Cycle D: 5 attack / 25 rest
+    Cycle E: 5 attack / 50 rest
+  Predefined before execution: TRUE
+  Trace search / optimization: NONE
+  Status: NO_POSTHOC_ATTACK_SELECTION
+
+[STEP 4] REPLAY INTEGRITY
+  Benign sequence SHA-256: 736dad0ffc20d55fc00c9150a6cec263e4f4563bd0c6fc4b550eb20928567c1f
+  Attack sequence SHA-256: 694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c
+  Trajectory hash run 1 (T_post_rest): ad728a3ca5530dfab308ecf8b5493f0b0933f86e902a7b8e19e078ea22998cfb
+  Trajectory hash run 2 (T_post_rest): ad728a3ca5530dfab308ecf8b5493f0b0933f86e902a7b8e19e078ea22998cfb
+  Trajectory hash run 1 (SB_post_rest): 4c84ebce4465d644781498b0a9db58f70747cb98858eb5b349f7e53f19e4a3cf
+  Trajectory hash run 2 (SB_post_rest): 4c84ebce4465d644781498b0a9db58f70747cb98858eb5b349f7e53f19e4a3cf
+  Exact equality verified: TRUE [PASS]
+
+[STEP 5] FINAL CLASSIFICATION
+  Classification: C5_PASS_WITH_TEMPORAL_LIMITATION
+  Conclusion: The empirical scores are genuine and the attack profile is verified without post-hoc selection. However, the benign stream was randomly sampled rather than temporally contiguous. The result supports TrustEngine state-response rehabilitation feasibility, but not an empirical claim of unbroken chronological cycling.
+======================================================================

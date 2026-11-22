@@ -1,0 +1,18 @@
+{
+  "total_benign_steps": 17459,
+  "mean_trust": 0.6876643751637347,
+  "min_trust": 0.0,
+  "final_trust": 0.9994288952736026,
+  "mean_energy": 0.21063898795491223,
+  "mean_accumulator": 3.138599003379269,
+  "sb_zero_fraction": 0.5498596712297382,
+  "sb_gt_theta_fraction": 0.2406208832120969,
+  "false_penalty_events": 3835,
+  "false_block_events": 4197,
+  "allow_fraction": 0.62237241537316,
+  "verify_fraction": 0.13723580961108883,
+  "block_fraction": 0.24039177501575118,
+  "t_hash": "c2973c64e49d39b38d86e168e7f01a697f07e35744100dc8ece225508ef96298",
+  "e_hash": "d30be27f83b89648b0e67feb69c5f4ea7a28a129a87270c3c60b18ecf87288ab",
+  "sb_hash": "acff1ca696e40f180e4034037b6bc69467080181090b13f3c8122b3227b7959d"
+}

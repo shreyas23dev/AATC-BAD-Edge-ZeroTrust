@@ -1,0 +1,6 @@
+{
+  "state_transitions_csv_sha256": "171a1cd9bf816c5e1b9afd70aab7a9cbf84e0781322f89aa1f3f699d904db197",
+  "orbit_verification_json_sha256": "47ad5b173c1b05f33bd9465e5205b0f36fd8dd011ddc98d6cc39bc9d56707290",
+  "reproducibility_match": true,
+  "verification_status": "VERIFIED_DETERMINISTIC"
+}

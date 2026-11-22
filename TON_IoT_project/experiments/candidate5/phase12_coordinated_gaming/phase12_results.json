@@ -1,0 +1,247 @@
+{
+  "E1_2device_interleaved": {
+    "without_CDDA": {
+      "n_devices": 2,
+      "n_steps": 500,
+      "use_cdda": false,
+      "schedules": [
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          25
+        ]
+      ],
+      "total_attack_steps": 300,
+      "total_allow_malicious": 10,
+      "malicious_allow_rate_pct": 3.33,
+      "total_benign_steps": 700,
+      "total_allow_benign": 14,
+      "benign_allow_rate_pct": 2.0,
+      "M_cum_normalized": 5.0,
+      "per_device_D_final": [
+        0.6012,
+        0.622
+      ],
+      "per_device_C_final": [
+        0.7,
+        0.7
+      ]
+    },
+    "with_CDDA": {
+      "n_devices": 2,
+      "n_steps": 500,
+      "use_cdda": true,
+      "schedules": [
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          25
+        ]
+      ],
+      "total_attack_steps": 300,
+      "total_allow_malicious": 10,
+      "malicious_allow_rate_pct": 3.33,
+      "total_benign_steps": 700,
+      "total_allow_benign": 16,
+      "benign_allow_rate_pct": 2.29,
+      "M_cum_normalized": 5.0,
+      "per_device_D_final": [
+        0.6012,
+        0.622
+      ],
+      "per_device_C_final": [
+        0.7,
+        0.7
+      ]
+    }
+  },
+  "E2_3device_roundrobin": {
+    "without_CDDA": {
+      "n_devices": 3,
+      "n_steps": 500,
+      "use_cdda": false,
+      "schedules": [
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          25
+        ]
+      ],
+      "total_attack_steps": 450,
+      "total_allow_malicious": 15,
+      "malicious_allow_rate_pct": 3.33,
+      "total_benign_steps": 1050,
+      "total_allow_benign": 20,
+      "benign_allow_rate_pct": 1.9,
+      "M_cum_normalized": 5.0,
+      "per_device_D_final": [
+        0.6116,
+        0.6116,
+        0.6116
+      ],
+      "per_device_C_final": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "with_CDDA": {
+      "n_devices": 3,
+      "n_steps": 500,
+      "use_cdda": true,
+      "schedules": [
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          25
+        ]
+      ],
+      "total_attack_steps": 450,
+      "total_allow_malicious": 15,
+      "malicious_allow_rate_pct": 3.33,
+      "total_benign_steps": 1050,
+      "total_allow_benign": 23,
+      "benign_allow_rate_pct": 2.19,
+      "M_cum_normalized": 5.0,
+      "per_device_D_final": [
+        0.6116,
+        0.6116,
+        0.6116
+      ],
+      "per_device_C_final": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    }
+  },
+  "E3_3device_staggered": {
+    "without_CDDA": {
+      "n_devices": 3,
+      "n_steps": 500,
+      "use_cdda": false,
+      "schedules": [
+        [
+          10,
+          15
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          35
+        ]
+      ],
+      "total_attack_steps": 465,
+      "total_allow_malicious": 15,
+      "malicious_allow_rate_pct": 3.23,
+      "total_benign_steps": 1035,
+      "total_allow_benign": 20,
+      "benign_allow_rate_pct": 1.93,
+      "M_cum_normalized": 5.0,
+      "per_device_D_final": [
+        0.1617,
+        0.5916,
+        0.2891
+      ],
+      "per_device_C_final": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "with_CDDA": {
+      "n_devices": 3,
+      "n_steps": 500,
+      "use_cdda": true,
+      "schedules": [
+        [
+          10,
+          15
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          10,
+          35
+        ]
+      ],
+      "total_attack_steps": 465,
+      "total_allow_malicious": 15,
+      "malicious_allow_rate_pct": 3.23,
+      "total_benign_steps": 1035,
+      "total_allow_benign": 23,
+      "benign_allow_rate_pct": 2.22,
+      "M_cum_normalized": 5.0,
+      "per_device_D_final": [
+        0.1617,
+        0.5916,
+        0.2891
+      ],
+      "per_device_C_final": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    }
+  },
+  "E4_benign_availability": {
+    "without_CDDA_benign_allow_pct": 15.23,
+    "with_CDDA_benign_allow_pct": 15.43,
+    "availability_delta_pp": 0.2
+  },
+  "summary": {
+    "mechanism": "Cross-Device Debt Aggregation (CDDA)",
+    "new_parameters": {
+      "K_net": 2.5,
+      "eta_net": 0.2,
+      "description": "K_net = network-level debt threshold; eta_net = network ceiling decay rate"
+    },
+    "E1_2device": {
+      "allow_malicious_before_CDDA": 10,
+      "allow_malicious_after_CDDA": 10,
+      "reduction_pct": 0.0,
+      "benign_allow_before": 2.0,
+      "benign_allow_after": 2.29
+    },
+    "E2_3device_roundrobin": {
+      "allow_malicious_before_CDDA": 15,
+      "allow_malicious_after_CDDA": 15,
+      "reduction_pct": 0.0,
+      "benign_allow_before": 1.9,
+      "benign_allow_after": 2.19
+    },
+    "E3_3device_staggered": {
+      "allow_malicious_before_CDDA": 15,
+      "allow_malicious_after_CDDA": 15,
+      "reduction_pct": 0.0,
+      "benign_allow_before": 1.93,
+      "benign_allow_after": 2.22
+    },
+    "E4_benign_availability_delta_pp": 0.2
+  }
+}

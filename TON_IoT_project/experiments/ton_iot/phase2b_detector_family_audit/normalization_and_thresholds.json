@@ -1,0 +1,42 @@
+{
+  "IsolationForest": {
+    "normalization": {
+      "s_min": 0.31783122443520645,
+      "s_max": 0.8857376492474537
+    },
+    "calibration": {
+      "A_thr": 0.7545387001350601,
+      "raw_thr_equiv": 0.7463386000113887
+    }
+  },
+  "OneClassSVM": {
+    "normalization": {
+      "s_min": -7491.945471383973,
+      "s_max": -1.0
+    },
+    "calibration": {
+      "A_thr": 0.007220780561396144,
+      "raw_thr_equiv": -7437.854997937726
+    }
+  },
+  "LocalOutlierFactor": {
+    "normalization": {
+      "s_min": 0.868571428918,
+      "s_max": 1915565213366.4114
+    },
+    "calibration": {
+      "A_thr": 4.317380120309088e-13,
+      "raw_thr_equiv": 1.695593746052003
+    }
+  },
+  "RobustMahalanobis": {
+    "normalization": {
+      "s_min": 0.3627286926912513,
+      "s_max": 5534145619022951.0
+    },
+    "calibration": {
+      "A_thr": 1.8406735317487092e-07,
+      "raw_thr_equiv": 1018655536.5405909
+    }
+  }
+}

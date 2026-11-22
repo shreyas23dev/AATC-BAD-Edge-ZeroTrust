@@ -1,0 +1,663 @@
+{
+  "Cycle_A": {
+    "schedule": "1 atk / 10 rest",
+    "tau_a": 1,
+    "tau_r": 10,
+    "planned_cycles": 20,
+    "survived_cycles_S": 8,
+    "total_cycles_attempted": 9,
+    "benign_observations_consumed": 89,
+    "rehabilitation_ratio_mean": 0.8263702278730699,
+    "attack_throughput_phi": 0.09183673469387756,
+    "residual_sb_ratio_mean": 0.13333333333333336,
+    "cycle_stability_c_var": 0.016136306230681206,
+    "cumulative_damage_m_cum": 8.5,
+    "final_blocked": true,
+    "trajectory_hashes": {
+      "T": "8110b4704c174cd839107f99edfd53e3a424463860887b7198211264c9f7db62",
+      "E": "f33c34c91790ac716f172edbd48e269d8c5a8f5f428270f5788ccd64533dada0",
+      "SB": "956d7e625a9d59e204ba33c90f16fe8c9d67579066040f63751d7d65d7e08348"
+    },
+    "cycles": [
+      {
+        "cycle": 1,
+        "T_before_attack": 1.0,
+        "T_post_attack": 1.0,
+        "T_post_rest": 0.9261822060873193,
+        "E_burst_peak": 0.26336,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 2,
+        "T_before_attack": 0.9261822060873193,
+        "T_post_attack": 0.9413665262951577,
+        "T_post_rest": 0.994138736447152,
+        "E_burst_peak": 0.32707856927923973,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.10000000000000007,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 3,
+        "T_before_attack": 0.994138736447152,
+        "T_post_attack": 0.9953443983599728,
+        "T_post_rest": 0.9995346052948075,
+        "E_burst_peak": 0.25795367406022257,
+        "SB_burst_peak": 0.10000000000000007,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 4,
+        "T_before_attack": 0.9995346052948075,
+        "T_post_attack": 0.9996303369856656,
+        "T_post_rest": 0.9999630468362891,
+        "E_burst_peak": 0.24244212881454802,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 5,
+        "T_before_attack": 0.9999630468362891,
+        "T_post_attack": 0.9999706481020645,
+        "T_post_rest": 0.9999970658533649,
+        "E_burst_peak": 0.28225520139204563,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 6,
+        "T_before_attack": 0.9999970658533649,
+        "T_post_attack": 0.9999976694073277,
+        "T_post_rest": 0.9999997670235614,
+        "E_burst_peak": 0.2941022558399065,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 7,
+        "T_before_attack": 0.9999997670235614,
+        "T_post_attack": 0.9999998149468148,
+        "T_post_rest": 0.7110786337293402,
+        "E_burst_peak": 0.24986945479726974,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 8,
+        "T_before_attack": 0.7110786337293402,
+        "T_post_attack": 0.770509758771215,
+        "T_post_rest": 0.9770591318975953,
+        "E_burst_peak": 0.3143971702886329,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.10000000000000007,
+        "burst_policies": [
+          "VERIFY"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 9,
+        "T_before_attack": 0.9770591318975953,
+        "T_post_attack": 0.9817780684662599,
+        "T_post_rest": 0.2321194188073995,
+        "E_burst_peak": 0.23708100442759075,
+        "SB_burst_peak": 0.10000000000000007,
+        "SB_post_rest": 1.5,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "BLOCK"
+        ],
+        "blocked": true,
+        "block_phase": "rest"
+      }
+    ]
+  },
+  "Cycle_B": {
+    "schedule": "1 atk / 25 rest",
+    "tau_a": 1,
+    "tau_r": 25,
+    "planned_cycles": 20,
+    "survived_cycles_S": 3,
+    "total_cycles_attempted": 4,
+    "benign_observations_consumed": 89,
+    "rehabilitation_ratio_mean": 0.726580604788917,
+    "attack_throughput_phi": 0.043010752688172046,
+    "residual_sb_ratio_mean": 0.25,
+    "cycle_stability_c_var": 0.0027121203176915984,
+    "cumulative_damage_m_cum": 4.0,
+    "final_blocked": true,
+    "trajectory_hashes": {
+      "T": "4786509ef7b0b9dd75b106a065255bc8c8d95ca6c6e1b13668323ebd2d435138",
+      "E": "bcf0cafa8e6317ea711d20147e53d1b8fc4a16a53853dee14f0dd86aec33422f",
+      "SB": "cbbfb4a210743e543bd1a26d193c8ee1cfe1e1941fe248037b29b30bf65438d1"
+    },
+    "cycles": [
+      {
+        "cycle": 1,
+        "T_before_attack": 1.0,
+        "T_post_attack": 1.0,
+        "T_post_rest": 0.9976669207016459,
+        "E_burst_peak": 0.26336,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 2,
+        "T_before_attack": 0.9976669207016459,
+        "T_post_attack": 0.9981468351133174,
+        "T_post_rest": 0.9999941449834576,
+        "E_burst_peak": 0.27511717963826077,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 3,
+        "T_before_attack": 0.9999941449834576,
+        "T_post_attack": 0.9999953493603604,
+        "T_post_rest": 0.9086512726247422,
+        "E_burst_peak": 0.29379097568894663,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 4,
+        "T_before_attack": 0.9086512726247422,
+        "T_post_attack": 0.9274417058458327,
+        "T_post_rest": 0.23199411417521124,
+        "E_burst_peak": 0.2755761767502101,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 1.5,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "BLOCK"
+        ],
+        "blocked": true,
+        "block_phase": "rest"
+      }
+    ]
+  },
+  "Cycle_C": {
+    "schedule": "1 atk / 50 rest",
+    "tau_a": 1,
+    "tau_r": 50,
+    "planned_cycles": 20,
+    "survived_cycles_S": 1,
+    "total_cycles_attempted": 2,
+    "benign_observations_consumed": 89,
+    "rehabilitation_ratio_mean": 0.6159151727615322,
+    "attack_throughput_phi": 0.02197802197802198,
+    "residual_sb_ratio_mean": 0.5,
+    "cycle_stability_c_var": null,
+    "cumulative_damage_m_cum": 2.0,
+    "final_blocked": true,
+    "trajectory_hashes": {
+      "T": "f0aa647ef5ff1da4103b80e86cafe4124045ae7db702ae7dcf9eff652a5b0f28",
+      "E": "783ea4c6450a8f72196770f4e8f0782bff0a0abda323be70e9a8cf736bcea95f",
+      "SB": "bb1be77753720875572d572a7ce5b06b166b4200b65b117cd331904fe5e3ca59"
+    },
+    "cycles": [
+      {
+        "cycle": 1,
+        "T_before_attack": 1.0,
+        "T_post_attack": 1.0,
+        "T_post_rest": 0.9999926287088727,
+        "E_burst_peak": 0.26336,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 0.0,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW"
+        ],
+        "blocked": false,
+        "block_phase": "none"
+      },
+      {
+        "cycle": 2,
+        "T_before_attack": 0.9999926287088727,
+        "T_post_attack": 0.9999941449834576,
+        "T_post_rest": 0.23183635940052463,
+        "E_burst_peak": 0.2937908222986493,
+        "SB_burst_peak": 0.0,
+        "SB_post_rest": 1.5,
+        "burst_policies": [
+          "ALLOW"
+        ],
+        "rest_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "VERIFY",
+          "BLOCK"
+        ],
+        "blocked": true,
+        "block_phase": "rest"
+      }
+    ]
+  },
+  "Cycle_D": {
+    "schedule": "5 atk / 25 rest",
+    "tau_a": 5,
+    "tau_r": 25,
+    "planned_cycles": 20,
+    "survived_cycles_S": 0,
+    "total_cycles_attempted": 1,
+    "benign_observations_consumed": 2,
+    "rehabilitation_ratio_mean": 0.0,
+    "attack_throughput_phi": 0.7142857142857143,
+    "residual_sb_ratio_mean": 1.0,
+    "cycle_stability_c_var": null,
+    "cumulative_damage_m_cum": 4.0,
+    "final_blocked": true,
+    "trajectory_hashes": {
+      "T": "3e12e65badb914fad963a3d34b631f7cc2aa59be5846cb41603f0a0967cfc64b",
+      "E": "247a0d103d100789d1201b2aae02f4770e89b45d55a915d9e87c09cf0aa413f7",
+      "SB": "049b311d446b194026f7f0565de6e3295acc7c38f865323abf4d1b20528891e6"
+    },
+    "cycles": [
+      {
+        "cycle": 1,
+        "T_before_attack": 1.0,
+        "T_post_attack": 0.5718050065876153,
+        "T_post_rest": 0.23993114143288194,
+        "E_burst_peak": 0.379507456,
+        "SB_burst_peak": 1.6500000000000001,
+        "SB_post_rest": 2.1500000000000004,
+        "burst_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY"
+        ],
+        "rest_policies": [
+          "VERIFY",
+          "BLOCK"
+        ],
+        "blocked": true,
+        "block_phase": "rest"
+      }
+    ]
+  },
+  "Cycle_E": {
+    "schedule": "5 atk / 50 rest",
+    "tau_a": 5,
+    "tau_r": 50,
+    "planned_cycles": 20,
+    "survived_cycles_S": 0,
+    "total_cycles_attempted": 1,
+    "benign_observations_consumed": 2,
+    "rehabilitation_ratio_mean": 0.0,
+    "attack_throughput_phi": 0.7142857142857143,
+    "residual_sb_ratio_mean": 1.0,
+    "cycle_stability_c_var": null,
+    "cumulative_damage_m_cum": 4.0,
+    "final_blocked": true,
+    "trajectory_hashes": {
+      "T": "3e12e65badb914fad963a3d34b631f7cc2aa59be5846cb41603f0a0967cfc64b",
+      "E": "247a0d103d100789d1201b2aae02f4770e89b45d55a915d9e87c09cf0aa413f7",
+      "SB": "049b311d446b194026f7f0565de6e3295acc7c38f865323abf4d1b20528891e6"
+    },
+    "cycles": [
+      {
+        "cycle": 1,
+        "T_before_attack": 1.0,
+        "T_post_attack": 0.5718050065876153,
+        "T_post_rest": 0.23993114143288194,
+        "E_burst_peak": 0.379507456,
+        "SB_burst_peak": 1.6500000000000001,
+        "SB_post_rest": 2.1500000000000004,
+        "burst_policies": [
+          "ALLOW",
+          "ALLOW",
+          "ALLOW",
+          "VERIFY",
+          "VERIFY"
+        ],
+        "rest_policies": [
+          "VERIFY",
+          "BLOCK"
+        ],
+        "blocked": true,
+        "block_phase": "rest"
+      }
+    ]
+  }
+}

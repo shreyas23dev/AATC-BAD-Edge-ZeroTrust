@@ -1,0 +1,25 @@
+{
+  "phase": 12,
+  "execution_timestamp": "2026-11-22T07:21:40.802966+00:00",
+  "dataset_sha256": "b4babfa3723c17fbe71e4b96994af927b3fa69b25d1dfd5bba6d66f1a88bf617",
+  "attack_profile_sha256": "694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c",
+  "parameters": {
+    "frozen_B0": {
+      "A_thr": 0.4554,
+      "beta": 0.4,
+      "gamma": 0.335,
+      "T_allow": 0.8
+    },
+    "frozen_AATC_BAD": {
+      "delta_D": 0.1,
+      "K_allow": 1.7,
+      "eta_C": 0.3,
+      "C_floor": 0.7
+    },
+    "CDDA_new": {
+      "K_net": 2.5,
+      "eta_net": 0.2
+    }
+  },
+  "results_hash": "6e2685b5263ed23ee799bb9014cb0d8fa8fc8560f7a0b7af40508e8ebf7a942c"
+}

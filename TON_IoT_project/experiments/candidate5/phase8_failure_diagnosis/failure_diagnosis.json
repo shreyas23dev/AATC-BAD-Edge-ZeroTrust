@@ -1,0 +1,47 @@
+{
+  "title": "Decomposition of Failure Factors for Baseline B0 and Countermeasure Family C",
+  "why_b0_is_exploitable": {
+    "mechanism_1_subthreshold_blind_region": {
+      "definition": "R_sub = {A < A_thr} cap {beta*A + (1-beta)*E <= gamma}",
+      "finding": "Every attack pulse of Cycle A (A=0.4100) satisfies A < 0.4554 and E = 0.2634 <= 0.3350. Both overt penalty and slow-burn penalty boundary conditions fail to trigger."
+    },
+    "mechanism_2_unconditional_recovery_branch": {
+      "definition": "T_{t+1} = T_t + alpha_0 * (1.0 - T_t)",
+      "finding": "B0 assigns all observations in R_sub to BENIGN_RECOVERY. An attack pulse of A=0.4100 receives the EXACT same positive trust recovery reward as a clean nominal packet of A=0.0500."
+    },
+    "mechanism_3_memoryless_rehabilitation": {
+      "definition": "Contraction factor per rest step: (1 - alpha_0) = 0.7943. Over 10 rest steps: (1 - alpha_0)^10 = 0.0993.",
+      "finding": "90.07% of any trust depression is erased within 10 rest steps. The 3D Markov state (T, E, SB) aliases with pristine devices after 10-28 rest steps, granting the adversary unlimited repeated rehabilitation."
+    }
+  },
+  "why_family_c_failed": {
+    "factor_a_accumulator_reset": {
+      "role": "SECONDARY CONTRIBUTOR",
+      "analysis": "Family C does not use hard resets, but its exponential decay factor rho=0.95 erases 40.13% of accumulated pulse evidence over 10 rest steps (0.95^10 = 0.5987), actively dissipating the attack signal."
+    },
+    "factor_b_detector_signal_amplitude": {
+      "role": "PRIMARY CO-FACTOR",
+      "analysis": "The single attack pulse A=0.41 produces an input of only 0.5693. Averaged over 11 steps, this yields an effective signal amplitude of 0.0518 per step, which is smaller than natural ambient variance."
+    },
+    "factor_c_threshold_calibration": {
+      "role": "PRIMARY CO-FACTOR",
+      "analysis": "To prevent false quarantine of uncompromised devices under Edge-IIoTset telemetry noise (where 8.88% of packets are in the near-threshold band), tau_Q had to be calibrated to the 99th percentile (4.4364). Setting it lower causes catastrophic availability loss (as observed in Phase 4 M1/M2)."
+    },
+    "factor_d_recovery_dynamics": {
+      "role": "ROOT CAUSE ARCHITECTURAL FACTOR",
+      "analysis": "Family C left B0's underlying trust recovery dynamics unchanged. When Q <= tau_Q, trust recovers toward 1.0 unconditionally at full rate alpha_0. Because Q remained below tau_Q, Family C applied zero penalty during attack pulses."
+    },
+    "factor_e_policy_timing": {
+      "role": "CONTRIBUTOR",
+      "analysis": "Trust and policy are evaluated synchronously per step. The attack pulse occurs when trust is at ceiling (T=1.0), immediately harvesting ALLOW before any degradation can manifest."
+    },
+    "factor_f_insufficient_memory_across_episodes": {
+      "role": "ROOT CAUSE ARCHITECTURAL FACTOR",
+      "analysis": "Family C has an effective memory horizon of H = 1/(1-rho) = 20 steps. It possesses ZERO memory across multiple completed rehabilitation episodes. Once an adversary rests for 20-30 steps, Family C's state completely forgets prior attack cycles."
+    },
+    "factor_g_observation_level_confounding": {
+      "role": "FUNDAMENTAL EPISTEMIC LIMITATION",
+      "analysis": "Family C operates strictly at the OBSERVATION level, integrating anomaly score proximity. Because the marginal distribution and frequency of near-threshold packets in benign telemetry (freq=0.0888, mean=0.4006) match the Cycle A attack (freq=0.0909, mean=0.4050), observation-level filtering suffers an insurmountable signal-to-noise barrier."
+    }
+  }
+}

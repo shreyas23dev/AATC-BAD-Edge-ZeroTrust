@@ -1,0 +1,13 @@
+{
+  "train_used_for": "model fitting and normalization bounds (s_min, s_max) only",
+  "calib_used_for": "A_thr computation only (benign 99th percentile)",
+  "eval_used_for": "frozen post-hoc evaluation only",
+  "attack_labels_used_for_fitting": false,
+  "attack_labels_used_for_threshold": false,
+  "attack_labels_used_for_normalization": false,
+  "attack_labels_used_for_model_selection": false,
+  "eval_labels_joined_before_scoring": false,
+  "scaler_fitted_on_train_only": true,
+  "normalizer_fitted_on_train_only": true,
+  "leakage_detected": false
+}

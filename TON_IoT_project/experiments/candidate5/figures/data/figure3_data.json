@@ -1,0 +1,52 @@
+{
+  "source_artifacts": [
+    "experiments\\candidate5\\phase10_countermeasure_evaluation\\benign_evaluation_results.json",
+    "experiments\\candidate5\\countermeasure_evaluation\\benign_evaluation_results.json",
+    "experiments\\candidate5\\phase10_countermeasure_evaluation\\attack_replay_results.json",
+    "experiments\\candidate5\\countermeasure_evaluation\\attack_replay_results.json"
+  ],
+  "benign_evaluation": {
+    "categories": [
+      "B0 Baseline",
+      "Family C",
+      "AATC-BAD"
+    ],
+    "ALLOW_pct": [
+      74.085,
+      74.0448,
+      74.085
+    ],
+    "VERIFY_pct": [
+      15.1361,
+      15.1093,
+      15.1361
+    ],
+    "BLOCK_pct": [
+      10.7789,
+      10.846,
+      10.7789
+    ]
+  },
+  "attack_pulses_cycle_a": {
+    "categories": [
+      "B0 Baseline",
+      "Family C",
+      "AATC-BAD"
+    ],
+    "ALLOW_count": [
+      8,
+      8,
+      6
+    ],
+    "VERIFY_count": [
+      1,
+      1,
+      3
+    ],
+    "BLOCK_count": [
+      0,
+      0,
+      0
+    ]
+  }
+}

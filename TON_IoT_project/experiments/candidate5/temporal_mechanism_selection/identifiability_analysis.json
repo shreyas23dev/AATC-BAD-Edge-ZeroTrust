@@ -1,0 +1,77 @@
+{
+  "phase": 6,
+  "formal_condition": "Identifiability requires that there exist input histories H_attack and H_benign such that B0(H_attack) == B0(H_benign) within numerical epsilon, but Q(H_attack) != Q(H_benign).",
+  "test_setup": {
+    "H_attack_length": 39,
+    "H_attack_description": "1 attack pulse at A=0.4100 followed by 38 rest steps at A=0.1656",
+    "H_benign_length": 39,
+    "H_benign_description": "39 pure rest steps at A=0.1656",
+    "initial_state": {
+      "T": 1.0,
+      "E": 0.1656,
+      "SB": 0.0
+    }
+  },
+  "b0_state_outcome": {
+    "H_attack_final": {
+      "T": 1.0,
+      "E": 0.1656,
+      "SB": 0.0
+    },
+    "H_benign_final": {
+      "T": 1.0,
+      "E": 0.1656,
+      "SB": 0.0
+    },
+    "delta_T": 0.0,
+    "delta_E": 4e-10,
+    "delta_SB": 0.0,
+    "b0_states_aliased": true
+  },
+  "family_q_outcomes": {
+    "Family_A_Count_Based": {
+      "Q_attack": 1,
+      "Q_benign": 0,
+      "distinguishable": true,
+      "notes": "Q_attack=1, Q_benign=0. Successfully separates aliased states."
+    },
+    "Family_B_Exponential_Decay": {
+      "Q_attack": 1.633263,
+      "Q_benign": 1.628803,
+      "distinguishable": true,
+      "delta_Q": 0.00445981,
+      "notes": "Q_attack=1.633263, Q_benign=1.628803. Delta=0.00445981. Note: with linear f, Q decays at rate 0.90^38 ~ 0.016, rendering residual separation weak unless rho is high."
+    },
+    "Family_C_Threshold_Offset": {
+      "Q_attack": 0.010388,
+      "Q_benign": 0.0,
+      "distinguishable": true,
+      "delta_Q": 0.01038786,
+      "notes": "Q_attack=0.010388, Q_benign=0.000000. Because benign traffic produces f(0.1656)=0, Q_benign is strictly 0.0, while Q_attack retains the decaying residual of the attack pulse."
+    },
+    "Family_D_Inter_Arrival": {
+      "Q_attack": 0.000181,
+      "Q_benign": 0.0,
+      "distinguishable": true,
+      "notes": "Q_attack captures the event arrival; Q_benign is 0.0."
+    },
+    "Family_E_Rate_Based": {
+      "Q_attack": 0.0,
+      "Q_benign": 0.0,
+      "distinguishable": false,
+      "notes": "For W=20 after 38 rest steps, the attack event has already exited the sliding window, so Q_attack=0 and Q_benign=0. FAILS identifiability once rest exceeds window W!"
+    }
+  },
+  "repeated_cycle_identifiability": {
+    "description": "After 8 complete cycles of Cycle A (1 attack + 10 rest each = 88 steps), B0 states are identical to 88 pure rest steps at convergence.",
+    "Family_A_8cycles": {
+      "Q_attack": 8,
+      "Q_benign": 0,
+      "identifiable": true
+    },
+    "Family_C_8cycles_rho_095": {
+      "note": "Under rho=0.95, each cycle adds f(0.41) = 0.5693 and decays by 0.95^11 = 0.5688 per cycle. Steady periodic peak Q reaches f / (1 - 0.5688) = 1.320, while benign rest Q remains strictly 0.0.",
+      "identifiable": true
+    }
+  }
+}

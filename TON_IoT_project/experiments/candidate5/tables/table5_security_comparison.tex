@@ -1,0 +1,20 @@
+\begin{table*}[t]
+\centering
+\caption{Comprehensive Security Comparison Across Architectural Generations}
+\label{tab:security_comparison}
+\small
+\begin{tabular}{l|ccc|ccc|ccc}
+\hline
+& \multicolumn{3}{c|}{\textbf{Baseline B0}} & \multicolumn{3}{c|}{\textbf{Family C Accumulator}} & \multicolumn{3}{c}{\textbf{AATC-BAD (Proposed)}} \\
+\textbf{Schedule} & \textbf{Survived} & \textbf{ALLOW} & \textbf{$M_{\rm cum}$} & \textbf{Survived} & \textbf{ALLOW} & \textbf{$M_{\rm cum}$} & \textbf{Survived} & \textbf{ALLOW} & \textbf{$M_{\rm cum}$} \\
+\hline
+Cycle A (1:10) & 8 & 8 & 8.5 & 8 & 8 & 8.5 & 8 & \textbf{6 (-25\%)} & \textbf{7.5 (-11.8\%)} \\
+Cycle B (1:25) & 3 & 4 & 4.0 & 3 & 4 & 4.0 & 3 & 4 & 4.0 \\
+Cycle C (1:50) & 1 & 2 & 2.0 & 1 & 2 & 2.0 & 1 & 2 & 2.0 \\
+Cycle D (5:25) & 0 & 3 & 4.0 & 0 & 3 & 4.0 & 0 & 3 & 4.0 \\
+Cycle E (5:50) & 0 & 3 & 4.0 & 0 & 3 & 4.0 & 0 & 3 & 4.0 \\
+\hline
+\textbf{Verdict} & \multicolumn{3}{c|}{\textit{Vulnerable to Moral Hazard}} & \multicolumn{3}{c|}{\textit{Zero Security Gain ($\Delta M=0.0$)}} & \multicolumn{3}{c}{\textit{\textbf{Security Effective ($-25\%$ High-Trust Access)}}} \\
+\hline
+\end{tabular}
+\end{table*}

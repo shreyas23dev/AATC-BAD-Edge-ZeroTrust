@@ -1,0 +1,33 @@
+{
+  "title": "Quantitative Signal-to-Noise Ratio (SNR) Analysis of Family C",
+  "ambient_benign_telemetry_properties": {
+    "dataset_partition": "CALIBRATION (rows 0-4,999)",
+    "near_threshold_band": [
+      0.35,
+      0.4554
+    ],
+    "near_threshold_count": 661,
+    "near_threshold_fraction": 0.1322,
+    "mean_anomaly_score_in_band": 0.4006,
+    "median_anomaly_score_in_band": 0.3951,
+    "std_anomaly_score_in_band": 0.0314,
+    "mean_inter_arrival_steps": 7.56,
+    "mean_instantaneous_input_f": 0.116893,
+    "expected_steady_state_Q_benign": 2.3379,
+    "calibrated_tau_Q_99th_percentile": 4.4364
+  },
+  "cycle_a_attack_properties": {
+    "schedule": "1 attack step, 10 rest steps (1:10 duty cycle = 1/11 = 0.0909)",
+    "attack_pulse_score": 0.41,
+    "attack_pulse_normalized_input_f": 0.56926,
+    "time_averaged_attack_input_rate": 0.051751,
+    "expected_incremental_attack_Q": 1.035,
+    "peak_Q_observed_during_cycles_1_to_8": 3.1172
+  },
+  "fundamental_snr_disparity": {
+    "attack_input_rate_vs_benign_input_rate_ratio": 0.4427,
+    "attack_incremental_Q_vs_benign_steady_state_ratio": 0.4427,
+    "gap_between_attack_peak_Q_and_tau_Q": 1.3192,
+    "diagnosis": "The time-averaged input rate of Cycle A (0.0518) is less than half the ambient benign noise rate (0.1169). Because the adversary spends 90.9% of time resting, the ambient telemetry dominates the state of the leaky accumulator Q_t. To prevent false quarantine on ambient noise, tau_Q was set to 4.4364, leaving Cycle A (peak Q = 3.12) completely sub-threshold."
+  }
+}

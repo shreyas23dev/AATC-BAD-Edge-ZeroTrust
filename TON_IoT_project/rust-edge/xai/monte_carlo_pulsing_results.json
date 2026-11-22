@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "n_monte_carlo_seeds": 100,
+    "attack_profile": [
+      0.41,
+      0.39,
+      0.42,
+      0.38,
+      0.4,
+      0.43,
+      0.39,
+      0.41,
+      0.4,
+      0.42
+    ],
+    "r_thr_ciciot": 0.036,
+    "a_thr": 0.4554
+  },
+  "edge_iiotset": [
+    {
+      "schedule": "Pacing (1, 8)",
+      "tau_a": 1,
+      "tau_r": 8,
+      "b0_mcum_mean": 14.03,
+      "b0_mcum_std": 9.21,
+      "aatc_mcum_mean": 11.85,
+      "aatc_mcum_std": 7.6,
+      "pct_reduction_mean": 10.81,
+      "pct_reduction_std": 12.67,
+      "allow_cut_mean": 4.02,
+      "allow_cut_std": 4.56
+    },
+    {
+      "schedule": "Pacing (1, 10)",
+      "tau_a": 1,
+      "tau_r": 10,
+      "b0_mcum_mean": 15.69,
+      "b0_mcum_std": 8.8,
+      "aatc_mcum_mean": 13.79,
+      "aatc_mcum_std": 7.55,
+      "pct_reduction_mean": 8.73,
+      "pct_reduction_std": 11.01,
+      "allow_cut_mean": 3.45,
+      "allow_cut_std": 3.91
+    },
+    {
+      "schedule": "Pacing (1, 12)",
+      "tau_a": 1,
+      "tau_r": 12,
+      "b0_mcum_mean": 14.72,
+      "b0_mcum_std": 9.61,
+      "aatc_mcum_mean": 13.44,
+      "aatc_mcum_std": 8.57,
+      "pct_reduction_mean": 5.69,
+      "pct_reduction_std": 6.89,
+      "allow_cut_mean": 2.56,
+      "allow_cut_std": 3.22
+    },
+    {
+      "schedule": "Pacing (1, 15)",
+      "tau_a": 1,
+      "tau_r": 15,
+      "b0_mcum_mean": 15.72,
+      "b0_mcum_std": 9.18,
+      "aatc_mcum_mean": 14.73,
+      "aatc_mcum_std": 8.67,
+      "pct_reduction_mean": 5.07,
+      "pct_reduction_std": 9.01,
+      "allow_cut_mean": 1.75,
+      "allow_cut_std": 2.23
+    },
+    {
+      "schedule": "Pacing (2, 12)",
+      "tau_a": 2,
+      "tau_r": 12,
+      "b0_mcum_mean": 15.96,
+      "b0_mcum_std": 13.91,
+      "aatc_mcum_mean": 12.65,
+      "aatc_mcum_std": 9.71,
+      "pct_reduction_mean": 11.52,
+      "pct_reduction_std": 13.85,
+      "allow_cut_mean": 5.57,
+      "allow_cut_std": 8.43
+    },
+    {
+      "schedule": "Pacing (2, 18)",
+      "tau_a": 2,
+      "tau_r": 18,
+      "b0_mcum_mean": 18.07,
+      "b0_mcum_std": 14.99,
+      "aatc_mcum_mean": 15.71,
+      "aatc_mcum_std": 12.85,
+      "pct_reduction_mean": 8.86,
+      "pct_reduction_std": 13.08,
+      "allow_cut_mean": 4.0,
+      "allow_cut_std": 6.26
+    }
+  ],
+  "cic_iot_2023": [
+    {
+      "schedule": "Pacing (1, 8)",
+      "tau_a": 1,
+      "tau_r": 8,
+      "b0_mcum_mean": 13.31,
+      "b0_mcum_std": 9.12,
+      "aatc_mcum_mean": 12.89,
+      "aatc_mcum_std": 8.85,
+      "pct_reduction_mean": 2.6,
+      "pct_reduction_std": 5.75,
+      "allow_cut_mean": 0.74,
+      "allow_cut_std": 1.71
+    },
+    {
+      "schedule": "Pacing (1, 10)",
+      "tau_a": 1,
+      "tau_r": 10,
+      "b0_mcum_mean": 12.38,
+      "b0_mcum_std": 8.75,
+      "aatc_mcum_mean": 12.03,
+      "aatc_mcum_std": 8.5,
+      "pct_reduction_mean": 2.61,
+      "pct_reduction_std": 5.9,
+      "allow_cut_mean": 0.62,
+      "allow_cut_std": 1.26
+    },
+    {
+      "schedule": "Pacing (1, 12)",
+      "tau_a": 1,
+      "tau_r": 12,
+      "b0_mcum_mean": 10.96,
+      "b0_mcum_std": 8.47,
+      "aatc_mcum_mean": 10.54,
+      "aatc_mcum_std": 8.13,
+      "pct_reduction_mean": 3.2,
+      "pct_reduction_std": 5.5,
+      "allow_cut_mean": 0.8,
+      "allow_cut_std": 1.52
+    },
+    {
+      "schedule": "Pacing (1, 15)",
+      "tau_a": 1,
+      "tau_r": 15,
+      "b0_mcum_mean": 9.33,
+      "b0_mcum_std": 8.14,
+      "aatc_mcum_mean": 9.01,
+      "aatc_mcum_std": 7.9,
+      "pct_reduction_mean": 3.24,
+      "pct_reduction_std": 6.94,
+      "allow_cut_mean": 0.61,
+      "allow_cut_std": 1.19
+    },
+    {
+      "schedule": "Pacing (2, 12)",
+      "tau_a": 2,
+      "tau_r": 12,
+      "b0_mcum_mean": 19.91,
+      "b0_mcum_std": 16.65,
+      "aatc_mcum_mean": 19.11,
+      "aatc_mcum_std": 16.06,
+      "pct_reduction_mean": 3.63,
+      "pct_reduction_std": 7.49,
+      "allow_cut_mean": 1.34,
+      "allow_cut_std": 2.36
+    },
+    {
+      "schedule": "Pacing (2, 18)",
+      "tau_a": 2,
+      "tau_r": 18,
+      "b0_mcum_mean": 16.72,
+      "b0_mcum_std": 15.13,
+      "aatc_mcum_mean": 16.11,
+      "aatc_mcum_std": 14.82,
+      "pct_reduction_mean": 3.48,
+      "pct_reduction_std": 7.54,
+      "allow_cut_mean": 1.04,
+      "allow_cut_std": 2.28
+    }
+  ]
+}

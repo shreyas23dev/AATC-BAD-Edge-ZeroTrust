@@ -1,0 +1,42 @@
+{
+  "run1_sha256": "fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e",
+  "run2_sha256": "fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e",
+  "all_match": true,
+  "checks": {
+    "n_train": {
+      "run1": 427936,
+      "run2": 427936,
+      "match": true
+    },
+    "n_calib": {
+      "run1": 28200,
+      "run2": 28200,
+      "match": true
+    },
+    "n_eval": {
+      "run1": 193049,
+      "run2": 193049,
+      "match": true
+    },
+    "s_min": {
+      "run1": 0.40378812964994204,
+      "run2": 0.40378812964994204,
+      "match": true
+    },
+    "s_max": {
+      "run1": 0.691126731020775,
+      "run2": 0.691126731020775,
+      "match": true
+    },
+    "A_thr": {
+      "run1": 0.9455121232239233,
+      "run2": 0.9455121232239233,
+      "match": true
+    },
+    "score_sha256": {
+      "run1": "fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e",
+      "run2": "fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e",
+      "match": true
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "phase": 5,
+  "description": "Formal characterization of the sub-threshold blind region R_sub",
+  "frozen_parameters": {
+    "A_thr": 0.4554,
+    "gamma": 0.335,
+    "beta": 0.4,
+    "lambda": 0.55,
+    "delta": 0.05,
+    "alpha_0": 0.2057,
+    "P_pen": 0.25,
+    "theta": 1.0,
+    "T_allow": 0.8,
+    "T_quar": 0.3
+  },
+  "cycle_a_attack": {
+    "A_attack": 0.41,
+    "A_rest_stationary_baseline": 0.1656,
+    "E_after_attack": 0.26336,
+    "A_attack_lt_A_thr": true,
+    "E_after_attack_lt_gamma": true,
+    "blind_region_confirmed": true
+  },
+  "region_R_sub": {
+    "definition": "R_sub = { A : A < A_thr  AND  beta*A + (1-beta)*E <= gamma }",
+    "boundary_1": "A = A_thr = 0.4554  (vertical line in (A,E) plane)",
+    "boundary_2": "E = (gamma - beta*A) / (1-beta)  (affine line in (A,E) plane)",
+    "boundary_equation": "0.40*A + 0.60*E = 0.335",
+    "boundary_evaluated": {
+      "A=0": 0.558333,
+      "A=A_thr": 0.254733,
+      "A=0.41": 0.285
+    },
+    "boundary_note": "At the corner (A=A_thr, E=E_bound_Athr): both boundaries meet. The region is open (strict inequalities). For A=0.41, the boundary E is 0.285; the actual E_after_attack=0.2634 is 0.0216 below this bound, well within R_sub."
+  },
+  "invariant_analysis": {
+    "trust_monotonicity": {
+      "statement": "For all (A_t, E_t) in R_sub with T_t < 1.0: T_{t+1} > T_t",
+      "proof_sketch": "In R_sub: (1) A_t < A_thr => overt branch not activated; (2) E_{t+1} = beta*A_t + (1-beta)*E_t <= gamma => I_{t+1} = 0 (SB does not accumulate); (3) SB_{t+1} = max(0, SB_t - delta) (SB decays or stays 0); (4) therefore the branch is BENIGN_RECOVERY and T_{t+1} = T_t + alpha_0*(1-T_t). Since alpha_0 > 0 and T_t < 1, T_{t+1} > T_t. QED.",
+      "special_case_T_equals_1": "T_{t+1} = 1.0 + alpha_0*0 = 1.0 (invariant at ceiling)"
+    },
+    "energy_monotone_toward_fixed_point": {
+      "statement": "E_t converges monotonically to fixed point E* = A_t under constant input",
+      "fixed_point_under_A_rest": 0.1656,
+      "fixed_point_under_A_atk": 0.41,
+      "note": "Fixed point under A_atk = 0.41 > gamma = 0.335, so E* is OUTSIDE R_sub. However, with tau_a=1, E never reaches this fixed point before rest resets it. Consecutive pulses needed to exit R_sub: 3 (verified computationally)."
+    },
+    "SB_monotone_decay": {
+      "statement": "In R_sub: SB_{t+1} = max(0, SB_t - delta). SB is non-increasing.",
+      "implication": "SB reaches 0 within ceil(SB_0 / delta) steps and stays 0."
+    }
+  },
+  "cycle_a_energy_trajectory": {
+    "after_attack": 0.26336,
+    "rest_trajectory": [
+      {
+        "rest_step": 1,
+        "E": 0.224256
+      },
+      {
+        "rest_step": 2,
+        "E": 0.2007936
+      },
+      {
+        "rest_step": 3,
+        "E": 0.18671616
+      },
+      {
+        "rest_step": 4,
+        "E": 0.1782697
+      },
+      {
+        "rest_step": 5,
+        "E": 0.17320182
+      },
+      {
+        "rest_step": 6,
+        "E": 0.17016109
+      },
+      {
+        "rest_step": 7,
+        "E": 0.16833665
+      },
+      {
+        "rest_step": 8,
+        "E": 0.16724199
+      },
+      {
+        "rest_step": 9,
+        "E": 0.1665852
+      },
+      {
+        "rest_step": 10,
+        "E": 0.16619112
+      }
+    ],
+    "rest_fixed_point": 0.1656,
+    "in_R_sub_throughout": true
+  },
+  "consecutive_pulse_analysis": {
+    "pulses_before_exceeding_gamma": 3,
+    "note": "A sustained attack with A=0.41 (no rest) exits R_sub after exactly 3 pulses. Paper 1's slow-burn mechanism WOULD detect such a sustained attack. Cycle A (tau_a=1, tau_r=10) is specifically structured to return E below gamma before the next pulse, keeping every individual observation within R_sub."
+  },
+  "distinguishability_from_benign": {
+    "same_policy_as_benign": true,
+    "same_branch_as_benign": "BENIGN_RECOVERY",
+    "state_difference_after_1_atk_plus_10_rest": {
+      "T": 0.0,
+      "E": 0.00059112,
+      "SB": 0.0,
+      "note": "Tiny E difference (5.91e-4) is indistinguishable from different benign starting condition"
+    },
+    "asymptotic_aliasing": {
+      "description": "After n additional rest steps, |E_attack_history - E_benign_history| <= |E_after_atk - A_REST| * (1-beta)^n = 0.09776 * 0.60^n. For any epsilon > 0, there exists n such that the states are epsilon-aliased.",
+      "epsilon_1e6_convergence_steps": 23,
+      "formal_status": "ASYMPTOTIC_ALIASING_DEMONSTRATED: the B0 state does not encode the number of prior attack cycles. States from adversarial history and benign history converge to the same fixed point under rest."
+    },
+    "sufficient_state_representation": {
+      "question": "Does (T, E, SB) contain enough information to distinguish 'isolated benign event' from 'repeated strategic sub-threshold event'?",
+      "answer": "NO",
+      "justification": "B0 is a Markov system: the next state is a deterministic function of (A_t, T_t, E_t, SB_t). The state triple (T, E, SB) does not encode the count, frequency, or inter-arrival times of prior A values. Two input histories that differ only in the number of prior sub-threshold events (but have allowed E to decay back to A_REST) produce identical subsequent state trajectories from that state forward."
+    }
+  }
+}

@@ -1,0 +1,636 @@
+{
+  "B0": {
+    "mechanism": "B0",
+    "total_benign_observations": 17459,
+    "allow_fraction": 0.6224,
+    "verify_fraction": 0.1372,
+    "block_fraction": 0.2404,
+    "allow_count": 10866,
+    "false_verify_count": 2396,
+    "false_block_count": 4197,
+    "block_transitions": 42,
+    "longest_continuous_block_duration": 3686,
+    "mean_recovery_time_steps": 14.18,
+    "median_recovery_time_steps": 4.0,
+    "final_trust": 0.999429,
+    "final_state": {
+      "T": 0.999429,
+      "E": 0.227168,
+      "SB": 0.0,
+      "I": 0,
+      "policy": "ALLOW",
+      "branch": "BENIGN_RECOVERY"
+    }
+  },
+  "M1": {
+    "mechanism": "M1",
+    "total_benign_observations": 17459,
+    "allow_fraction": 0.5101,
+    "verify_fraction": 0.142,
+    "block_fraction": 0.3479,
+    "allow_count": 8906,
+    "false_verify_count": 2479,
+    "false_block_count": 6074,
+    "block_transitions": 175,
+    "longest_continuous_block_duration": 3750,
+    "mean_recovery_time_steps": 20.76,
+    "median_recovery_time_steps": 5.0,
+    "final_trust": 0.999429,
+    "final_state": {
+      "T": 0.999429,
+      "E": 0.227168,
+      "SB": 0.427164,
+      "h": 0.427164,
+      "I": 0,
+      "policy": "ALLOW",
+      "branch": "BENIGN_RECOVERY"
+    },
+    "h_trajectory_sample": [
+      {
+        "step": 0,
+        "h": 0.0,
+        "SB": 0.0
+      },
+      {
+        "step": 500,
+        "h": 0.693,
+        "SB": 0.693
+      },
+      {
+        "step": 1000,
+        "h": 0.782,
+        "SB": 0.834
+      },
+      {
+        "step": 1500,
+        "h": 0.51025,
+        "SB": 0.51025
+      },
+      {
+        "step": 2000,
+        "h": 0.745,
+        "SB": 0.745
+      },
+      {
+        "step": 2500,
+        "h": 0.731,
+        "SB": 0.731
+      },
+      {
+        "step": 3000,
+        "h": 0.739,
+        "SB": 0.739
+      },
+      {
+        "step": 3500,
+        "h": 0.716,
+        "SB": 0.716
+      },
+      {
+        "step": 4000,
+        "h": 0.624,
+        "SB": 0.624
+      },
+      {
+        "step": 4500,
+        "h": 0.774,
+        "SB": 1.025
+      },
+      {
+        "step": 5000,
+        "h": 0.8,
+        "SB": 2.556563
+      },
+      {
+        "step": 5500,
+        "h": 0.67,
+        "SB": 0.67
+      },
+      {
+        "step": 6000,
+        "h": 0.745,
+        "SB": 0.745
+      },
+      {
+        "step": 6500,
+        "h": 0.73,
+        "SB": 0.73
+      },
+      {
+        "step": 7000,
+        "h": 0.744,
+        "SB": 0.744
+      },
+      {
+        "step": 7500,
+        "h": 0.798,
+        "SB": 1.71
+      },
+      {
+        "step": 8000,
+        "h": 0.799,
+        "SB": 3.87
+      },
+      {
+        "step": 8500,
+        "h": 0.791,
+        "SB": 4.07
+      },
+      {
+        "step": 9000,
+        "h": 0.792,
+        "SB": 7.87
+      },
+      {
+        "step": 9500,
+        "h": 0.792,
+        "SB": 15.87
+      },
+      {
+        "step": 10000,
+        "h": 0.786,
+        "SB": 23.27
+      },
+      {
+        "step": 10500,
+        "h": 0.794,
+        "SB": 27.07
+      },
+      {
+        "step": 11000,
+        "h": 0.787,
+        "SB": 20.67
+      },
+      {
+        "step": 11500,
+        "h": 0.799,
+        "SB": 7.07
+      },
+      {
+        "step": 12000,
+        "h": 0.686,
+        "SB": 0.686
+      },
+      {
+        "step": 12500,
+        "h": 0.737,
+        "SB": 0.737
+      },
+      {
+        "step": 13000,
+        "h": 0.366,
+        "SB": 0.366
+      },
+      {
+        "step": 13500,
+        "h": 0.548,
+        "SB": 0.548
+      },
+      {
+        "step": 14000,
+        "h": 0.432312,
+        "SB": 0.432312
+      },
+      {
+        "step": 14500,
+        "h": 0.425377,
+        "SB": 0.425377
+      },
+      {
+        "step": 15000,
+        "h": 0.249672,
+        "SB": 0.249672
+      },
+      {
+        "step": 15500,
+        "h": 0.0,
+        "SB": 0.0
+      },
+      {
+        "step": 16000,
+        "h": 0.0,
+        "SB": 0.0
+      },
+      {
+        "step": 16500,
+        "h": 0.2165,
+        "SB": 0.2165
+      },
+      {
+        "step": 17000,
+        "h": 0.181625,
+        "SB": 0.181625
+      }
+    ],
+    "min_residual_floor": 0.0,
+    "max_residual_floor": 0.8
+  },
+  "M2": {
+    "mechanism": "M2",
+    "total_benign_observations": 17459,
+    "allow_fraction": 0.1769,
+    "verify_fraction": 0.5363,
+    "block_fraction": 0.2868,
+    "allow_count": 3088,
+    "false_verify_count": 9363,
+    "false_block_count": 5008,
+    "block_transitions": 192,
+    "longest_continuous_block_duration": 3713,
+    "mean_recovery_time_steps": 124.56,
+    "median_recovery_time_steps": 42.0,
+    "final_trust": 0.731893,
+    "final_state": {
+      "T": 0.731893,
+      "E": 0.227168,
+      "SB": 0.0,
+      "k_inc": 10,
+      "clean_counter": 0,
+      "alpha_eff": 0.034283,
+      "I": 0,
+      "policy": "VERIFY",
+      "branch": "BENIGN_RECOVERY"
+    },
+    "k_trajectory_sample": [
+      {
+        "step": 0,
+        "k_inc": 0,
+        "alpha_eff": 0.2057
+      },
+      {
+        "step": 500,
+        "k_inc": 7,
+        "alpha_eff": 0.045711
+      },
+      {
+        "step": 1000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 1500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 2000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 2500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 3000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 3500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 4000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 4500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 5000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 5500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 6000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 6500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 7000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 7500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 8000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 8500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 9000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 9500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 10000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 10500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 11000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 11500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 12000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 12500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 13000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 13500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 14000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 14500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 15000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 15500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 16000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 16500,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      },
+      {
+        "step": 17000,
+        "k_inc": 10,
+        "alpha_eff": 0.034283
+      }
+    ],
+    "min_alpha_eff": 0.034283,
+    "max_k_inc": 10
+  },
+  "M3": {
+    "mechanism": "M3",
+    "total_benign_observations": 17459,
+    "allow_fraction": 0.296,
+    "verify_fraction": 0.4637,
+    "block_fraction": 0.2404,
+    "allow_count": 5167,
+    "false_verify_count": 8095,
+    "false_block_count": 4197,
+    "block_transitions": 42,
+    "longest_continuous_block_duration": 3686,
+    "mean_recovery_time_steps": 66.8,
+    "median_recovery_time_steps": 34.0,
+    "final_trust": 0.999429,
+    "final_state": {
+      "T": 0.999429,
+      "E": 0.227168,
+      "SB": 0.0,
+      "probation": 0,
+      "streak": 26,
+      "I": 0,
+      "policy": "ALLOW",
+      "branch": "BENIGN_RECOVERY"
+    },
+    "streak_trajectory_sample": [
+      {
+        "step": 0,
+        "probation": 0,
+        "streak": 1
+      },
+      {
+        "step": 500,
+        "probation": 0,
+        "streak": 43
+      },
+      {
+        "step": 1000,
+        "probation": 1,
+        "streak": 13
+      },
+      {
+        "step": 1500,
+        "probation": 0,
+        "streak": 32
+      },
+      {
+        "step": 2000,
+        "probation": 0,
+        "streak": 20
+      },
+      {
+        "step": 2500,
+        "probation": 1,
+        "streak": 2
+      },
+      {
+        "step": 3000,
+        "probation": 0,
+        "streak": 45
+      },
+      {
+        "step": 3500,
+        "probation": 0,
+        "streak": 17
+      },
+      {
+        "step": 4000,
+        "probation": 0,
+        "streak": 20
+      },
+      {
+        "step": 4500,
+        "probation": 1,
+        "streak": 9
+      },
+      {
+        "step": 5000,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 5500,
+        "probation": 0,
+        "streak": 20
+      },
+      {
+        "step": 6000,
+        "probation": 1,
+        "streak": 5
+      },
+      {
+        "step": 6500,
+        "probation": 0,
+        "streak": 42
+      },
+      {
+        "step": 7000,
+        "probation": 1,
+        "streak": 12
+      },
+      {
+        "step": 7500,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 8000,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 8500,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 9000,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 9500,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 10000,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 10500,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 11000,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 11500,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 12000,
+        "probation": 0,
+        "streak": 18
+      },
+      {
+        "step": 12500,
+        "probation": 1,
+        "streak": 5
+      },
+      {
+        "step": 13000,
+        "probation": 0,
+        "streak": 53
+      },
+      {
+        "step": 13500,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 14000,
+        "probation": 1,
+        "streak": 3
+      },
+      {
+        "step": 14500,
+        "probation": 0,
+        "streak": 17
+      },
+      {
+        "step": 15000,
+        "probation": 0,
+        "streak": 29
+      },
+      {
+        "step": 15500,
+        "probation": 0,
+        "streak": 31
+      },
+      {
+        "step": 16000,
+        "probation": 1,
+        "streak": 0
+      },
+      {
+        "step": 16500,
+        "probation": 1,
+        "streak": 12
+      },
+      {
+        "step": 17000,
+        "probation": 0,
+        "streak": 18
+      }
+    ],
+    "probation_fraction": 0.5714
+  }
+}

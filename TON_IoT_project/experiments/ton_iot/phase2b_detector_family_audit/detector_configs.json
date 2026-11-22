@@ -1,0 +1,37 @@
+{
+  "IsolationForest": {
+    "family": "Tree-based Ensemble Isolation",
+    "params": {
+      "n_estimators": 300,
+      "max_samples": 256,
+      "max_features": 1.0,
+      "bootstrap": false,
+      "random_state": 42,
+      "n_jobs": -1
+    }
+  },
+  "OneClassSVM": {
+    "family": "Kernel Support Vector Boundary",
+    "params": {
+      "kernel": "rbf",
+      "nu": 0.05,
+      "gamma": "scale"
+    }
+  },
+  "LocalOutlierFactor": {
+    "family": "k-NN Density-based Novelty",
+    "params": {
+      "n_neighbors": 20,
+      "contamination": 0.01,
+      "novelty": true,
+      "n_jobs": -1
+    }
+  },
+  "RobustMahalanobis": {
+    "family": "FastMCD Minimum Volume Ellipsoid",
+    "params": {
+      "support_fraction": 0.8,
+      "random_state": 42
+    }
+  }
+}

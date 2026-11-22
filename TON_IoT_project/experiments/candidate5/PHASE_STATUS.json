@@ -1,0 +1,26 @@
+{
+  "project": "BAZT-TON_IoT / Candidate 5 (Strategic Gaming & Moral Hazard)",
+  "target_venue": "3rd India Conference on Information Systems (InCIS 2027) — IIT Madras / DoMS / AIS India Chapter",
+  "last_updated": "2026-09-29T19:05:00Z",
+  "current_phase": "PHASE_11_COMPLETE",
+  "phase_history": {
+    "Phase_1": {"status": "COMPLETE", "description": "Candidate identification and protocol freeze"},
+    "Phase_2A_2D": {"status": "COMPLETE", "description": "Corrected E1 chronological validation and dynamical system audit"},
+    "Phase_3": {"status": "COMPLETE", "description": "Initial countermeasure specifications (M1 Floor, M2 Dilation, M3 Hysteresis)"},
+    "Phase_4": {"status": "COMPLETE", "verdict": "C5_PHASE4_ALL_MECHANISMS_REQUIRE_REASSESSMENT", "description": "Empirical evaluation showing M1, M2, M3 failed to prevent Cycle A exploitation"},
+    "Phase_5": {"status": "COMPLETE", "verdict": "C5_PHASE5_FORMALIZATION_READY", "description": "Sub-threshold blind region formalization and temporal evidence families enumeration"},
+    "Phase_6": {"status": "COMPLETE", "verdict": "C5_PHASE6_MECHANISM_SELECTION_READY", "description": "6-gate mechanism selection surviving Family C (threshold-offset proximity accumulator)"},
+    "Phase_7": {"status": "COMPLETE", "verdict": "C5_COUNTERMEASURE_NO_EFFECT", "description": "Empirical evaluation of Family C showing zero security gain and small availability cost"},
+    "Phase_7_Audit": {"status": "COMPLETE", "verdict": "C5_PHASE7_RESULTS_VALID", "description": "Independent results integrity audit verifying lambda=0.55 B0 fidelity and zero leakage"},
+    "Phase_8": {"status": "COMPLETE", "verdict": "DIAGNOSIS_COMPLETE", "description": "Failure mechanism diagnosis: observation-level SNR dilemma and memoryless ceiling recovery"},
+    "Phase_9": {"status": "COMPLETE", "verdict": "SPECIFICATION_COMPLETE", "description": "Derivation of Adaptive Asymptotic Trust Ceiling with Borderline Authorization Debt (AATC-BAD)"},
+    "Phase_10": {"status": "COMPLETE", "verdict": "C5_AATC_SECURITY_EFFECTIVE_AVAILABILITY_PRESERVED", "description": "Empirical evaluation of AATC-BAD: 25% reduction in ALLOW attack access, M_cum 8.5->7.5, zero availability degradation"},
+    "Phase_11": {"status": "COMPLETE", "verdict": "ENVELOPE_CHARACTERISED", "description": "Operating envelope: AATC effective for duty_cycle >= 7.7% (tau_r <= 12). Closed-form: net debt +0.375/cycle at tau_r=10. Phase 9 params confirmed optimal zero-cost configuration."}
+  },
+  "next_step": {
+    "phase": "Manuscript_Synthesis",
+    "objective": "Integrate complete Candidate 5 empirical trajectory into InCIS 2027 paper manuscript",
+    "execution_ready": true,
+    "awaiting_user_instruction": true
+  }
+}

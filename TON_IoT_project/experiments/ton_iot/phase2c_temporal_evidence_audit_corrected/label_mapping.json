@@ -1,0 +1,25 @@
+{
+  "total_eval_rows": 799102,
+  "label_column": "label",
+  "label_dtype": "int64",
+  "label_unique_values": [
+    0,
+    1
+  ],
+  "label_counts": {
+    "0": 7781,
+    "1": 791321
+  },
+  "type_column": "type",
+  "type_unique_values": [
+    "normal",
+    "scanning"
+  ],
+  "normal_count": 7781,
+  "attack_count": 791321,
+  "verified_mapping": {
+    "0": "normal",
+    "1": "attack"
+  },
+  "assertion_passed": true
+}

@@ -1,0 +1,26 @@
+CANDIDATE 5 — PHASE 6 RUN LOG
+==================================================
+Execution Timestamp: 2026-09-29T08:03:21Z
+Script: run_phase6_selection.py
+Mode: SELECTION_AND_IDENTIFIABILITY_ONLY (No Countermeasure Benchmark)
+
+SHA-256 HASH LEDGER:
+--------------------------------------------------
+family_definitions.json: c77fcd5410cf2844c9d0cb40e1da2a2115fd288103a1d1fc9ed95d03f9d8fec0
+identifiability_analysis.json: 81911bd0b0eb63871dedfebe6a716c25081588a5582342e9bf1278aa8915ca1d
+minimal_state_analysis.json: 4b16b5a989989c0a5816dad05f10e790bd4ae8c72b43ce85ff6997e8936e1ec4
+benign_temporal_characterization.json: 6b9e5a788eaf70d525377701d32adc2b2da942f35c99f193b1d204daf4f1de89
+pacing_analysis.json: 89ef925a859adee50f82f6f91a7770a4b849c1bd7fdeb634f8f061a141e6f40f
+redundancy_analysis.json: 75120e3efea69da3dc7d43894d8cbd6dc223b1ac935cddccd71ace6f27363dae
+gate_matrix.json: f5e584e4ad65a3b94a9edb6f81c3d81940c2935857bcab3b607eff4753f74abb
+hypothesis_definition.json: 75fdba74f5d9fdf7be81094791ffbae94681f3d81cb81a0bb333cff934c31abf
+
+REPRODUCIBILITY STATUS: DETERMINISTIC
+BENIGN DATASET: benign_chronological_scores.csv (N=17,459)
+SURVIVING MECHANISM: Family C (Recency-Weighted Threshold Offset Proximity)
+ELIMINATED MECHANISMS:
+  - Family A (Fails G4, G5: Unbounded growth / Epoch boundary vulnerability)
+  - Family B (Fails G2: Redundant with E_t EWMA)
+  - Family D (Fails G4, G5: Micro-burst noise spikes / Trivial pacing evasion)
+  - Family E (Fails G2, G3, G5: Textbook sliding-window / Non-O(1) memory)
+==================================================

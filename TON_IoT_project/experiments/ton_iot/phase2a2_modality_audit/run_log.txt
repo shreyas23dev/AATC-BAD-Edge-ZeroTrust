@@ -1,0 +1,127 @@
+2026-09-28 22:12:59,172 [INFO] Starting Phase 2A.2 — ToN-IoT Modality Suitability Audit
+2026-09-28 22:12:59,172 [INFO] Start time: 2026-09-28T22:12:59.172669
+2026-09-28 22:12:59,172 [INFO] [DATASET AUDIT] Inspecting raw dataset at C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\iot_processed\IoT_Weather.csv...
+2026-09-28 22:13:01,068 [INFO]   Total rows: 650,242
+2026-09-28 22:13:01,068 [INFO]   Missing values: {'date': 0, 'time': 0, 'temperature': 0, 'pressure': 0, 'humidity': 0, 'label': 0, 'type': 0}
+2026-09-28 22:13:01,069 [INFO]   Duplicate rows: 26,045
+2026-09-28 22:13:01,069 [INFO]   Time range: 2019-03-31 12:36:52 to 2019-04-29 14:47:38
+2026-09-28 22:13:01,069 [INFO]   Label counts: {0: 559718, 1: 90524}
+2026-09-28 22:13:01,069 [INFO]   Attack types: {'normal': 559718, 'backdoor': 35641, 'password': 25715, 'ddos': 15182, 'injection': 9726, 'ransomware': 2865, 'xss': 866, 'scanning': 529}
+2026-09-28 22:13:01,080 [INFO] 
+======================================================================
+2026-09-28 22:13:01,080 [INFO] EXPERIMENT RUN 1 (seed=42)
+2026-09-28 22:13:01,080 [INFO] ======================================================================
+2026-09-28 22:13:01,080 [INFO] [1] Partitioning IoT_Weather according to chronological rules...
+2026-09-28 22:13:01,181 [INFO]   TRAIN rows      :    427,936 (attacks: 0)
+2026-09-28 22:13:01,181 [INFO]   CALIBRATION rows:     28,200 (attacks: 0)
+2026-09-28 22:13:01,181 [INFO]   EVALUATION rows :    193,049 (normal: 102,525, attacks: 90,524)
+2026-09-28 22:13:01,182 [INFO]   EVAL time span  : 2019-04-23 11:51:47 to 2019-04-29 14:47:38
+2026-09-28 22:13:01,184 [INFO]   [OK] Temporal precedence and benign purity strictly verified.
+2026-09-28 22:13:01,184 [INFO] [2] Extracting raw numerical telemetry features: ['temperature', 'pressure', 'humidity']...
+2026-09-28 22:13:01,198 [INFO] [3] Fitting RobustScaler on TRAIN benign partition only...
+2026-09-28 22:13:01,242 [INFO]   Scaler medians: [36.51948634, 1.22627469, 55.11095691]
+2026-09-28 22:13:01,242 [INFO]   Scaler IQRs   : [13.925957195000002, 2.678795783, 47.740519427500004]
+2026-09-28 22:13:01,242 [INFO] [4] Fitting Isolation Forest on 427,936 benign TRAIN samples...
+2026-09-28 22:13:02,813 [INFO]   [OK] Isolation Forest fitted.
+2026-09-28 22:13:02,813 [INFO] [5] Computing raw anomaly scores (raw = -score_samples)...
+2026-09-28 22:13:10,651 [INFO]   Normalization bounds: s_min=0.40378813, s_max=0.69112673
+2026-09-28 22:13:10,652 [INFO]   A_thr (normalized) = 0.94551212 (raw equiv = 0.67547026)
+2026-09-28 22:13:10,652 [INFO] [8] Evaluating frozen detector on complete EVALUATION partition...
+2026-09-28 22:13:10,803 [INFO] 
+============================================================
+2026-09-28 22:13:10,803 [INFO] EVALUATION POINT METRICS (IoT_Weather)
+2026-09-28 22:13:10,803 [INFO] ============================================================
+2026-09-28 22:13:10,803 [INFO]   Attack Prevalence : 0.4689 (90,524 / 193,049)
+2026-09-28 22:13:10,804 [INFO]   ROC-AUC           : 0.515389
+2026-09-28 22:13:10,804 [INFO]   PR-AUC            : 0.500109
+2026-09-28 22:13:10,804 [INFO]   Precision         : 1.000000
+2026-09-28 22:13:10,804 [INFO]   Recall            : 0.000011
+2026-09-28 22:13:10,804 [INFO]   F1-Score          : 0.000022
+2026-09-28 22:13:10,804 [INFO]   FPR               : 0.000000
+2026-09-28 22:13:10,804 [INFO]   Specificity       : 1.000000
+2026-09-28 22:13:10,804 [INFO]   Balanced Accuracy : 0.500006
+2026-09-28 22:13:10,804 [INFO] ============================================================
+
+2026-09-28 22:13:10,814 [INFO]   Benign Mean A_t   : 0.269865 (median: 0.246861)
+2026-09-28 22:13:10,814 [INFO]   Attack Mean A_t   : 0.282646 (median: 0.258517)
+2026-09-28 22:13:10,814 [INFO]   Score Separation  : +0.012781
+2026-09-28 22:13:10,815 [INFO]   Sub-threshold attacks : 90,523 (100.00%)
+2026-09-28 22:13:10,815 [INFO]   Above-threshold attacks: 1 (0.00%)
+2026-09-28 22:13:10,879 [INFO]   Lag-1 Autocorrelation : 0.251772
+2026-09-28 22:13:10,879 [INFO]   First-Diff Volatility : 0.188916
+2026-09-28 22:13:10,880 [INFO]   Contiguous runs >= A_thr: 1 (mean length: 1.00)
+2026-09-28 22:13:10,880 [INFO]   Attack episodes       : 1,100 (crossing A_thr: 1 / 0.1%)
+2026-09-28 22:13:10,882 [INFO]   Score SHA-256         : fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e
+2026-09-28 22:13:10,895 [INFO] 
+======================================================================
+2026-09-28 22:13:10,896 [INFO] EXPERIMENT RUN 2 (seed=42)
+2026-09-28 22:13:10,896 [INFO] ======================================================================
+2026-09-28 22:13:10,896 [INFO] [1] Partitioning IoT_Weather according to chronological rules...
+2026-09-28 22:13:10,994 [INFO]   TRAIN rows      :    427,936 (attacks: 0)
+2026-09-28 22:13:10,994 [INFO]   CALIBRATION rows:     28,200 (attacks: 0)
+2026-09-28 22:13:10,994 [INFO]   EVALUATION rows :    193,049 (normal: 102,525, attacks: 90,524)
+2026-09-28 22:13:10,995 [INFO]   EVAL time span  : 2019-04-23 11:51:47 to 2019-04-29 14:47:38
+2026-09-28 22:13:10,997 [INFO]   [OK] Temporal precedence and benign purity strictly verified.
+2026-09-28 22:13:10,997 [INFO] [2] Extracting raw numerical telemetry features: ['temperature', 'pressure', 'humidity']...
+2026-09-28 22:13:11,010 [INFO] [3] Fitting RobustScaler on TRAIN benign partition only...
+2026-09-28 22:13:11,069 [INFO]   Scaler medians: [36.51948634, 1.22627469, 55.11095691]
+2026-09-28 22:13:11,070 [INFO]   Scaler IQRs   : [13.925957195000002, 2.678795783, 47.740519427500004]
+2026-09-28 22:13:11,070 [INFO] [4] Fitting Isolation Forest on 427,936 benign TRAIN samples...
+2026-09-28 22:13:12,290 [INFO]   [OK] Isolation Forest fitted.
+2026-09-28 22:13:12,291 [INFO] [5] Computing raw anomaly scores (raw = -score_samples)...
+2026-09-28 22:13:19,928 [INFO]   Normalization bounds: s_min=0.40378813, s_max=0.69112673
+2026-09-28 22:13:19,929 [INFO]   A_thr (normalized) = 0.94551212 (raw equiv = 0.67547026)
+2026-09-28 22:13:19,929 [INFO] [8] Evaluating frozen detector on complete EVALUATION partition...
+2026-09-28 22:13:20,101 [INFO] 
+============================================================
+2026-09-28 22:13:20,101 [INFO] EVALUATION POINT METRICS (IoT_Weather)
+2026-09-28 22:13:20,101 [INFO] ============================================================
+2026-09-28 22:13:20,101 [INFO]   Attack Prevalence : 0.4689 (90,524 / 193,049)
+2026-09-28 22:13:20,101 [INFO]   ROC-AUC           : 0.515389
+2026-09-28 22:13:20,102 [INFO]   PR-AUC            : 0.500109
+2026-09-28 22:13:20,102 [INFO]   Precision         : 1.000000
+2026-09-28 22:13:20,102 [INFO]   Recall            : 0.000011
+2026-09-28 22:13:20,102 [INFO]   F1-Score          : 0.000022
+2026-09-28 22:13:20,102 [INFO]   FPR               : 0.000000
+2026-09-28 22:13:20,102 [INFO]   Specificity       : 1.000000
+2026-09-28 22:13:20,102 [INFO]   Balanced Accuracy : 0.500006
+2026-09-28 22:13:20,102 [INFO] ============================================================
+
+2026-09-28 22:13:20,114 [INFO]   Benign Mean A_t   : 0.269865 (median: 0.246861)
+2026-09-28 22:13:20,114 [INFO]   Attack Mean A_t   : 0.282646 (median: 0.258517)
+2026-09-28 22:13:20,114 [INFO]   Score Separation  : +0.012781
+2026-09-28 22:13:20,115 [INFO]   Sub-threshold attacks : 90,523 (100.00%)
+2026-09-28 22:13:20,115 [INFO]   Above-threshold attacks: 1 (0.00%)
+2026-09-28 22:13:20,176 [INFO]   Lag-1 Autocorrelation : 0.251772
+2026-09-28 22:13:20,176 [INFO]   First-Diff Volatility : 0.188916
+2026-09-28 22:13:20,176 [INFO]   Contiguous runs >= A_thr: 1 (mean length: 1.00)
+2026-09-28 22:13:20,176 [INFO]   Attack episodes       : 1,100 (crossing A_thr: 1 / 0.1%)
+2026-09-28 22:13:20,178 [INFO]   Score SHA-256         : fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e
+2026-09-28 22:13:20,192 [INFO] 
+======================================================================
+2026-09-28 22:13:20,193 [INFO] CROSS-RUN REPRODUCIBILITY VERIFICATION
+2026-09-28 22:13:20,193 [INFO] ======================================================================
+2026-09-28 22:13:20,193 [INFO]   [PASS]     n_train: 427936
+2026-09-28 22:13:20,193 [INFO]   [PASS]     n_calib: 28200
+2026-09-28 22:13:20,193 [INFO]   [PASS]     n_eval: 193049
+2026-09-28 22:13:20,193 [INFO]   [PASS]     s_min: 0.40378812964994204
+2026-09-28 22:13:20,193 [INFO]   [PASS]     s_max: 0.691126731020775
+2026-09-28 22:13:20,193 [INFO]   [PASS]     A_thr: 0.9455121232239233
+2026-09-28 22:13:20,193 [INFO]   [PASS]     score_sha256: fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e
+2026-09-28 22:13:20,193 [INFO] Overall Reproducibility: VERIFIED
+2026-09-28 22:13:20,193 [INFO] 
+======================================================================
+2026-09-28 22:13:20,193 [INFO] SUITABILITY ASSESSMENT
+2026-09-28 22:13:20,193 [INFO] ======================================================================
+2026-09-28 22:13:20,194 [INFO]   ROC-AUC          : 0.515389
+2026-09-28 22:13:20,194 [INFO]   PR-AUC           : 0.500109 (Prevalence: 0.4689)
+2026-09-28 22:13:20,194 [INFO]   Score Separation : +0.012781
+2026-09-28 22:13:20,194 [INFO]   Sub-threshold %  : 100.00%
+2026-09-28 22:13:20,194 [INFO]   VERDICT  : SIGNAL_LIMITED
+2026-09-28 22:13:20,194 [INFO]   RATIONALE: IoT_Weather exhibits limited or weak discrimination: ROC-AUC=0.5154, PR-AUC=0.5001 (prevalence 0.4689), score separation is +0.0128. Signal is insufficient for robust downstream trust calibration.
+2026-09-28 22:13:20,194 [INFO] ======================================================================
+2026-09-28 22:13:20,194 [INFO] 
+[ARTIFACTS] Writing JSON artifacts to experiments/ton_iot/phase2a2_modality_audit/...
+2026-09-28 22:13:20,208 [INFO] [ARTIFACTS] All artifacts written successfully.
+2026-09-28 22:13:20,209 [INFO] 
+PHASE_2A2_MODALITY_AUDIT_COMPLETE

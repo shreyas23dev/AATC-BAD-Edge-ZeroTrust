@@ -1,0 +1,86 @@
+{
+  "IsolationForest": {
+    "matching_rows": 482518,
+    "matching_proportion_of_eval": 60.38252938923942,
+    "attack_proportion_among_matching": 100.0,
+    "dense_probe_score_stats": {
+      "label": "IsolationForest dense_probes",
+      "n": 482518,
+      "mean": 0.040437578404728655,
+      "std": 0.0,
+      "min": 0.040437578404728655,
+      "p25": 0.040437578404728655,
+      "median": 0.040437578404728655,
+      "p75": 0.040437578404728655,
+      "p90": 0.040437578404728655,
+      "p95": 0.040437578404728655,
+      "p99": 0.040437578404728655,
+      "max": 0.040437578404728655
+    },
+    "pct_matching_sub_threshold": 100.0,
+    "treats_dense_cluster_as_anomalous": false
+  },
+  "OneClassSVM": {
+    "matching_rows": 482518,
+    "matching_proportion_of_eval": 60.38252938923942,
+    "attack_proportion_among_matching": 100.0,
+    "dense_probe_score_stats": {
+      "label": "OneClassSVM dense_probes",
+      "n": 482518,
+      "mean": 0.004383426040724061,
+      "std": 3.469446951953614e-18,
+      "min": 0.004383426040724064,
+      "p25": 0.004383426040724064,
+      "median": 0.004383426040724064,
+      "p75": 0.004383426040724064,
+      "p90": 0.004383426040724064,
+      "p95": 0.004383426040724064,
+      "p99": 0.004383426040724064,
+      "max": 0.004383426040724064
+    },
+    "pct_matching_sub_threshold": 100.0,
+    "treats_dense_cluster_as_anomalous": false
+  },
+  "LocalOutlierFactor": {
+    "matching_rows": 482518,
+    "matching_proportion_of_eval": 60.38252938923942,
+    "attack_proportion_among_matching": 100.0,
+    "dense_probe_score_stats": {
+      "label": "LocalOutlierFactor dense_probes",
+      "n": 482518,
+      "mean": 6.861085708018639e-14,
+      "std": 1.262177448353619e-29,
+      "min": 6.86108570801864e-14,
+      "p25": 6.86108570801864e-14,
+      "median": 6.86108570801864e-14,
+      "p75": 6.86108570801864e-14,
+      "p90": 6.86108570801864e-14,
+      "p95": 6.86108570801864e-14,
+      "p99": 6.86108570801864e-14,
+      "max": 6.86108570801864e-14
+    },
+    "pct_matching_sub_threshold": 100.0,
+    "treats_dense_cluster_as_anomalous": false
+  },
+  "RobustMahalanobis": {
+    "matching_rows": 482518,
+    "matching_proportion_of_eval": 60.38252938923942,
+    "attack_proportion_among_matching": 100.0,
+    "dense_probe_score_stats": {
+      "label": "RobustMahalanobis dense_probes",
+      "n": 482518,
+      "mean": 6.496310352555192e-14,
+      "std": 3.7865323450608567e-29,
+      "min": 6.496310352555188e-14,
+      "p25": 6.496310352555188e-14,
+      "median": 6.496310352555188e-14,
+      "p75": 6.496310352555188e-14,
+      "p90": 6.496310352555188e-14,
+      "p95": 6.496310352555188e-14,
+      "p99": 6.496310352555188e-14,
+      "max": 6.496310352555188e-14
+    },
+    "pct_matching_sub_threshold": 100.0,
+    "treats_dense_cluster_as_anomalous": false
+  }
+}

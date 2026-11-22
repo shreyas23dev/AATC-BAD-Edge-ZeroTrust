@@ -1,0 +1,23 @@
+[package]
+name        = "aatc-edge"
+description = "AATC-BAD edge runtime — ONNX inference + trust engine + policy enforcement"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+
+[[bin]]
+name = "aatc-edge"
+path = "src/main.rs"
+
+[dependencies]
+aatc-engine          = { path = "../aatc-engine" }
+tokio                = { workspace = true }
+ort                  = { workspace = true }
+serde                = { workspace = true }
+serde_json           = { workspace = true }
+csv                  = { workspace = true }
+tracing              = { workspace = true }
+tracing-subscriber   = { workspace = true }
+anyhow               = { workspace = true }
+clap                 = { workspace = true }

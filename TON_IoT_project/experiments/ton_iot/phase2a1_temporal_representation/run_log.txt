@@ -1,0 +1,107 @@
+2026-09-28 21:25:45,684 [INFO] Starting Phase 2A.1 — Temporal Feature Representation Audit
+2026-09-28 21:25:45,684 [INFO] Start time: 2026-09-28T21:25:45.684632
+2026-09-28 21:25:45,684 [INFO] 
+======================================================================
+2026-09-28 21:25:45,684 [INFO] PHASE 2A.1 EXPERIMENT RUN 1 (seed=42)
+2026-09-28 21:25:45,684 [INFO] ======================================================================
+2026-09-28 21:25:45,684 [INFO] [1] Loading raw data & reconstructing timestamps...
+2026-09-28 21:25:45,684 [INFO] Loading raw ToN-IoT Modbus CSV from C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\iot_processed\IoT_Modbus.csv...
+2026-09-28 21:25:46,020 [INFO] Loaded 287194 rows and 8 columns.
+2026-09-28 21:25:46,020 [INFO] Reconstructing deterministic timestamps from 'date' + 'time'...
+2026-09-28 21:25:47,036 [INFO] Timestamp reconstruction successful. Earliest: 2019-03-31 12:36:52, Latest: 2019-04-29 23:59:58
+2026-09-28 21:25:47,050 [INFO] [2] Partitioning via TonIoTChronologicalSplitter...
+2026-09-28 21:25:47,051 [INFO] Executing chronological partitioning according to frozen E1 boundaries...
+2026-09-28 21:25:47,292 [INFO] Chronological split complete: Train=100940 (100% normal), Calib=11691 (100% normal), Eval=173506 (64339 attacks)
+2026-09-28 21:25:47,324 [INFO]   [OK] Data partition counts and benign purity verified.
+2026-09-28 21:25:47,326 [INFO] [3] Preparing Representation A: Static Baseline (4 features)...
+2026-09-28 21:25:47,337 [INFO] 
+--- Evaluating Representation: STATIC_BASELINE (N_features=4) ---
+2026-09-28 21:25:58,195 [INFO]   [STATIC_BASELINE] ROC-AUC=0.499887, PR-AUC=0.369016, F1=0.021495, Recall=0.011097
+2026-09-28 21:25:58,195 [INFO]   [STATIC_BASELINE] Benign Mean A=0.310338, Attack Mean A=0.309804
+2026-09-28 21:25:58,195 [INFO]   [STATIC_BASELINE] Sub-threshold attacks: 63,625 (98.89%)
+2026-09-28 21:25:58,202 [INFO]   [STATIC_BASELINE] Episodes crossing A_thr: 89/1,002 (8.9%)
+2026-09-28 21:25:58,202 [INFO]   [STATIC_BASELINE] Score Hash: 362c107d879b2a5f6604b0b135c3939af99d47e7d3af5830d8f4a0234f9c98b5
+2026-09-28 21:25:58,214 [INFO] [4] Building Representation B: Causal Temporal Features (29 features)...
+2026-09-28 21:25:59,061 [INFO]   [OK] Temporal feature names (29): ['FC1_Read_Input_Register', 'FC2_Read_Discrete_Value', 'FC3_Read_Holding_Register', 'FC4_Read_Coil', 'diff_FC1_Read_Input_Register', 'abs_diff_FC1_Read_Input_Register', 'diff_FC2_Read_Discrete_Value', 'abs_diff_FC2_Read_Discrete_Value', 'diff_FC3_Read_Holding_Register', 'abs_diff_FC3_Read_Holding_Register', 'diff_FC4_Read_Coil', 'abs_diff_FC4_Read_Coil', 'inter_arrival_time', 'roll_mean_w5_FC1_Read_Input_Register', 'roll_var_w5_FC1_Read_Input_Register', 'roll_mean_w5_FC2_Read_Discrete_Value', 'roll_var_w5_FC2_Read_Discrete_Value', 'roll_mean_w5_FC3_Read_Holding_Register', 'roll_var_w5_FC3_Read_Holding_Register', 'roll_mean_w5_FC4_Read_Coil', 'roll_var_w5_FC4_Read_Coil', 'roll_mean_w20_FC1_Read_Input_Register', 'roll_var_w20_FC1_Read_Input_Register', 'roll_mean_w20_FC2_Read_Discrete_Value', 'roll_var_w20_FC2_Read_Discrete_Value', 'roll_mean_w20_FC3_Read_Holding_Register', 'roll_var_w20_FC3_Read_Holding_Register', 'roll_mean_w20_FC4_Read_Coil', 'roll_var_w20_FC4_Read_Coil']
+2026-09-28 21:25:59,092 [INFO]   [OK] Zero NaNs verified across all temporal partitions.
+2026-09-28 21:25:59,092 [INFO] 
+--- Evaluating Representation: TEMPORAL_REPRESENTATION (N_features=29) ---
+2026-09-28 21:26:18,494 [INFO]   [TEMPORAL_REPRESENTATION] ROC-AUC=0.453899, PR-AUC=0.346323, F1=0.027966, Recall=0.014563
+2026-09-28 21:26:18,494 [INFO]   [TEMPORAL_REPRESENTATION] Benign Mean A=0.339382, Attack Mean A=0.319199
+2026-09-28 21:26:18,494 [INFO]   [TEMPORAL_REPRESENTATION] Sub-threshold attacks: 63,402 (98.54%)
+2026-09-28 21:26:18,494 [INFO]   [TEMPORAL_REPRESENTATION] Episodes crossing A_thr: 200/1,002 (20.0%)
+2026-09-28 21:26:18,506 [INFO]   [TEMPORAL_REPRESENTATION] Score Hash: a6d838243580c7e2759db7dcf64afa885862658a8d05444e1bf11480690c4bc3
+2026-09-28 21:26:18,622 [INFO] 
+======================================================================
+2026-09-28 21:26:18,622 [INFO] PHASE 2A.1 EXPERIMENT RUN 2 (seed=42)
+2026-09-28 21:26:18,623 [INFO] ======================================================================
+2026-09-28 21:26:18,623 [INFO] [1] Loading raw data & reconstructing timestamps...
+2026-09-28 21:26:18,623 [INFO] Loading raw ToN-IoT Modbus CSV from C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\iot_processed\IoT_Modbus.csv...
+2026-09-28 21:26:19,613 [INFO] Loaded 287194 rows and 8 columns.
+2026-09-28 21:26:19,613 [INFO] Reconstructing deterministic timestamps from 'date' + 'time'...
+2026-09-28 21:26:23,323 [INFO] Timestamp reconstruction successful. Earliest: 2019-03-31 12:36:52, Latest: 2019-04-29 23:59:58
+2026-09-28 21:26:23,341 [INFO] [2] Partitioning via TonIoTChronologicalSplitter...
+2026-09-28 21:26:23,341 [INFO] Executing chronological partitioning according to frozen E1 boundaries...
+2026-09-28 21:26:23,678 [INFO] Chronological split complete: Train=100940 (100% normal), Calib=11691 (100% normal), Eval=173506 (64339 attacks)
+2026-09-28 21:26:23,710 [INFO]   [OK] Data partition counts and benign purity verified.
+2026-09-28 21:26:23,712 [INFO] [3] Preparing Representation A: Static Baseline (4 features)...
+2026-09-28 21:26:23,726 [INFO] 
+--- Evaluating Representation: STATIC_BASELINE (N_features=4) ---
+2026-09-28 21:26:38,719 [INFO]   [STATIC_BASELINE] ROC-AUC=0.499887, PR-AUC=0.369016, F1=0.021495, Recall=0.011097
+2026-09-28 21:26:38,719 [INFO]   [STATIC_BASELINE] Benign Mean A=0.310338, Attack Mean A=0.309804
+2026-09-28 21:26:38,725 [INFO]   [STATIC_BASELINE] Sub-threshold attacks: 63,625 (98.89%)
+2026-09-28 21:26:38,725 [INFO]   [STATIC_BASELINE] Episodes crossing A_thr: 89/1,002 (8.9%)
+2026-09-28 21:26:38,725 [INFO]   [STATIC_BASELINE] Score Hash: 362c107d879b2a5f6604b0b135c3939af99d47e7d3af5830d8f4a0234f9c98b5
+2026-09-28 21:26:38,739 [INFO] [4] Building Representation B: Causal Temporal Features (29 features)...
+2026-09-28 21:26:39,801 [INFO]   [OK] Temporal feature names (29): ['FC1_Read_Input_Register', 'FC2_Read_Discrete_Value', 'FC3_Read_Holding_Register', 'FC4_Read_Coil', 'diff_FC1_Read_Input_Register', 'abs_diff_FC1_Read_Input_Register', 'diff_FC2_Read_Discrete_Value', 'abs_diff_FC2_Read_Discrete_Value', 'diff_FC3_Read_Holding_Register', 'abs_diff_FC3_Read_Holding_Register', 'diff_FC4_Read_Coil', 'abs_diff_FC4_Read_Coil', 'inter_arrival_time', 'roll_mean_w5_FC1_Read_Input_Register', 'roll_var_w5_FC1_Read_Input_Register', 'roll_mean_w5_FC2_Read_Discrete_Value', 'roll_var_w5_FC2_Read_Discrete_Value', 'roll_mean_w5_FC3_Read_Holding_Register', 'roll_var_w5_FC3_Read_Holding_Register', 'roll_mean_w5_FC4_Read_Coil', 'roll_var_w5_FC4_Read_Coil', 'roll_mean_w20_FC1_Read_Input_Register', 'roll_var_w20_FC1_Read_Input_Register', 'roll_mean_w20_FC2_Read_Discrete_Value', 'roll_var_w20_FC2_Read_Discrete_Value', 'roll_mean_w20_FC3_Read_Holding_Register', 'roll_var_w20_FC3_Read_Holding_Register', 'roll_mean_w20_FC4_Read_Coil', 'roll_var_w20_FC4_Read_Coil']
+2026-09-28 21:26:39,827 [INFO]   [OK] Zero NaNs verified across all temporal partitions.
+2026-09-28 21:26:39,827 [INFO] 
+--- Evaluating Representation: TEMPORAL_REPRESENTATION (N_features=29) ---
+2026-09-28 21:26:53,284 [INFO]   [TEMPORAL_REPRESENTATION] ROC-AUC=0.453899, PR-AUC=0.346323, F1=0.027966, Recall=0.014563
+2026-09-28 21:26:53,284 [INFO]   [TEMPORAL_REPRESENTATION] Benign Mean A=0.339382, Attack Mean A=0.319199
+2026-09-28 21:26:53,284 [INFO]   [TEMPORAL_REPRESENTATION] Sub-threshold attacks: 63,402 (98.54%)
+2026-09-28 21:26:53,284 [INFO]   [TEMPORAL_REPRESENTATION] Episodes crossing A_thr: 200/1,002 (20.0%)
+2026-09-28 21:26:53,285 [INFO]   [TEMPORAL_REPRESENTATION] Score Hash: a6d838243580c7e2759db7dcf64afa885862658a8d05444e1bf11480690c4bc3
+2026-09-28 21:26:53,328 [INFO] 
+======================================================================
+2026-09-28 21:26:53,328 [INFO] CROSS-RUN REPRODUCIBILITY VERIFICATION
+2026-09-28 21:26:53,332 [INFO] ======================================================================
+2026-09-28 21:26:53,332 [INFO]   [PASS]     static.s_min: 0.44705100738580633
+2026-09-28 21:26:53,332 [INFO]   [PASS]     static.s_max: 0.6608747851971484
+2026-09-28 21:26:53,332 [INFO]   [PASS]     static.A_thr: 0.6892296769106134
+2026-09-28 21:26:53,332 [INFO]   [PASS]     static.score_sha256: 362c107d879b2a5f6604b0b135c3939af99d47e7d3af5830d8f4a0234f9c98b5
+2026-09-28 21:26:53,332 [INFO]   [PASS]     temporal.s_min: 0.38581212282498856
+2026-09-28 21:26:53,332 [INFO]   [PASS]     temporal.s_max: 0.6289604521138386
+2026-09-28 21:26:53,332 [INFO]   [PASS]     temporal.A_thr: 0.6623135872399162
+2026-09-28 21:26:53,332 [INFO]   [PASS]     temporal.score_sha256: a6d838243580c7e2759db7dcf64afa885862658a8d05444e1bf11480690c4bc3
+2026-09-28 21:26:53,332 [INFO] Overall Reproducibility: VERIFIED
+2026-09-28 21:26:53,332 [INFO] 
+======================================================================
+2026-09-28 21:26:53,332 [INFO] PRIMARY COMPARISON: STATIC vs TEMPORAL REPRESENTATION
+2026-09-28 21:26:53,333 [INFO] ======================================================================
+2026-09-28 21:26:53,333 [INFO] Metric                              STATIC (4 feats)     TEMPORAL (29 feats)  Delta          
+2026-09-28 21:26:53,333 [INFO] ------------------------------------------------------------------------------------------
+2026-09-28 21:26:53,333 [INFO] Features Count                      4.000000             29.000000            +25            
+2026-09-28 21:26:53,333 [INFO] ROC-AUC                             0.499887             0.453899             -0.045988      
+2026-09-28 21:26:53,333 [INFO] PR-AUC                              0.369016             0.346323             -0.022693      
+2026-09-28 21:26:53,333 [INFO] Recall                              0.011097             0.014563             +0.003466      
+2026-09-28 21:26:53,333 [INFO] F1-Score                            0.021495             0.027966             +0.006471      
+2026-09-28 21:26:53,333 [INFO] Precision                           0.340811             0.350674             +0.009862      
+2026-09-28 21:26:53,333 [INFO] FPR                                 0.012650             0.015893             +0.003243      
+2026-09-28 21:26:53,333 [INFO] Balanced Accuracy                   0.499224             0.499335             +0.000112      
+2026-09-28 21:26:53,333 [INFO] Benign Mean A                       0.310338             0.339382             +0.029044      
+2026-09-28 21:26:53,333 [INFO] Attack Mean A                       0.309804             0.319199             +0.009395      
+2026-09-28 21:26:53,333 [INFO] Score Separation (Atk - Ben)        -0.000534            -0.020182            -0.019649      
+2026-09-28 21:26:53,333 [INFO] Sub-Threshold Attack %              98.890253            98.543652            -0.346602      
+2026-09-28 21:26:53,334 [INFO] Episodes Crossing A_thr             89.000000            200.000000           +111           
+2026-09-28 21:26:53,334 [INFO] Episodes Crossing A_thr %           8.882236             19.960080            +11.077844     
+2026-09-28 21:26:53,334 [INFO] 
+======================================================================
+2026-09-28 21:26:53,334 [INFO] AUDIT VERDICT: TEMPORAL_SIGNAL_PARTIALLY_IMPROVED
+2026-09-28 21:26:53,334 [INFO] RATIONALE: Temporal features yield marginal or partial improvements: ROC-AUC moved from 0.4999 to 0.4539 (delta=-0.0460), but remains insufficient or limited for robust downstream zero-trust trust calibration.
+2026-09-28 21:26:53,334 [INFO] ======================================================================
+2026-09-28 21:26:53,334 [INFO] 
+[ARTIFACTS] Writing JSON artifacts to experiments/ton_iot/phase2a1_temporal_representation/...
+2026-09-28 21:26:53,349 [INFO] [ARTIFACTS] All artifacts written successfully.
+2026-09-28 21:26:53,349 [INFO] 
+PHASE_2A1_TEMPORAL_REPRESENTATION_AUDIT_COMPLETE

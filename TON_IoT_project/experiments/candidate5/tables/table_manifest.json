@@ -1,0 +1,84 @@
+{
+  "project": "BAZT-TON_IoT / Candidate 5 (Strategic Gaming & Moral Hazard)",
+  "target_venue": "3rd India Conference on Information Systems (InCIS 2027)",
+  "generated_at": "2026-09-29T19:16:00Z",
+  "tables_count": 8,
+  "tables": [
+    {
+      "table_number": "TABLE I",
+      "file": "table1_parameter_provenance.tex",
+      "title": "Experimental Parameters and Formal Provenance across Evaluated Architectures",
+      "source_artifacts": [
+        "experiments/candidate5/countermeasure_evaluation/parameter_freeze.json",
+        "experiments/candidate5/phase9_countermeasure/parameter_provenance.json",
+        "experiments/candidate5/phase10_countermeasure_evaluation/parameter_freeze.json"
+      ],
+      "sha256": "c73128c2b8efd4c9bcd8ecf62a344ca655254ca61fbe8c0f21f0caa3310489e7"
+    },
+    {
+      "table_number": "TABLE II",
+      "file": "table2_b0_baseline.tex",
+      "title": "Baseline B0 TrustEngine Security Replay Results across Canonical Schedules",
+      "source_artifacts": [
+        "experiments/candidate5/phase10_countermeasure_evaluation/attack_replay_results.json"
+      ],
+      "sha256": "b2d1aef5bf7029ba999c207b12a6b22f590100ae2f573647e807007e541686af"
+    },
+    {
+      "table_number": "TABLE III",
+      "file": "table3_family_c_results.tex",
+      "title": "Family C Countermeasure Evaluation Results (Phase 7 Replay)",
+      "source_artifacts": [
+        "experiments/candidate5/countermeasure_evaluation/attack_replay_results.json"
+      ],
+      "sha256": "a4ff631f56376d7354a86c9e7fe64f44c283eedf344c73b65056afb0adcf43e7"
+    },
+    {
+      "table_number": "TABLE IV",
+      "file": "table4_aatc_results.tex",
+      "title": "AATC-BAD Countermeasure Empirical Evaluation Results (Phase 10 Replay)",
+      "source_artifacts": [
+        "experiments/candidate5/phase10_countermeasure_evaluation/attack_replay_results.json"
+      ],
+      "sha256": "1a240160bfcdc24c699773d8a9bfa10008b4527e9fb1e5c42a5b2bf239924cac"
+    },
+    {
+      "table_number": "TABLE V",
+      "file": "table5_security_comparison.tex",
+      "title": "Comprehensive Security Comparison Across Architectural Generations",
+      "source_artifacts": [
+        "experiments/candidate5/countermeasure_evaluation/attack_replay_results.json",
+        "experiments/candidate5/phase10_countermeasure_evaluation/attack_replay_results.json"
+      ],
+      "sha256": "d69019c4ff6f02ba2cd51393527dc6ae7de27bd1776382b9f9ae71bbbfd5f9e3"
+    },
+    {
+      "table_number": "TABLE VI",
+      "file": "table6_availability_comparison.tex",
+      "title": "Empirical Device Availability on the Untouched Chronological Evaluation Stream (N=7,459 frames)",
+      "source_artifacts": [
+        "experiments/candidate5/countermeasure_evaluation/benign_evaluation_results.json",
+        "experiments/candidate5/phase10_countermeasure_evaluation/benign_evaluation_results.json"
+      ],
+      "sha256": "3fc8062504af33c02674eddeb4b90b57032395003bb9ba180ac889a84e982e60"
+    },
+    {
+      "table_number": "TABLE VII",
+      "file": "table7_operating_envelope.tex",
+      "title": "AATC-BAD Duty-Cycle Operating Envelope Analysis (tau_a=1, tau_r in [5, 60])",
+      "source_artifacts": [
+        "experiments/candidate5/phase11_envelope_analysis/envelope_sweep.json"
+      ],
+      "sha256": "5d51e0e1075cdb0398110e08abe3ac4db2671b6fbfa011a29d5930cc070ae521"
+    },
+    {
+      "table_number": "TABLE VIII",
+      "file": "table8_sensitivity_grid.tex",
+      "title": "Sensitivity and Robustness Evaluation Grid on Validation Partition (rows 5,000-9,999, N=5,000)",
+      "source_artifacts": [
+        "experiments/candidate5/phase11_envelope_analysis/sensitivity_grid.json"
+      ],
+      "sha256": "73b0a16beb934f19e679265879f63cb082da1ab5870b02dcfa09485b3000b621"
+    }
+  ]
+}

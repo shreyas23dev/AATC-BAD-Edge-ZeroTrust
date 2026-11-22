@@ -1,0 +1,104 @@
+2026-09-29 11:17:53,737 [INFO] ================================================================================
+2026-09-29 11:17:53,737 [INFO] STARTING CANDIDATE 5 CHRONOLOGICAL EMPIRICAL VALIDATION (PHASE 2B)
+2026-09-29 11:17:53,737 [INFO] ================================================================================
+2026-09-29 11:17:53,737 [INFO] Reading first 17459 rows from C:\Users\Shreyas A\PROJECTS\Behavior-Adaptive-Zero-Trust-IoT\edge-iiot-anomaly-detection\data\raw\DNN-EdgeIIoT-dataset.csv (preserving original chronological order)...
+2026-09-29 11:17:53,918 [INFO] Extracted 17459 contiguous benign rows.
+2026-09-29 11:17:53,918 [INFO] Start Timestamp: 2021-01-01 11:44:10.081753
+2026-09-29 11:17:53,918 [INFO] End Timestamp:   2021-01-01 12:02:24.882968
+2026-09-29 11:17:53,918 [INFO] Monotonicity: Negative jumps = 0, Zero jumps = 0, Positive jumps = 17458
+2026-09-29 11:17:53,918 [INFO] Delta stats (s): Median = 0.000131, Mean = 0.062711, Min = 0.000003, Max = 4.267853
+2026-09-29 11:17:53,918 [INFO] Gaps > 5x median: 33.11%
+2026-09-29 11:17:53,918 [INFO] Loading preprocessing pipeline from C:\Users\Shreyas A\PROJECTS\Behavior-Adaptive-Zero-Trust-IoT\edge-iiot-anomaly-detection\artifacts\models\preprocessing_pipeline.pkl...
+2026-09-29 11:17:55,332 [INFO] Loading anomaly detector from C:\Users\Shreyas A\PROJECTS\Behavior-Adaptive-Zero-Trust-IoT\edge-iiot-anomaly-detection\artifacts\models\model.pkl...
+2026-09-29 11:18:00,354 [INFO] Preprocessing 17459 samples...
+2026-09-29 11:18:00,354 [INFO] Transforming data with DataCleaner (input shape: (17459, 63))...
+2026-09-29 11:18:00,401 [INFO] DataCleaner transform complete (output shape: (17459, 47)).
+2026-09-29 11:18:00,401 [INFO] Transforming data with FeatureEncoder...
+2026-09-29 11:18:00,506 [INFO] Transforming data with FeatureScaler...
+2026-09-29 11:18:00,581 [INFO] Generating Isolation Forest anomaly scores...
+2026-09-29 11:18:01,704 [INFO] Score generation complete. Shape: (17459,)
+2026-09-29 11:18:02,086 [INFO] Saved scores to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\chronological_validation\benign_chronological_scores.csv (SHA-256: b4babfa3723c17fbe71e4b96994af927b3fa69b25d1dfd5bba6d66f1a88bf617)
+2026-09-29 11:18:02,086 [INFO] Saved metadata to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\chronological_validation\benign_block_metadata.json
+2026-09-29 11:18:02,092 [INFO] Characterizing temporal dependence and score distribution...
+2026-09-29 11:18:02,100 [INFO] Score Distribution: Mean=0.2106, Std=0.1331, Median=0.2104, p99=0.5177
+2026-09-29 11:18:02,100 [INFO] Tail Frac: A >= gamma (0.335): 19.29%, A >= A_thr (0.4554): 5.03%
+2026-09-29 11:18:02,100 [INFO] Autocorrelation: Lag-1=-0.1398, Lag-5=0.1425, Lag-10=-0.2075
+2026-09-29 11:18:02,100 [INFO] Max clean interval without false positive: 168 steps
+2026-09-29 11:18:02,100 [INFO] 
+>>> EXECUTING REPLAY RUN 1 <<<
+2026-09-29 11:18:02,100 [INFO] Executing Paper 1 TrustEngine across 17459 consecutive benign scores...
+2026-09-29 11:18:02,149 [INFO] Benign TrustEngine Results: Mean T=0.6877, Min T=0.0000
+2026-09-29 11:18:02,149 [INFO] SB == 0 Fraction: 54.99%, SB > theta: 24.06%
+2026-09-29 11:18:02,149 [INFO] Policy Fractions: ALLOW=62.24%, VERIFY=13.72%, BLOCK=24.04%
+2026-09-29 11:18:02,151 [INFO] False Penalties: 3835, False Blocks: 4197
+2026-09-29 11:18:02,151 [INFO] Evaluating 5 benchmark schedules under strict sequential benign consumption...
+2026-09-29 11:18:02,151 [INFO] 
+--- Running Schedule Cycle_A (1 attack / 10 rest) ---
+2026-09-29 11:18:02,151 [INFO] Cycle 9: System entered BLOCK during rest recovery at T=0.2321!
+2026-09-29 11:18:02,151 [INFO] Outcome Cycle_A: Survived S=8/20 cycles, Blocked=True
+2026-09-29 11:18:02,151 [INFO]   R_rec=0.8264, Phi_atk=0.0918, R_SB=0.1333, C_var=0.016136306230681206, M_cum=8.5
+2026-09-29 11:18:02,151 [INFO] 
+--- Running Schedule Cycle_B (1 attack / 25 rest) ---
+2026-09-29 11:18:02,151 [INFO] Cycle 4: System entered BLOCK during rest recovery at T=0.2320!
+2026-09-29 11:18:02,151 [INFO] Outcome Cycle_B: Survived S=3/20 cycles, Blocked=True
+2026-09-29 11:18:02,151 [INFO]   R_rec=0.7266, Phi_atk=0.0430, R_SB=0.2500, C_var=0.0027121203176915984, M_cum=4.0
+2026-09-29 11:18:02,151 [INFO] 
+--- Running Schedule Cycle_C (1 attack / 50 rest) ---
+2026-09-29 11:18:02,151 [INFO] Cycle 2: System entered BLOCK during rest recovery at T=0.2318!
+2026-09-29 11:18:02,151 [INFO] Outcome Cycle_C: Survived S=1/20 cycles, Blocked=True
+2026-09-29 11:18:02,151 [INFO]   R_rec=0.6159, Phi_atk=0.0220, R_SB=0.5000, C_var=None, M_cum=2.0
+2026-09-29 11:18:02,151 [INFO] 
+--- Running Schedule Cycle_D (5 attack / 25 rest) ---
+2026-09-29 11:18:02,151 [INFO] Cycle 1: System entered BLOCK during rest recovery at T=0.2399!
+2026-09-29 11:18:02,151 [INFO] Outcome Cycle_D: Survived S=0/20 cycles, Blocked=True
+2026-09-29 11:18:02,151 [INFO]   R_rec=0.0000, Phi_atk=0.7143, R_SB=1.0000, C_var=None, M_cum=4.0
+2026-09-29 11:18:02,151 [INFO] 
+--- Running Schedule Cycle_E (5 attack / 50 rest) ---
+2026-09-29 11:18:02,151 [INFO] Cycle 1: System entered BLOCK during rest recovery at T=0.2399!
+2026-09-29 11:18:02,151 [INFO] Outcome Cycle_E: Survived S=0/20 cycles, Blocked=True
+2026-09-29 11:18:02,151 [INFO]   R_rec=0.0000, Phi_atk=0.7143, R_SB=1.0000, C_var=None, M_cum=4.0
+2026-09-29 11:18:02,151 [INFO] 
+>>> EXECUTING REPLAY RUN 2 (REPRODUCIBILITY CHECK) <<<
+2026-09-29 11:18:02,151 [INFO] Executing Paper 1 TrustEngine across 17459 consecutive benign scores...
+2026-09-29 11:18:02,192 [INFO] Benign TrustEngine Results: Mean T=0.6877, Min T=0.0000
+2026-09-29 11:18:02,192 [INFO] SB == 0 Fraction: 54.99%, SB > theta: 24.06%
+2026-09-29 11:18:02,192 [INFO] Policy Fractions: ALLOW=62.24%, VERIFY=13.72%, BLOCK=24.04%
+2026-09-29 11:18:02,192 [INFO] False Penalties: 3835, False Blocks: 4197
+2026-09-29 11:18:02,192 [INFO] Evaluating 5 benchmark schedules under strict sequential benign consumption...
+2026-09-29 11:18:02,192 [INFO] 
+--- Running Schedule Cycle_A (1 attack / 10 rest) ---
+2026-09-29 11:18:02,192 [INFO] Cycle 9: System entered BLOCK during rest recovery at T=0.2321!
+2026-09-29 11:18:02,192 [INFO] Outcome Cycle_A: Survived S=8/20 cycles, Blocked=True
+2026-09-29 11:18:02,192 [INFO]   R_rec=0.8264, Phi_atk=0.0918, R_SB=0.1333, C_var=0.016136306230681206, M_cum=8.5
+2026-09-29 11:18:02,192 [INFO] 
+--- Running Schedule Cycle_B (1 attack / 25 rest) ---
+2026-09-29 11:18:02,192 [INFO] Cycle 4: System entered BLOCK during rest recovery at T=0.2320!
+2026-09-29 11:18:02,194 [INFO] Outcome Cycle_B: Survived S=3/20 cycles, Blocked=True
+2026-09-29 11:18:02,194 [INFO]   R_rec=0.7266, Phi_atk=0.0430, R_SB=0.2500, C_var=0.0027121203176915984, M_cum=4.0
+2026-09-29 11:18:02,194 [INFO] 
+--- Running Schedule Cycle_C (1 attack / 50 rest) ---
+2026-09-29 11:18:02,194 [INFO] Cycle 2: System entered BLOCK during rest recovery at T=0.2318!
+2026-09-29 11:18:02,194 [INFO] Outcome Cycle_C: Survived S=1/20 cycles, Blocked=True
+2026-09-29 11:18:02,194 [INFO]   R_rec=0.6159, Phi_atk=0.0220, R_SB=0.5000, C_var=None, M_cum=2.0
+2026-09-29 11:18:02,194 [INFO] 
+--- Running Schedule Cycle_D (5 attack / 25 rest) ---
+2026-09-29 11:18:02,194 [INFO] Cycle 1: System entered BLOCK during rest recovery at T=0.2399!
+2026-09-29 11:18:02,194 [INFO] Outcome Cycle_D: Survived S=0/20 cycles, Blocked=True
+2026-09-29 11:18:02,194 [INFO]   R_rec=0.0000, Phi_atk=0.7143, R_SB=1.0000, C_var=None, M_cum=4.0
+2026-09-29 11:18:02,194 [INFO] 
+--- Running Schedule Cycle_E (5 attack / 50 rest) ---
+2026-09-29 11:18:02,194 [INFO] Cycle 1: System entered BLOCK during rest recovery at T=0.2399!
+2026-09-29 11:18:02,194 [INFO] Outcome Cycle_E: Survived S=0/20 cycles, Blocked=True
+2026-09-29 11:18:02,194 [INFO]   R_rec=0.0000, Phi_atk=0.7143, R_SB=1.0000, C_var=None, M_cum=4.0
+2026-09-29 11:18:02,194 [INFO] 
+Reproducibility Verification:
+2026-09-29 11:18:02,194 [INFO]   Benign T Hash Match:  True
+2026-09-29 11:18:02,194 [INFO]   Benign E Hash Match:  True
+2026-09-29 11:18:02,194 [INFO]   Benign SB Hash Match: True
+2026-09-29 11:18:02,194 [INFO]   Cyclic Trajectories Match: True
+2026-09-29 11:18:02,198 [INFO] 
+Generating Randomized vs Chronological Comparison...
+2026-09-29 11:18:02,202 [INFO] 
+================================================================================
+2026-09-29 11:18:02,202 [INFO] CHRONOLOGICAL EMPIRICAL VALIDATION COMPLETE
+2026-09-29 11:18:02,202 [INFO] ================================================================================

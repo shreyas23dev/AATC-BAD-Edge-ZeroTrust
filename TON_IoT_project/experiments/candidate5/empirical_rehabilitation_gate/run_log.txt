@@ -1,0 +1,69 @@
+2026-09-29 10:44:57,585 [INFO] ======================================================================
+2026-09-29 10:44:57,588 [INFO] CANDIDATE 5 — EMPIRICAL REHABILITATION/CYCLING FEASIBILITY GATE
+2026-09-29 10:44:57,588 [INFO] Start: 2026-09-29T10:44:57.585934
+2026-09-29 10:44:57,588 [INFO] ======================================================================
+2026-09-29 10:44:57,588 [INFO] Loading pipeline from C:\Users\Shreyas A\PROJECTS\Behavior-Adaptive-Zero-Trust-IoT\edge-iiot-anomaly-detection\artifacts\models\preprocessing_pipeline.pkl ...
+2026-09-29 10:44:57,638 [INFO] Loading model from C:\Users\Shreyas A\PROJECTS\Behavior-Adaptive-Zero-Trust-IoT\edge-iiot-anomaly-detection\artifacts\models\model.pkl ...
+2026-09-29 10:45:02,304 [INFO] Reading real normal rows from C:\Users\Shreyas A\PROJECTS\Behavior-Adaptive-Zero-Trust-IoT\edge-iiot-anomaly-detection\data\raw\DNN-EdgeIIoT-dataset.csv (test partition split)...
+2026-09-29 10:45:03,222 [INFO] Transforming 15000 real benign samples through preprocessing pipeline...
+2026-09-29 10:45:03,222 [INFO] Transforming data with DataCleaner (input shape: (15000, 63))...
+2026-09-29 10:45:03,279 [INFO] DataCleaner transform complete (output shape: (15000, 47)).
+2026-09-29 10:45:03,280 [INFO] Transforming data with FeatureEncoder...
+2026-09-29 10:45:03,397 [INFO] Transforming data with FeatureScaler...
+2026-09-29 10:45:03,423 [INFO] Scoring benign samples through Isolation Forest detector...
+2026-09-29 10:45:04,790 [INFO] Extracted 15000 real benign anomaly scores.
+2026-09-29 10:45:05,145 [INFO] Benign score stream SHA-256: 736dad0ffc20d55fc00c9150a6cec263e4f4563bd0c6fc4b550eb20928567c1f
+2026-09-29 10:45:05,148 [INFO] 
+==========================================
+2026-09-29 10:45:05,148 [INFO] C5 REHABILITATION GATE EXECUTION RUN 1
+2026-09-29 10:45:05,148 [INFO] ==========================================
+2026-09-29 10:45:05,148 [INFO] 
+--- Executing Phase 1: Benign Recovery Characterization ---
+2026-09-29 10:45:05,156 [INFO]   Long-run benign steady state (n=5000):
+2026-09-29 10:45:05,156 [INFO]     Fraction T in ALLOW: 92.66%
+2026-09-29 10:45:05,156 [INFO]     Fraction T in VERIFY: 7.26%
+2026-09-29 10:45:05,156 [INFO]     Fraction T in BLOCK: 0.08%
+2026-09-29 10:45:05,156 [INFO]     Fraction steps SB == 0.0: 95.94%
+2026-09-29 10:45:05,156 [INFO]     Fraction steps SB > THETA: 0.04%
+2026-09-29 10:45:05,156 [INFO] 
+--- Executing Phase 2: Realistic Attack/Rest Cycling Test ---
+2026-09-29 10:45:05,158 [INFO]   Cycle_A (atk=1, rest=10): Quarantined=False (cycle=None), Sustainable cycles=20/20, Mean R_rec=0.9700, SB Reset%=90.0%, Periodic Orbit=True
+2026-09-29 10:45:05,158 [INFO]   Cycle_B (atk=1, rest=25): Quarantined=True (cycle=11), Sustainable cycles=10/20, Mean R_rec=-62.8032, SB Reset%=95.0%, Periodic Orbit=False
+2026-09-29 10:45:05,159 [INFO]   Cycle_C (atk=1, rest=50): Quarantined=True (cycle=6), Sustainable cycles=5/20, Mean R_rec=-1135.9935, SB Reset%=100.0%, Periodic Orbit=False
+2026-09-29 10:45:05,159 [INFO]   Cycle_D (atk=5, rest=25): Quarantined=True (cycle=2), Sustainable cycles=1/20, Mean R_rec=0.2394, SB Reset%=50.0%, Periodic Orbit=False
+2026-09-29 10:45:05,161 [INFO]   Cycle_E (atk=5, rest=50): Quarantined=True (cycle=2), Sustainable cycles=1/20, Mean R_rec=0.8306, SB Reset%=70.0%, Periodic Orbit=False
+2026-09-29 10:45:05,161 [INFO] 
+==========================================
+2026-09-29 10:45:05,161 [INFO] C5 REHABILITATION GATE EXECUTION RUN 2
+2026-09-29 10:45:05,161 [INFO] ==========================================
+2026-09-29 10:45:05,161 [INFO] 
+--- Executing Phase 1: Benign Recovery Characterization ---
+2026-09-29 10:45:05,169 [INFO]   Long-run benign steady state (n=5000):
+2026-09-29 10:45:05,169 [INFO]     Fraction T in ALLOW: 92.66%
+2026-09-29 10:45:05,169 [INFO]     Fraction T in VERIFY: 7.26%
+2026-09-29 10:45:05,169 [INFO]     Fraction T in BLOCK: 0.08%
+2026-09-29 10:45:05,169 [INFO]     Fraction steps SB == 0.0: 95.94%
+2026-09-29 10:45:05,169 [INFO]     Fraction steps SB > THETA: 0.04%
+2026-09-29 10:45:05,169 [INFO] 
+--- Executing Phase 2: Realistic Attack/Rest Cycling Test ---
+2026-09-29 10:45:05,169 [INFO]   Cycle_A (atk=1, rest=10): Quarantined=False (cycle=None), Sustainable cycles=20/20, Mean R_rec=0.9700, SB Reset%=90.0%, Periodic Orbit=True
+2026-09-29 10:45:05,172 [INFO]   Cycle_B (atk=1, rest=25): Quarantined=True (cycle=11), Sustainable cycles=10/20, Mean R_rec=-62.8032, SB Reset%=95.0%, Periodic Orbit=False
+2026-09-29 10:45:05,172 [INFO]   Cycle_C (atk=1, rest=50): Quarantined=True (cycle=6), Sustainable cycles=5/20, Mean R_rec=-1135.9935, SB Reset%=100.0%, Periodic Orbit=False
+2026-09-29 10:45:05,172 [INFO]   Cycle_D (atk=5, rest=25): Quarantined=True (cycle=2), Sustainable cycles=1/20, Mean R_rec=0.2394, SB Reset%=50.0%, Periodic Orbit=False
+2026-09-29 10:45:05,174 [INFO]   Cycle_E (atk=5, rest=50): Quarantined=True (cycle=2), Sustainable cycles=1/20, Mean R_rec=0.8306, SB Reset%=70.0%, Periodic Orbit=False
+2026-09-29 10:45:05,174 [INFO] 
+Reproducibility verification: [PASS]
+2026-09-29 10:45:05,174 [INFO]   T_post_rest hash match: True
+2026-09-29 10:45:05,176 [INFO]   SB_post_rest hash match: True
+2026-09-29 10:45:05,176 [INFO] 
+--- Gate Decision Synthesis ---
+2026-09-29 10:45:05,176 [INFO]   Feasible cyclic configurations: ['Cycle_A']
+2026-09-29 10:45:05,176 [INFO]   Collapsed cyclic configurations: ['Cycle_B', 'Cycle_C', 'Cycle_D', 'Cycle_E']
+2026-09-29 10:45:05,176 [INFO] 
+GATE STATUS: C5_GATE_PASS
+2026-09-29 10:45:05,176 [INFO] Rationale: Under real empirical Edge-IIoTset benign telemetry, 1 of 5 tested attack/rest cycles sustained repeated execution (>= 15 cycles) without triggering permanent quarantine. Trust consistently rehabilitated back above the ALLOW threshold (mean R_rec >= 0.70), proving that the empirical prerequisite for policy-induced rehabilitation gaming is present.
+2026-09-29 10:45:05,176 [INFO] 
+Writing JSON artifacts...
+2026-09-29 10:45:05,189 [INFO] 
+Wall time: 7.60s
+2026-09-29 10:45:05,189 [INFO] C5_EMPIRICAL_REHABILITATION_GATE_COMPLETE

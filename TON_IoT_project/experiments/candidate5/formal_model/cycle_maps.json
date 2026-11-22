@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Candidate 5 Cycle Maps & Dynamic Orbit Analysis",
+    "version": "1.0",
+    "target_venue": "InCIS 2027",
+    "specification_type": "Dynamical Systems Analysis (Pre-Implementation)"
+  },
+  "cycle_operator_definition": {
+    "formula": "x_{k+1} = F_cycle(x_k) = (F_rest^{tau_r} o F_attack^{tau_a})(x_k)",
+    "description": "Discrete-time mapping of state vector x_t from cycle start to post-rest cycle end"
+  },
+  "analytical_reset_conditions": {
+    "condition_1_intra_burst_bounding": {
+      "inequality": "SB_{tau_a} <= theta",
+      "special_case_single_step": {
+        "tau_a": 1,
+        "energy_step_1": "beta * A_atk + (1 - beta) * E_0 = 0.40 * 0.4050 + 0.60 * 0.1656 = 0.2614",
+        "comparison": "0.2614 < gamma (0.3350)",
+        "accumulator_step_1": "max(0.0, 0.0 - 0.05) = 0.0000",
+        "indicator_step_1": 0,
+        "trust_step_1": "T_0 + alpha * (1 - T_0) = 1.0000",
+        "consequence": "Single-step sub-threshold attack generates exactly zero penalty and zero evidence"
+      }
+    },
+    "condition_2_accumulator_clearance": {
+      "inequality": "tau_r >= ceil(SB_peak / delta)",
+      "parameters": {
+        "delta": 0.05
+      },
+      "examples": {
+        "peak_sb_0_55": "ceil(0.55 / 0.05) = 11 steps",
+        "peak_sb_1_10": "ceil(1.10 / 0.05) = 22 steps",
+        "peak_sb_2_20": "ceil(2.20 / 0.05) = 44 steps"
+      }
+    },
+    "condition_3_trust_restoration": {
+      "formula": "tau_r >= ceil( (ln(1.0 - T_target) - ln(1.0 - T_post_attack)) / ln(1.0 - alpha) )",
+      "parameters": {
+        "alpha": 0.2057,
+        "T_target": 0.80
+      },
+      "examples": {
+        "recovery_from_0_60": "ceil( (ln(0.20) - ln(0.40)) / ln(0.7943) ) = 3 steps",
+        "recovery_from_0_40": "ceil( (ln(0.20) - ln(0.60)) / ln(0.7943) ) = 5 steps"
+      }
+    }
+  },
+  "schedules": {
+    "Cycle_A": {
+      "tau_a": 1,
+      "tau_r": 10,
+      "duty_cycle": 0.0909,
+      "intra_burst_peak_E": 0.2614,
+      "intra_burst_peak_SB": 0.0000,
+      "post_attack_trust": 1.0000,
+      "post_rest_trust": 1.0000,
+      "post_rest_SB": 0.0000,
+      "fixed_point": {
+        "exists": true,
+        "x_star": [1.0000, 0.1656, 0.0000, 0],
+        "orbit_period": 1,
+        "classification": "Stable Periodic Orbit"
+      },
+      "contraction_mapping": {
+        "is_contraction": true,
+        "lipschitz_constant_L": 0.0
+      },
+      "asymptotic_behavior": "Adversary sustains 100% of attack pulses indefinitely without triggering VERIFY or BLOCK under nominal background",
+      "vulnerability_rating": "CRITICAL"
+    },
+    "Cycle_B": {
+      "tau_a": 1,
+      "tau_r": 25,
+      "duty_cycle": 0.0385,
+      "intra_burst_peak_E": 0.2614,
+      "intra_burst_peak_SB": 0.0000,
+      "post_attack_trust": 1.0000,
+      "post_rest_trust": 1.0000,
+      "post_rest_SB": 0.0000,
+      "fixed_point": {
+        "exists": true,
+        "x_star": [1.0000, 0.1656, 0.0000, 0],
+        "orbit_period": 1,
+        "classification": "Noise-Sensitive Orbit"
+      },
+      "noise_vulnerability": {
+        "p_fp_per_step": 0.0155,
+        "p_fp_per_cycle": 0.325,
+        "p_survival_20_cycles": 0.0004
+      },
+      "asymptotic_behavior": "Mathematically stable fixed point in expectation, but collapses to BLOCK due to empirical background false-positive noise during extended rest",
+      "vulnerability_rating": "ENVIRONMENTALLY_CONSTRAINED"
+    },
+    "Cycle_C": {
+      "tau_a": 1,
+      "tau_r": 50,
+      "duty_cycle": 0.0196,
+      "intra_burst_peak_E": 0.2614,
+      "intra_burst_peak_SB": 0.0000,
+      "post_attack_trust": 1.0000,
+      "post_rest_trust": 1.0000,
+      "post_rest_SB": 0.0000,
+      "fixed_point": {
+        "exists": true,
+        "x_star": [1.0000, 0.1656, 0.0000, 0],
+        "orbit_period": 1,
+        "classification": "Noise-Absorbing Orbit"
+      },
+      "noise_vulnerability": {
+        "p_fp_per_step": 0.0155,
+        "p_fp_per_cycle": 0.544,
+        "p_survival_20_cycles": 0.0000001
+      },
+      "asymptotic_behavior": "Rapidly absorbs into BLOCK within 1-3 cycles due to high probability of encountering benign telemetry spikes during 50 rest steps",
+      "vulnerability_rating": "SELF_LIMITING"
+    },
+    "Cycle_D": {
+      "tau_a": 5,
+      "tau_r": 25,
+      "duty_cycle": 0.1667,
+      "intra_burst_peak_E": 0.3912,
+      "intra_burst_peak_SB": 2.2000,
+      "post_attack_trust": 0.5500,
+      "required_rest_clearance": 44,
+      "provided_rest_clearance": 25,
+      "residual_SB_after_rest": 0.9500,
+      "fixed_point": {
+        "exists": false,
+        "classification": "Absorbing BLOCK Attractor"
+      },
+      "asymptotic_behavior": "Accumulator ratchet: residual SB causes premature tripping on subsequent cycle; trust drops below 0.30 within 2 cycles",
+      "vulnerability_rating": "DEFENDED_BY_ACCUMULATOR"
+    },
+    "Cycle_E": {
+      "tau_a": 5,
+      "tau_r": 50,
+      "duty_cycle": 0.0909,
+      "intra_burst_peak_E": 0.3912,
+      "intra_burst_peak_SB": 2.2000,
+      "post_attack_trust": 0.5500,
+      "required_rest_clearance": 44,
+      "provided_rest_clearance": 50,
+      "residual_SB_after_rest": 0.0000,
+      "fixed_point": {
+        "exists": false,
+        "classification": "Intra-Burst Degraded Attractor"
+      },
+      "asymptotic_behavior": "While SB clears mathematically during 50 steps, the burst itself degrades trust to 0.5500 (VERIFY), and residual energy plus noise trips BLOCK by cycle 2-3",
+      "vulnerability_rating": "DEFENDED_BY_ENERGY_FILTER"
+    }
+  }
+}

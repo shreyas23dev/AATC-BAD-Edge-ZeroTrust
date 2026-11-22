@@ -1,0 +1,51 @@
+{
+  "phase": 7,
+  "classification": "C5_COUNTERMEASURE_NO_EFFECT",
+  "primary_outcome_table": [
+    {
+      "scenario": "Cycle_A",
+      "B0_security": "S=8, M_cum=8.5",
+      "Family_C_security": "S=8, M_cum=8.5",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "Family_C_availability": "ALLOW=74.04%, BLOCK=10.85%",
+      "security_difference": "Delta_S=0, Delta_M=0.0"
+    },
+    {
+      "scenario": "Cycle_B",
+      "B0_security": "S=3, M_cum=4.0",
+      "Family_C_security": "S=3, M_cum=4.0",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "Family_C_availability": "ALLOW=74.04%, BLOCK=10.85%",
+      "security_difference": "Delta_S=0, Delta_M=0.0"
+    },
+    {
+      "scenario": "Cycle_C",
+      "B0_security": "S=1, M_cum=2.0",
+      "Family_C_security": "S=1, M_cum=2.0",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "Family_C_availability": "ALLOW=74.04%, BLOCK=10.85%",
+      "security_difference": "Delta_S=0, Delta_M=0.0"
+    },
+    {
+      "scenario": "Cycle_D",
+      "B0_security": "S=0, M_cum=4.0",
+      "Family_C_security": "S=0, M_cum=4.0",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "Family_C_availability": "ALLOW=74.04%, BLOCK=10.85%",
+      "security_difference": "Delta_S=0, Delta_M=0.0"
+    },
+    {
+      "scenario": "Cycle_E",
+      "B0_security": "S=0, M_cum=4.0",
+      "Family_C_security": "S=0, M_cum=4.0",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "Family_C_availability": "ALLOW=74.04%, BLOCK=10.85%",
+      "security_difference": "Delta_S=0, Delta_M=0.0"
+    }
+  ],
+  "summary": {
+    "security_effect": "ZERO_CHANGE (Across all 5 schedules, Family C produces identical survival count S and cumulative malicious access M_cum as B0)",
+    "availability_effect": "PRESERVED (ALLOW rate 79.68% vs 80.24% for B0, -0.56 pp difference; BLOCK rate 0.43% vs 0.11% for B0)",
+    "state_aliasing_resolution": "Mathematically resolves aliasing in pure rest (Delta_Q = 0.7905); but empirically compressed under ambient benign noise floor"
+  }
+}

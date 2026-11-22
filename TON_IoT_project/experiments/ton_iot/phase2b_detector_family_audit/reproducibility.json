@@ -1,0 +1,41 @@
+{
+  "all_match": true,
+  "per_detector_checks": {
+    "IsolationForest": {
+      "s_min_match": true,
+      "s_max_match": true,
+      "A_thr_match": true,
+      "hash_match": true,
+      "run1_hash": "184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0",
+      "run2_hash": "184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0",
+      "overall_match": true
+    },
+    "OneClassSVM": {
+      "s_min_match": true,
+      "s_max_match": true,
+      "A_thr_match": true,
+      "hash_match": true,
+      "run1_hash": "442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155",
+      "run2_hash": "442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155",
+      "overall_match": true
+    },
+    "LocalOutlierFactor": {
+      "s_min_match": true,
+      "s_max_match": true,
+      "A_thr_match": true,
+      "hash_match": true,
+      "run1_hash": "c2ab12dde1502aafdb96ac4f0ef16c6b7d11ef3465065bece50e03572d867d94",
+      "run2_hash": "c2ab12dde1502aafdb96ac4f0ef16c6b7d11ef3465065bece50e03572d867d94",
+      "overall_match": true
+    },
+    "RobustMahalanobis": {
+      "s_min_match": true,
+      "s_max_match": true,
+      "A_thr_match": true,
+      "hash_match": true,
+      "run1_hash": "e6595096353f6d19f5d7f5f5f2a6db653427781b411b9b9121df8e4fbdb3d9da",
+      "run2_hash": "e6595096353f6d19f5d7f5f5f2a6db653427781b411b9b9121df8e4fbdb3d9da",
+      "overall_match": true
+    }
+  }
+}

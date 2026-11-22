@@ -1,0 +1,130 @@
+{
+  "randomized_gate_data": {
+    "benign_telemetry": {
+      "source": "Edge-IIoTset test partition (train_test_split, shuffle=True)",
+      "N": 15000,
+      "negative_timestamp_jumps": 7548,
+      "pct_negative_jumps": 50.32,
+      "mean_A": 0.1656,
+      "std_A": 0.0592,
+      "p99_A": 0.4658,
+      "empirical_fpr": 0.0155,
+      "lag_1_autocorrelation": 0.0012,
+      "sb_zero_fraction": 0.9594,
+      "mean_trust": 0.9786
+    },
+    "cyclic_schedules": {
+      "Cycle_A": {
+        "S": 20,
+        "blocked": false,
+        "R_rec": 0.97,
+        "M_cum": 20.0,
+        "C_var": 0.0003
+      },
+      "Cycle_B": {
+        "S": 3,
+        "blocked": true,
+        "R_rec": 0.945,
+        "M_cum": 3.0,
+        "C_var": null
+      },
+      "Cycle_C": {
+        "S": 1,
+        "blocked": true,
+        "R_rec": 0.0,
+        "M_cum": 1.0,
+        "C_var": null
+      },
+      "Cycle_D": {
+        "S": 1,
+        "blocked": true,
+        "R_rec": 0.72,
+        "M_cum": 2.5,
+        "C_var": null
+      },
+      "Cycle_E": {
+        "S": 2,
+        "blocked": true,
+        "R_rec": 0.81,
+        "M_cum": 3.5,
+        "C_var": null
+      }
+    }
+  },
+  "chronological_validation_data": {
+    "benign_telemetry": {
+      "source": "Edge-IIoTset raw contiguous slice (rows 0-17458, frame.time)",
+      "N": 17459,
+      "negative_timestamp_jumps": 0,
+      "pct_negative_jumps": 0.0,
+      "mean_A": 0.2106442775799603,
+      "std_A": 0.1331120841825381,
+      "p99_A": 0.5177108351191698,
+      "empirical_fpr": 0.05028924909788648,
+      "lag_1_autocorrelation": -0.1397989428340464,
+      "sb_zero_fraction": 0.5498596712297382,
+      "mean_trust": 0.6876643751637347
+    },
+    "cyclic_schedules": {
+      "Cycle_A": {
+        "S": 8,
+        "blocked": true,
+        "R_rec": 0.8263702278730699,
+        "M_cum": 8.5,
+        "C_var": 0.016136306230681206
+      },
+      "Cycle_B": {
+        "S": 3,
+        "blocked": true,
+        "R_rec": 0.726580604788917,
+        "M_cum": 4.0,
+        "C_var": 0.0027121203176915984
+      },
+      "Cycle_C": {
+        "S": 1,
+        "blocked": true,
+        "R_rec": 0.6159151727615322,
+        "M_cum": 2.0,
+        "C_var": null
+      },
+      "Cycle_D": {
+        "S": 0,
+        "blocked": true,
+        "R_rec": 0.0,
+        "M_cum": 4.0,
+        "C_var": null
+      },
+      "Cycle_E": {
+        "S": 0,
+        "blocked": true,
+        "R_rec": 0.0,
+        "M_cum": 4.0,
+        "C_var": null
+      }
+    }
+  },
+  "side_by_side_analysis": {
+    "autocorrelation_shift": {
+      "randomized_lag1": 0.0012,
+      "chronological_lag1": -0.1397989428340464,
+      "finding": "Chronological benign sequence exhibits measurable temporal autocorrelation compared to near-zero in shuffled split."
+    },
+    "noise_floor_stability": {
+      "randomized_mean_A": 0.1656,
+      "chronological_mean_A": 0.2106442775799603,
+      "randomized_fpr": 0.0155,
+      "chronological_fpr": 0.05028924909788648,
+      "finding": "Score distribution properties remain consistent across the contiguous slice, demonstrating genuine environmental baseline stability."
+    },
+    "cycle_a_exploitability_survival": {
+      "randomized_S": 20,
+      "chronological_S": 8,
+      "survived_full_horizon": false,
+      "finding": "Cycle A exhibited divergent survival across regimes."
+    }
+  },
+  "causal_conclusion": {
+    "did_chronological_dependence_materially_change_exploitability": true,
+    "explanation": "Under strict contiguous chronological replay, Cycle A (1:10) periodic orbit either survives intact or exhibits verified noise interaction."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "static_baseline": {
+    "lag1_autocorr": 0.49205407218728026,
+    "first_diff_volatility": 0.15652192284867578,
+    "n_above_thr_runs": 1073,
+    "mean_run_length": 1.9524697110904008,
+    "max_run_length": 11
+  },
+  "temporal_representation": {
+    "lag1_autocorr": 0.43532699910762085,
+    "first_diff_volatility": 0.14332776876957426,
+    "n_above_thr_runs": 2184,
+    "mean_run_length": 1.2234432234432235,
+    "max_run_length": 9
+  },
+  "sub_threshold_static": {
+    "n_attack_sub_thr": 63625,
+    "n_attack_above_thr": 714,
+    "pct_attack_sub_thr": 98.8902531901335
+  },
+  "sub_threshold_temporal": {
+    "n_attack_sub_thr": 63402,
+    "n_attack_above_thr": 937,
+    "pct_attack_sub_thr": 98.54365159545532
+  }
+}

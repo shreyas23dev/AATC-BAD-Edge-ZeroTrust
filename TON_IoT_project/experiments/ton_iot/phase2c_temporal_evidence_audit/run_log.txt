@@ -1,0 +1,332 @@
+2026-09-28 23:48:49,640 [INFO] ======================================================================
+2026-09-28 23:48:49,640 [INFO] PHASE 2C -- TEMPORAL/RELATIONAL EVIDENCE FEASIBILITY AUDIT
+2026-09-28 23:48:49,640 [INFO] Start: 2026-09-28T23:48:49.640157
+2026-09-28 23:48:49,640 [INFO] ======================================================================
+2026-09-28 23:48:49,799 [INFO] Source data SHA-256: 37ea5238fcd2a7a18574b8e37e0427086c6c34d03a22f690256fc925946c0448
+2026-09-28 23:48:49,800 [INFO] Loading C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\network_processed\Network_dataset_1.csv ...
+2026-09-28 23:48:53,014 [INFO]   Loaded 1,000,000 rows, 46 cols.
+2026-09-28 23:48:54,459 [INFO]   TRAIN  165,322 rows (n_attack=165322)
+2026-09-28 23:48:54,460 [INFO]   CALIB  35,576 rows (n_attack=35576)
+2026-09-28 23:48:54,460 [INFO]   EVAL   799,102 rows  (n_attack=799102)
+2026-09-28 23:48:54,615 [INFO] 
+======================================================================
+2026-09-28 23:48:54,615 [INFO] PHASE 2C RUN 1
+2026-09-28 23:48:54,615 [INFO] ======================================================================
+2026-09-28 23:48:54,615 [INFO] 
+[Step 1] OneClassSVM baseline (Phase 2B exact reproduction)
+2026-09-28 23:48:54,615 [INFO]   Fitting RobustScaler on TRAIN only ...
+2026-09-28 23:48:54,668 [INFO]   Fitting OneClassSVM(kernel=rbf, nu=0.05, gamma='scale') on 165,322 rows ...
+2026-09-28 23:50:51,225 [INFO]   [OK] Fitted in 116.6s
+2026-09-28 23:50:51,225 [INFO]   Scoring TRAIN, CALIB, EVAL streams ...
+2026-09-28 23:57:37,501 [INFO]   [OK] Scored in 406.3s
+2026-09-28 23:57:37,509 [INFO]   s_min=-7458.10946604, s_max=32.83600534, A_thr=0.99642897
+2026-09-28 23:57:37,515 [INFO]   A_eval SHA-256: 405d658d238f9d63ae170cfe0bd13723ffbea1dc29b3d66e507285c6deb0786a
+2026-09-28 23:57:37,748 [INFO]   Point ROC-AUC=nan  Recall=0.003384  FPR=0.0000  Sub-thr-atk=99.66%
+2026-09-28 23:57:37,748 [INFO] 
+[Step 2] Building causal temporal features on EVAL stream ...
+2026-09-28 23:57:39,841 [INFO]   [OK] 20 features built in 2.1s
+2026-09-28 23:57:39,841 [INFO] 
+[Step 3] Calibrating temporal thresholds on CALIB stream (label-blind) ...
+2026-09-28 23:57:39,933 [INFO]   [OK] 20 thresholds derived from 99th pct of benign calib.
+2026-09-28 23:57:39,933 [INFO]     roll_mean_10                  : 0.99615573
+2026-09-28 23:57:39,933 [INFO]     roll_max_10                   : 0.99858585
+2026-09-28 23:57:39,933 [INFO]     exceedance_10                 : 0.3
+2026-09-28 23:57:39,933 [INFO]     burst_rate_10                 : 1
+2026-09-28 23:57:39,933 [INFO]     roll_mean_50                  : 0.99583278
+2026-09-28 23:57:39,933 [INFO]     roll_max_50                   : 0.9999081
+2026-09-28 23:57:39,933 [INFO]     exceedance_50                 : 0.12
+2026-09-28 23:57:39,933 [INFO]     burst_rate_50                 : 1
+2026-09-28 23:57:39,933 [INFO]     roll_mean_100                 : 0.99576201
+2026-09-28 23:57:39,933 [INFO]     roll_max_100                  : 0.99998546
+2026-09-28 23:57:39,933 [INFO]     exceedance_100                : 0.08
+2026-09-28 23:57:39,933 [INFO]     burst_rate_100                : 1
+2026-09-28 23:57:39,933 [INFO]     roll_mean_500                 : 0.99563705
+2026-09-28 23:57:39,933 [INFO]     roll_max_500                  : 0.99999822
+2026-09-28 23:57:39,933 [INFO]     exceedance_500                : 0.044
+2026-09-28 23:57:39,933 [INFO]     burst_rate_500                : 1
+2026-09-28 23:57:39,933 [INFO]     persistence                   : 0.25
+2026-09-28 23:57:39,933 [INFO]     ewma_b05                      : 0.99581319
+2026-09-28 23:57:39,933 [INFO]     ewma_b10                      : 0.99591793
+2026-09-28 23:57:39,933 [INFO]     ewma_b20                      : 0.99606579
+2026-09-28 23:57:39,933 [INFO] 
+[Step 4] Evaluating all temporal mechanisms ...
+2026-09-28 23:57:40,243 [INFO]   [roll_mean_10                ] ROC=nan Recall=0.0013 FPR=0.0000 Sub-thr-atk=99.9%
+2026-09-28 23:57:40,503 [INFO]   [roll_max_10                 ] ROC=nan Recall=0.0055 FPR=0.0000 Sub-thr-atk=99.4%
+2026-09-28 23:57:40,715 [INFO]   [exceedance_10               ] ROC=nan Recall=0.0012 FPR=0.0000 Sub-thr-atk=99.9%
+2026-09-28 23:57:40,943 [INFO]   [burst_rate_10               ] ROC=nan Recall=1.0000 FPR=0.0000 Sub-thr-atk=0.0%
+2026-09-28 23:57:41,258 [INFO]   [roll_mean_50                ] ROC=nan Recall=0.0028 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:41,518 [INFO]   [roll_max_50                 ] ROC=nan Recall=0.0016 FPR=0.0000 Sub-thr-atk=99.8%
+2026-09-28 23:57:41,726 [INFO]   [exceedance_50               ] ROC=nan Recall=0.0037 FPR=0.0000 Sub-thr-atk=99.6%
+2026-09-28 23:57:41,950 [INFO]   [burst_rate_50               ] ROC=nan Recall=0.9999 FPR=0.0000 Sub-thr-atk=0.0%
+2026-09-28 23:57:42,225 [INFO]   [roll_mean_100               ] ROC=nan Recall=0.0047 FPR=0.0000 Sub-thr-atk=99.5%
+2026-09-28 23:57:42,516 [INFO]   [roll_max_100                ] ROC=nan Recall=0.0020 FPR=0.0000 Sub-thr-atk=99.8%
+2026-09-28 23:57:42,795 [INFO]   [exceedance_100              ] ROC=nan Recall=0.0076 FPR=0.0000 Sub-thr-atk=99.2%
+2026-09-28 23:57:43,028 [INFO]   [burst_rate_100              ] ROC=nan Recall=0.9999 FPR=0.0000 Sub-thr-atk=0.0%
+2026-09-28 23:57:43,298 [INFO]   [roll_mean_500               ] ROC=nan Recall=0.1050 FPR=0.0000 Sub-thr-atk=89.5%
+2026-09-28 23:57:43,515 [INFO]   [roll_max_500                ] ROC=nan Recall=0.0025 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:43,717 [INFO]   [exceedance_500              ] ROC=nan Recall=0.0204 FPR=0.0000 Sub-thr-atk=98.0%
+2026-09-28 23:57:43,974 [INFO]   [burst_rate_500              ] ROC=nan Recall=0.9994 FPR=0.0000 Sub-thr-atk=0.1%
+2026-09-28 23:57:44,209 [INFO]   [persistence                 ] ROC=nan Recall=0.0034 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:44,527 [INFO]   [ewma_b05                    ] ROC=nan Recall=0.0041 FPR=0.0000 Sub-thr-atk=99.6%
+2026-09-28 23:57:44,856 [INFO]   [ewma_b10                    ] ROC=nan Recall=0.0033 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:45,205 [INFO]   [ewma_b20                    ] ROC=nan Recall=0.0029 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:45,205 [INFO] 
+[Step 5] Dense-probe cluster analysis ...
+2026-09-28 23:57:45,382 [INFO]   Probes: n=482,518  frac=0.6038  attack%=100.0%
+2026-09-28 23:57:45,382 [INFO]   Temporal above-threshold rates for dense probes:
+2026-09-28 23:57:45,382 [INFO]     roll_mean_10                    : mean=0.9956  thr=0.9962  above=0.04%
+2026-09-28 23:57:45,382 [INFO]     roll_max_10                     : mean=0.9957  thr=0.9986  above=0.42%
+2026-09-28 23:57:45,382 [INFO]     exceedance_10                   : mean=0.002104  thr=0.3  above=0.03%
+2026-09-28 23:57:45,382 [INFO]     burst_rate_10                   : mean=1  thr=1  above=100.00%
+2026-09-28 23:57:45,382 [INFO]     roll_mean_50                    : mean=0.9956  thr=0.9958  above=0.10%
+2026-09-28 23:57:45,382 [INFO]     roll_max_50                     : mean=0.9958  thr=0.9999  above=0.10%
+2026-09-28 23:57:45,382 [INFO]     exceedance_50                   : mean=0.002274  thr=0.12  above=0.14%
+2026-09-28 23:57:45,382 [INFO]     burst_rate_50                   : mean=1  thr=1  above=100.00%
+2026-09-28 23:57:45,382 [INFO]     roll_mean_100                   : mean=0.9956  thr=0.9958  above=0.24%
+2026-09-28 23:57:45,382 [INFO]     roll_max_100                    : mean=0.9959  thr=1  above=0.15%
+2026-09-28 23:57:45,382 [INFO]     exceedance_100                  : mean=0.002303  thr=0.08  above=0.39%
+2026-09-28 23:57:45,382 [INFO]     burst_rate_100                  : mean=1  thr=1  above=100.00%
+2026-09-28 23:57:45,382 [INFO]     roll_mean_500                   : mean=0.9956  thr=0.9956  above=7.24%
+2026-09-28 23:57:45,382 [INFO]     roll_max_500                    : mean=0.9963  thr=1  above=0.09%
+2026-09-28 23:57:45,382 [INFO]     exceedance_500                  : mean=0.00232  thr=0.044  above=1.17%
+2026-09-28 23:57:45,382 [INFO]     burst_rate_500                  : mean=1  thr=1  above=100.00%
+2026-09-28 23:57:45,382 [INFO]     persistence                     : mean=0  thr=0.25  above=0.00%
+2026-09-28 23:57:45,382 [INFO]     ewma_b05                        : mean=0.9956  thr=0.9958  above=0.17%
+2026-09-28 23:57:45,382 [INFO]     ewma_b10                        : mean=0.9956  thr=0.9959  above=0.12%
+2026-09-28 23:57:45,382 [INFO]     ewma_b20                        : mean=0.9956  thr=0.9961  above=0.09%
+2026-09-28 23:57:45,382 [INFO] 
+[Step 6] Attack episode analysis ...
+2026-09-28 23:57:45,458 [INFO]   1 episodes identified.
+2026-09-28 23:57:45,459 [INFO]   point_wise: 1/1 detected (100.0%), med_delay=862.0 rows
+2026-09-28 23:57:45,460 [INFO]   roll_mean_100                 : 1/1 detected (100.0%), med_delay=43745.0 rows
+2026-09-28 23:57:45,460 [INFO]   roll_max_100                  : 1/1 detected (100.0%), med_delay=10365.0 rows
+2026-09-28 23:57:45,461 [INFO]   exceedance_100                : 1/1 detected (100.0%), med_delay=10448.0 rows
+2026-09-28 23:57:45,461 [INFO]   persistence                   : 1/1 detected (100.0%), med_delay=862.0 rows
+2026-09-28 23:57:45,462 [INFO]   ewma_b10                      : 1/1 detected (100.0%), med_delay=862.0 rows
+2026-09-28 23:57:45,462 [INFO]   ewma_b05                      : 1/1 detected (100.0%), med_delay=8953.0 rows
+2026-09-28 23:57:45,463 [INFO] 
+[Step 7] Causality check ...
+2026-09-28 23:57:46,278 [INFO]   Full vs chunked max diff: 1.11e-16
+2026-09-28 23:57:46,278 [INFO]   Causality verified: True
+2026-09-28 23:57:46,278 [INFO]   Shuffled differs:   True
+2026-09-28 23:57:46,278 [INFO] 
+[Step 8] Ablation comparison ...
+2026-09-28 23:57:46,472 [INFO]   1_point_wise                       : ROC=nan Recall=0.0034 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:46,719 [INFO]   2_roll_mean_100                    : ROC=nan Recall=0.0047 FPR=0.0000 Sub-thr-atk=99.5%
+2026-09-28 23:57:46,862 [INFO]   3_exceedance_100                   : ROC=nan Recall=0.0076 FPR=0.0000 Sub-thr-atk=99.2%
+2026-09-28 23:57:47,021 [INFO]   4_persistence                      : ROC=nan Recall=0.0034 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:47,273 [INFO]   5_ewma_b10                         : ROC=nan Recall=0.0033 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-28 23:57:47,273 [INFO] 
+[Step 9] Suitability classifications ...
+2026-09-28 23:57:47,273 [INFO]   roll_mean_10                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   roll_max_10                   : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   exceedance_10                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   burst_rate_10                 : TEMPORAL_SIGNAL_LIMITED
+2026-09-28 23:57:47,273 [INFO]   roll_mean_50                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   roll_max_50                   : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   exceedance_50                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   burst_rate_50                 : TEMPORAL_SIGNAL_LIMITED
+2026-09-28 23:57:47,273 [INFO]   roll_mean_100                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   roll_max_100                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,273 [INFO]   exceedance_100                : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,274 [INFO]   burst_rate_100                : TEMPORAL_SIGNAL_LIMITED
+2026-09-28 23:57:47,274 [INFO]   roll_mean_500                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,274 [INFO]   roll_max_500                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,274 [INFO]   exceedance_500                : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,274 [INFO]   burst_rate_500                : TEMPORAL_SIGNAL_LIMITED
+2026-09-28 23:57:47,274 [INFO]   persistence                   : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,274 [INFO]   ewma_b05                      : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,274 [INFO]   ewma_b10                      : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,274 [INFO]   ewma_b20                      : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-28 23:57:47,436 [INFO] 
+======================================================================
+2026-09-28 23:57:47,436 [INFO] PHASE 2C RUN 2
+2026-09-28 23:57:47,436 [INFO] ======================================================================
+2026-09-28 23:57:47,436 [INFO] 
+[Step 1] OneClassSVM baseline (Phase 2B exact reproduction)
+2026-09-28 23:57:47,436 [INFO]   Fitting RobustScaler on TRAIN only ...
+2026-09-28 23:57:47,489 [INFO]   Fitting OneClassSVM(kernel=rbf, nu=0.05, gamma='scale') on 165,322 rows ...
+2026-09-28 23:59:43,785 [INFO]   [OK] Fitted in 116.3s
+2026-09-28 23:59:43,785 [INFO]   Scoring TRAIN, CALIB, EVAL streams ...
+2026-09-29 00:06:28,677 [INFO]   [OK] Scored in 404.9s
+2026-09-29 00:06:28,685 [INFO]   s_min=-7458.10946604, s_max=32.83600534, A_thr=0.99642897
+2026-09-29 00:06:28,690 [INFO]   A_eval SHA-256: 405d658d238f9d63ae170cfe0bd13723ffbea1dc29b3d66e507285c6deb0786a
+2026-09-29 00:06:28,871 [INFO]   Point ROC-AUC=nan  Recall=0.003384  FPR=0.0000  Sub-thr-atk=99.66%
+2026-09-29 00:06:28,872 [INFO] 
+[Step 2] Building causal temporal features on EVAL stream ...
+2026-09-29 00:06:30,738 [INFO]   [OK] 20 features built in 1.9s
+2026-09-29 00:06:30,738 [INFO] 
+[Step 3] Calibrating temporal thresholds on CALIB stream (label-blind) ...
+2026-09-29 00:06:30,827 [INFO]   [OK] 20 thresholds derived from 99th pct of benign calib.
+2026-09-29 00:06:30,827 [INFO]     roll_mean_10                  : 0.99615573
+2026-09-29 00:06:30,827 [INFO]     roll_max_10                   : 0.99858585
+2026-09-29 00:06:30,827 [INFO]     exceedance_10                 : 0.3
+2026-09-29 00:06:30,827 [INFO]     burst_rate_10                 : 1
+2026-09-29 00:06:30,827 [INFO]     roll_mean_50                  : 0.99583278
+2026-09-29 00:06:30,827 [INFO]     roll_max_50                   : 0.9999081
+2026-09-29 00:06:30,827 [INFO]     exceedance_50                 : 0.12
+2026-09-29 00:06:30,827 [INFO]     burst_rate_50                 : 1
+2026-09-29 00:06:30,828 [INFO]     roll_mean_100                 : 0.99576201
+2026-09-29 00:06:30,828 [INFO]     roll_max_100                  : 0.99998546
+2026-09-29 00:06:30,828 [INFO]     exceedance_100                : 0.08
+2026-09-29 00:06:30,828 [INFO]     burst_rate_100                : 1
+2026-09-29 00:06:30,828 [INFO]     roll_mean_500                 : 0.99563705
+2026-09-29 00:06:30,828 [INFO]     roll_max_500                  : 0.99999822
+2026-09-29 00:06:30,828 [INFO]     exceedance_500                : 0.044
+2026-09-29 00:06:30,828 [INFO]     burst_rate_500                : 1
+2026-09-29 00:06:30,828 [INFO]     persistence                   : 0.25
+2026-09-29 00:06:30,828 [INFO]     ewma_b05                      : 0.99581319
+2026-09-29 00:06:30,828 [INFO]     ewma_b10                      : 0.99591793
+2026-09-29 00:06:30,828 [INFO]     ewma_b20                      : 0.99606579
+2026-09-29 00:06:30,828 [INFO] 
+[Step 4] Evaluating all temporal mechanisms ...
+2026-09-29 00:06:31,116 [INFO]   [roll_mean_10                ] ROC=nan Recall=0.0013 FPR=0.0000 Sub-thr-atk=99.9%
+2026-09-29 00:06:31,369 [INFO]   [roll_max_10                 ] ROC=nan Recall=0.0055 FPR=0.0000 Sub-thr-atk=99.4%
+2026-09-29 00:06:31,567 [INFO]   [exceedance_10               ] ROC=nan Recall=0.0012 FPR=0.0000 Sub-thr-atk=99.9%
+2026-09-29 00:06:31,775 [INFO]   [burst_rate_10               ] ROC=nan Recall=1.0000 FPR=0.0000 Sub-thr-atk=0.0%
+2026-09-29 00:06:32,039 [INFO]   [roll_mean_50                ] ROC=nan Recall=0.0028 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:32,299 [INFO]   [roll_max_50                 ] ROC=nan Recall=0.0016 FPR=0.0000 Sub-thr-atk=99.8%
+2026-09-29 00:06:32,515 [INFO]   [exceedance_50               ] ROC=nan Recall=0.0037 FPR=0.0000 Sub-thr-atk=99.6%
+2026-09-29 00:06:32,732 [INFO]   [burst_rate_50               ] ROC=nan Recall=0.9999 FPR=0.0000 Sub-thr-atk=0.0%
+2026-09-29 00:06:32,996 [INFO]   [roll_mean_100               ] ROC=nan Recall=0.0047 FPR=0.0000 Sub-thr-atk=99.5%
+2026-09-29 00:06:33,224 [INFO]   [roll_max_100                ] ROC=nan Recall=0.0020 FPR=0.0000 Sub-thr-atk=99.8%
+2026-09-29 00:06:33,429 [INFO]   [exceedance_100              ] ROC=nan Recall=0.0076 FPR=0.0000 Sub-thr-atk=99.2%
+2026-09-29 00:06:33,671 [INFO]   [burst_rate_100              ] ROC=nan Recall=0.9999 FPR=0.0000 Sub-thr-atk=0.0%
+2026-09-29 00:06:33,953 [INFO]   [roll_mean_500               ] ROC=nan Recall=0.1050 FPR=0.0000 Sub-thr-atk=89.5%
+2026-09-29 00:06:34,164 [INFO]   [roll_max_500                ] ROC=nan Recall=0.0025 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:34,372 [INFO]   [exceedance_500              ] ROC=nan Recall=0.0204 FPR=0.0000 Sub-thr-atk=98.0%
+2026-09-29 00:06:34,587 [INFO]   [burst_rate_500              ] ROC=nan Recall=0.9994 FPR=0.0000 Sub-thr-atk=0.1%
+2026-09-29 00:06:34,812 [INFO]   [persistence                 ] ROC=nan Recall=0.0034 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:35,156 [INFO]   [ewma_b05                    ] ROC=nan Recall=0.0041 FPR=0.0000 Sub-thr-atk=99.6%
+2026-09-29 00:06:35,489 [INFO]   [ewma_b10                    ] ROC=nan Recall=0.0033 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:35,832 [INFO]   [ewma_b20                    ] ROC=nan Recall=0.0029 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:35,832 [INFO] 
+[Step 5] Dense-probe cluster analysis ...
+2026-09-29 00:06:35,986 [INFO]   Probes: n=482,518  frac=0.6038  attack%=100.0%
+2026-09-29 00:06:35,986 [INFO]   Temporal above-threshold rates for dense probes:
+2026-09-29 00:06:35,988 [INFO]     roll_mean_10                    : mean=0.9956  thr=0.9962  above=0.04%
+2026-09-29 00:06:35,988 [INFO]     roll_max_10                     : mean=0.9957  thr=0.9986  above=0.42%
+2026-09-29 00:06:35,988 [INFO]     exceedance_10                   : mean=0.002104  thr=0.3  above=0.03%
+2026-09-29 00:06:35,988 [INFO]     burst_rate_10                   : mean=1  thr=1  above=100.00%
+2026-09-29 00:06:35,988 [INFO]     roll_mean_50                    : mean=0.9956  thr=0.9958  above=0.10%
+2026-09-29 00:06:35,988 [INFO]     roll_max_50                     : mean=0.9958  thr=0.9999  above=0.10%
+2026-09-29 00:06:35,988 [INFO]     exceedance_50                   : mean=0.002274  thr=0.12  above=0.14%
+2026-09-29 00:06:35,988 [INFO]     burst_rate_50                   : mean=1  thr=1  above=100.00%
+2026-09-29 00:06:35,988 [INFO]     roll_mean_100                   : mean=0.9956  thr=0.9958  above=0.24%
+2026-09-29 00:06:35,988 [INFO]     roll_max_100                    : mean=0.9959  thr=1  above=0.15%
+2026-09-29 00:06:35,988 [INFO]     exceedance_100                  : mean=0.002303  thr=0.08  above=0.39%
+2026-09-29 00:06:35,988 [INFO]     burst_rate_100                  : mean=1  thr=1  above=100.00%
+2026-09-29 00:06:35,988 [INFO]     roll_mean_500                   : mean=0.9956  thr=0.9956  above=7.24%
+2026-09-29 00:06:35,988 [INFO]     roll_max_500                    : mean=0.9963  thr=1  above=0.09%
+2026-09-29 00:06:35,988 [INFO]     exceedance_500                  : mean=0.00232  thr=0.044  above=1.17%
+2026-09-29 00:06:35,988 [INFO]     burst_rate_500                  : mean=1  thr=1  above=100.00%
+2026-09-29 00:06:35,988 [INFO]     persistence                     : mean=0  thr=0.25  above=0.00%
+2026-09-29 00:06:35,988 [INFO]     ewma_b05                        : mean=0.9956  thr=0.9958  above=0.17%
+2026-09-29 00:06:35,988 [INFO]     ewma_b10                        : mean=0.9956  thr=0.9959  above=0.12%
+2026-09-29 00:06:35,988 [INFO]     ewma_b20                        : mean=0.9956  thr=0.9961  above=0.09%
+2026-09-29 00:06:35,988 [INFO] 
+[Step 6] Attack episode analysis ...
+2026-09-29 00:06:36,063 [INFO]   1 episodes identified.
+2026-09-29 00:06:36,064 [INFO]   point_wise: 1/1 detected (100.0%), med_delay=862.0 rows
+2026-09-29 00:06:36,064 [INFO]   roll_mean_100                 : 1/1 detected (100.0%), med_delay=43745.0 rows
+2026-09-29 00:06:36,065 [INFO]   roll_max_100                  : 1/1 detected (100.0%), med_delay=10365.0 rows
+2026-09-29 00:06:36,066 [INFO]   exceedance_100                : 1/1 detected (100.0%), med_delay=10448.0 rows
+2026-09-29 00:06:36,066 [INFO]   persistence                   : 1/1 detected (100.0%), med_delay=862.0 rows
+2026-09-29 00:06:36,067 [INFO]   ewma_b10                      : 1/1 detected (100.0%), med_delay=862.0 rows
+2026-09-29 00:06:36,067 [INFO]   ewma_b05                      : 1/1 detected (100.0%), med_delay=8953.0 rows
+2026-09-29 00:06:36,067 [INFO] 
+[Step 7] Causality check ...
+2026-09-29 00:06:36,917 [INFO]   Full vs chunked max diff: 1.11e-16
+2026-09-29 00:06:36,917 [INFO]   Causality verified: True
+2026-09-29 00:06:36,917 [INFO]   Shuffled differs:   True
+2026-09-29 00:06:36,917 [INFO] 
+[Step 8] Ablation comparison ...
+2026-09-29 00:06:37,108 [INFO]   1_point_wise                       : ROC=nan Recall=0.0034 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:37,349 [INFO]   2_roll_mean_100                    : ROC=nan Recall=0.0047 FPR=0.0000 Sub-thr-atk=99.5%
+2026-09-29 00:06:37,486 [INFO]   3_exceedance_100                   : ROC=nan Recall=0.0076 FPR=0.0000 Sub-thr-atk=99.2%
+2026-09-29 00:06:37,630 [INFO]   4_persistence                      : ROC=nan Recall=0.0034 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:37,888 [INFO]   5_ewma_b10                         : ROC=nan Recall=0.0033 FPR=0.0000 Sub-thr-atk=99.7%
+2026-09-29 00:06:37,889 [INFO] 
+[Step 9] Suitability classifications ...
+2026-09-29 00:06:37,889 [INFO]   roll_mean_10                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   roll_max_10                   : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   exceedance_10                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   burst_rate_10                 : TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:37,889 [INFO]   roll_mean_50                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   roll_max_50                   : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   exceedance_50                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   burst_rate_50                 : TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:37,889 [INFO]   roll_mean_100                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   roll_max_100                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   exceedance_100                : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   burst_rate_100                : TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:37,889 [INFO]   roll_mean_500                 : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   roll_max_500                  : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   exceedance_500                : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   burst_rate_500                : TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:37,889 [INFO]   persistence                   : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   ewma_b05                      : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   ewma_b10                      : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:37,889 [INFO]   ewma_b20                      : TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,019 [INFO] 
+======================================================================
+2026-09-29 00:06:38,019 [INFO] REPRODUCIBILITY VERIFICATION
+2026-09-29 00:06:38,019 [INFO] ======================================================================
+2026-09-29 00:06:38,019 [INFO]   roll_mean_10                  : [PASS]
+2026-09-29 00:06:38,019 [INFO]   roll_max_10                   : [PASS]
+2026-09-29 00:06:38,019 [INFO]   exceedance_10                 : [PASS]
+2026-09-29 00:06:38,019 [INFO]   burst_rate_10                 : [PASS]
+2026-09-29 00:06:38,019 [INFO]   roll_mean_50                  : [PASS]
+2026-09-29 00:06:38,019 [INFO]   roll_max_50                   : [PASS]
+2026-09-29 00:06:38,019 [INFO]   exceedance_50                 : [PASS]
+2026-09-29 00:06:38,019 [INFO]   burst_rate_50                 : [PASS]
+2026-09-29 00:06:38,019 [INFO]   roll_mean_100                 : [PASS]
+2026-09-29 00:06:38,019 [INFO]   roll_max_100                  : [PASS]
+2026-09-29 00:06:38,019 [INFO]   exceedance_100                : [PASS]
+2026-09-29 00:06:38,019 [INFO]   burst_rate_100                : [PASS]
+2026-09-29 00:06:38,019 [INFO]   roll_mean_500                 : [PASS]
+2026-09-29 00:06:38,019 [INFO]   roll_max_500                  : [PASS]
+2026-09-29 00:06:38,019 [INFO]   exceedance_500                : [PASS]
+2026-09-29 00:06:38,019 [INFO]   burst_rate_500                : [PASS]
+2026-09-29 00:06:38,019 [INFO]   persistence                   : [PASS]
+2026-09-29 00:06:38,019 [INFO]   ewma_b05                      : [PASS]
+2026-09-29 00:06:38,019 [INFO]   ewma_b10                      : [PASS]
+2026-09-29 00:06:38,019 [INFO]   ewma_b20                      : [PASS]
+2026-09-29 00:06:38,019 [INFO]   A_eval                        : [PASS]
+2026-09-29 00:06:38,019 [INFO] 
+Overall: VERIFIED
+2026-09-29 00:06:38,019 [INFO] 
+==========================================================================================
+2026-09-29 00:06:38,019 [INFO] COMPARATIVE SUMMARY (Run 1)
+2026-09-29 00:06:38,019 [INFO] ==========================================================================================
+2026-09-29 00:06:38,019 [INFO] Mechanism                         ROC-AUC   Recall      FPR  Sub-thr%                 Classification
+2026-09-29 00:06:38,019 [INFO] ----------------------------------------------------------------------------------------------------
+2026-09-29 00:06:38,019 [INFO] point_wise                            nan   0.0034   0.0000     99.66   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,019 [INFO] roll_mean_10                          nan   0.0013   0.0000     99.87   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] roll_max_10                           nan   0.0055   0.0000     99.45   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] exceedance_10                         nan   0.0012   0.0000     99.88   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] burst_rate_10                         nan   1.0000   0.0000      0.00        TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:38,020 [INFO] roll_mean_50                          nan   0.0028   0.0000     99.72   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] roll_max_50                           nan   0.0016   0.0000     99.84   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] exceedance_50                         nan   0.0037   0.0000     99.63   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] burst_rate_50                         nan   0.9999   0.0000      0.01        TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:38,020 [INFO] roll_mean_100                         nan   0.0047   0.0000     99.53   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] roll_max_100                          nan   0.0020   0.0000     99.80   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] exceedance_100                        nan   0.0076   0.0000     99.24   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] burst_rate_100                        nan   0.9999   0.0000      0.01        TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:38,020 [INFO] roll_mean_500                         nan   0.1050   0.0000     89.50   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] roll_max_500                          nan   0.0025   0.0000     99.75   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] exceedance_500                        nan   0.0204   0.0000     97.96   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] burst_rate_500                        nan   0.9994   0.0000      0.06        TEMPORAL_SIGNAL_LIMITED
+2026-09-29 00:06:38,020 [INFO] persistence                           nan   0.0034   0.0000     99.66   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] ewma_b05                              nan   0.0041   0.0000     99.59   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] ewma_b10                              nan   0.0033   0.0000     99.67   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] ewma_b20                              nan   0.0029   0.0000     99.71   TEMPORAL_SIGNAL_INSUFFICIENT
+2026-09-29 00:06:38,020 [INFO] 
+[ARTIFACTS] Writing JSON artifacts ...
+2026-09-29 00:06:38,029 [INFO] 
+[ARTIFACTS] All artifacts written to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2c_temporal_evidence_audit
+2026-09-29 00:06:38,029 [INFO] Wall time: 1068.4s (17.8 min)
+2026-09-29 00:06:38,029 [INFO] End: 2026-09-29T00:06:38.029591
+2026-09-29 00:06:38,029 [INFO] 
+PHASE_2C_TEMPORAL_EVIDENCE_AUDIT_COMPLETE

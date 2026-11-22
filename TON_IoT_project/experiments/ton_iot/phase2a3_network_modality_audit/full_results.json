@@ -1,0 +1,125 @@
+{
+  "run1": {
+    "run_id": 1,
+    "seed": 42,
+    "n_train": 165322,
+    "n_calib": 35576,
+    "n_eval": 799102,
+    "eval_normal": 7781,
+    "eval_attacks": 791321,
+    "features": [
+      "duration",
+      "src_bytes",
+      "dst_bytes",
+      "src_pkts",
+      "dst_pkts",
+      "src_ip_bytes",
+      "dst_ip_bytes",
+      "missed_bytes"
+    ],
+    "scaler": {
+      "feature_names": [
+        "duration",
+        "src_bytes",
+        "dst_bytes",
+        "src_pkts",
+        "dst_pkts",
+        "src_ip_bytes",
+        "dst_ip_bytes",
+        "missed_bytes"
+      ],
+      "medians": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "iqrs": [
+        3.5e-05,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        63.0,
+        1.0,
+        1.0
+      ]
+    },
+    "normalization": {
+      "s_min": 0.31783122443520645,
+      "s_max": 0.8857376492474537
+    },
+    "calibration": {
+      "A_thr": 0.7545387001350601,
+      "raw_thr_equiv": 0.7463386000113887
+    },
+    "point_metrics": {
+      "TP": 385,
+      "TN": 6945,
+      "FP": 836,
+      "FN": 790936,
+      "precision": 0.3153153153153153,
+      "recall": 0.0004865282230599213,
+      "f1": 0.000971557343333224,
+      "FPR": 0.10744120293021463,
+      "FNR": 0.99951347177694,
+      "specificity": 0.8925587970697854,
+      "balanced_accuracy": 0.44652266264642265,
+      "roc_auc": 0.09191821430630143,
+      "pr_auc": 0.9674325963663148,
+      "attack_prevalence": 0.9902628200154674
+    },
+    "score_distributions": {
+      "eval_benign": {
+        "label": "eval_benign",
+        "n": 7781,
+        "mean": 0.38832276899851503,
+        "std": 0.23491231629543988,
+        "min": 0.0,
+        "p25": 0.27714696734813715,
+        "median": 0.3432218574246482,
+        "p75": 0.5130959990987863,
+        "p90": 0.7861543511371378,
+        "p95": 0.8920613280756929,
+        "p99": 0.966939473966537,
+        "max": 1.0
+      },
+      "eval_attack": {
+        "label": "eval_attack",
+        "n": 791321,
+        "mean": 0.07052123781245623,
+        "std": 0.06725391648268074,
+        "min": 0.029693235821016916,
+        "p25": 0.040437578404728655,
+        "median": 0.040437578404728655,
+        "p75": 0.040437578404728655,
+        "p90": 0.1785507275729243,
+        "p95": 0.1816222697755962,
+        "p99": 0.27560038530998127,
+        "max": 0.9604119441476683
+      },
+      "score_separation": -0.3178015311860588
+    },
+    "sub_threshold": {
+      "n_attack_sub_thr": 790936,
+      "n_attack_above_thr": 385,
+      "n_benign_sub_thr": 6945,
+      "n_benign_above_thr": 836,
+      "pct_attack_sub_thr": 99.951347177694
+    },
+    "temporal_characteristics": {
+      "lag1_autocorr": 0.23711495635528415,
+      "first_diff_volatility": 0.09560197639813156,
+      "n_above_thr_runs": 1126,
+      "mean_run_length": 1.0843694493783305,
+      "max_run_length": 6
+    },
+    "score_sha256": "184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0"
+  },
+  "verdict": "NETWORK_SIGNAL_INSUFFICIENT",
+  "reproducibility": true
+}

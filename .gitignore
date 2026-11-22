@@ -1,0 +1,92 @@
+# ==============================================================================
+# Git Ignore Configuration for AATC-BAD Industrial IoT Zero-Trust Repository
+# ==============================================================================
+
+# --- Large Datasets & Archives ---
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+TON_IoT.zip
+TON_IoT_audit/
+
+# --- Rust Build & Artifacts ---
+**/target/
+Cargo.lock
+**/*.rlib
+**/*.rmeta
+
+# --- Large Decision Logs & Runtime Traces ---
+**/*.jsonl
+**/*.pcap
+**/*.pcapng
+**/*.bin
+
+# --- Python & Environments ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- LaTeX Intermediate Files ---
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+*.fls
+
+# Scratch & Temporary Files
+scratch_*.py
+**/scratch_*.py
+author_crop.png
+page1_author_check.png
+special_issue_page.txt
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# Manuscript, internal research notes, and publication drafts
+TON_IoT_project/journal_paper/
+journal_paper/
+TON_IoT_project/paper/
+paper/
+TON_IoT_project/docs/
+docs/

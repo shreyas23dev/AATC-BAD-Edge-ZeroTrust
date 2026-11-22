@@ -1,0 +1,534 @@
+{
+  "equilibrium_analysis": {
+    "boundary_tau_r": 6,
+    "sweep_summary": [
+      {
+        "tau_r": 5,
+        "max_D": 1.7754,
+        "D_breaches": true,
+        "malicious_allow_rate_pct": 2.0
+      },
+      {
+        "tau_r": 6,
+        "max_D": 1.5453,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.85
+      },
+      {
+        "tau_r": 7,
+        "max_D": 1.3871,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.41
+      },
+      {
+        "tau_r": 8,
+        "max_D": 1.2385,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.49
+      },
+      {
+        "tau_r": 9,
+        "max_D": 1.1967,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.56
+      },
+      {
+        "tau_r": 10,
+        "max_D": 1.096,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.67
+      },
+      {
+        "tau_r": 11,
+        "max_D": 1.0821,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.72
+      },
+      {
+        "tau_r": 12,
+        "max_D": 0.962,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.81
+      },
+      {
+        "tau_r": 13,
+        "max_D": 0.9351,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 1.91
+      },
+      {
+        "tau_r": 14,
+        "max_D": 0.9794,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.0
+      },
+      {
+        "tau_r": 15,
+        "max_D": 0.8833,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.08
+      },
+      {
+        "tau_r": 16,
+        "max_D": 0.8107,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.16
+      },
+      {
+        "tau_r": 17,
+        "max_D": 0.8575,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.21
+      },
+      {
+        "tau_r": 18,
+        "max_D": 0.8832,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.27
+      },
+      {
+        "tau_r": 19,
+        "max_D": 0.81,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.38
+      },
+      {
+        "tau_r": 20,
+        "max_D": 0.8105,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.5
+      },
+      {
+        "tau_r": 21,
+        "max_D": 0.7673,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.5
+      },
+      {
+        "tau_r": 22,
+        "max_D": 0.829,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.63
+      },
+      {
+        "tau_r": 23,
+        "max_D": 0.7863,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.69
+      },
+      {
+        "tau_r": 24,
+        "max_D": 0.7598,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.78
+      },
+      {
+        "tau_r": 25,
+        "max_D": 0.7624,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.86
+      },
+      {
+        "tau_r": 26,
+        "max_D": 0.7146,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.94
+      },
+      {
+        "tau_r": 27,
+        "max_D": 0.6953,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 2.98
+      },
+      {
+        "tau_r": 28,
+        "max_D": 0.8061,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.12
+      },
+      {
+        "tau_r": 29,
+        "max_D": 0.6915,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.12
+      },
+      {
+        "tau_r": 30,
+        "max_D": 0.6522,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.33
+      },
+      {
+        "tau_r": 31,
+        "max_D": 0.6772,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.33
+      },
+      {
+        "tau_r": 32,
+        "max_D": 0.6703,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.33
+      },
+      {
+        "tau_r": 33,
+        "max_D": 0.7674,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.57
+      },
+      {
+        "tau_r": 34,
+        "max_D": 0.6646,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.57
+      },
+      {
+        "tau_r": 35,
+        "max_D": 0.6991,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.57
+      },
+      {
+        "tau_r": 36,
+        "max_D": 0.6443,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.79
+      },
+      {
+        "tau_r": 37,
+        "max_D": 0.6402,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.85
+      },
+      {
+        "tau_r": 38,
+        "max_D": 0.6875,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.85
+      },
+      {
+        "tau_r": 39,
+        "max_D": 0.7246,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 3.85
+      },
+      {
+        "tau_r": 40,
+        "max_D": 0.7118,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.17
+      },
+      {
+        "tau_r": 41,
+        "max_D": 0.6534,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.17
+      },
+      {
+        "tau_r": 42,
+        "max_D": 0.6226,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.17
+      },
+      {
+        "tau_r": 43,
+        "max_D": 0.6124,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.17
+      },
+      {
+        "tau_r": 44,
+        "max_D": 0.6089,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.31
+      },
+      {
+        "tau_r": 45,
+        "max_D": 0.6448,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.55
+      },
+      {
+        "tau_r": 46,
+        "max_D": 0.6977,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.55
+      },
+      {
+        "tau_r": 47,
+        "max_D": 0.6656,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.55
+      },
+      {
+        "tau_r": 48,
+        "max_D": 0.6456,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.55
+      },
+      {
+        "tau_r": 49,
+        "max_D": 0.7714,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 4.55
+      },
+      {
+        "tau_r": 50,
+        "max_D": 0.7047,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.0
+      },
+      {
+        "tau_r": 51,
+        "max_D": 0.6712,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.0
+      },
+      {
+        "tau_r": 52,
+        "max_D": 0.6318,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.0
+      },
+      {
+        "tau_r": 53,
+        "max_D": 0.6029,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.0
+      },
+      {
+        "tau_r": 54,
+        "max_D": 0.6031,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.0
+      },
+      {
+        "tau_r": 55,
+        "max_D": 0.6038,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.0
+      },
+      {
+        "tau_r": 56,
+        "max_D": 0.6443,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.21
+      },
+      {
+        "tau_r": 57,
+        "max_D": 0.6139,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.56
+      },
+      {
+        "tau_r": 58,
+        "max_D": 0.6435,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.56
+      },
+      {
+        "tau_r": 59,
+        "max_D": 0.6326,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.56
+      },
+      {
+        "tau_r": 60,
+        "max_D": 0.6413,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.56
+      },
+      {
+        "tau_r": 61,
+        "max_D": 0.6278,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.56
+      },
+      {
+        "tau_r": 62,
+        "max_D": 0.6282,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.56
+      },
+      {
+        "tau_r": 63,
+        "max_D": 0.642,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.56
+      },
+      {
+        "tau_r": 64,
+        "max_D": 0.6429,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 5.68
+      },
+      {
+        "tau_r": 65,
+        "max_D": 0.7148,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 6.25
+      },
+      {
+        "tau_r": 66,
+        "max_D": 0.7427,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 6.25
+      },
+      {
+        "tau_r": 67,
+        "max_D": 0.6831,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 6.25
+      },
+      {
+        "tau_r": 68,
+        "max_D": 0.6424,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 6.25
+      },
+      {
+        "tau_r": 69,
+        "max_D": 0.6914,
+        "D_breaches": false,
+        "malicious_allow_rate_pct": 6.25
+      }
+    ]
+  },
+  "scenarios": {
+    "A_boundary_exploiter": {
+      "tau_r": 6,
+      "fixed_AATC_BAD": {
+        "tau_a": 10,
+        "tau_r": 6,
+        "use_ape": false,
+        "n_steps": 600,
+        "allow_malicious": 7,
+        "total_attack_steps": 378,
+        "malicious_allow_rate_pct": 1.85,
+        "benign_allow_rate_pct": 2.25,
+        "max_D": 1.5453,
+        "D_breaches_K_allow": false,
+        "final_delta_D": 0.1,
+        "final_tau_r_est": 6
+      },
+      "with_APE": {
+        "tau_a": 10,
+        "tau_r": 6,
+        "use_ape": true,
+        "n_steps": 600,
+        "allow_malicious": 7,
+        "total_attack_steps": 378,
+        "malicious_allow_rate_pct": 1.85,
+        "benign_allow_rate_pct": 2.25,
+        "max_D": 2.4072,
+        "D_breaches_K_allow": true,
+        "final_delta_D": 0.3,
+        "final_tau_r_est": 4.72
+      },
+      "APE_reduction_pct": 0.0
+    },
+    "B_slow_exploiter": {
+      "tau_r": 60,
+      "fixed_AATC_BAD": {
+        "tau_a": 10,
+        "tau_r": 60,
+        "use_ape": false,
+        "n_steps": 600,
+        "allow_malicious": 5,
+        "total_attack_steps": 90,
+        "malicious_allow_rate_pct": 5.56,
+        "benign_allow_rate_pct": 1.37,
+        "max_D": 0.6413,
+        "D_breaches_K_allow": false,
+        "final_delta_D": 0.1,
+        "final_tau_r_est": 60
+      },
+      "with_APE": {
+        "tau_a": 10,
+        "tau_r": 60,
+        "use_ape": true,
+        "n_steps": 600,
+        "allow_malicious": 5,
+        "total_attack_steps": 90,
+        "malicious_allow_rate_pct": 5.56,
+        "benign_allow_rate_pct": 1.37,
+        "max_D": 1.0412,
+        "D_breaches_K_allow": false,
+        "final_delta_D": 0.16648,
+        "final_tau_r_est": 8.51
+      },
+      "APE_reduction_pct": 0.0
+    },
+    "C_fast_exploiter": {
+      "tau_r": 5,
+      "fixed_AATC_BAD": {
+        "tau_a": 10,
+        "tau_r": 5,
+        "use_ape": false,
+        "n_steps": 600,
+        "allow_malicious": 8,
+        "total_attack_steps": 400,
+        "malicious_allow_rate_pct": 2.0,
+        "benign_allow_rate_pct": 2.0,
+        "max_D": 1.7754,
+        "D_breaches_K_allow": true,
+        "final_delta_D": 0.1,
+        "final_tau_r_est": 5
+      },
+      "with_APE": {
+        "tau_a": 10,
+        "tau_r": 5,
+        "use_ape": true,
+        "n_steps": 600,
+        "allow_malicious": 8,
+        "total_attack_steps": 400,
+        "malicious_allow_rate_pct": 2.0,
+        "benign_allow_rate_pct": 2.0,
+        "max_D": 2.7447,
+        "D_breaches_K_allow": true,
+        "final_delta_D": 0.3,
+        "final_tau_r_est": 4.11
+      },
+      "APE_reduction_pct": 0.0
+    },
+    "D_adaptive_adversary": {
+      "tau_r": 20,
+      "fixed_AATC_BAD": {
+        "tau_a": 10,
+        "tau_r": 20,
+        "use_ape": false,
+        "n_steps": 600,
+        "allow_malicious": 5,
+        "total_attack_steps": 200,
+        "malicious_allow_rate_pct": 2.5,
+        "benign_allow_rate_pct": 1.75,
+        "max_D": 0.8105,
+        "D_breaches_K_allow": false,
+        "final_delta_D": 0.1,
+        "final_tau_r_est": 20
+      },
+      "with_APE": {
+        "tau_a": 10,
+        "tau_r": 20,
+        "use_ape": true,
+        "n_steps": 600,
+        "allow_malicious": 5,
+        "total_attack_steps": 200,
+        "malicious_allow_rate_pct": 2.5,
+        "benign_allow_rate_pct": 1.75,
+        "max_D": 1.37,
+        "D_breaches_K_allow": false,
+        "final_delta_D": 0.17888,
+        "final_tau_r_est": 7.92
+      },
+      "APE_reduction_pct": 0.0
+    }
+  },
+  "APE_parameters": {
+    "W_ape": 50,
+    "ewma_ape": 0.15,
+    "margin": 1.2,
+    "delta_D_base": 0.1,
+    "delta_D_max_allowed": 0.30000000000000004
+  }
+}

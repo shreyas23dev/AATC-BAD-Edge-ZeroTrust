@@ -1,0 +1,33 @@
+\begin{table*}[t]
+\centering
+\caption{Sensitivity and Robustness Evaluation Grid on Validation Partition (rows 5,000--9,999, $N=5,000$)}
+\label{tab:sensitivity_grid}
+\small
+\begin{tabular}{rrrrrrrl}
+\hline
+\textbf{$\delta_D$} & \textbf{$K_{\rm allow}$} & \textbf{$M_{\rm cum}$} & \textbf{$\Delta M$} & \textbf{ALLOW} & \textbf{VERIFY} & \textbf{Validation ALLOW} & \textbf{$\Delta$ ALLOW} & \textbf{Assessment} \\
+\hline
+0.05 & 1.20 & 1.5 & +1.0 & 1 & 1 & 34.74\% & -2.88 pp & Costly Security Gain \\
+0.05 & 1.50 & 1.5 & +1.0 & 1 & 1 & 35.40\% & -2.22 pp & Costly Security Gain \\
+0.05 & 1.70 & 2.5 & +0.0 & 2 & 1 & 36.04\% & -1.58 pp & Costly Security Gain \\
+0.05 & 2.00 & 2.5 & +0.0 & 2 & 1 & 36.50\% & -1.12 pp & Costly Security Gain \\
+0.05 & 2.30 & 2.5 & +0.0 & 2 & 1 & 36.76\% & -0.86 pp & Robust Baseline Parity \\
+0.10 & 1.20 & 2.5 & +0.0 & 2 & 1 & 37.54\% & -0.08 pp & Robust Baseline Parity \\
+0.10 & 1.50 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.10 \textbf{*} & 1.70 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.10 & 2.00 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.10 & 2.30 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.15 & 1.20 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.15 & 1.50 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.15 & 1.70 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.15 & 2.00 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.15 & 2.30 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.20 & 1.20 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.20 & 1.50 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.20 & 1.70 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.20 & 2.00 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+0.20 & 2.30 & 2.5 & +0.0 & 2 & 1 & 37.62\% & +0.00 pp & Exact Zero-Cost Parity \\
+\hline
+\multicolumn{9}{l}{\footnotesize{* Denotes the Phase 9 frozen configuration ($\delta_D=0.10, K_{\rm allow}=1.70$). Baseline B0 on validation stream: $M_{\rm cum} = 2.5$, ALLOW = 37.62\%.}} \\
+\end{tabular}
+\end{table*}

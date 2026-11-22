@@ -1,0 +1,20 @@
+================================================================================
+STARTING PHASE 2C: FORMAL CLAIM AUDIT AND PERIODIC-ORBIT PROOF
+================================================================================
+Running deterministic periodic orbit evaluation...
+Saved orbit analysis to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\formal_claim_audit\deterministic_orbit_analysis.json
+Extracting microscopic Cycle A step-by-step trace...
+Saved Cycle A trace to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\formal_claim_audit\cycle_a_trace.csv (9 cycles, 9 rows)
+Generating claims audit and gate exceedance assessment...
+Saved claims classification to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\formal_claim_audit\claim_classification.json
+
+Executing Run 2 for bit-for-bit reproducibility check...
+Reproducibility Results:
+  Orbit Analysis Identical: True
+  Cycle A Trace Identical:  True
+  Claims Payload Identical: True
+Saved reproducibility hashes to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\formal_claim_audit\reproducibility.json
+
+================================================================================
+PHASE 2C AUDIT COMPLETE: C5_PHASE2C_CLAIMS_PARTIALLY_VERIFIED
+================================================================================

@@ -1,0 +1,18 @@
+CANDIDATE 5 — PHASE 7 RESULTS INTEGRITY AUDIT RUN LOG
+==================================================
+Execution Timestamp: 2026-09-29T08:29:00Z
+Classification: C5_PHASE7_RESULTS_VALID
+
+SHA-256 HASH LEDGER:
+--------------------------------------------------
+authoritative_b0_spec.json: 4cede016b1591f913a2cdd899537279e8c4cb26a69a2d8875be95365fa5da3e3
+corrected_b0_results.json: 153506e1c9fac7bf74a6cafce4ccfb45391a975e59aed4bf7ae8a3692b918323
+corrected_family_c_results.json: e8085bc2cdcdd664db85db96cf376011be1795727a42a6b3fb085c73f8dfa80c
+comparison.json: 019af5f21417f416bd99f921e85bec39975cd3a247274a02c2500a24d6979d6f
+provenance_audit.json: 200d13d420ff6035b8778bf2926a324afceba8b8ba85c739d79da244a9484cdb
+corrected_trajectories_b0.csv: aaf0b9d0dd0ba58d78a8c1847bc617db67a50af594f9547253f77f8c3bf507d9
+corrected_trajectories_family_c.csv: 08b3f4a7eb8ea4c74b520ea582abcc6d05c2ca87c935537fe2f7943ab515b983
+
+REPRODUCIBILITY STATUS: DETERMINISTIC
+INTEGRITY VERDICT: C5_PHASE7_RESULTS_VALID
+==================================================

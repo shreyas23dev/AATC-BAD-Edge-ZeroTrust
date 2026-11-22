@@ -1,0 +1,8 @@
+{
+  "mechanism_definitions_sha256": "620acb04493faa90ef7ed463a4f2c33144525a69b983db9c0501dd58be74dcdb",
+  "parameter_definitions_sha256": "6fc75113242b7f6d4077a0ec9e488689c75e05d451aad2fd50742361f8e6cb0e",
+  "theoretical_analysis_sha256": "5c75883d9514e0542f740b1d0ab2177638a02a3a60558cfcec3d5f454561f31e",
+  "design_comparison_sha256": "7484f9176c166fac76dfd72ea6c4ec7d88e6c7d5c13606f220c6403dbbc8f9f3",
+  "all_runs_identical": true,
+  "verification_status": "VERIFIED_DETERMINISTIC"
+}

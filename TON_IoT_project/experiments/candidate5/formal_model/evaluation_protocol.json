@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "title": "Candidate 5 Chronological Evaluation Protocol Specification",
+    "version": "1.0",
+    "target_venue": "InCIS 2027",
+    "precondition_status": "C5_PASS_WITH_TEMPORAL_LIMITATION",
+    "specification_type": "Chronological Protocol & Dataset Selection Gate (Pre-Implementation)"
+  },
+  "guardrails": {
+    "no_code_execution": true,
+    "no_dataset_download": true,
+    "no_solver_implementation": true,
+    "no_engine_modification": true,
+    "branch_reopening_prohibited": {
+      "ton_iot_network": "BRANCH_STATUS = CLOSED (Strictly Prohibited from Reopening)"
+    }
+  },
+  "temporal_integrity_mandates": {
+    "zero_shuffling_rule": "Strict prohibition of train_test_split, KFold, or randomized bootstrap routines; all reads must be contiguous raw slices",
+    "monotonicity_constraint": "Delta t_k = t_k - t_{k-1} >= 0 for 100.0% of transitions; zero negative timestamp jumps permitted",
+    "gap_tolerance": {
+      "max_gap_multiplier": 5,
+      "max_gap_formula": "tau_gap_max = 5 * Delta_t_median",
+      "reporting": "Telemetry gaps exceeding tau_gap_max must be logged in telemetry_gaps.json without artificial interpolation"
+    }
+  },
+  "protocol_phases": {
+    "phase_1_calibration": {
+      "name": "BENIGN_CALIBRATION_BLOCK",
+      "duration_steps": 5000,
+      "control": "u_t = 0",
+      "telemetry_source": "Contiguous normal operational trace",
+      "acceptance_gates": {
+        "max_p_fp": 0.030,
+        "max_mean_energy": 0.220,
+        "accumulator_zero_fraction": 0.950
+      },
+      "post_condition": "System state verified at x_0 = (1.0000, mu_0, 0.0000, 0)"
+    },
+    "phase_2_cyclic_evaluation": {
+      "name": "CYCLIC_EVALUATION_EPISODE",
+      "planned_cycles_M": 20,
+      "sub_phases": {
+        "attack_window": {
+          "duration": "tau_a steps",
+          "control": "u_t = 1",
+          "trace_source": "Table 6 DDoS_HTTP empirical sub-threshold profile",
+          "sha256": "694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c"
+        },
+        "benign_recovery_window": {
+          "duration": "tau_r steps",
+          "control": "u_t = 0",
+          "trace_source": "Contiguous chronological normal telemetry slice"
+        }
+      },
+      "termination_rule": "If at any step t, T_t < 0.30 (BLOCK), record S = m - 1 and terminate episode immediately"
+    }
+  },
+  "benchmark_schedules": [
+    {"schedule_id": "Cycle_A", "tau_a": 1, "tau_r": 10, "duty_cycle": 0.0909, "expected_outcome": "Stable periodic orbit"},
+    {"schedule_id": "Cycle_B", "tau_a": 1, "tau_r": 25, "duty_cycle": 0.0385, "expected_outcome": "Noise-sensitive orbit"},
+    {"schedule_id": "Cycle_C", "tau_a": 1, "tau_r": 50, "duty_cycle": 0.0196, "expected_outcome": "Noise-absorbing orbit"},
+    {"schedule_id": "Cycle_D", "tau_a": 5, "tau_r": 25, "duty_cycle": 0.1667, "expected_outcome": "Absorbing BLOCK attractor"},
+    {"schedule_id": "Cycle_E", "tau_a": 5, "tau_r": 50, "duty_cycle": 0.0909, "expected_outcome": "Intra-burst degraded attractor"}
+  ],
+  "dataset_selection_gate": {
+    "candidate_evaluations": {
+      "Edge-IIoTset": {
+        "domain": "IoT/IIoT Edge Gateway",
+        "status": "ACTIVE / PRIMARY CANDIDATE",
+        "strengths": "Verified low background noise (mu0=0.1656), verified empirical sub-threshold trace, contiguous PCAP timestamps available",
+        "condition_for_phase_2b": "Must extract contiguous raw CSV slice by frame.time without train_test_split"
+      },
+      "SWaT": {
+        "domain": "Industrial Water Treatment",
+        "status": "SECONDARY ALTERNATIVE",
+        "strengths": "Strictly monotonic 1 Hz continuous time-series across 11 days",
+        "condition_for_phase_2b": "Requires training new detector and establishing empirical sub-threshold baseline"
+      },
+      "ToN-IoT Network Branch": {
+        "domain": "Zeek NetFlow",
+        "status": "AUTHORITATIVELY CLOSED",
+        "reason": "Distribution collapse (p_fp=38.3%), flow duration artifacts; reopening strictly forbidden"
+      }
+    },
+    "mandatory_gate_criteria": [
+      {
+        "gate_id": "Gate_1",
+        "name": "Monotonic Temporal Integrity Gate",
+        "requirement": "100% monotonic timestamps (Delta t >= 0) across at least 25,000 consecutive flows"
+      },
+      {
+        "gate_id": "Gate_2",
+        "name": "Steady-State Noise Floor Gate",
+        "requirement": "Un-shuffled normal telemetry scored under frozen detector exhibits mu_0 <= 0.220, sigma_0 <= 0.080, p_fp <= 0.030"
+      },
+      {
+        "gate_id": "Gate_3",
+        "name": "Empirical Attack Trace Traceability Gate",
+        "requirement": "Sub-threshold attack trace derived directly from empirical attack flows without artificial synthetic flattening"
+      },
+      {
+        "gate_id": "Gate_4",
+        "name": "Replay Determinism & Cryptographic Ledger Gate",
+        "requirement": "Bit-for-bit identical SHA-256 trajectory hashes across independent replay runs"
+      }
+    ]
+  }
+}

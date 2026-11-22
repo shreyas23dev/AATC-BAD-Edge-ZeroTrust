@@ -1,0 +1,38 @@
+{
+  "isolated_overt_event": {
+    "sequence_length": 21,
+    "B0_non_allow_steps": 4,
+    "AATC_non_allow_steps": 4,
+    "AATC_final_D": 0.0,
+    "AATC_final_C": 1.0,
+    "device_recovered_to_allow": true,
+    "rehabilitation_penalty_observed": false
+  },
+  "two_nearby_overt_events": {
+    "sequence_length": 24,
+    "B0_non_allow_steps": 9,
+    "AATC_non_allow_steps": 9,
+    "AATC_final_D": 0.0,
+    "AATC_final_C": 1.0,
+    "device_recovered_to_allow": true,
+    "rehabilitation_penalty_observed": false
+  },
+  "benign_micro_burst": {
+    "sequence_length": 23,
+    "B0_non_allow_steps": 0,
+    "AATC_non_allow_steps": 0,
+    "AATC_final_D": 0.0,
+    "AATC_final_C": 1.0,
+    "device_recovered_to_allow": true,
+    "rehabilitation_penalty_observed": false
+  },
+  "continuous_nominal_baseline": {
+    "sequence_length": 50,
+    "B0_non_allow_steps": 0,
+    "AATC_non_allow_steps": 0,
+    "AATC_final_D": 0.0,
+    "AATC_final_C": 1.0,
+    "device_recovered_to_allow": true,
+    "rehabilitation_penalty_observed": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "phase": 6,
+  "title": "Analytical Pacing Robustness Analysis Across Attack Topologies",
+  "attack_topologies_analyzed": [
+    "Concentrated attacks (burst of K consecutive steps, tau_r = 0)",
+    "Evenly spaced periodic attacks (duty cycle 1:tau_r)",
+    "Attack/rest alternation (Cycle A: tau_a=1, tau_r=10)",
+    "Sparse repeated attacks (tau_r >> 10)",
+    "Burst-separated episodes (K pulses then long rest)"
+  ],
+  "family_evaluations": {
+    "Family_A_Count": {
+      "classification": "Pacing-sensitive if reset/decayed; Pacing-robust within tested model if unbounded",
+      "analysis": "An unreset counter accumulates regardless of pacing. However, in any deployable system, an unreset counter eventually triggers on benign noise. Once an epoch reset or sliding window is added, an adversary who paces pulses with spacing > window W completely evades detection."
+    },
+    "Family_B_Exponential": {
+      "classification": "Pacing-sensitive",
+      "analysis": "Under constant spacing tau_r, the decay between pulses is rho^{tau_r}. For an adversary to keep Q below a threshold theta_Q, they solve for required pacing: tau_r >= ln(1 - f_atk / theta_Q) / ln(rho). Because tau_r can be chosen arbitrarily large by a patient adversary, Family B is structurally pacing-sensitive to sparse attacks. However, within Cycle A's frozen schedule (tau_r=10), pacing is fixed by the system's rehabilitation dynamics."
+    },
+    "Family_C_Threshold_Offset": {
+      "classification": "Pacing-robust within the tested model (Cycle A duty cycle tau_r=10); Pacing-sensitive to unbounded pacing",
+      "analysis": "Cycle A has a fixed rest horizon tau_r = 10 dictated by the attacker's objective to maintain high yield. For rho >= 0.95, the inter-cycle retention factor is rho^{10} = 0.5987. Each attack pulse adds f(0.4100, 0.4554) = 0.5693. Over 8 cycles, Q builds up monotonically to a periodic orbit peaking at ~1.32, which is significantly distinct from the benign stationary floor. If the adversary widens pacing to tau_r = 50, Q decays by 0.95^{50} = 0.0769, reducing accumulation. Therefore, it is robust against the exploit schedule (which requires rapid reuse of rehabilitation), but sensitive if the adversary sacrifices yield for stealth."
+    },
+    "Family_D_Inter_Arrival": {
+      "classification": "Pacing-sensitive (CRITICALLY VULNERABLE)",
+      "analysis": "Family D maps inter-arrival Delta_t directly to evidence Q = g(Delta_t). Because g is monotonically decreasing in Delta_t, any adversary who knows the critical threshold tau_crit simply spaces attack pulses by tau_crit + 1 steps. This evasion requires no change in attack magnitude, only a fixed timing delay. Structurally vulnerable to trivial pacing evasion."
+    },
+    "Family_E_Rate": {
+      "classification": "Pacing-sensitive",
+      "analysis": "Measures rate N_sub / W. An adversary with pacing tau_r > W ensures that at most 1 event ever resides in window W, capping the measured rate at 1/W. Evasion is guaranteed for any pacing exceeding the window length."
+    }
+  }
+}

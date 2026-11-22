@@ -1,0 +1,62 @@
+{
+  "verdict": "TEMPORAL_SIGNAL_PARTIALLY_IMPROVED",
+  "rationale": "Temporal features yield marginal or partial improvements: ROC-AUC moved from 0.4999 to 0.4539 (delta=-0.0460), but remains insufficient or limited for robust downstream zero-trust trust calibration.",
+  "comparisons": {
+    "Features Count": {
+      "static": 4,
+      "temporal": 29
+    },
+    "ROC-AUC": {
+      "static": 0.49988712857964224,
+      "temporal": 0.45389940989175376
+    },
+    "PR-AUC": {
+      "static": 0.36901611152257024,
+      "temporal": 0.3463229181082486
+    },
+    "Recall": {
+      "static": 0.011097468098664885,
+      "temporal": 0.014563484045446775
+    },
+    "F1-Score": {
+      "static": 0.02149501761146401,
+      "temporal": 0.027965557893480174
+    },
+    "Precision": {
+      "static": 0.34081145584725536,
+      "temporal": 0.35067365269461076
+    },
+    "FPR": {
+      "static": 0.012650343052387627,
+      "temporal": 0.015893081242500023
+    },
+    "Balanced Accuracy": {
+      "static": 0.4992235625231386,
+      "temporal": 0.4993352014014734
+    },
+    "Benign Mean A": {
+      "static": 0.3103378156993121,
+      "temporal": 0.3393816125206524
+    },
+    "Attack Mean A": {
+      "static": 0.3098042477559969,
+      "temporal": 0.3191991677448179
+    },
+    "Score Separation (Atk - Ben)": {
+      "static": -0.0005335679433152163,
+      "temporal": -0.02018244477583453
+    },
+    "Sub-Threshold Attack %": {
+      "static": 98.8902531901335,
+      "temporal": 98.54365159545532
+    },
+    "Episodes Crossing A_thr": {
+      "static": 89,
+      "temporal": 200
+    },
+    "Episodes Crossing A_thr %": {
+      "static": 8.882235528942116,
+      "temporal": 19.960079840319363
+    }
+  }
+}

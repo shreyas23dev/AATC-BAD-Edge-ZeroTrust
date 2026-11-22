@@ -1,0 +1,32 @@
+{
+  "feature_names": [
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "src_pkts",
+    "dst_pkts",
+    "src_ip_bytes",
+    "dst_ip_bytes",
+    "missed_bytes"
+  ],
+  "medians": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "iqrs": [
+    3.5e-05,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    63.0,
+    1.0,
+    1.0
+  ]
+}

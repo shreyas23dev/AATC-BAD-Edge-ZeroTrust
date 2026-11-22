@@ -1,0 +1,7 @@
+{
+  "orbit_analysis_sha256": "6e6bdfc87fd8fd540638bf9a520aa9ca03b5326be203862e47073dc2cda61110",
+  "cycle_a_trace_sha256": "abbf52d74382da06128570e6aecb742e170b4f251252d880716eaff1b0fc1323",
+  "claim_classification_sha256": "d5929d545253b23dc28d7af8d1c30510d87b18d98723931f6774c8a0905590bc",
+  "all_runs_identical": true,
+  "verification_status": "VERIFIED_DETERMINISTIC"
+}

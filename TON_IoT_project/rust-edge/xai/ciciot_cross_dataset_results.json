@@ -1,0 +1,151 @@
+{
+  "dataset": "CIC-IoT-2023",
+  "summary_table": [
+    {
+      "category": "Normal",
+      "total": 10000,
+      "allow": 597,
+      "verify": 8421,
+      "block": 982,
+      "pure_block_pct": 9.82,
+      "mitigated_pct": 94.03
+    },
+    {
+      "category": "DDoS_UDP",
+      "total": 2001,
+      "allow": 4,
+      "verify": 1751,
+      "block": 246,
+      "pure_block_pct": 12.29,
+      "mitigated_pct": 99.8
+    },
+    {
+      "category": "DDoS_ICMP",
+      "total": 2001,
+      "allow": 0,
+      "verify": 0,
+      "block": 2001,
+      "pure_block_pct": 100.0,
+      "mitigated_pct": 100.0
+    },
+    {
+      "category": "Port_Scanning",
+      "total": 2001,
+      "allow": 7,
+      "verify": 701,
+      "block": 1293,
+      "pure_block_pct": 64.62,
+      "mitigated_pct": 99.65
+    },
+    {
+      "category": "Vulnerability_scanner",
+      "total": 2001,
+      "allow": 1227,
+      "verify": 757,
+      "block": 17,
+      "pure_block_pct": 0.85,
+      "mitigated_pct": 38.68
+    },
+    {
+      "category": "Password",
+      "total": 2001,
+      "allow": 4,
+      "verify": 352,
+      "block": 1645,
+      "pure_block_pct": 82.21,
+      "mitigated_pct": 99.8
+    }
+  ],
+  "attribution_fingerprints": {
+    "DDoS_UDP": [
+      {
+        "feature": "mean(Number)",
+        "error": 0.9996340274810791
+      },
+      {
+        "feature": "mean(Rate)",
+        "error": 0.7526947855949402
+      },
+      {
+        "feature": "mean(AVG)",
+        "error": 0.05984079837799072
+      },
+      {
+        "feature": "mean(Tot size)",
+        "error": 0.05555569753050804
+      }
+    ],
+    "DDoS_ICMP": [
+      {
+        "feature": "mean(Number)",
+        "error": 0.9822463393211365
+      },
+      {
+        "feature": "mean(ICMP)",
+        "error": 0.8638957738876343
+      },
+      {
+        "feature": "mean(Rate)",
+        "error": 0.7837101817131042
+      },
+      {
+        "feature": "mean(UDP)",
+        "error": 0.4742678701877594
+      }
+    ],
+    "Port_Scanning": [
+      {
+        "feature": "mean(Rate)",
+        "error": 0.32748985290527344
+      },
+      {
+        "feature": "std(Rate)",
+        "error": 0.24805907905101776
+      },
+      {
+        "feature": "mean(psh_flag_number)",
+        "error": 0.2080521583557129
+      },
+      {
+        "feature": "mean(syn_count)",
+        "error": 0.1761026829481125
+      }
+    ],
+    "Vulnerability_scanner": [
+      {
+        "feature": "std(SSH)",
+        "error": 0.07098138332366943
+      },
+      {
+        "feature": "std(DHCP)",
+        "error": 0.05633082613348961
+      },
+      {
+        "feature": "mean(SSH)",
+        "error": 0.05383655056357384
+      },
+      {
+        "feature": "mean(DNS)",
+        "error": 0.04961790144443512
+      }
+    ],
+    "Password": [
+      {
+        "feature": "mean(SSH)",
+        "error": 0.4800724983215332
+      },
+      {
+        "feature": "std(SSH)",
+        "error": 0.47380390763282776
+      },
+      {
+        "feature": "std(IAT)",
+        "error": 0.23039622604846954
+      },
+      {
+        "feature": "std(fin_flag_number)",
+        "error": 0.1309136152267456
+      }
+    ]
+  }
+}

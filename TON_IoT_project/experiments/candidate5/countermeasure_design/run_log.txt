@@ -1,0 +1,19 @@
+================================================================================
+STARTING PHASE 3: COUNTERMEASURE DESIGN & THEORETICAL SCREENING
+================================================================================
+Generating Phase 3 mechanism definitions and theoretical screening...
+Saved mechanism definitions to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\countermeasure_design\mechanism_definitions.json
+Saved parameter definitions to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\countermeasure_design\parameter_definitions.json
+Saved theoretical screening to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\countermeasure_design\theoretical_analysis.json
+Saved design comparison matrix to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\countermeasure_design\design_comparison.json
+
+Executing Run 2 for bit-for-bit reproducibility check...
+Reproducibility verification:
+  Mechanism definitions identical: True
+  Parameter definitions identical: True
+  Theoretical analysis identical:  True
+  Design comparison identical:     True
+Saved reproducibility ledger to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\countermeasure_design\reproducibility.json
+================================================================================
+PHASE 3 COMPLETE: C5_PHASE3_DESIGN_READY
+================================================================================

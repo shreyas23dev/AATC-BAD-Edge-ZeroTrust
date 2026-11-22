@@ -1,0 +1,14 @@
+{
+  "detector_fit_only_on_benign_train": true,
+  "scaler_fit_only_on_benign_train": true,
+  "normalization_bounds_from_train_only": true,
+  "A_thr_from_benign_calibration_only": true,
+  "no_attack_labels_during_training": true,
+  "no_attack_labels_during_calibration": true,
+  "no_evaluation_labels_during_model_selection": true,
+  "no_future_information_used": true,
+  "chronological_split_verified": true,
+  "no_cross_partition_temporal_leakage": true,
+  "no_label_derived_features": true,
+  "leakage_detected": false
+}

@@ -1,0 +1,102 @@
+{
+  "baseline_parameters": {
+    "A_thr": {
+      "value": 0.4554,
+      "type": "float",
+      "description": "Static Isolation Forest anomaly threshold"
+    },
+    "gamma": {
+      "value": 0.335,
+      "type": "float",
+      "description": "Slow-burn accumulation energy threshold (mu + 3.05*sigma)"
+    },
+    "theta": {
+      "value": 1.0,
+      "type": "float",
+      "description": "Slow-burn accumulator trigger threshold"
+    },
+    "beta": {
+      "value": 0.4,
+      "type": "float",
+      "description": "EMA smoothing coefficient"
+    },
+    "lambda": {
+      "value": 0.55,
+      "type": "float",
+      "description": "Accumulator evidence gain step"
+    },
+    "delta": {
+      "value": 0.05,
+      "type": "float",
+      "description": "Accumulator forgiveness decay step"
+    },
+    "P_pen": {
+      "value": 0.25,
+      "type": "float",
+      "description": "Slow-burn penalty scaling multiplier"
+    },
+    "alpha_0": {
+      "value": 0.2057,
+      "type": "float",
+      "description": "Baseline closed-form trust recovery rate"
+    },
+    "T_allow": {
+      "value": 0.8,
+      "type": "float",
+      "description": "High-trust access threshold (ALLOW)"
+    },
+    "T_quar": {
+      "value": 0.3,
+      "type": "float",
+      "description": "Quarantine threshold (BLOCK)"
+    }
+  },
+  "m1_parameters": {
+    "kappa": {
+      "value": 0.5,
+      "type": "float",
+      "domain": "(0, 1)",
+      "description": "Fraction of accumulated suspicion retained as floor"
+    },
+    "h_max": {
+      "value": 0.8,
+      "type": "float",
+      "domain": "[0, theta)",
+      "description": "Maximum ceiling for persistent evidence floor (strictly < theta=1.0)"
+    },
+    "delta_h": {
+      "value": 0.001,
+      "type": "float",
+      "domain": "(0, delta)",
+      "description": "Long-term decay rate of persistent floor (50x slower than delta)"
+    }
+  },
+  "m2_parameters": {
+    "eta": {
+      "value": 0.5,
+      "type": "float",
+      "domain": "> 0",
+      "description": "Sensitivity parameter for hyperbolic recovery rate decay"
+    },
+    "k_max": {
+      "value": 10,
+      "type": "int",
+      "domain": ">= 1",
+      "description": "Maximum incident counter ceiling"
+    },
+    "n_clean_req": {
+      "value": 100,
+      "type": "int",
+      "domain": ">= 1",
+      "description": "Consecutive clean ALLOW steps required to forgive one incident"
+    }
+  },
+  "m3_parameters": {
+    "H_req": {
+      "value": 15,
+      "type": "int",
+      "domain": ">= 1",
+      "description": "Consecutive clean steps required to clear probation and restore ALLOW"
+    }
+  }
+}

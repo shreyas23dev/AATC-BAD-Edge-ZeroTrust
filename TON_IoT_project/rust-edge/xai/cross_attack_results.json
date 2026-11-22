@@ -1,0 +1,145 @@
+{
+  "summary_table": [
+    {
+      "category": "Normal",
+      "total": 10000,
+      "allow": 334,
+      "verify": 9350,
+      "block": 316,
+      "pure_block_pct": 3.16
+    },
+    {
+      "category": "DDoS_UDP",
+      "total": 2000,
+      "allow": 0,
+      "verify": 1,
+      "block": 1999,
+      "pure_block_pct": 99.95
+    },
+    {
+      "category": "DDoS_ICMP",
+      "total": 2000,
+      "allow": 0,
+      "verify": 0,
+      "block": 2000,
+      "pure_block_pct": 100.0
+    },
+    {
+      "category": "Vulnerability_scanner",
+      "total": 2000,
+      "allow": 0,
+      "verify": 1,
+      "block": 1999,
+      "pure_block_pct": 99.95
+    },
+    {
+      "category": "Port_Scanning",
+      "total": 2000,
+      "allow": 35,
+      "verify": 141,
+      "block": 1824,
+      "pure_block_pct": 91.2
+    },
+    {
+      "category": "Password",
+      "total": 2000,
+      "allow": 0,
+      "verify": 2,
+      "block": 1998,
+      "pure_block_pct": 99.9
+    }
+  ],
+  "attribution_fingerprints": {
+    "DDoS_UDP": [
+      {
+        "feature": "mean(udp.stream)",
+        "error": 0.9999041702650012
+      },
+      {
+        "feature": "std(udp.stream)",
+        "error": 0.9998976347650015
+      },
+      {
+        "feature": "mean(tcp.srcport)",
+        "error": 0.18413946202472084
+      },
+      {
+        "feature": "std(tcp.srcport)",
+        "error": 0.06609269194732892
+      }
+    ],
+    "DDoS_ICMP": [
+      {
+        "feature": "mean(icmp.seq_le)",
+        "error": 0.9999973097149975
+      },
+      {
+        "feature": "mean(icmp.checksum)",
+        "error": 0.9999940561650089
+      },
+      {
+        "feature": "std(icmp.seq_le)",
+        "error": 0.40299404370130804
+      },
+      {
+        "feature": "std(icmp.checksum)",
+        "error": 0.4029711442025851
+      }
+    ],
+    "Vulnerability_scanner": [
+      {
+        "feature": "mean(tcp.len)",
+        "error": 0.920967463906451
+      },
+      {
+        "feature": "mean(http.content_length)",
+        "error": 0.827417881713531
+      },
+      {
+        "feature": "std(http.content_length)",
+        "error": 0.5854881120324429
+      },
+      {
+        "feature": "std(tcp.seq)",
+        "error": 0.5474308390220008
+      }
+    ],
+    "Port_Scanning": [
+      {
+        "feature": "mean(tcp.connection.syn)",
+        "error": 0.44762356641071793
+      },
+      {
+        "feature": "mean(tcp.dstport)",
+        "error": 0.38983021773186655
+      },
+      {
+        "feature": "mean(tcp.flags.ack)",
+        "error": 0.3521908778473264
+      },
+      {
+        "feature": "std(tcp.ack)",
+        "error": 0.3060426450743326
+      }
+    ],
+    "Password": [
+      {
+        "feature": "mean(tcp.len)",
+        "error": 0.7536541049082086
+      },
+      {
+        "feature": "std(http.content_length)",
+        "error": 0.6134926517731586
+      },
+      {
+        "feature": "mean(http.content_length)",
+        "error": 0.6134483107379323
+      },
+      {
+        "feature": "std(tcp.len)",
+        "error": 0.49829699245908154
+      }
+    ]
+  },
+  "throughput_fps": 5591.777849849581
+}

@@ -1,0 +1,169 @@
+{
+  "phase": 11,
+  "part": "A",
+  "title": "Duty-Cycle Operating Envelope (tau_a=1, tau_r swept 5..60)",
+  "stream": "Full chronological stream (N=17,459) \u2014 same as Phase 10 attack replay",
+  "validation_availability": {
+    "B0": {
+      "allow_frac": 0.3762,
+      "verify_frac": 0.1496,
+      "block_frac": 0.4742
+    },
+    "AATC_frozen": {
+      "allow_frac": 0.3762,
+      "verify_frac": 0.1496,
+      "block_frac": 0.4742
+    },
+    "delta_allow_pp": 0.0
+  },
+  "effective_tau_r_range": [
+    5,
+    10
+  ],
+  "sweep_results": [
+    {
+      "tau_r": 5,
+      "duty_cycle": 0.1667,
+      "B0_M_cum": 17.0,
+      "AATC_M_cum": 12.5,
+      "Delta_M": 4.5,
+      "B0_survived": 17,
+      "AATC_survived": 17,
+      "AATC_ALLOW_demotion": 9,
+      "AATC_VERIFY_gain": 9,
+      "AATC_effective": true
+    },
+    {
+      "tau_r": 10,
+      "duty_cycle": 0.0909,
+      "B0_M_cum": 8.5,
+      "AATC_M_cum": 7.5,
+      "Delta_M": 1.0,
+      "B0_survived": 8,
+      "AATC_survived": 8,
+      "AATC_ALLOW_demotion": 2,
+      "AATC_VERIFY_gain": 2,
+      "AATC_effective": true
+    },
+    {
+      "tau_r": 15,
+      "duty_cycle": 0.0625,
+      "B0_M_cum": 6.0,
+      "AATC_M_cum": 6.0,
+      "Delta_M": 0.0,
+      "B0_survived": 5,
+      "AATC_survived": 5,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 20,
+      "duty_cycle": 0.0476,
+      "B0_M_cum": 5.0,
+      "AATC_M_cum": 5.0,
+      "Delta_M": 0.0,
+      "B0_survived": 4,
+      "AATC_survived": 4,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 25,
+      "duty_cycle": 0.0385,
+      "B0_M_cum": 4.0,
+      "AATC_M_cum": 4.0,
+      "Delta_M": 0.0,
+      "B0_survived": 3,
+      "AATC_survived": 3,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 30,
+      "duty_cycle": 0.0323,
+      "B0_M_cum": 3.0,
+      "AATC_M_cum": 3.0,
+      "Delta_M": 0.0,
+      "B0_survived": 2,
+      "AATC_survived": 2,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 35,
+      "duty_cycle": 0.0278,
+      "B0_M_cum": 2.5,
+      "AATC_M_cum": 2.5,
+      "Delta_M": 0.0,
+      "B0_survived": 2,
+      "AATC_survived": 2,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 40,
+      "duty_cycle": 0.0244,
+      "B0_M_cum": 3.0,
+      "AATC_M_cum": 3.0,
+      "Delta_M": 0.0,
+      "B0_survived": 2,
+      "AATC_survived": 2,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 45,
+      "duty_cycle": 0.0217,
+      "B0_M_cum": 2.0,
+      "AATC_M_cum": 2.0,
+      "Delta_M": 0.0,
+      "B0_survived": 1,
+      "AATC_survived": 1,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 50,
+      "duty_cycle": 0.0196,
+      "B0_M_cum": 2.0,
+      "AATC_M_cum": 2.0,
+      "Delta_M": 0.0,
+      "B0_survived": 1,
+      "AATC_survived": 1,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 55,
+      "duty_cycle": 0.0179,
+      "B0_M_cum": 2.0,
+      "AATC_M_cum": 2.0,
+      "Delta_M": 0.0,
+      "B0_survived": 1,
+      "AATC_survived": 1,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    },
+    {
+      "tau_r": 60,
+      "duty_cycle": 0.0164,
+      "B0_M_cum": 2.0,
+      "AATC_M_cum": 2.0,
+      "Delta_M": 0.0,
+      "B0_survived": 1,
+      "AATC_survived": 1,
+      "AATC_ALLOW_demotion": 0,
+      "AATC_VERIFY_gain": 0,
+      "AATC_effective": false
+    }
+  ]
+}

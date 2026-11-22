@@ -1,0 +1,35 @@
+CANDIDATE 5 — PHASE 10 EMPIRICAL EVALUATION RUN LOG
+==================================================
+Execution Timestamp: 2026-09-29T16:20:00Z
+Script: run_phase10_evaluation.py
+Classification: C5_AATC_SECURITY_EFFECTIVE_AVAILABILITY_PRESERVED
+
+PRIMARY FINDINGS:
+--------------------------------------------------
+1. Security: Cycle A malicious access M_cum reduced from 8.5 to 7.5 (-1.0 point, -11.76%).
+   ALLOW attack pulses reduced from 8 to 6 (-25.0%).
+   VERIFY challenges increased from 1 to 3 (+200.0%).
+2. Availability: 100% PRESERVED.
+   ALLOW rate on untouched evaluation stream: exactly 74.0850% (identical to B0).
+   VERIFY rate: 15.1361% (identical to B0).
+   BLOCK rate: 10.7789% (identical to B0).
+   Minimum ceiling observed on benign evaluation: C_min = 0.8697 > T_allow (0.80).
+   Zero false demotions or false quarantines induced by AATC on honest telemetry.
+3. Recovery: 100% OPERATIONAL.
+   All legitimate recovery sequences returned to ALLOW with zero excess delay.
+
+SHA-256 HASH LEDGER:
+--------------------------------------------------
+parameter_freeze.json: e02e663a67bda5a3007cdd5eb61c93b7c43435e3954caaab80733a53404cee5e
+benign_evaluation_results.json: 12424faadf3558f69fb9fefc3ab4a38735a1f8c416dab8e5d119be3e806b6efb
+attack_replay_results.json: afa30b0b7f69cffd045e59e5d1661938fc6f8bdf2bade71ab3add9b798451e64
+state_aliasing_results.json: 8105ac4866c925bca15862a60eeeba2dd2cb83b0bb3d96823ae7c32692d1c2d7
+multi_cycle_trace.json: 9670eae1cdcd370cf2ee1cf621c8e7c26f590c1ca9ee31b5046010e6cb841117
+recovery_results.json: d71907679f215c8d0b580eb806d431509e0ce83cd06947e519d80e31d27e19cb
+trajectory_b0.csv: aaf0b9d0dd0ba58d78a8c1847bc617db67a50af594f9547253f77f8c3bf507d9
+trajectory_aatc.csv: d011bca4f34da827a4a62a213f69dcc097a249a956e6c60266fdd8acfea19e4d
+metrics.json: 88da49c027b197bc733c1b55a33357cf01203ff7c3cb8ab605d998f6cbb7d592
+
+REPRODUCIBILITY STATUS: DETERMINISTIC
+FINAL STATUS: C5_AATC_SECURITY_EFFECTIVE_AVAILABILITY_PRESERVED
+==================================================

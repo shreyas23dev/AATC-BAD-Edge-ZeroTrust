@@ -1,0 +1,536 @@
+{
+  "R1": {
+    "model_name": "Ideal Silent Channel (A_rest = 0.0)",
+    "rest_value": 0.0,
+    "schedules": {
+      "Cycle_A": {
+        "tau_a": 1,
+        "tau_r": 10,
+        "has_periodic_orbit": true,
+        "classification": "Stable Period-1 Orbit (T invariant at 1.0, SB invariant at 0.0)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          1.0,
+          0.0009952560460346753,
+          0.0
+        ],
+        "contraction_factor_E": 0.0036279705599999985,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.001592437211136,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.1649554623266816,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.0009974226017206494,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.1645984535610324,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.0009952639062349208,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.1645971536276208,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.0009952560460346758,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      },
+      "Cycle_B": {
+        "tau_a": 1,
+        "tau_r": 25,
+        "has_periodic_orbit": true,
+        "classification": "Stable Period-1 Orbit (T invariant at 1.0, SB invariant at 0.0)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          1.0,
+          4.662575190409804e-07,
+          0.0
+        ],
+        "contraction_factor_E": 1.7058172817957804e-06,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 7.487400655562281e-07,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.16400044924403934,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 4.662580009045901e-07,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.16400027975480055,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 4.662575190418023e-07,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.16400027975451142,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 4.6625751904098024e-07,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      },
+      "Cycle_C": {
+        "tau_a": 1,
+        "tau_r": 50,
+        "has_periodic_orbit": true,
+        "classification": "Stable Period-1 Orbit (T invariant at 1.0, SB invariant at 0.0)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          1.0,
+          1.3255812950486393e-12,
+          0.0
+        ],
+        "contraction_factor_E": 4.849687664788575e-12,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 2.128689572331199e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.1640000000012772,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 1.3255812950525342e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.16400000000079534,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 1.3255812950486393e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.16400000000079534,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 1.3255812950486393e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      },
+      "Cycle_D": {
+        "tau_a": 5,
+        "tau_r": 25,
+        "has_periodic_orbit": true,
+        "classification": "Asymptotically Convergent Orbit (Zero Rest Noise Only)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          0.999125,
+          0.0,
+          0.0
+        ],
+        "contraction_factor_E": null,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 0.5718050065876153,
+            "E_post_atk": 0.379507456,
+            "SB_post_atk": 1.6500000000000001,
+            "T_post_rst": 0.978549328195159,
+            "E_post_rst": 1.0789506283585863e-06,
+            "SB_post_rst": 0.3999999999999992,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 0.7718743717514699,
+            "E_post_atk": 0.3666304838992009,
+            "SB_post_atk": 1.3499999999999992,
+            "T_post_rst": 0.9971300074705726,
+            "E_post_rst": 1.0423410257806775e-06,
+            "SB_post_rst": 0.09999999999999858,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 0.7792704217287414,
+            "E_post_atk": 0.36663048105243823,
+            "SB_post_atk": 1.1,
+            "T_post_rst": 0.9991220090594592,
+            "E_post_rst": 1.0423410176872488e-06,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 0.7800645965268157,
+            "E_post_atk": 0.36663048105243756,
+            "SB_post_atk": 1.1,
+            "T_post_rst": 0.9991251680301934,
+            "E_post_rst": 1.0423410176872476e-06,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      },
+      "Cycle_E": {
+        "tau_a": 5,
+        "tau_r": 50,
+        "has_periodic_orbit": true,
+        "classification": "Asymptotically Convergent Orbit with Throttled Attack (Zero Rest Noise Only)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          0.999997,
+          0.0,
+          0.0
+        ],
+        "contraction_factor_E": null,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 0.5718050065876153,
+            "E_post_atk": 0.379507456,
+            "SB_post_atk": 1.6500000000000001,
+            "T_post_rst": 0.9999322272728319,
+            "E_post_rst": 3.0674877134308215e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 0.7803858469184026,
+            "E_post_atk": 0.3666304000002386,
+            "SB_post_atk": 1.1,
+            "T_post_rst": 0.9999972400329974,
+            "E_post_rst": 2.963404880696098e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 0.7804117252846461,
+            "E_post_atk": 0.3666304000002305,
+            "SB_post_atk": 1.1,
+            "T_post_rst": 0.9999972403582198,
+            "E_post_rst": 2.963404880696033e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 0.7804117254141016,
+            "E_post_atk": 0.3666304000002305,
+            "SB_post_atk": 1.1,
+            "T_post_rst": 0.9999972403582214,
+            "E_post_rst": 2.963404880696033e-12,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      }
+    }
+  },
+  "R2": {
+    "model_name": "Stationary Baseline Mean (A_rest = 0.1656)",
+    "rest_value": 0.1656,
+    "schedules": {
+      "Cycle_A": {
+        "tau_a": 1,
+        "tau_r": 10,
+        "has_periodic_orbit": true,
+        "classification": "Stable Period-1 Orbit (T invariant at 1.0, SB invariant at 0.0)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          1.0,
+          0.1661932697015875,
+          0.0
+        ],
+        "contraction_factor_E": 0.0036279705599999985,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.16619111733657602,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26371467040194563,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.16619326189287062,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.2637159571357224,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.1661932696732577,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26371596182095247,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.1661932697015875,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      },
+      "Cycle_B": {
+        "tau_a": 1,
+        "tau_r": 25,
+        "has_periodic_orbit": true,
+        "classification": "Stable Period-1 Orbit (T invariant at 1.0, SB invariant at 0.0)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          1.0,
+          0.1656002779349699,
+          0.0
+        ],
+        "contraction_factor_E": 1.7058172817957804e-06,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.1656002779344958,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.2633601667606975,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.1656002779349699,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336016676098195,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.1656002779349699,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336016676098195,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.1656002779349699,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      },
+      "Cycle_C": {
+        "tau_a": 1,
+        "tau_r": 50,
+        "has_periodic_orbit": true,
+        "classification": "Stable Period-1 Orbit (T invariant at 1.0, SB invariant at 0.0)",
+        "quarantined": false,
+        "quarantine_cycle": null,
+        "quarantine_phase": null,
+        "quarantine_step": null,
+        "fixed_point": [
+          1.0,
+          0.16560000000079017,
+          0.0
+        ],
+        "contraction_factor_E": 4.849687664788575e-12,
+        "completed_cycles": 20,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.26336,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.16560000000079017,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 2,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.2633600000004741,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.16560000000079017,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 3,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.2633600000004741,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.16560000000079017,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          },
+          {
+            "cycle": 20,
+            "T_post_atk": 1.0,
+            "E_post_atk": 0.2633600000004741,
+            "SB_post_atk": 0.0,
+            "T_post_rst": 1.0,
+            "E_post_rst": 0.16560000000079017,
+            "SB_post_rst": 0.0,
+            "quarantined": false
+          }
+        ]
+      },
+      "Cycle_D": {
+        "tau_a": 5,
+        "tau_r": 25,
+        "has_periodic_orbit": false,
+        "classification": "Absorbing BLOCK (Quarantined at Cycle 1 Rest Step 3)",
+        "quarantined": true,
+        "quarantine_cycle": 1,
+        "quarantine_phase": "REST",
+        "quarantine_step": 3,
+        "fixed_point": null,
+        "contraction_factor_E": null,
+        "completed_cycles": 1,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 0.5718050065876153,
+            "E_post_atk": 0.379507456,
+            "SB_post_atk": 1.6500000000000001,
+            "T_post_rst": 0.2990777338603427,
+            "E_post_rst": 0.211804010496,
+            "SB_post_rst": 1.5,
+            "quarantined": true
+          }
+        ]
+      },
+      "Cycle_E": {
+        "tau_a": 5,
+        "tau_r": 50,
+        "has_periodic_orbit": false,
+        "classification": "Absorbing BLOCK (Quarantined at Cycle 1 Rest Step 3)",
+        "quarantined": true,
+        "quarantine_cycle": 1,
+        "quarantine_phase": "REST",
+        "quarantine_step": 3,
+        "fixed_point": null,
+        "contraction_factor_E": null,
+        "completed_cycles": 1,
+        "endpoints": [
+          {
+            "cycle": 1,
+            "T_post_atk": 0.5718050065876153,
+            "E_post_atk": 0.379507456,
+            "SB_post_atk": 1.6500000000000001,
+            "T_post_rst": 0.2990777338603427,
+            "E_post_rst": 0.211804010496,
+            "SB_post_rst": 1.5,
+            "quarantined": true
+          }
+        ]
+      }
+    }
+  }
+}

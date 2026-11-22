@@ -1,0 +1,25 @@
+{
+  "sample_count": 17459,
+  "mean_A": 0.2106442775799603,
+  "std_A": 0.1331120841825381,
+  "median_A": 0.21042477256602493,
+  "p90_A": 0.4090490614892886,
+  "p95_A": 0.45556091084052225,
+  "p99_A": 0.5177108351191698,
+  "fraction_A_ge_gamma": 0.1928518242740134,
+  "fraction_A_ge_athr": 0.05028924909788648,
+  "autocorrelation_lag_1": -0.1397989428340464,
+  "autocorrelation_lag_5": 0.14250855553662703,
+  "autocorrelation_lag_10": -0.20745320867614397,
+  "run_lengths_ge_gamma": {
+    "total_runs": 3158,
+    "mean_run_length": 1.0661811272957569,
+    "max_run_length": 3
+  },
+  "run_lengths_ge_athr": {
+    "total_runs": 878,
+    "mean_run_length": 1.0,
+    "max_run_length": 1
+  },
+  "longest_clean_interval_no_fp": 168
+}

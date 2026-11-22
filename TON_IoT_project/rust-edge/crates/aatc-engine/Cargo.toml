@@ -1,0 +1,19 @@
+[package]
+name        = "aatc-engine"
+description = "AATC-BAD trust math engine — pure Rust, zero-allocation hot path"
+version.workspace    = true
+edition.workspace    = true
+authors.workspace    = true
+license.workspace    = true
+
+[dependencies]
+serde        = { workspace = true }
+tracing      = { workspace = true }
+
+[dev-dependencies]
+criterion    = { workspace = true }
+serde_json   = { workspace = true }
+
+[[bench]]
+name    = "trust_update"
+harness = false

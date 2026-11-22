@@ -1,0 +1,9 @@
+{
+  "n_episodes": 1100,
+  "episodes_crossing_A_thr": 1,
+  "episodes_entirely_sub_thr": 1099,
+  "pct_episodes_crossing_A_thr": 0.09090909090909091,
+  "median_episode_mean_A": 0.2612374611146079,
+  "median_episode_max_A": 0.43076065222930904,
+  "median_episode_duration": 11.0
+}

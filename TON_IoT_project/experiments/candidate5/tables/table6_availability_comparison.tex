@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\caption{Empirical Device Availability on the Untouched Chronological Evaluation Stream ($N=7,459$ frames)}
+\label{tab:availability_comparison}
+\small
+\begin{tabular}{lrrr}
+\hline
+\textbf{Availability Metric} & \textbf{Baseline B0} & \textbf{Family C} & \textbf{AATC-BAD (Proposed)} \\
+\hline
+ALLOW Count (Fraction) & 5526 (74.0850\%) & 5523 (74.0448\%) & 5526 (74.0850\%) \\
+VERIFY Count (Fraction) & 1129 (15.1361\%) & 1127 (15.1093\%) & 1129 (15.1361\%) \\
+BLOCK Count (Fraction) & 804 (10.7789\%) & 809 (10.8460\%) & 804 (10.7789\%) \\
+Quarantine Transitions (to BLOCK) & 12 & 13 & 12 \\
+Total Policy Transitions & 464 & 466 & 464 \\
+Longest Continuous BLOCK (steps) & 743 & 743 & 743 \\
+Mean Recovery Time Post-Overt (steps) & 41.7508 & 41.7726 & 41.7508 \\
+Minimum Observed Ceiling ($C_{\rm min}$) & $1.0000$ (fixed) & N/A & $0.8697$ ($> T_{\rm allow} = 0.8000$) \\
+\hline
+\textbf{Availability Impact vs Baseline} & \textit{Reference} & $-0.0402$ pp ALLOW & \textbf{Exact $0.0000$ pp Parity} \\
+\hline
+\end{tabular}
+\end{table*}

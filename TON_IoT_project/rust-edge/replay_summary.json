@@ -1,0 +1,209 @@
+{
+  "edge": {
+    "total_frames": 20000,
+    "per_class": [
+      {
+        "class": "DDoS_ICMP",
+        "total": 2000,
+        "ALLOW": 0,
+        "ALLOW_pct": 0.0,
+        "VERIFY": 1194,
+        "VERIFY_pct": 59.699999999999996,
+        "BLOCK": 806,
+        "BLOCK_pct": 40.300000000000004,
+        "mitigation_pct": 100.0,
+        "is_attack": true
+      },
+      {
+        "class": "DDoS_UDP",
+        "total": 2000,
+        "ALLOW": 0,
+        "ALLOW_pct": 0.0,
+        "VERIFY": 1,
+        "VERIFY_pct": 0.05,
+        "BLOCK": 1999,
+        "BLOCK_pct": 99.95,
+        "mitigation_pct": 100.0,
+        "is_attack": true
+      },
+      {
+        "class": "Normal",
+        "total": 10000,
+        "ALLOW": 8767,
+        "ALLOW_pct": 87.67,
+        "VERIFY": 143,
+        "VERIFY_pct": 1.43,
+        "BLOCK": 1090,
+        "BLOCK_pct": 10.9,
+        "mitigation_pct": 12.33,
+        "is_attack": false
+      },
+      {
+        "class": "Password",
+        "total": 2000,
+        "ALLOW": 1,
+        "ALLOW_pct": 0.05,
+        "VERIFY": 1,
+        "VERIFY_pct": 0.05,
+        "BLOCK": 1998,
+        "BLOCK_pct": 99.9,
+        "mitigation_pct": 99.95,
+        "is_attack": true
+      },
+      {
+        "class": "Port_Scanning",
+        "total": 2000,
+        "ALLOW": 141,
+        "ALLOW_pct": 7.049999999999999,
+        "VERIFY": 54,
+        "VERIFY_pct": 2.7,
+        "BLOCK": 1805,
+        "BLOCK_pct": 90.25,
+        "mitigation_pct": 92.95,
+        "is_attack": true
+      },
+      {
+        "class": "Vulnerability_scanner",
+        "total": 2000,
+        "ALLOW": 3,
+        "ALLOW_pct": 0.15,
+        "VERIFY": 1,
+        "VERIFY_pct": 0.05,
+        "BLOCK": 1996,
+        "BLOCK_pct": 99.8,
+        "mitigation_pct": 99.85000000000001,
+        "is_attack": true
+      }
+    ],
+    "fpr_block_pct": 10.9,
+    "tpr_pct": 98.55
+  },
+  "cic": {
+    "total_frames": 26011,
+    "per_class": [
+      {
+        "class": "DDoS_ICMP",
+        "total": 2001,
+        "ALLOW": 1,
+        "ALLOW_pct": 0.04997501249375312,
+        "VERIFY": 1,
+        "VERIFY_pct": 0.04997501249375312,
+        "BLOCK": 1999,
+        "BLOCK_pct": 99.9000499750125,
+        "mitigation_pct": 99.95002498750625,
+        "is_attack": true
+      },
+      {
+        "class": "DDoS_UDP",
+        "total": 2001,
+        "ALLOW": 2001,
+        "ALLOW_pct": 100.0,
+        "VERIFY": 0,
+        "VERIFY_pct": 0.0,
+        "BLOCK": 0,
+        "BLOCK_pct": 0.0,
+        "mitigation_pct": 0.0,
+        "is_attack": true
+      },
+      {
+        "class": "Mirai",
+        "total": 2002,
+        "ALLOW": 1313,
+        "ALLOW_pct": 65.5844155844156,
+        "VERIFY": 24,
+        "VERIFY_pct": 1.1988011988011988,
+        "BLOCK": 665,
+        "BLOCK_pct": 33.21678321678322,
+        "mitigation_pct": 34.41558441558442,
+        "is_attack": true
+      },
+      {
+        "class": "Normal",
+        "total": 10000,
+        "ALLOW": 8751,
+        "ALLOW_pct": 87.51,
+        "VERIFY": 122,
+        "VERIFY_pct": 1.22,
+        "BLOCK": 1127,
+        "BLOCK_pct": 11.27,
+        "mitigation_pct": 12.49,
+        "is_attack": false
+      },
+      {
+        "class": "Password",
+        "total": 2001,
+        "ALLOW": 6,
+        "ALLOW_pct": 0.29985007496251875,
+        "VERIFY": 3,
+        "VERIFY_pct": 0.14992503748125938,
+        "BLOCK": 1992,
+        "BLOCK_pct": 99.55022488755623,
+        "mitigation_pct": 99.70014992503748,
+        "is_attack": true
+      },
+      {
+        "class": "Port_Scanning",
+        "total": 2001,
+        "ALLOW": 1,
+        "ALLOW_pct": 0.04997501249375312,
+        "VERIFY": 4,
+        "VERIFY_pct": 0.19990004997501248,
+        "BLOCK": 1996,
+        "BLOCK_pct": 99.75012493753124,
+        "mitigation_pct": 99.95002498750625,
+        "is_attack": true
+      },
+      {
+        "class": "SYN_Flood",
+        "total": 2002,
+        "ALLOW": 0,
+        "ALLOW_pct": 0.0,
+        "VERIFY": 1,
+        "VERIFY_pct": 0.04995004995004995,
+        "BLOCK": 2001,
+        "BLOCK_pct": 99.95004995004994,
+        "mitigation_pct": 100.0,
+        "is_attack": true
+      },
+      {
+        "class": "SlowLoris",
+        "total": 2002,
+        "ALLOW": 0,
+        "ALLOW_pct": 0.0,
+        "VERIFY": 1,
+        "VERIFY_pct": 0.04995004995004995,
+        "BLOCK": 2001,
+        "BLOCK_pct": 99.95004995004994,
+        "mitigation_pct": 100.0,
+        "is_attack": true
+      },
+      {
+        "class": "Vulnerability_scanner",
+        "total": 2001,
+        "ALLOW": 2001,
+        "ALLOW_pct": 100.0,
+        "VERIFY": 0,
+        "VERIFY_pct": 0.0,
+        "BLOCK": 0,
+        "BLOCK_pct": 0.0,
+        "mitigation_pct": 0.0,
+        "is_attack": true
+      }
+    ],
+    "fpr_block_pct": 11.27,
+    "tpr_pct": 66.7541
+  },
+  "parameters": {
+    "A_THR": 0.4554,
+    "Q_LOW": 0.35,
+    "K_ALLOW": 1.7,
+    "DELTA_D": 0.1,
+    "ETA_C": 0.3,
+    "C_FLOOR": 0.7,
+    "ALPHA_0": 0.2057,
+    "T_ALLOW": 0.8,
+    "T_QUAR": 0.3,
+    "BETA": 0.4,
+    "GAMMA": 0.335
+  }
+}

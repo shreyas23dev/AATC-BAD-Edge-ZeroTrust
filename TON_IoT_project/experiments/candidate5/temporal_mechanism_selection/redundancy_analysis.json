@@ -1,0 +1,32 @@
+{
+  "phase": 6,
+  "title": "Redundancy Test Against Existing TrustEngine Mechanisms",
+  "reference_mechanisms": {
+    "EWMA_magnitude": "E_t = beta * A_t + (1 - beta) * E_{t-1} (tracks mean anomaly magnitude)",
+    "Slow_burn_accumulator": "SB_t = max(0, SB_{t-1} - delta) + 1.0 * I(E_t > gamma)",
+    "Sliding_window": "Counting events in fixed horizon W",
+    "Thresholding": "Instantaneous indicator I(A_t >= A_thr)"
+  },
+  "family_evaluations": {
+    "Family_A": {
+      "status": "NON-REDUNDANT with EWMA, but REDUNDANT with cumulative epoch counter",
+      "justification": "Counts events above q without magnitude scaling. Differs fundamentally from E_t. However, it is mathematically identical to a standard cumulative event counter."
+    },
+    "Family_B": {
+      "status": "REDUNDANT if f(A_t) is linear; NON-REDUNDANT if f(A_t) is non-linear",
+      "justification": "If f(A_t) = k * A_t, then Q_{t+1} = rho * Q_t + k * A_t. Setting rho = 1 - beta and k = beta makes Q_t mathematically identical to E_t. Even with different rho, it remains an EWMA of anomaly score, merely operating at a different timescale. It does not introduce a novel representational dimension."
+    },
+    "Family_C": {
+      "status": "NON-REDUNDANT",
+      "justification": "Family C incorporates a non-linear threshold offset: f(A_t) = max(0, A_t - q_low) / (A_thr - q_low). This contains two non-linear elements absent from E_t: (1) a lower deadband [0, q_low] that completely zeroes out standard benign traffic, and (2) normalization relative to the decision boundary A_thr. This is not an EWMA of A_t, cannot be obtained by reparameterizing E_t, and is not a sliding-window count."
+    },
+    "Family_D": {
+      "status": "NON-REDUNDANT",
+      "justification": "Operates on inter-arrival time Delta_t = t - t_last rather than anomaly score magnitude. Completely distinct from E_t, SB_t, and sliding windows."
+    },
+    "Family_E": {
+      "status": "REDUNDANT",
+      "justification": "Exact sliding window rate Q_t = (1/W) sum I(A >= q) is textbook sliding-window detection. The EMA approximation is mathematically identical to Family B with binary input."
+    }
+  }
+}

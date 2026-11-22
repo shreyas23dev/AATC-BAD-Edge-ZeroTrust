@@ -1,0 +1,19 @@
+{
+  "source_dataset": "Edge-IIoTset (DNN-EdgeIIoT-dataset.csv)",
+  "source_split": "test partition (random_state=42, test_ratio=0.15)",
+  "model_provenance": "Optuna-tuned IsolationForest (model.pkl)",
+  "n_samples": 15000,
+  "mean": 0.16557777464032436,
+  "std": 0.12213867379658401,
+  "median": 0.16218816107653894,
+  "min": 0.0026954450884120688,
+  "max": 0.5977344027233993,
+  "p25": 0.05124329362355182,
+  "p75": 0.2466405735481268,
+  "p90": 0.3474781489811653,
+  "p95": 0.389779674917561,
+  "p99": 0.4720945991664995,
+  "pct_above_gamma_0.335": 11.48,
+  "pct_above_Athr_0.4554": 1.5466666666666666,
+  "sha256": "736dad0ffc20d55fc00c9150a6cec263e4f4563bd0c6fc4b550eb20928567c1f"
+}

@@ -1,0 +1,48 @@
+{
+  "evaluation_philosophy": "Descriptive multi-dimensional trade-off matrix. No single scalar score or winner ranking.",
+  "dimensions": [
+    "Cycle A Security Suppression (1:10 duty cycle under R1/R2)",
+    "Multi-Pulse Burst Containment (Cycle D & E)",
+    "Honest Device Availability (Steps to re-attain ALLOW after false alarm)",
+    "Computational & State Footprint",
+    "Mathematical Risk Profile"
+  ],
+  "profiles": {
+    "B0": {
+      "name": "Memoryless Baseline",
+      "cycle_a_r1_yield": 20.0,
+      "cycle_a_r2_yield": 20.0,
+      "honest_recovery_steps": 4,
+      "strengths": "Fastest honest recovery (5 steps); strictly preserves trust convergence.",
+      "weaknesses": "Vulnerable to single-pulse cyclic exploitation; indefinite period-1 orbit under low noise.",
+      "tradeoff_summary": "Maximum availability, minimal resistance to periodic gaming."
+    },
+    "M1": {
+      "name": "Persistent Evidence Floor",
+      "cycle_a_r1_yield": 20.0,
+      "cycle_a_r2_yield": 20.0,
+      "honest_recovery_steps": 4,
+      "strengths": "Directly attacks evidence erasure by retaining latent accumulator memory; bounds accumulator reset.",
+      "weaknesses": "Does not stop Cycle A if single attack pulse never exceeds gamma=0.335; requires elevated energy to latch.",
+      "tradeoff_summary": "Highly effective against multi-pulse or high-energy adversaries; neutral against single-pulse low-energy adversaries."
+    },
+    "M2": {
+      "name": "History-Dependent Recovery Rate",
+      "cycle_a_r1_yield": 20.0,
+      "cycle_a_r2_yield": 20.0,
+      "honest_recovery_steps": 7,
+      "strengths": "Expands required recovery horizon for repeat offenders; reduces sustainable throughput over time.",
+      "weaknesses": "First incident behaves like B0; requires multiple degradation events before rate suppression takes effect.",
+      "tradeoff_summary": "Smooth, continuous penalty scaling; honest devices with isolated incidents experience zero long-term penalty."
+    },
+    "M3": {
+      "name": "Rehabilitation Hysteresis",
+      "cycle_a_r1_yield": 20.0,
+      "cycle_a_r2_yield": 20.0,
+      "honest_recovery_steps": 18,
+      "strengths": "Forces repeat offenders into VERIFY if rest window tau_r < H_req; throttles malicious yield by 50% immediately.",
+      "weaknesses": "Increases honest device recovery time from 5 steps to H_req=15 steps after a transient false alarm.",
+      "tradeoff_summary": "Immediate structural barrier against high-frequency cycling; minor temporal friction cost on honest devices."
+    }
+  }
+}

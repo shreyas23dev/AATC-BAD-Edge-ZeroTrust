@@ -1,0 +1,126 @@
+{
+  "file_path": "C:\\Users\\Shreyas A\\PROJECTS\\BAZT-TON_IoT\\TON_IoT_audit\\iot_processed\\IoT_Weather.csv",
+  "total_rows": 650242,
+  "columns": [
+    "date",
+    "time",
+    "temperature",
+    "pressure",
+    "humidity",
+    "label",
+    "type"
+  ],
+  "numeric_candidate_features": [
+    "temperature",
+    "pressure",
+    "humidity"
+  ],
+  "missing_values": {
+    "date": 0,
+    "time": 0,
+    "temperature": 0,
+    "pressure": 0,
+    "humidity": 0,
+    "label": 0,
+    "type": 0
+  },
+  "duplicate_rows": 26045,
+  "malformed_timestamps": 0,
+  "negative_timestamp_deltas": 0,
+  "earliest_timestamp": "2019-03-31 12:36:52",
+  "latest_timestamp": "2019-04-29 14:47:38",
+  "label_counts": {
+    "0": 559718,
+    "1": 90524
+  },
+  "type_counts": {
+    "normal": 559718,
+    "backdoor": 35641,
+    "password": 25715,
+    "ddos": 15182,
+    "injection": 9726,
+    "ransomware": 2865,
+    "xss": 866,
+    "scanning": 529
+  },
+  "daily_distribution": [
+    {
+      "date_only": "2019-03-31",
+      "total": 46348,
+      "normal": 46348,
+      "attack": 0
+    },
+    {
+      "date_only": "2019-04-01",
+      "total": 52090,
+      "normal": 52090,
+      "attack": 0
+    },
+    {
+      "date_only": "2019-04-02",
+      "total": 243230,
+      "normal": 243230,
+      "attack": 0
+    },
+    {
+      "date_only": "2019-04-03",
+      "total": 86268,
+      "normal": 86268,
+      "attack": 0
+    },
+    {
+      "date_only": "2019-04-04",
+      "total": 28200,
+      "normal": 28200,
+      "attack": 0
+    },
+    {
+      "date_only": "2019-04-17",
+      "total": 1057,
+      "normal": 1057,
+      "attack": 0
+    },
+    {
+      "date_only": "2019-04-23",
+      "total": 6437,
+      "normal": 5908,
+      "attack": 529
+    },
+    {
+      "date_only": "2019-04-24",
+      "total": 2656,
+      "normal": 2656,
+      "attack": 0
+    },
+    {
+      "date_only": "2019-04-25",
+      "total": 30475,
+      "normal": 7250,
+      "attack": 23225
+    },
+    {
+      "date_only": "2019-04-26",
+      "total": 41234,
+      "normal": 22335,
+      "attack": 18899
+    },
+    {
+      "date_only": "2019-04-27",
+      "total": 54389,
+      "normal": 45024,
+      "attack": 9365
+    },
+    {
+      "date_only": "2019-04-28",
+      "total": 34536,
+      "normal": 1519,
+      "attack": 33017
+    },
+    {
+      "date_only": "2019-04-29",
+      "total": 23322,
+      "normal": 17833,
+      "attack": 5489
+    }
+  ]
+}

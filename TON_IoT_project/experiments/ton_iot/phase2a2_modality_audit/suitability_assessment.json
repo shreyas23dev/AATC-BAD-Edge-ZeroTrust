@@ -1,0 +1,4 @@
+{
+  "verdict": "SIGNAL_LIMITED",
+  "rationale": "IoT_Weather exhibits limited or weak discrimination: ROC-AUC=0.5154, PR-AUC=0.5001 (prevalence 0.4689), score separation is +0.0128. Signal is insufficient for robust downstream trust calibration."
+}

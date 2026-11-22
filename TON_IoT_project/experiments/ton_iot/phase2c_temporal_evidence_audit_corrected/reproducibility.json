@@ -1,0 +1,90 @@
+{
+  "all_match": true,
+  "per_hash": {
+    "roll_mean_10": {
+      "run1": "ad953d4ec0b300cbcb3392eb280e9033c2035a6bb9f25a9ebafc9488f9c7334f",
+      "run2": "ad953d4ec0b300cbcb3392eb280e9033c2035a6bb9f25a9ebafc9488f9c7334f",
+      "match": true
+    },
+    "roll_max_10": {
+      "run1": "0379c751a918b5db7205026031948f4aad37844ae3ff58195bf0f4700db57f5b",
+      "run2": "0379c751a918b5db7205026031948f4aad37844ae3ff58195bf0f4700db57f5b",
+      "match": true
+    },
+    "exceedance_10": {
+      "run1": "c3fe143ddc084a5075017b6eaa86831644fcd6df3b75717fceb7713be6e16509",
+      "run2": "c3fe143ddc084a5075017b6eaa86831644fcd6df3b75717fceb7713be6e16509",
+      "match": true
+    },
+    "roll_mean_50": {
+      "run1": "61f2a31b4f357899e2c7a5218f5bd351a54ee92799293ecdac11c7ca030e2bec",
+      "run2": "61f2a31b4f357899e2c7a5218f5bd351a54ee92799293ecdac11c7ca030e2bec",
+      "match": true
+    },
+    "roll_max_50": {
+      "run1": "6eecf8e62f7b7cff27e09673dcb623b37bfe4f17e242c55a9419290cc1bc3836",
+      "run2": "6eecf8e62f7b7cff27e09673dcb623b37bfe4f17e242c55a9419290cc1bc3836",
+      "match": true
+    },
+    "exceedance_50": {
+      "run1": "f1920b51f793cbed6f61dd347061efbaef0b0ffe385cf979b1c07e200d5f74ec",
+      "run2": "f1920b51f793cbed6f61dd347061efbaef0b0ffe385cf979b1c07e200d5f74ec",
+      "match": true
+    },
+    "roll_mean_100": {
+      "run1": "a160c1738cb169ca8da49203ab39ef56d6893faa871cd9b40ae45453418f93c9",
+      "run2": "a160c1738cb169ca8da49203ab39ef56d6893faa871cd9b40ae45453418f93c9",
+      "match": true
+    },
+    "roll_max_100": {
+      "run1": "2a7bfe43a314a64393fb74183608d42d3232531695067cc01962e313333db185",
+      "run2": "2a7bfe43a314a64393fb74183608d42d3232531695067cc01962e313333db185",
+      "match": true
+    },
+    "exceedance_100": {
+      "run1": "3d215910ce9f93da384eccfaadd76e7aa5c2e9fa3dd54c4421389b997d6e3403",
+      "run2": "3d215910ce9f93da384eccfaadd76e7aa5c2e9fa3dd54c4421389b997d6e3403",
+      "match": true
+    },
+    "roll_mean_500": {
+      "run1": "abd21e24bda93ba9c4eda34a9c04ec11419d062f4a2c1c389d6fb9b6693793bd",
+      "run2": "abd21e24bda93ba9c4eda34a9c04ec11419d062f4a2c1c389d6fb9b6693793bd",
+      "match": true
+    },
+    "roll_max_500": {
+      "run1": "b9659083d3a9fcd691f3c57bd5cd332d5c5acca2db3f3327f606d457a02bec96",
+      "run2": "b9659083d3a9fcd691f3c57bd5cd332d5c5acca2db3f3327f606d457a02bec96",
+      "match": true
+    },
+    "exceedance_500": {
+      "run1": "4ecd55ddac973b9e8c5318875380e913a98de445bf4483ba41ae0bb161767448",
+      "run2": "4ecd55ddac973b9e8c5318875380e913a98de445bf4483ba41ae0bb161767448",
+      "match": true
+    },
+    "persistence": {
+      "run1": "ab2caf3fd6711166e1351adf0a1c0684342c3061e7c45be5df1bfb069a5aa5bf",
+      "run2": "ab2caf3fd6711166e1351adf0a1c0684342c3061e7c45be5df1bfb069a5aa5bf",
+      "match": true
+    },
+    "ewma_b05": {
+      "run1": "6365a0c91b3bf6086de42fab2fce70d4385cc842a7f3f77a8045e9e0ed27ff75",
+      "run2": "6365a0c91b3bf6086de42fab2fce70d4385cc842a7f3f77a8045e9e0ed27ff75",
+      "match": true
+    },
+    "ewma_b10": {
+      "run1": "11293ed69c633952e8bb8cd5e93061e3d22006248deff41c19bc45ab1ce6fc64",
+      "run2": "11293ed69c633952e8bb8cd5e93061e3d22006248deff41c19bc45ab1ce6fc64",
+      "match": true
+    },
+    "ewma_b20": {
+      "run1": "da30bf6c2d5f528294d27ef643b8264a606354b72eda2523f8c1b58dceb6cd4f",
+      "run2": "da30bf6c2d5f528294d27ef643b8264a606354b72eda2523f8c1b58dceb6cd4f",
+      "match": true
+    },
+    "A_eval": {
+      "run1": "442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155",
+      "run2": "442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155",
+      "match": true
+    }
+  }
+}

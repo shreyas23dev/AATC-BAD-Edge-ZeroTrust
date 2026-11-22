@@ -1,0 +1,297 @@
+2026-09-28 20:45:22,265 [INFO] Phase 2A Corrected — E1 Detector Suitability Experiment
+2026-09-28 20:45:22,265 [INFO] Start time: 2026-09-28T20:45:22.265309
+2026-09-28 20:45:22,265 [INFO] Dataset   : C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\iot_processed\IoT_Modbus.csv
+2026-09-28 20:45:22,267 [INFO] Output dir: C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected
+2026-09-28 20:45:22,267 [INFO] 
+======================================================================
+2026-09-28 20:45:22,267 [INFO] EXPERIMENT RUN 1  (seed=42)
+2026-09-28 20:45:22,268 [INFO] ======================================================================
+
+2026-09-28 20:45:22,268 [INFO] [1] Loading IoT_Modbus.csv...
+2026-09-28 20:45:22,268 [INFO] Loading raw ToN-IoT Modbus CSV from C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\iot_processed\IoT_Modbus.csv...
+2026-09-28 20:45:23,055 [INFO] Loaded 287194 rows and 8 columns.
+2026-09-28 20:45:23,058 [INFO]     Raw rows loaded: 287194
+2026-09-28 20:45:23,058 [INFO] [1] Reconstructing deterministic timestamps...
+2026-09-28 20:45:23,058 [INFO] Reconstructing deterministic timestamps from 'date' + 'time'...
+2026-09-28 20:45:26,852 [INFO] Timestamp reconstruction successful. Earliest: 2019-03-31 12:36:52, Latest: 2019-04-29 23:59:58
+2026-09-28 20:45:26,885 [INFO]     Timestamped & sorted rows: 287194
+2026-09-28 20:45:26,885 [INFO] [2] Applying TonIoTChronologicalSplitter (E1 frozen boundaries)...
+2026-09-28 20:45:26,885 [INFO] Executing chronological partitioning according to frozen E1 boundaries...
+2026-09-28 20:45:27,725 [INFO] Chronological split complete: Train=100940 (100% normal), Calib=11691 (100% normal), Eval=173506 (64339 attacks)
+2026-09-28 20:45:27,754 [INFO] 
+============================================================
+2026-09-28 20:45:27,754 [INFO] DATA SPLIT VERIFICATION
+2026-09-28 20:45:27,754 [INFO] ============================================================
+2026-09-28 20:45:27,755 [INFO]   TRAIN N          :    100,940  (expected 100,940)
+2026-09-28 20:45:27,755 [INFO]   CALIBRATION N    :     11,691  (expected 11,691)
+2026-09-28 20:45:27,755 [INFO]   EVALUATION N     :    173,506  (expected 173,506)
+2026-09-28 20:45:27,755 [INFO]   EVAL BENIGN N    :    109,167  (expected 109,167)
+2026-09-28 20:45:27,755 [INFO]   EVAL ATTACK N    :     64,339  (expected 64,339)
+2026-09-28 20:45:27,755 [INFO]   evaluation_start : 2019-04-23 11:51:47
+2026-09-28 20:45:27,755 [INFO]   evaluation_end   : 2019-04-29 23:59:58
+2026-09-28 20:45:27,755 [INFO] ============================================================
+
+2026-09-28 20:45:27,755 [INFO]   ✓ All partition counts verified.
+2026-09-28 20:45:27,768 [INFO]   ✓ Train & calibration benign purity verified.
+2026-09-28 20:45:27,771 [INFO] [3] Fitting TonIoTPreprocessor (RobustScaler) on TRAIN partition only...
+2026-09-28 20:45:27,771 [INFO] Fitting TonIoTPreprocessor (RobustScaler) on 100940 samples...
+2026-09-28 20:45:27,827 [INFO] TonIoTPreprocessor successfully fitted on training partition.
+2026-09-28 20:45:27,915 [INFO]     Scaler medians: ['32799.0000', '32656.5000', '32594.0000', '32690.0000']
+2026-09-28 20:45:27,915 [INFO]     Scaler IQRs   : ['32577.2500', '32744.0000', '32670.0000', '32580.0000']
+2026-09-28 20:45:27,918 [INFO]   ✓ Leakage audit: scaler fitted exclusively on TRAIN benign data.
+2026-09-28 20:45:27,921 [INFO] 
+[4] Fitting IsolationForest on TRAIN (100,940 benign samples)...
+2026-09-28 20:45:27,921 [INFO]     Config: {'n_estimators': 300, 'max_samples': 256, 'max_features': 1.0, 'bootstrap': False, 'random_state': 42, 'n_jobs': -1}
+2026-09-28 20:45:29,684 [INFO]     ✓ IsolationForest fitted.
+2026-09-28 20:45:29,687 [INFO] [5] Computing raw anomaly scores (raw = -score_samples(X))...
+2026-09-28 20:45:43,900 [INFO]     raw_train: n=100940, mean=0.513416
+2026-09-28 20:45:43,900 [INFO]     raw_calib: n=11691, mean=0.513850
+2026-09-28 20:45:43,900 [INFO]     raw_eval:  n=173506, mean=0.513366
+2026-09-28 20:45:43,974 [INFO] [6] Fitting score normalizer on TRAIN benign raw scores...
+2026-09-28 20:45:43,977 [INFO] TonIoTScoreNormalizer fitted: s_min=0.447051, s_max=0.660875
+2026-09-28 20:45:43,977 [INFO]     s_min = 0.44705101
+2026-09-28 20:45:43,977 [INFO]     s_max = 0.66087479
+2026-09-28 20:45:43,977 [INFO]   ✓ Normalization bounds derived from TRAIN only.
+2026-09-28 20:45:43,993 [INFO] [7] Computing A_thr = 99th percentile of benign calibration scores...
+2026-09-28 20:45:43,995 [INFO]     A_thr (normalized) = 0.68922968
+2026-09-28 20:45:43,997 [INFO]     raw score equiv    = 0.59442470
+2026-09-28 20:45:43,998 [INFO]     interpolation      = linear (numpy.percentile default)
+2026-09-28 20:45:43,998 [INFO]   ✓ A_thr derived from benign calibration only. No evaluation labels used.
+2026-09-28 20:45:44,007 [INFO]     Calib A_t stats: mean=0.312400, std=0.153708, p99=0.689230, max=0.892291
+2026-09-28 20:45:44,008 [INFO] [8] Joining evaluation labels post-hoc (after all scoring is frozen)...
+2026-09-28 20:45:44,010 [INFO] [9] Computing point-level discrimination metrics...
+2026-09-28 20:45:44,624 [INFO] 
+============================================================
+2026-09-28 20:45:44,624 [INFO] POINT-LEVEL METRICS (post-hoc, A_thr={A_thr:.6f})
+2026-09-28 20:45:44,624 [INFO] ============================================================
+2026-09-28 20:45:44,624 [INFO]   Attack prevalence : 0.3708 (64339/173506)
+2026-09-28 20:45:44,624 [INFO]   TP                : 714
+2026-09-28 20:45:44,624 [INFO]   TN                : 107,786
+2026-09-28 20:45:44,629 [INFO]   FP                : 1,381
+2026-09-28 20:45:44,629 [INFO]   FN                : 63,625
+2026-09-28 20:45:44,629 [INFO]   Precision         : 0.340811
+2026-09-28 20:45:44,629 [INFO]   Recall            : 0.011097
+2026-09-28 20:45:44,629 [INFO]   F1-Score          : 0.021495
+2026-09-28 20:45:44,631 [INFO]   FPR               : 0.012650
+2026-09-28 20:45:44,631 [INFO]   FNR               : 0.988903
+2026-09-28 20:45:44,632 [INFO]   Specificity       : 0.987350
+2026-09-28 20:45:44,632 [INFO]   Balanced Accuracy : 0.499224
+2026-09-28 20:45:44,632 [INFO]   ROC-AUC           : 0.499887
+2026-09-28 20:45:44,632 [INFO]   PR-AUC            : 0.369016
+2026-09-28 20:45:44,633 [INFO] ============================================================
+
+2026-09-28 20:45:44,634 [INFO] [10] Computing benign vs attack score distributions...
+2026-09-28 20:45:44,729 [INFO]   [EVAL benign         ] n=109,167  mean=0.310338  std=0.155828  median=0.297063  p90=0.524896  p99=0.705188  max=1.000000
+2026-09-28 20:45:44,729 [INFO]   [EVAL attack         ] n= 64,339  mean=0.309804  std=0.154380  median=0.296657  p90=0.521933  p99=0.695202  max=1.000000
+2026-09-28 20:45:44,729 [INFO]   [EVAL all            ] n=173,506  mean=0.310140  std=0.155293  median=0.296914  p90=0.523578  p99=0.701759  max=1.000000
+2026-09-28 20:45:44,761 [INFO] [11] Sub-threshold attack signal analysis...
+2026-09-28 20:45:44,768 [INFO] 
+============================================================
+2026-09-28 20:45:44,768 [INFO] SUB-THRESHOLD ANALYSIS
+2026-09-28 20:45:44,770 [INFO] ============================================================
+2026-09-28 20:45:44,770 [INFO]   Attack obs with A_t < A_thr  :   63,625  (98.89% of attacks)
+2026-09-28 20:45:44,770 [INFO]   Attack obs with A_t >= A_thr :      714  (1.11% of attacks)
+2026-09-28 20:45:44,773 [INFO]   Benign obs with A_t < A_thr  :  107,786
+2026-09-28 20:45:44,773 [INFO]   Benign obs with A_t >= A_thr :    1,381  (FP count)
+2026-09-28 20:45:44,773 [INFO] ============================================================
+
+2026-09-28 20:45:44,786 [INFO]   Sub-threshold attack score stats:
+2026-09-28 20:45:44,794 [INFO]     mean=0.304929  median=0.294357  p90=0.511202  p95=0.567357  p99=0.651326  max=0.688546
+2026-09-28 20:45:44,799 [INFO]   Above-threshold attack score stats:
+2026-09-28 20:45:44,799 [INFO]     mean=0.744280  median=0.724306  p99=1.000000  max=1.000000
+2026-09-28 20:45:44,819 [INFO] [12] Computing temporal score characteristics...
+2026-09-28 20:45:44,926 [INFO]   Eval stream lag-1 autocorr (all)   : 0.492054
+2026-09-28 20:45:44,926 [INFO]   Eval stream lag-1 autocorr (benign) : 0.466851
+2026-09-28 20:45:44,926 [INFO]   Eval stream lag-1 autocorr (attack) : 0.521511
+2026-09-28 20:45:44,926 [INFO]   First-diff volatility (all)         : 0.156522
+2026-09-28 20:45:44,934 [INFO]   First-diff volatility (benign)      : 0.160910
+2026-09-28 20:45:44,934 [INFO]   First-diff volatility (attack)      : 0.151024
+2026-09-28 20:45:44,934 [INFO]   Contiguous A_t >= A_thr runs        : 1,073
+2026-09-28 20:45:44,935 [INFO]   Mean above-thr run length           : 1.95 steps
+2026-09-28 20:45:44,935 [INFO]   Max  above-thr run length           : 11 steps
+2026-09-28 20:45:44,935 [INFO] [13] Episode-level score characterization...
+2026-09-28 20:45:45,118 [INFO]   Number of attack episodes         : 1,002
+2026-09-28 20:45:45,118 [INFO]   Episodes with any A_t >= A_thr    : 89 (8.9%)
+2026-09-28 20:45:45,118 [INFO]   Episode duration: min=1 median=7 max=9784
+2026-09-28 20:45:45,124 [INFO]   Episode mean A_t: min=0.042501 median=0.309881 max=0.663618
+2026-09-28 20:45:45,125 [INFO]   Episode max  A_t: min=0.042501 median=0.464710 max=1.000000
+2026-09-28 20:45:45,127 [INFO] [14] Computing SHA-256 hash of evaluation score array...
+2026-09-28 20:45:45,134 [INFO]     SHA-256(A_eval) = 362c107d879b2a5f6604b0b135c3939af99d47e7d3af5830d8f4a0234f9c98b5
+2026-09-28 20:45:45,164 [INFO]     Eval rows                    : 173,506
+2026-09-28 20:45:45,164 [INFO]     Timestamp diffs computed     : 173,505  (expected 173,505)
+2026-09-28 20:45:45,164 [INFO]     Negative diffs               : 0  (expected 0)
+2026-09-28 20:45:45,164 [INFO]     Zero diffs (same second)     : 34590
+2026-09-28 20:45:45,166 [INFO]     Positive diffs               : 138915
+2026-09-28 20:45:45,179 [INFO]     Duplicate eval original_row_id: 0  (expected 0)
+2026-09-28 20:45:45,180 [INFO] [15] Leakage audit summary...
+2026-09-28 20:45:45,180 [INFO]   ✓ No leakage detected.
+2026-09-28 20:45:45,259 [INFO] 
+======================================================================
+2026-09-28 20:45:45,260 [INFO] EXPERIMENT RUN 2  (seed=42)
+2026-09-28 20:45:45,260 [INFO] ======================================================================
+
+2026-09-28 20:45:45,260 [INFO] [1] Loading IoT_Modbus.csv...
+2026-09-28 20:45:45,260 [INFO] Loading raw ToN-IoT Modbus CSV from C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\iot_processed\IoT_Modbus.csv...
+2026-09-28 20:45:46,214 [INFO] Loaded 287194 rows and 8 columns.
+2026-09-28 20:45:46,214 [INFO]     Raw rows loaded: 287194
+2026-09-28 20:45:46,214 [INFO] [1] Reconstructing deterministic timestamps...
+2026-09-28 20:45:46,214 [INFO] Reconstructing deterministic timestamps from 'date' + 'time'...
+2026-09-28 20:45:50,017 [INFO] Timestamp reconstruction successful. Earliest: 2019-03-31 12:36:52, Latest: 2019-04-29 23:59:58
+2026-09-28 20:45:50,051 [INFO]     Timestamped & sorted rows: 287194
+2026-09-28 20:45:50,051 [INFO] [2] Applying TonIoTChronologicalSplitter (E1 frozen boundaries)...
+2026-09-28 20:45:50,054 [INFO] Executing chronological partitioning according to frozen E1 boundaries...
+2026-09-28 20:45:50,906 [INFO] Chronological split complete: Train=100940 (100% normal), Calib=11691 (100% normal), Eval=173506 (64339 attacks)
+2026-09-28 20:45:50,934 [INFO] 
+============================================================
+2026-09-28 20:45:50,934 [INFO] DATA SPLIT VERIFICATION
+2026-09-28 20:45:50,937 [INFO] ============================================================
+2026-09-28 20:45:50,937 [INFO]   TRAIN N          :    100,940  (expected 100,940)
+2026-09-28 20:45:50,937 [INFO]   CALIBRATION N    :     11,691  (expected 11,691)
+2026-09-28 20:45:50,937 [INFO]   EVALUATION N     :    173,506  (expected 173,506)
+2026-09-28 20:45:50,938 [INFO]   EVAL BENIGN N    :    109,167  (expected 109,167)
+2026-09-28 20:45:50,938 [INFO]   EVAL ATTACK N    :     64,339  (expected 64,339)
+2026-09-28 20:45:50,939 [INFO]   evaluation_start : 2019-04-23 11:51:47
+2026-09-28 20:45:50,939 [INFO]   evaluation_end   : 2019-04-29 23:59:58
+2026-09-28 20:45:50,939 [INFO] ============================================================
+
+2026-09-28 20:45:50,939 [INFO]   ✓ All partition counts verified.
+2026-09-28 20:45:50,944 [INFO]   ✓ Train & calibration benign purity verified.
+2026-09-28 20:45:50,946 [INFO] [3] Fitting TonIoTPreprocessor (RobustScaler) on TRAIN partition only...
+2026-09-28 20:45:50,946 [INFO] Fitting TonIoTPreprocessor (RobustScaler) on 100940 samples...
+2026-09-28 20:45:51,014 [INFO] TonIoTPreprocessor successfully fitted on training partition.
+2026-09-28 20:45:51,100 [INFO]     Scaler medians: ['32799.0000', '32656.5000', '32594.0000', '32690.0000']
+2026-09-28 20:45:51,100 [INFO]     Scaler IQRs   : ['32577.2500', '32744.0000', '32670.0000', '32580.0000']
+2026-09-28 20:45:51,100 [INFO]   ✓ Leakage audit: scaler fitted exclusively on TRAIN benign data.
+2026-09-28 20:45:51,107 [INFO] 
+[4] Fitting IsolationForest on TRAIN (100,940 benign samples)...
+2026-09-28 20:45:51,110 [INFO]     Config: {'n_estimators': 300, 'max_samples': 256, 'max_features': 1.0, 'bootstrap': False, 'random_state': 42, 'n_jobs': -1}
+2026-09-28 20:45:54,339 [INFO]     ✓ IsolationForest fitted.
+2026-09-28 20:45:54,339 [INFO] [5] Computing raw anomaly scores (raw = -score_samples(X))...
+2026-09-28 20:46:07,196 [INFO]     raw_train: n=100940, mean=0.513416
+2026-09-28 20:46:07,196 [INFO]     raw_calib: n=11691, mean=0.513850
+2026-09-28 20:46:07,199 [INFO]     raw_eval:  n=173506, mean=0.513366
+2026-09-28 20:46:07,278 [INFO] [6] Fitting score normalizer on TRAIN benign raw scores...
+2026-09-28 20:46:07,282 [INFO] TonIoTScoreNormalizer fitted: s_min=0.447051, s_max=0.660875
+2026-09-28 20:46:07,283 [INFO]     s_min = 0.44705101
+2026-09-28 20:46:07,283 [INFO]     s_max = 0.66087479
+2026-09-28 20:46:07,284 [INFO]   ✓ Normalization bounds derived from TRAIN only.
+2026-09-28 20:46:07,302 [INFO] [7] Computing A_thr = 99th percentile of benign calibration scores...
+2026-09-28 20:46:07,305 [INFO]     A_thr (normalized) = 0.68922968
+2026-09-28 20:46:07,305 [INFO]     raw score equiv    = 0.59442470
+2026-09-28 20:46:07,305 [INFO]     interpolation      = linear (numpy.percentile default)
+2026-09-28 20:46:07,305 [INFO]   ✓ A_thr derived from benign calibration only. No evaluation labels used.
+2026-09-28 20:46:07,316 [INFO]     Calib A_t stats: mean=0.312400, std=0.153708, p99=0.689230, max=0.892291
+2026-09-28 20:46:07,316 [INFO] [8] Joining evaluation labels post-hoc (after all scoring is frozen)...
+2026-09-28 20:46:07,326 [INFO] [9] Computing point-level discrimination metrics...
+2026-09-28 20:46:07,871 [INFO] 
+============================================================
+2026-09-28 20:46:07,871 [INFO] POINT-LEVEL METRICS (post-hoc, A_thr={A_thr:.6f})
+2026-09-28 20:46:07,871 [INFO] ============================================================
+2026-09-28 20:46:07,874 [INFO]   Attack prevalence : 0.3708 (64339/173506)
+2026-09-28 20:46:07,874 [INFO]   TP                : 714
+2026-09-28 20:46:07,874 [INFO]   TN                : 107,786
+2026-09-28 20:46:07,874 [INFO]   FP                : 1,381
+2026-09-28 20:46:07,874 [INFO]   FN                : 63,625
+2026-09-28 20:46:07,874 [INFO]   Precision         : 0.340811
+2026-09-28 20:46:07,874 [INFO]   Recall            : 0.011097
+2026-09-28 20:46:07,874 [INFO]   F1-Score          : 0.021495
+2026-09-28 20:46:07,874 [INFO]   FPR               : 0.012650
+2026-09-28 20:46:07,876 [INFO]   FNR               : 0.988903
+2026-09-28 20:46:07,876 [INFO]   Specificity       : 0.987350
+2026-09-28 20:46:07,876 [INFO]   Balanced Accuracy : 0.499224
+2026-09-28 20:46:07,877 [INFO]   ROC-AUC           : 0.499887
+2026-09-28 20:46:07,877 [INFO]   PR-AUC            : 0.369016
+2026-09-28 20:46:07,877 [INFO] ============================================================
+
+2026-09-28 20:46:07,877 [INFO] [10] Computing benign vs attack score distributions...
+2026-09-28 20:46:07,952 [INFO]   [EVAL benign         ] n=109,167  mean=0.310338  std=0.155828  median=0.297063  p90=0.524896  p99=0.705188  max=1.000000
+2026-09-28 20:46:07,952 [INFO]   [EVAL attack         ] n= 64,339  mean=0.309804  std=0.154380  median=0.296657  p90=0.521933  p99=0.695202  max=1.000000
+2026-09-28 20:46:07,954 [INFO]   [EVAL all            ] n=173,506  mean=0.310140  std=0.155293  median=0.296914  p90=0.523578  p99=0.701759  max=1.000000
+2026-09-28 20:46:07,976 [INFO] [11] Sub-threshold attack signal analysis...
+2026-09-28 20:46:07,983 [INFO] 
+============================================================
+2026-09-28 20:46:07,984 [INFO] SUB-THRESHOLD ANALYSIS
+2026-09-28 20:46:07,984 [INFO] ============================================================
+2026-09-28 20:46:07,985 [INFO]   Attack obs with A_t < A_thr  :   63,625  (98.89% of attacks)
+2026-09-28 20:46:07,985 [INFO]   Attack obs with A_t >= A_thr :      714  (1.11% of attacks)
+2026-09-28 20:46:07,986 [INFO]   Benign obs with A_t < A_thr  :  107,786
+2026-09-28 20:46:07,986 [INFO]   Benign obs with A_t >= A_thr :    1,381  (FP count)
+2026-09-28 20:46:07,987 [INFO] ============================================================
+
+2026-09-28 20:46:08,005 [INFO]   Sub-threshold attack score stats:
+2026-09-28 20:46:08,005 [INFO]     mean=0.304929  median=0.294357  p90=0.511202  p95=0.567357  p99=0.651326  max=0.688546
+2026-09-28 20:46:08,010 [INFO]   Above-threshold attack score stats:
+2026-09-28 20:46:08,010 [INFO]     mean=0.744280  median=0.724306  p99=1.000000  max=1.000000
+2026-09-28 20:46:08,032 [INFO] [12] Computing temporal score characteristics...
+2026-09-28 20:46:08,143 [INFO]   Eval stream lag-1 autocorr (all)   : 0.492054
+2026-09-28 20:46:08,143 [INFO]   Eval stream lag-1 autocorr (benign) : 0.466851
+2026-09-28 20:46:08,143 [INFO]   Eval stream lag-1 autocorr (attack) : 0.521511
+2026-09-28 20:46:08,143 [INFO]   First-diff volatility (all)         : 0.156522
+2026-09-28 20:46:08,147 [INFO]   First-diff volatility (benign)      : 0.160910
+2026-09-28 20:46:08,147 [INFO]   First-diff volatility (attack)      : 0.151024
+2026-09-28 20:46:08,147 [INFO]   Contiguous A_t >= A_thr runs        : 1,073
+2026-09-28 20:46:08,147 [INFO]   Mean above-thr run length           : 1.95 steps
+2026-09-28 20:46:08,148 [INFO]   Max  above-thr run length           : 11 steps
+2026-09-28 20:46:08,149 [INFO] [13] Episode-level score characterization...
+2026-09-28 20:46:08,347 [INFO]   Number of attack episodes         : 1,002
+2026-09-28 20:46:08,347 [INFO]   Episodes with any A_t >= A_thr    : 89 (8.9%)
+2026-09-28 20:46:08,349 [INFO]   Episode duration: min=1 median=7 max=9784
+2026-09-28 20:46:08,349 [INFO]   Episode mean A_t: min=0.042501 median=0.309881 max=0.663618
+2026-09-28 20:46:08,351 [INFO]   Episode max  A_t: min=0.042501 median=0.464710 max=1.000000
+2026-09-28 20:46:08,351 [INFO] [14] Computing SHA-256 hash of evaluation score array...
+2026-09-28 20:46:08,357 [INFO]     SHA-256(A_eval) = 362c107d879b2a5f6604b0b135c3939af99d47e7d3af5830d8f4a0234f9c98b5
+2026-09-28 20:46:08,379 [INFO]     Eval rows                    : 173,506
+2026-09-28 20:46:08,380 [INFO]     Timestamp diffs computed     : 173,505  (expected 173,505)
+2026-09-28 20:46:08,380 [INFO]     Negative diffs               : 0  (expected 0)
+2026-09-28 20:46:08,380 [INFO]     Zero diffs (same second)     : 34590
+2026-09-28 20:46:08,380 [INFO]     Positive diffs               : 138915
+2026-09-28 20:46:08,388 [INFO]     Duplicate eval original_row_id: 0  (expected 0)
+2026-09-28 20:46:08,389 [INFO] [15] Leakage audit summary...
+2026-09-28 20:46:08,390 [INFO]   ✓ No leakage detected.
+2026-09-28 20:46:08,444 [INFO] 
+============================================================
+2026-09-28 20:46:08,447 [INFO] CROSS-RUN REPRODUCIBILITY VERIFICATION
+2026-09-28 20:46:08,447 [INFO] ============================================================
+2026-09-28 20:46:08,447 [INFO]   ✓          split.n_train: 100940
+2026-09-28 20:46:08,449 [INFO]   ✓          split.n_calib: 11691
+2026-09-28 20:46:08,452 [INFO]   ✓          split.n_eval: 173506
+2026-09-28 20:46:08,453 [INFO]   ✓          normalization.s_min: 0.44705100738580633
+2026-09-28 20:46:08,455 [INFO]   ✓          normalization.s_max: 0.6608747851971484
+2026-09-28 20:46:08,455 [INFO]   ✓          calibration.A_thr: 0.6892296769106134
+2026-09-28 20:46:08,463 [INFO]   ✓          score_sha256: 362c107d879b2a5f6604b0b135c3939af99d47e7d3af5830d8f4a0234f9c98b5
+2026-09-28 20:46:08,466 [INFO] 
+  Overall reproducibility: VERIFIED
+2026-09-28 20:46:08,466 [INFO] 
+============================================================
+2026-09-28 20:46:08,466 [INFO] SUITABILITY CONCLUSION
+2026-09-28 20:46:08,466 [INFO] ============================================================
+2026-09-28 20:46:08,466 [INFO]   ROC-AUC                : 0.499887
+2026-09-28 20:46:08,467 [INFO]   PR-AUC                 : 0.369016
+2026-09-28 20:46:08,467 [INFO]   Point recall           : 0.011097
+2026-09-28 20:46:08,467 [INFO]   Point F1               : 0.021495
+2026-09-28 20:46:08,467 [INFO]   Sub-threshold attacks  : 98.89%
+2026-09-28 20:46:08,469 [INFO]   Score separation       : NO
+2026-09-28 20:46:08,469 [INFO]   Continuous signal      : NO
+2026-09-28 20:46:08,469 [INFO] 
+  VERDICT: UNSUITABLE
+2026-09-28 20:46:08,469 [INFO]   RATIONALE: ROC-AUC=0.4999 is near-random or detector fails minimum suitability criteria. Recommend investigation before TrustEngine phase.
+2026-09-28 20:46:08,469 [INFO] 
+[ARTIFACTS] Saving experiment artifacts...
+2026-09-28 20:46:08,605 [INFO]   detector_config.json          -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\detector_config.json
+2026-09-28 20:46:08,616 [INFO]   normalization_constants.json  -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\normalization_constants.json
+2026-09-28 20:46:08,616 [INFO]   calibration_threshold.json    -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\calibration_threshold.json
+2026-09-28 20:46:08,616 [INFO]   point_metrics.json            -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\point_metrics.json
+2026-09-28 20:46:08,616 [INFO]   sub_threshold_analysis.json   -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\sub_threshold_analysis.json
+2026-09-28 20:46:08,616 [INFO]   episode_analysis.json         -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\episode_analysis.json
+2026-09-28 20:46:08,616 [INFO]   temporal_score_characteristics.json -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\temporal_score_characteristics.json
+2026-09-28 20:46:08,616 [INFO]   score_distributions.json      -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\score_distributions.json
+2026-09-28 20:46:08,624 [INFO]   leakage_audit.json            -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\leakage_audit.json
+2026-09-28 20:46:08,624 [INFO]   reproducibility.json          -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\reproducibility.json
+2026-09-28 20:46:08,624 [INFO]   suitability_summary.json      -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\suitability_summary.json
+2026-09-28 20:46:08,624 [INFO]   full_results_run1.json        -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\full_results_run1.json
+2026-09-28 20:46:08,624 [INFO]   run_log.txt                   -> C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\ton_iot\phase2a_corrected\run_log.txt
+2026-09-28 20:46:08,624 [INFO] 
+======================================================================
+2026-09-28 20:46:08,624 [INFO] PHASE_2A_CORRECTED_COMPLETE
+2026-09-28 20:46:08,624 [INFO] ======================================================================
+2026-09-28 20:46:08,624 [INFO]   Finish time: 2026-09-28T20:46:08.624416

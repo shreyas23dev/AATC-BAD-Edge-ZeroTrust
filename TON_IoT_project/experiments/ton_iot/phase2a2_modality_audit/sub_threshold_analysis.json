@@ -1,0 +1,7 @@
+{
+  "n_attack_sub_thr": 90523,
+  "n_attack_above_thr": 1,
+  "n_benign_sub_thr": 102525,
+  "n_benign_above_thr": 0,
+  "pct_attack_sub_thr": 99.99889532057797
+}

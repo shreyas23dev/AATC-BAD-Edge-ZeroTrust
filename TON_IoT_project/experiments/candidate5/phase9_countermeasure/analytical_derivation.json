@@ -1,0 +1,19 @@
+{
+  "title": "Analytical Derivation and Comparative Distinctness Proofs",
+  "mathematical_distinctness": {
+    "distinct_from_B0": "B0 enforces a fixed, memoryless ceiling C equiv 1.0. AATC introduces an internal state variable C_t that dynamically contracts the recovery asymptote based on cumulative borderline debt D_t.",
+    "distinct_from_M1": "M1 (Persistent Floor) places a lower floor h_t on the slow-burn accumulator SB_t and latches on E > gamma. AATC places an upper ceiling C_t on trust recovery and activates on high-trust sub-threshold consumption.",
+    "distinct_from_M2": "M2 (Recovery Dilation) scales the recovery rate alpha_t using an integer incident counter k_inc triggered by ANY transition from ALLOW to non-ALLOW. AATC bounds the asymptote C_t and does NOT trigger on overt false alarms, preventing honest device lockout.",
+    "distinct_from_M3": "M3 (Rehabilitation Hysteresis) is a discrete binary hysteresis flag p in {0,1} cleared after 15 consecutive clean steps with zero continuous memory. AATC is a continuous stateful ceiling with persistent memory across episodes.",
+    "distinct_from_Family_C": "Family C is a fast leaky accumulator Q_t with short memory (H=20) that deducts an instantaneous penalty from trust T_t. AATC is an authorization debt accumulator D_t acting on the asymptotic recovery ceiling C_t."
+  },
+  "closed_form_dynamics": {
+    "under_clean_rest": "When A_t < q_low: D_{t+1} = max(0.0, D_t - delta_D). Debt clears to zero in exactly t_clear = ceil(D_t / delta_D) steps.",
+    "under_cycle_a": "Attack pulse adds Delta D = (0.41 - 0.35)/0.1054 = 0.5693. Over 10 rest steps, nominal traffic sheds 10 * 0.10 = 1.0. However, when ambient packets occur in rest, shedding is reduced. As D accumulates across cycles, once D > 1.70, C drops below 0.80, forcing subsequent cycles into VERIFY.",
+    "asymptotic_trust_recovery": "In recovery, T_{t+1} - C_t = (1 - alpha_0) * (T_t - C_t). Trust converges exponentially to C_t rather than 1.0."
+  },
+  "failure_modes_and_boundary_conditions": {
+    "patient_adversary": "An adversary spacing attack pulses by tau_r >= 25 steps allows debt D to fully clear between cycles, evading ceiling attenuation (duty cycle < 1/26 = 0.038).",
+    "burst_benign_traffic": "An honest device generating prolonged bursts of near-threshold traffic (e.g., heavy legitimate video streaming) may see its ceiling drop to VERIFY until traffic subsides."
+  }
+}

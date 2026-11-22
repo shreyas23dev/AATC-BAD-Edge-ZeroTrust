@@ -1,0 +1,54 @@
+{
+  "phase": 10,
+  "evaluation_dataset": "benign_chronological_scores.csv (FINAL EVALUATION split)",
+  "N_observations": 7459,
+  "timestamps": [
+    "2021-01-01 11:54:35.905279",
+    "2021-01-01 12:02:24.882968"
+  ],
+  "P_A_ge_A_thr": 0.043035,
+  "B0_availability": {
+    "N_total": 7459,
+    "n_allow": 5526,
+    "allow_fraction": 0.74085,
+    "n_verify": 1129,
+    "verify_fraction": 0.151361,
+    "n_block": 804,
+    "block_fraction": 0.107789,
+    "block_transitions": 12,
+    "total_policy_transitions": 464,
+    "longest_continuous_block": 743,
+    "mean_recovery_time_after_overt": 41.7508
+  },
+  "AATC_availability": {
+    "N_total": 7459,
+    "n_allow": 5526,
+    "allow_fraction": 0.74085,
+    "n_verify": 1129,
+    "verify_fraction": 0.151361,
+    "n_block": 804,
+    "block_fraction": 0.107789,
+    "block_transitions": 12,
+    "total_policy_transitions": 464,
+    "longest_continuous_block": 743,
+    "mean_recovery_time_after_overt": 41.7508
+  },
+  "AATC_internal_distributions": {
+    "debt": {
+      "mean": 0.262502,
+      "median": 0.0,
+      "p90": 0.869215,
+      "p95": 1.062992,
+      "p99": 1.53881,
+      "max": 2.13449,
+      "crossings_above_K_allow": 35
+    },
+    "ceiling": {
+      "mean": 0.999764,
+      "median": 1.0,
+      "min": 0.869653,
+      "fraction_at_1_0": 0.995308,
+      "fraction_below_T_allow": 0.0
+    }
+  }
+}

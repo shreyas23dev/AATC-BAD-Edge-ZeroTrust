@@ -1,0 +1,11 @@
+{
+  "future_values_used": false,
+  "cross_partition_temporal_leakage": false,
+  "attack_labels_used_during_training": false,
+  "attack_labels_used_during_calibration": false,
+  "evaluation_labels_used_for_threshold": false,
+  "scaler_fit_only_on_benign_train": true,
+  "normalization_bounds_derived_only_from_train": true,
+  "A_thr_derived_only_from_benign_calibration": true,
+  "leakage_detected": false
+}

@@ -1,0 +1,110 @@
+{
+  "all_match": true,
+  "per_hash": {
+    "roll_mean_10": {
+      "run1": "80f4a274c034d105f0f29c2fc1a9d225c4f921a8bcfd561a2aeb7f4c651c35e8",
+      "run2": "80f4a274c034d105f0f29c2fc1a9d225c4f921a8bcfd561a2aeb7f4c651c35e8",
+      "match": true
+    },
+    "roll_max_10": {
+      "run1": "15946f0acad2a87ff3a4e0373cb5aad77f84436eaf5736293f8f0fe22b7496c7",
+      "run2": "15946f0acad2a87ff3a4e0373cb5aad77f84436eaf5736293f8f0fe22b7496c7",
+      "match": true
+    },
+    "exceedance_10": {
+      "run1": "99b5e7fff7a41e68eac01e12dc863b8c187aaac82f358dac0a913a088fe59374",
+      "run2": "99b5e7fff7a41e68eac01e12dc863b8c187aaac82f358dac0a913a088fe59374",
+      "match": true
+    },
+    "burst_rate_10": {
+      "run1": "2cc4f59facce9c185414ec6d613c6a347378854f65eeaa9e3709283a9b21ab77",
+      "run2": "2cc4f59facce9c185414ec6d613c6a347378854f65eeaa9e3709283a9b21ab77",
+      "match": true
+    },
+    "roll_mean_50": {
+      "run1": "56f6c857c67dbed8ee7d784872c5e578076b953019162e1a9038eaf0f7308b2b",
+      "run2": "56f6c857c67dbed8ee7d784872c5e578076b953019162e1a9038eaf0f7308b2b",
+      "match": true
+    },
+    "roll_max_50": {
+      "run1": "ba1a6a739a031f7d62093e78970825703108e6e1102c00cf6374164a9ca50e9f",
+      "run2": "ba1a6a739a031f7d62093e78970825703108e6e1102c00cf6374164a9ca50e9f",
+      "match": true
+    },
+    "exceedance_50": {
+      "run1": "bb63aece4200302f2354074097f2b93b73d075a41888c30cf8df887530b84655",
+      "run2": "bb63aece4200302f2354074097f2b93b73d075a41888c30cf8df887530b84655",
+      "match": true
+    },
+    "burst_rate_50": {
+      "run1": "7b326106f9f80897d33ba702a2c55af6b53eacb6cf79d61d8a4d7ce8cfea571c",
+      "run2": "7b326106f9f80897d33ba702a2c55af6b53eacb6cf79d61d8a4d7ce8cfea571c",
+      "match": true
+    },
+    "roll_mean_100": {
+      "run1": "429fe1648f3005c95de2ef9196fb2569b945d85ef8038c2ef9c9b347031f2296",
+      "run2": "429fe1648f3005c95de2ef9196fb2569b945d85ef8038c2ef9c9b347031f2296",
+      "match": true
+    },
+    "roll_max_100": {
+      "run1": "8f9ef9cbc570ce7e5e356c551c27f9c2214d3c44834d481df4d473fe1d56e979",
+      "run2": "8f9ef9cbc570ce7e5e356c551c27f9c2214d3c44834d481df4d473fe1d56e979",
+      "match": true
+    },
+    "exceedance_100": {
+      "run1": "9518ffd08bae4876af6194d06840f01b6747c1ccabd940b51a755ff283cc71e2",
+      "run2": "9518ffd08bae4876af6194d06840f01b6747c1ccabd940b51a755ff283cc71e2",
+      "match": true
+    },
+    "burst_rate_100": {
+      "run1": "f6829bbcd12b69c110597d0c44fd990e82c49954dbbdeb1030a4612708450e17",
+      "run2": "f6829bbcd12b69c110597d0c44fd990e82c49954dbbdeb1030a4612708450e17",
+      "match": true
+    },
+    "roll_mean_500": {
+      "run1": "3c014e8407cb032b4ad4a81cb1a72739a6dee506c6dd7cedf69cfbbb81540dc3",
+      "run2": "3c014e8407cb032b4ad4a81cb1a72739a6dee506c6dd7cedf69cfbbb81540dc3",
+      "match": true
+    },
+    "roll_max_500": {
+      "run1": "a22c5c872eb63f1564d7d9dd35b31deb71e62022d71213d88f56218add7eaf4f",
+      "run2": "a22c5c872eb63f1564d7d9dd35b31deb71e62022d71213d88f56218add7eaf4f",
+      "match": true
+    },
+    "exceedance_500": {
+      "run1": "6a2564c6df5af1775a7071b2cbc157cc65b8f6b2764d7f296a544cb9162ce502",
+      "run2": "6a2564c6df5af1775a7071b2cbc157cc65b8f6b2764d7f296a544cb9162ce502",
+      "match": true
+    },
+    "burst_rate_500": {
+      "run1": "761df2d11996b937c1618ea027b9532c34179175d8ea3f3dcbc94c2290bfc601",
+      "run2": "761df2d11996b937c1618ea027b9532c34179175d8ea3f3dcbc94c2290bfc601",
+      "match": true
+    },
+    "persistence": {
+      "run1": "6ad90de1c9793b9e4889de752e6b12e2305a2eeb87224b71aed5b8b233863868",
+      "run2": "6ad90de1c9793b9e4889de752e6b12e2305a2eeb87224b71aed5b8b233863868",
+      "match": true
+    },
+    "ewma_b05": {
+      "run1": "ffbaeb0980d9e94ce65e8cd6ca15717d67013a3c72799f8bca5e4eb1a5a0ff66",
+      "run2": "ffbaeb0980d9e94ce65e8cd6ca15717d67013a3c72799f8bca5e4eb1a5a0ff66",
+      "match": true
+    },
+    "ewma_b10": {
+      "run1": "729e160eee16f0feb0b00de409fcdc5ef99a550f9829716f1d4dc5dbb7c38a24",
+      "run2": "729e160eee16f0feb0b00de409fcdc5ef99a550f9829716f1d4dc5dbb7c38a24",
+      "match": true
+    },
+    "ewma_b20": {
+      "run1": "21d3fe0116f6af84603bdbd76755d6df0e67c849a47dfee0f94cebc9954599e2",
+      "run2": "21d3fe0116f6af84603bdbd76755d6df0e67c849a47dfee0f94cebc9954599e2",
+      "match": true
+    },
+    "A_eval": {
+      "run1": "405d658d238f9d63ae170cfe0bd13723ffbea1dc29b3d66e507285c6deb0786a",
+      "run2": "405d658d238f9d63ae170cfe0bd13723ffbea1dc29b3d66e507285c6deb0786a",
+      "match": true
+    }
+  }
+}

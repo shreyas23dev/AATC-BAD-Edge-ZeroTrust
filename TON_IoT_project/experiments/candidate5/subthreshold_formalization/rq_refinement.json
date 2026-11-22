@@ -1,0 +1,69 @@
+{
+  "phase": 5,
+  "description": "Research question refinement based on Phase 5 formal analysis",
+  "basis_for_refinement": [
+    "Phase 4 empirical result: M1, M2 structurally inert against R_sub adversary; M3 partially effective",
+    "Phase 5 finding: B0 state (T, E, SB) does not encode temporal pattern of sub-threshold events",
+    "Phase 5 finding: repeated A=0.41 observations are epistemically indistinguishable from benign",
+    "Phase 5 finding: the exploit operates entirely within the BENIGN_RECOVERY branch",
+    "Phase 5 finding: Paper 1 slow-burn detects SUSTAINED sub-threshold attacks (3+ consecutive), but Cycle A avoids this via alternating rest"
+  ],
+  "paper_1_distinction": {
+    "paper_1_addressed": "Sub-threshold slow-burn behavior where individual steps have A < A_thr but E eventually exceeds gamma after sustained observation, activating the slow-burn accumulation branch. Paper 1's EMA accumulator (E_t) is designed to detect this cumulative magnitude pattern.",
+    "candidate_5_addresses": "Repeated attack episodes where EACH INDIVIDUAL EPISODE consists of observations remaining below BOTH the overt threshold (A < A_thr) AND the energy accumulation threshold (E_next <= gamma), while the adversary exploits the REHABILITATION CYCLE between episodes. The attack is not on the slow-burn accumulation mechanism directly, but on the PERIODIC RESET PROPERTY that rehabilitation provides. The pattern is in the inter-episode temporal structure, not in individual event magnitude.",
+    "why_not_another_slow_burn_detector": "Paper 1's slow-burn detector requires sustained sub-threshold activity to accumulate energy above gamma. Candidate 5's adversary actively prevents this by interleaving sufficient rest to reset E below gamma before each attack. The new evidence must capture the RECURRENCE of the exploitation cycle, not the per-observation magnitude of the anomaly signal."
+  },
+  "magnitude_vs_temporal_distinction": {
+    "magnitude_evidence": {
+      "definition": "Evidence that a SINGLE observation or a SUSTAINED stream is anomalous",
+      "examples": [
+        "A_t > A_thr (overt threshold exceeded)",
+        "E_t > gamma (slow-burn accumulator exceeds energy threshold)",
+        "SB_t > theta (trust penalty triggered)"
+      ],
+      "applicable_to_cycle_a": false,
+      "reason": "Every Cycle A observation, taken individually, is in R_sub \u2014 below all detection thresholds"
+    },
+    "temporal_evidence": {
+      "definition": "Evidence derived from the temporal PATTERN of observations: repetition, persistence, inter-arrival structure, cumulative near-threshold exposure, or temporal concentration of individually sub-threshold events.",
+      "applicable_to_cycle_a": true,
+      "reason": "The adversarial behavior consists of k cycles of (1 attack + tau_r rest), with the cycle PERSISTING over a long observation window. No single observation is anomalous; the pattern across observations is anomalous.",
+      "key_property": "Temporal evidence must be NONZERO under adversarial cycling and near-ZERO under isolated benign sub-threshold events. This requires accumulating information across the INTER-EPISODE boundary."
+    }
+  },
+  "primary_rq": {
+    "id": "RQ_PRIMARY",
+    "statement": "Can a compact O(1)-state temporal evidence accumulator, operating strictly within the sub-threshold region R_sub = {A < A_thr, E_next <= gamma}, represent the distinction between isolated benign sub-threshold events and repeated strategic rehabilitation cycles, while preserving B0's false quarantine rate for uncompromised IoT devices under real ambient telemetry noise?",
+    "motivation": "Phase 4 established that no post-accumulation mechanism (M1\u2013M3) intercepts Cycle A exploitation. Phase 5 establishes that B0's current state (T, E, SB) aliases adversarial cycling with benign recovery. The primary question is whether a minimal state extension can resolve this aliasing without degrading availability.",
+    "key_constraints": [
+      "Must not modify A_thr or gamma (preserving Paper 1 integrity)",
+      "Must operate exclusively on temporal pattern, not individual event magnitude",
+      "Must preserve B0's false quarantine rate within acceptable tolerance",
+      "Must be O(1) in state and computation (IoT edge-deployable)"
+    ]
+  },
+  "secondary_rq_1": {
+    "id": "RQ_S1",
+    "statement": "What mathematical properties of an input sequence \u2014 including event count, inter-arrival time, near-threshold proximity, and temporal concentration \u2014 are most discriminative between adversarial sub-threshold cycling and legitimate IoT device behavior under real ambient telemetry noise ($p_{fp} = 5.03\\%$)?",
+    "motivation": "The five temporal evidence families (A\u2013E) represent different information-theoretic choices. RQ_S1 asks which property or combination is most discriminative when benign traffic contributes an ambient sub-threshold event rate that could mask or mimic adversarial patterns."
+  },
+  "secondary_rq_2": {
+    "id": "RQ_S2",
+    "statement": "Does there exist a temporal evidence accumulator Q_t with a fixed stationary distribution Q* under pure benign telemetry (representing the benign noise floor) such that the expected Q value under Cycle A attack cycling significantly exceeds Q* \u2014 enabling a principled detection threshold \u2014 without requiring knowledge of the adversarial schedule parameters (tau_a, tau_r)?",
+    "motivation": "A deployable mechanism must set detection thresholds without knowing the specific adversarial schedule. RQ_S2 asks whether a Q accumulator can achieve a meaningful signal-to-noise ratio over the benign Q* baseline in a schedule-agnostic manner."
+  },
+  "rq_scope_boundaries": {
+    "in_scope": [
+      "Compact O(1) state extensions to B0",
+      "Detection of periodic sub-threshold cycling patterns",
+      "Discrimination from benign IoT ambient noise",
+      "Non-modification of A_thr, gamma, alpha_0, or Paper 1 architecture"
+    ],
+    "out_of_scope": [
+      "Modifying A_thr or gamma (parameter tuning)",
+      "Replacing the TrustEngine with a learned model",
+      "Applying supervised ML to the detection problem",
+      "Protocol-level network topology analysis"
+    ]
+  }
+}

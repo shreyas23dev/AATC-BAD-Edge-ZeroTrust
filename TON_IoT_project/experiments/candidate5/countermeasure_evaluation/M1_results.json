@@ -1,0 +1,560 @@
+{
+  "security": {
+    "Cycle_A": {
+      "mechanism": "M1",
+      "schedule": "Cycle_A",
+      "tau_a": 1,
+      "tau_r": 10,
+      "survived_cycles_S": 8,
+      "attack_steps_delivered": 9,
+      "attack_steps_allow": 8,
+      "attack_steps_verify": 1,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 8.5,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 9,
+        "phase": "REST",
+        "step": 8
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 8,
+      "residual_evidence_last_cycle": 1.317,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.926182,
+          "SB_post_rst": 0.0,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.0
+          }
+        },
+        {
+          "cycle": 2,
+          "T_post_atk": 0.941367,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.994139,
+          "SB_post_rst": 0.266,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.266
+          }
+        },
+        {
+          "cycle": 3,
+          "T_post_atk": 0.995344,
+          "SB_post_atk": 0.265,
+          "T_post_rst": 0.999535,
+          "SB_post_rst": 0.255,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.255
+          }
+        },
+        {
+          "cycle": 4,
+          "T_post_atk": 0.99963,
+          "SB_post_atk": 0.254,
+          "T_post_rst": 0.999963,
+          "SB_post_rst": 0.244,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.244
+          }
+        },
+        {
+          "cycle": 5,
+          "T_post_atk": 0.999971,
+          "SB_post_atk": 0.243,
+          "T_post_rst": 0.999997,
+          "SB_post_rst": 0.233,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.233
+          }
+        },
+        {
+          "cycle": 6,
+          "T_post_atk": 0.999998,
+          "SB_post_atk": 0.232,
+          "T_post_rst": 1.0,
+          "SB_post_rst": 0.222,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.222
+          }
+        },
+        {
+          "cycle": 7,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.221,
+          "T_post_rst": 0.711079,
+          "SB_post_rst": 0.211,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "VERIFY",
+          "extra_state": {
+            "h": 0.211
+          }
+        },
+        {
+          "cycle": 8,
+          "T_post_atk": 0.77051,
+          "SB_post_atk": 0.21,
+          "T_post_rst": 0.977059,
+          "SB_post_rst": 0.371,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.371
+          }
+        },
+        {
+          "cycle": 9,
+          "T_post_atk": 0.981778,
+          "SB_post_atk": 0.37,
+          "T_post_rst": 0.250969,
+          "SB_post_rst": 1.317,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 8,
+          "end_policy": "BLOCK",
+          "extra_state": {
+            "h": 0.6825
+          }
+        }
+      ]
+    },
+    "Cycle_B": {
+      "mechanism": "M1",
+      "schedule": "Cycle_B",
+      "tau_a": 1,
+      "tau_r": 25,
+      "survived_cycles_S": 3,
+      "attack_steps_delivered": 4,
+      "attack_steps_allow": 4,
+      "attack_steps_verify": 0,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 4.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 4,
+        "phase": "REST",
+        "step": 13
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 3,
+      "residual_evidence_last_cycle": 1.15,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.997667,
+          "SB_post_rst": 0.261,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.261
+          }
+        },
+        {
+          "cycle": 2,
+          "T_post_atk": 0.998147,
+          "SB_post_atk": 0.26,
+          "T_post_rst": 0.999994,
+          "SB_post_rst": 0.235,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.235
+          }
+        },
+        {
+          "cycle": 3,
+          "T_post_atk": 0.999995,
+          "SB_post_atk": 0.234,
+          "T_post_rst": 0.908651,
+          "SB_post_rst": 0.209,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.209
+          }
+        },
+        {
+          "cycle": 4,
+          "T_post_atk": 0.927442,
+          "SB_post_atk": 0.208,
+          "T_post_rst": 0.250662,
+          "SB_post_rst": 1.15,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 13,
+          "end_policy": "BLOCK",
+          "extra_state": {
+            "h": 0.599
+          }
+        }
+      ]
+    },
+    "Cycle_C": {
+      "mechanism": "M1",
+      "schedule": "Cycle_C",
+      "tau_a": 1,
+      "tau_r": 50,
+      "survived_cycles_S": 1,
+      "attack_steps_delivered": 2,
+      "attack_steps_allow": 2,
+      "attack_steps_verify": 0,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 2.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 2,
+        "phase": "REST",
+        "step": 38
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 1,
+      "residual_evidence_last_cycle": 1.152,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 1.0,
+          "SB_post_atk": 0.0,
+          "T_post_rst": 0.999993,
+          "SB_post_rst": 0.236,
+          "quarantined": false,
+          "quarantine_phase": "NONE",
+          "quarantine_step": null,
+          "end_policy": "ALLOW",
+          "extra_state": {
+            "h": 0.236
+          }
+        },
+        {
+          "cycle": 2,
+          "T_post_atk": 0.999994,
+          "SB_post_atk": 0.235,
+          "T_post_rst": 0.250275,
+          "SB_post_rst": 1.152,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 38,
+          "end_policy": "BLOCK",
+          "extra_state": {
+            "h": 0.6
+          }
+        }
+      ]
+    },
+    "Cycle_D": {
+      "mechanism": "M1",
+      "schedule": "Cycle_D",
+      "tau_a": 5,
+      "tau_r": 25,
+      "survived_cycles_S": 0,
+      "attack_steps_delivered": 5,
+      "attack_steps_allow": 3,
+      "attack_steps_verify": 2,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 4.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 1,
+        "phase": "REST",
+        "step": 2
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 0,
+      "residual_evidence_last_cycle": 2.15,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 0.571805,
+          "SB_post_atk": 1.65,
+          "T_post_rst": 0.239931,
+          "SB_post_rst": 2.15,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 2,
+          "end_policy": "BLOCK",
+          "extra_state": {
+            "h": 0.8
+          }
+        }
+      ]
+    },
+    "Cycle_E": {
+      "mechanism": "M1",
+      "schedule": "Cycle_E",
+      "tau_a": 5,
+      "tau_r": 50,
+      "survived_cycles_S": 0,
+      "attack_steps_delivered": 5,
+      "attack_steps_allow": 3,
+      "attack_steps_verify": 2,
+      "attack_steps_block": 0,
+      "malicious_access_yield_M_cum": 4.0,
+      "quarantined": true,
+      "time_to_first_block": {
+        "cycle": 1,
+        "phase": "REST",
+        "step": 2
+      },
+      "absorbing_block": true,
+      "rehabilitation_cycles_completed": 0,
+      "residual_evidence_last_cycle": 2.15,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "T_post_atk": 0.571805,
+          "SB_post_atk": 1.65,
+          "T_post_rst": 0.239931,
+          "SB_post_rst": 2.15,
+          "quarantined": true,
+          "quarantine_phase": "REST",
+          "quarantine_step": 2,
+          "end_policy": "BLOCK",
+          "extra_state": {
+            "h": 0.8
+          }
+        }
+      ]
+    }
+  },
+  "availability": {
+    "mechanism": "M1",
+    "total_benign_observations": 17459,
+    "allow_fraction": 0.5101,
+    "verify_fraction": 0.142,
+    "block_fraction": 0.3479,
+    "allow_count": 8906,
+    "false_verify_count": 2479,
+    "false_block_count": 6074,
+    "block_transitions": 175,
+    "longest_continuous_block_duration": 3750,
+    "mean_recovery_time_steps": 20.76,
+    "median_recovery_time_steps": 5.0,
+    "final_trust": 0.999429,
+    "final_state": {
+      "T": 0.999429,
+      "E": 0.227168,
+      "SB": 0.427164,
+      "h": 0.427164,
+      "I": 0,
+      "policy": "ALLOW",
+      "branch": "BENIGN_RECOVERY"
+    },
+    "h_trajectory_sample": [
+      {
+        "step": 0,
+        "h": 0.0,
+        "SB": 0.0
+      },
+      {
+        "step": 500,
+        "h": 0.693,
+        "SB": 0.693
+      },
+      {
+        "step": 1000,
+        "h": 0.782,
+        "SB": 0.834
+      },
+      {
+        "step": 1500,
+        "h": 0.51025,
+        "SB": 0.51025
+      },
+      {
+        "step": 2000,
+        "h": 0.745,
+        "SB": 0.745
+      },
+      {
+        "step": 2500,
+        "h": 0.731,
+        "SB": 0.731
+      },
+      {
+        "step": 3000,
+        "h": 0.739,
+        "SB": 0.739
+      },
+      {
+        "step": 3500,
+        "h": 0.716,
+        "SB": 0.716
+      },
+      {
+        "step": 4000,
+        "h": 0.624,
+        "SB": 0.624
+      },
+      {
+        "step": 4500,
+        "h": 0.774,
+        "SB": 1.025
+      },
+      {
+        "step": 5000,
+        "h": 0.8,
+        "SB": 2.556563
+      },
+      {
+        "step": 5500,
+        "h": 0.67,
+        "SB": 0.67
+      },
+      {
+        "step": 6000,
+        "h": 0.745,
+        "SB": 0.745
+      },
+      {
+        "step": 6500,
+        "h": 0.73,
+        "SB": 0.73
+      },
+      {
+        "step": 7000,
+        "h": 0.744,
+        "SB": 0.744
+      },
+      {
+        "step": 7500,
+        "h": 0.798,
+        "SB": 1.71
+      },
+      {
+        "step": 8000,
+        "h": 0.799,
+        "SB": 3.87
+      },
+      {
+        "step": 8500,
+        "h": 0.791,
+        "SB": 4.07
+      },
+      {
+        "step": 9000,
+        "h": 0.792,
+        "SB": 7.87
+      },
+      {
+        "step": 9500,
+        "h": 0.792,
+        "SB": 15.87
+      },
+      {
+        "step": 10000,
+        "h": 0.786,
+        "SB": 23.27
+      },
+      {
+        "step": 10500,
+        "h": 0.794,
+        "SB": 27.07
+      },
+      {
+        "step": 11000,
+        "h": 0.787,
+        "SB": 20.67
+      },
+      {
+        "step": 11500,
+        "h": 0.799,
+        "SB": 7.07
+      },
+      {
+        "step": 12000,
+        "h": 0.686,
+        "SB": 0.686
+      },
+      {
+        "step": 12500,
+        "h": 0.737,
+        "SB": 0.737
+      },
+      {
+        "step": 13000,
+        "h": 0.366,
+        "SB": 0.366
+      },
+      {
+        "step": 13500,
+        "h": 0.548,
+        "SB": 0.548
+      },
+      {
+        "step": 14000,
+        "h": 0.432312,
+        "SB": 0.432312
+      },
+      {
+        "step": 14500,
+        "h": 0.425377,
+        "SB": 0.425377
+      },
+      {
+        "step": 15000,
+        "h": 0.249672,
+        "SB": 0.249672
+      },
+      {
+        "step": 15500,
+        "h": 0.0,
+        "SB": 0.0
+      },
+      {
+        "step": 16000,
+        "h": 0.0,
+        "SB": 0.0
+      },
+      {
+        "step": 16500,
+        "h": 0.2165,
+        "SB": 0.2165
+      },
+      {
+        "step": 17000,
+        "h": 0.181625,
+        "SB": 0.181625
+      }
+    ],
+    "min_residual_floor": 0.0,
+    "max_residual_floor": 0.8
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "evaluation_name": "Candidate 5 Phase 4 Empirical Countermeasure Evaluation",
+  "dataset_source": "benign_chronological_scores.csv (Edge-IIoTset)",
+  "dataset_rows": 17459,
+  "ambient_noise_rate_p_fp": 0.05028924909788648,
+  "attack_profile_sha256": "46b43406dce8a8740e843062f7d3cf202c0dfd025397a4f1d25b4e77510259da",
+  "baseline_parameters": {
+    "A_thr": 0.4554,
+    "gamma": 0.335,
+    "theta": 1.0,
+    "beta": 0.4,
+    "lambda": 0.55,
+    "delta": 0.05,
+    "P_pen": 0.25,
+    "alpha_0": 0.2057,
+    "T_allow": 0.8,
+    "T_quar": 0.3
+  },
+  "mechanisms_evaluated": [
+    "B0",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "schedules_evaluated": [
+    "Cycle_A",
+    "Cycle_B",
+    "Cycle_C",
+    "Cycle_D",
+    "Cycle_E"
+  ]
+}

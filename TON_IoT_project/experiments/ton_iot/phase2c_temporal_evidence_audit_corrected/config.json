@@ -1,0 +1,52 @@
+{
+  "phase": "2C_CORRECTED",
+  "experiment": "Temporal/Relational Evidence Feasibility Audit (Corrected)",
+  "dataset": "C:\\Users\\Shreyas A\\PROJECTS\\BAZT-TON_IoT\\TON_IoT_audit\\network_processed\\Network_dataset_1.csv",
+  "source_data_sha256": "37ea5238fcd2a7a18574b8e37e0427086c6c34d03a22f690256fc925946c0448",
+  "feature_cols": [
+    "duration",
+    "src_bytes",
+    "dst_bytes",
+    "src_pkts",
+    "dst_pkts",
+    "src_ip_bytes",
+    "dst_ip_bytes",
+    "missed_bytes"
+  ],
+  "train_end_ts": 1554335999,
+  "calib_end_ts": 1554364211,
+  "eval_start_ts": 1556021410,
+  "ocsvm_params": {
+    "kernel": "rbf",
+    "nu": 0.05,
+    "gamma": "scale"
+  },
+  "rolling_windows": [
+    10,
+    50,
+    100,
+    500
+  ],
+  "ewma_betas": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "calib_percentile": 99.0,
+  "dense_probe_vector": {
+    "duration": 0.0,
+    "src_bytes": 0.0,
+    "dst_bytes": 0.0,
+    "src_pkts": 1,
+    "dst_pkts": 0,
+    "src_ip_bytes": 48.0,
+    "dst_ip_bytes": 0.0,
+    "missed_bytes": 0.0
+  },
+  "burst_rate_status": "VOID_DEGENERATE_FEATURE",
+  "n_train": 165322,
+  "n_calib": 35576,
+  "n_eval": 799102,
+  "n_eval_attack": 791321,
+  "n_eval_benign": 7781
+}

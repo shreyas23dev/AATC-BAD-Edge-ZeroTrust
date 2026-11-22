@@ -1,0 +1,161 @@
+{
+  "n_matching_rows": 482518,
+  "fraction_of_eval": 0.6038252938923943,
+  "attack_pct_among_probes": 100.0,
+  "point_score_stats": {
+    "label": "dense_probe_point",
+    "n": 482518,
+    "mean": 0.9956165739592754,
+    "std": 5.551115123125783e-16,
+    "min": 0.9956165739592759,
+    "p25": 0.9956165739592759,
+    "median": 0.9956165739592759,
+    "p75": 0.9956165739592759,
+    "p90": 0.9956165739592759,
+    "p95": 0.9956165739592759,
+    "p99": 0.9956165739592759,
+    "max": 0.9956165739592759
+  },
+  "temporal_evidence": {
+    "roll_mean_10": {
+      "mean": 0.9956149176900887,
+      "min": 0.8960549165633471,
+      "max": 0.9967313850906884,
+      "threshold": 0.9961557309136944,
+      "pct_above_threshold": 0.0352318462730924
+    },
+    "roll_max_10": {
+      "mean": 0.9956638843558245,
+      "min": 0.9956165739592759,
+      "max": 1.0,
+      "threshold": 0.9985858543200159,
+      "pct_above_threshold": 0.4238183860498468
+    },
+    "exceedance_10": {
+      "mean": 0.0021043774532763545,
+      "min": 0.0,
+      "max": 0.5,
+      "threshold": 0.3,
+      "pct_above_threshold": 0.02797823086392632
+    },
+    "burst_rate_10": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "threshold": 1.0,
+      "pct_above_threshold": 100.0
+    },
+    "roll_mean_50": {
+      "mean": 0.9956145434960778,
+      "min": 0.9757042424800904,
+      "max": 0.9960154187470773,
+      "threshold": 0.9958327807744631,
+      "pct_above_threshold": 0.09512598493734949
+    },
+    "roll_max_50": {
+      "mean": 0.9957963727280722,
+      "min": 0.9956165739592759,
+      "max": 1.0,
+      "threshold": 0.999908095331788,
+      "pct_above_threshold": 0.10072163111013475
+    },
+    "exceedance_50": {
+      "mean": 0.0022742364015435695,
+      "min": 0.0,
+      "max": 0.22,
+      "threshold": 0.12,
+      "pct_above_threshold": 0.1390621697014412
+    },
+    "burst_rate_50": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "threshold": 1.0,
+      "pct_above_threshold": 100.0
+    },
+    "roll_mean_100": {
+      "mean": 0.9956146704417068,
+      "min": 0.9856604161713691,
+      "max": 0.995897073762578,
+      "threshold": 0.995762005663316,
+      "pct_above_threshold": 0.24206350851159958
+    },
+    "roll_max_100": {
+      "mean": 0.9959036054238064,
+      "min": 0.9956165739592759,
+      "max": 1.0,
+      "threshold": 0.9999854555891126,
+      "pct_above_threshold": 0.14818100050153568
+    },
+    "exceedance_100": {
+      "mean": 0.0023025876754856813,
+      "min": 0.0,
+      "max": 0.16,
+      "threshold": 0.08,
+      "pct_above_threshold": 0.3860995859221832
+    },
+    "burst_rate_100": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "threshold": 1.0,
+      "pct_above_threshold": 100.0
+    },
+    "roll_mean_500": {
+      "mean": 0.9956145898555431,
+      "min": 0.9936254358985322,
+      "max": 0.995800262478326,
+      "threshold": 0.9956370474177836,
+      "pct_above_threshold": 7.240973393738679
+    },
+    "roll_max_500": {
+      "mean": 0.9963432570236409,
+      "min": 0.9956167891893445,
+      "max": 1.0,
+      "threshold": 0.9999982150800658,
+      "pct_above_threshold": 0.09139555415549265
+    },
+    "exceedance_500": {
+      "mean": 0.0023201870189298642,
+      "min": 0.0,
+      "max": 0.114,
+      "threshold": 0.044,
+      "pct_above_threshold": 1.1682465731848346
+    },
+    "burst_rate_500": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "threshold": 1.0,
+      "pct_above_threshold": 100.0
+    },
+    "persistence": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "threshold": 0.25,
+      "pct_above_threshold": 0.0
+    },
+    "ewma_b05": {
+      "mean": 0.9956147415587134,
+      "min": 0.9483248563290776,
+      "max": 0.9960997865395238,
+      "threshold": 0.9958131933804716,
+      "pct_above_threshold": 0.17242880058360519
+    },
+    "ewma_b10": {
+      "mean": 0.9956149420530731,
+      "min": 0.9060111236857958,
+      "max": 0.9963731247345473,
+      "threshold": 0.9959179286956117,
+      "pct_above_threshold": 0.11543610808301451
+    },
+    "ewma_b20": {
+      "mean": 0.9956152756050235,
+      "min": 0.8363179238153114,
+      "max": 0.9968181349321814,
+      "threshold": 0.9960657908719022,
+      "pct_above_threshold": 0.09491873878280188
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "phase": 5,
+  "description": "Concrete state aliasing examples demonstrating that B0 state (T, E, SB) does not encode the number of prior attack cycles. These are analytic constructions from frozen parameters, not empirical simulations.",
+  "formal_statement": "B0 is a deterministic Markov system: state_{t+1} = f(A_t, state_t). Two histories H1 and H2 with H1(T=T0, E=E0, SB=SB0) = H2(T=T0, E=E0, SB=SB0) are INDISTINGUISHABLE from that state forward. If there exist adversarial history H_attack and benign history H_benign that converge to the same state, B0 cannot distinguish them.",
+  "epistemic_note": "This is a DEMONSTRATED PROPERTY (not an information-theoretic impossibility theorem). The aliasing arises from the EMA decay structure of E_t and the decay of SB_t, not from any fundamental information-theoretic argument. A state variable that encodes count or frequency of prior sub-threshold events would break the aliasing.",
+  "examples": [
+    {
+      "id": "ALIAS_1",
+      "name": "Asymptotic Convergence After 1 Attack Cycle",
+      "H_attack": {
+        "description": "Start at (T=1.0, E=0.1656, SB=0.0); execute 1 Cycle-A attack pulse + 10 rest steps",
+        "final_state": {
+          "T": 1.0,
+          "E": 0.16619112,
+          "SB": 0.0
+        },
+        "additional_rest_100_steps": {
+          "T": 1.0,
+          "E": 0.1656,
+          "SB": 0.0
+        }
+      },
+      "H_benign": {
+        "description": "Start at (T=1.0, E=0.1656, SB=0.0); execute 11 pure rest steps",
+        "final_state": {
+          "T": 1.0,
+          "E": 0.1656,
+          "SB": 0.0
+        },
+        "additional_rest_100_steps": {
+          "T": 1.0,
+          "E": 0.1656,
+          "SB": 0.0
+        }
+      },
+      "aliasing_status": {
+        "immediate": "Non-identical: delta_E = 0.000591",
+        "after_100_more_rest": "Epsilon-aliased: delta_E = 0.00000000",
+        "conclusion": "ASYMPTOTIC_ALIASING: states become indistinguishable after ~100 rest steps"
+      }
+    },
+    {
+      "id": "ALIAS_2",
+      "name": "Exact Aliasing After 8 Attack Cycles + Convergence Rest",
+      "H_attack": {
+        "description": "Start at (T=1.0, E=0.1656, SB=0.0); execute 8 complete Cycle-A attack cycles (88 total steps); then allow convergence rest",
+        "state_at_end_of_8_cycles": {
+          "T": 1.0,
+          "E": 0.16619327,
+          "SB": 0.0
+        },
+        "state_after_sufficient_rest": {
+          "T": 1.0,
+          "E": 0.1656,
+          "SB": 0.0
+        }
+      },
+      "H_benign": {
+        "description": "Any benign device operating normally from a clean initial state, with the same final (T, E, SB) values",
+        "state": {
+          "T": 1.0,
+          "E": 0.1656,
+          "SB": 0.0
+        }
+      },
+      "aliasing_status": {
+        "after_convergence_rest": "EXACT_ALIASING: both states are (T=1.0, E=0.1656, SB=0.0)",
+        "b0_perspective": "B0 observes (T=1.0, E=0.1656, SB=0.0) in both cases. The next-state function f(A_t, state) will produce identical trajectories for any future input sequence. B0 cannot differentiate the device that just completed 8 adversarial cycles from a pristine device."
+      }
+    },
+    {
+      "id": "ALIAS_3",
+      "name": "Mid-Cycle State Aliasing (Strongest Case)",
+      "description": "Mid-cycle, during the rest phase, the attack device and a benign device that experienced a single overt FP may have identical (T, E, SB).",
+      "H_attack": {
+        "description": "Device at cycle 5, rest step 8: T=0.98, E=0.168, SB=0.0 (typical mid-rest state)",
+        "state": {
+          "T": 0.98,
+          "E": 0.168,
+          "SB": 0.0
+        }
+      },
+      "H_benign": {
+        "description": "Benign device that encountered one overt FP (A=0.47) 8 steps ago, causing brief trust depression, now recovering. Starting from T=0.75 after FP, after 8 rest steps: T = 0.75 + alpha*(1-0.75) * [accumulated], E ~ 0.168, SB ~ 0.0",
+        "note": "Exact T value depends on FP amplitude and prior state; the point is that such states are REACHABLE by benign devices. B0 state space is a compact region; adversarial mid-cycle states are not confined to a separate subspace."
+      },
+      "aliasing_status": {
+        "structural_note": "The B0 state space R = [0,1] x [0, inf) x [0, inf) is the same for all input histories. There is no adversarial-exclusive subspace. Every adversarial state is also reachable by some benign history."
+      }
+    }
+  ],
+  "markov_property_and_its_consequence": {
+    "markov_property": "B0 satisfies the Markov property: P(s_{t+1} | s_t, s_{t-1}, ..., s_0) = P(s_{t+1} | s_t). Equivalently, the next state is a deterministic function only of the current state and input: s_{t+1} = f(A_t, s_t).",
+    "consequence_for_aliasing": "Because B0 is Markovian with state (T, E, SB), two histories that reach the same state are GUARANTEED to produce identical future trajectories under identical future inputs. The adversary's exploitation history is erased from B0's state representation once E decays back to its benign fixed point.",
+    "required_additional_state": "To distinguish adversarial cycling from benign operation, a new state variable Q_t is required that encodes information about the TEMPORAL PATTERN of prior inputs, not merely the current magnitude state (T, E, SB)."
+  }
+}

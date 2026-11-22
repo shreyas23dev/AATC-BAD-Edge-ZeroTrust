@@ -1,0 +1,21 @@
+{
+  "phase": "Candidate 5 Empirical Gate",
+  "date": "2026-09-29T10:45:05.176964",
+  "dataset": "C:\\Users\\Shreyas A\\PROJECTS\\Behavior-Adaptive-Zero-Trust-IoT\\edge-iiot-anomaly-detection\\data\\raw\\DNN-EdgeIIoT-dataset.csv",
+  "model": "C:\\Users\\Shreyas A\\PROJECTS\\Behavior-Adaptive-Zero-Trust-IoT\\edge-iiot-anomaly-detection\\artifacts\\models\\model.pkl",
+  "parameters": {
+    "A_THR": 0.4554,
+    "GAMMA": 0.335,
+    "THETA": 1.0,
+    "BETA": 0.4,
+    "LAMBDA": 0.55,
+    "DELTA": 0.05,
+    "P_PEN": 0.25,
+    "ALPHA": 0.2057,
+    "T_ALLOW": 0.8,
+    "T_DET": 0.6,
+    "T_QUAR": 0.3
+  },
+  "gate_status": "C5_GATE_PASS",
+  "gate_rationale": "Under real empirical Edge-IIoTset benign telemetry, 1 of 5 tested attack/rest cycles sustained repeated execution (>= 15 cycles) without triggering permanent quarantine. Trust consistently rehabilitated back above the ALLOW threshold (mean R_rec >= 0.70), proving that the empirical prerequisite for policy-induced rehabilitation gaming is present."
+}

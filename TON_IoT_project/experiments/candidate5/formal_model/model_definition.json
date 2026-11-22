@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "title": "Candidate 5 Formal Model Definition",
+    "version": "1.0",
+    "target_venue": "InCIS 2027 (IIT Madras / DoMS / AIS India Chapter)",
+    "precondition_status": "C5_PASS_WITH_TEMPORAL_LIMITATION",
+    "specification_type": "Theoretical & Mathematical Design (Pre-Implementation)"
+  },
+  "research_questions": {
+    "primary_rq": "How does memoryless trust rehabilitation in automated Zero-Trust architectures induce policy gaming by cyclic adversaries, and what history-dependent state mechanisms are required to eliminate exploitable periodic orbits without compromising legitimate device recovery?",
+    "secondary_rqs": [
+      "Under what structural conditions on the trust decay rate (alpha), evidence gain (lambda), and decay (delta) does the discrete dynamical system possess an asymptotically stable periodic orbit that sustains non-zero attack throughput?",
+      "How does natural background false-positive noise in the benign telemetry stream bound the adversary's feasible rest horizon, and does this noise floor eliminate or merely constrain cyclic exploitability?",
+      "What is the minimal formal modification to the trust state transition kernel that breaks the cyclic reset condition while preserving asymptotic convergence to T=1.0 for honest devices?"
+    ]
+  },
+  "state_space": {
+    "vector": "x_t = (T_t, E_t, SB_t, n_t)",
+    "dimensions": [
+      {
+        "symbol": "T_t",
+        "domain": "[0.0, 1.0]",
+        "type": "continuous",
+        "description": "Scalar continuous device trust score",
+        "initial_value": 1.0
+      },
+      {
+        "symbol": "E_t",
+        "domain": "[0.0, 1.0]",
+        "type": "continuous",
+        "description": "Exponentially smoothed anomaly score energy (EMA)",
+        "initial_value": 0.1656
+      },
+      {
+        "symbol": "SB_t",
+        "domain": "[0.0, Infinity)",
+        "type": "continuous",
+        "description": "Asymmetric slow-burn evidence accumulator",
+        "initial_value": 0.0
+      },
+      {
+        "symbol": "n_t",
+        "domain": "Integers >= 0",
+        "type": "discrete",
+        "description": "Cumulative historical penalty or quarantine counter",
+        "initial_value": 0
+      }
+    ]
+  },
+  "control_space": {
+    "symbol": "u_t",
+    "domain": "{0, 1}",
+    "type": "binary",
+    "actions": {
+      "0": "Benign rest action (compliance with normal operational telemetry)",
+      "1": "Attack action (sub-threshold anomaly generation)"
+    }
+  },
+  "observable_observation": {
+    "symbol": "A_t",
+    "domain": "[0.0, 1.0]",
+    "type": "continuous",
+    "equation": "A_t = (1 - u_t) * A_t_benign + u_t * A_t_attack",
+    "distributions": {
+      "benign": {
+        "source": "Edge-IIoTset normal telemetry",
+        "mean_mu0": 0.1656,
+        "variance_sigma0_sq": 0.0035,
+        "empirical_p_fp": 0.0155
+      },
+      "attack": {
+        "source": "Paper 1 Table 6 DDoS_HTTP sub-threshold trace",
+        "sequence": [0.41, 0.39, 0.42, 0.38, 0.4, 0.43, 0.39, 0.41, 0.4, 0.42],
+        "mean_mua": 0.4050,
+        "min_score": 0.3800,
+        "max_score": 0.4300,
+        "p_sub_threshold": 1.0000,
+        "sha256": "694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c"
+      }
+    }
+  },
+  "baseline_trust_engine_parameters": {
+    "beta_smoothing": 0.40,
+    "gamma_energy_threshold": 0.335,
+    "theta_accumulator_trigger": 1.00,
+    "lambda_evidence_gain": 0.55,
+    "delta_evidence_decay": 0.05,
+    "a_thr_overt_threshold": 0.4554,
+    "alpha_trust_recovery": 0.2057,
+    "p_pen_slowburn_penalty": 0.25,
+    "t_allow_threshold": 0.80,
+    "t_block_threshold": 0.30
+  },
+  "baseline_equations": {
+    "energy_ema": "E_{t+1} = beta * A_t + (1 - beta) * E_t",
+    "slow_burn_accumulator": "SB_{t+1} = (SB_t + lambda) if (E_{t+1} > gamma) else max(0.0, SB_t - delta)",
+    "trigger_indicator": "I_{t+1} = 1 if (SB_{t+1} > theta) else 0",
+    "trust_update": {
+      "overt_attack": "T_{t+1} = T_t * (1.0 - A_t) if (A_t >= A_thr)",
+      "benign_recovery": "T_{t+1} = T_t + alpha * (1.0 - T_t) if (A_t < A_thr and I_{t+1} == 0)",
+      "slow_burn_penalty": "T_{t+1} = max(0.0, T_t - P_pen * (A_t / A_thr)) if (A_t < A_thr and I_{t+1} == 1)"
+    },
+    "policy_mapping": {
+      "ALLOW": "T_{t+1} >= 0.80",
+      "VERIFY": "0.30 <= T_{t+1} < 0.80",
+      "BLOCK": "T_{t+1} < 0.30"
+    }
+  },
+  "game_theoretic_specification": {
+    "game_type": "Stackelberg Dynamic Game (Defender-Leader, Attacker-Follower)",
+    "leader": {
+      "entity": "Defender / System Administrator",
+      "action": "Selects policy mechanism M and parameters theta_D",
+      "objective": "Minimize social loss J_D = sum [ u_t * L_damage * I(ALLOW) + C_friction * I(VERIFY) + (1-u_t) * C_false_quar * I(BLOCK) ]",
+      "parameters": {
+        "L_damage": 10.0,
+        "C_friction": 1.0,
+        "C_false_quar": 50.0
+      }
+    },
+    "follower": {
+      "entity": "Adversary / Compromised Device Controller",
+      "action": "Selects control schedule u_t in {0, 1} to maximize J_A",
+      "objective": "Maximize malicious utility J_A = sum [ u_t * omega_gain * I(ALLOW) + u_t * omega_degraded * I(VERIFY) - c_rest * (1 - u_t) - c_block * I(BLOCK) ]",
+      "parameters": {
+        "omega_gain": 5.0,
+        "omega_degraded": 1.5,
+        "c_rest": 0.1,
+        "c_block": 100.0
+      }
+    },
+    "information_structure": "Feedback Stackelberg Equilibrium; Defender commits to deterministic policy; Attacker observes policy feedback P_t"
+  }
+}

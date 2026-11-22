@@ -1,0 +1,30 @@
+{
+  "IsolationForest": {
+    "lag1_autocorr": 0.23711495635528415,
+    "first_diff_volatility": 0.09560197639813156,
+    "n_above_thr_runs": 1126,
+    "mean_run_length": 1.0843694493783305,
+    "max_run_length": 6
+  },
+  "OneClassSVM": {
+    "lag1_autocorr": 0.06626814199380035,
+    "first_diff_volatility": 0.007501553485469429,
+    "n_above_thr_runs": 335,
+    "mean_run_length": 1.0537313432835822,
+    "max_run_length": 3
+  },
+  "LocalOutlierFactor": {
+    "lag1_autocorr": 0.10181441344861268,
+    "first_diff_volatility": 0.006163674566507038,
+    "n_above_thr_runs": 88698,
+    "mean_run_length": 2.158188459717243,
+    "max_run_length": 7303
+  },
+  "RobustMahalanobis": {
+    "lag1_autocorr": 0.00021347257752374834,
+    "first_diff_volatility": 5.051535463688425e-07,
+    "n_above_thr_runs": 173,
+    "mean_run_length": 1.0289017341040463,
+    "max_run_length": 2
+  }
+}

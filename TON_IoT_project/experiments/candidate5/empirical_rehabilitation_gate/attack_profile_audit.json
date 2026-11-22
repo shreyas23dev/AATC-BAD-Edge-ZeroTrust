@@ -1,0 +1,29 @@
+{
+  "status": "VERIFIED_EMPIRICAL_PROFILE",
+  "source_file": "experiments\\evaluate_adaptive_adversaries.py (line 157) & scripts\\generate_ieee_conference_figures.py (line 134)",
+  "provenance_description": "Authoritative Paper 1 empirical sub-threshold attack profile from Edge-IIoTset test partition (Table 6 DDoS_HTTP sub-threshold trace)",
+  "attack_type_represented": "DDoS_HTTP (sub-threshold pacing)",
+  "num_observations": 10,
+  "values": [
+    0.41,
+    0.39,
+    0.42,
+    0.38,
+    0.4,
+    0.43,
+    0.39,
+    0.41,
+    0.4,
+    0.42
+  ],
+  "sha256": "694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c",
+  "min": 0.38,
+  "max": 0.43,
+  "mean": 0.4050000000000001,
+  "median": 0.405,
+  "std": 0.014999999999999989,
+  "calibrated_Athr": 0.4554,
+  "fraction_below_Athr": 1.0,
+  "values_modified": false,
+  "synthetic_or_gaussian": false
+}

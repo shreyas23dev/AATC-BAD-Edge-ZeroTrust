@@ -1,0 +1,40 @@
+{
+  "phase": 10,
+  "separation_criterion": "Delta_D > 0.01",
+  "immediate_pulse_test": {
+    "H_attack_step1_D": 0.56926,
+    "H_benign_step1_D": 0.0,
+    "delta_D": 0.56926,
+    "separates_immediately": true
+  },
+  "single_cycle_long_term_clearing": {
+    "H_attack_39steps": {
+      "T": 1.0,
+      "E": 0.16560000036300176,
+      "SB": 0.0,
+      "D": 0.0,
+      "C": 1.0,
+      "I": 0,
+      "policy": "ALLOW",
+      "branch": "BENIGN_RECOVERY"
+    },
+    "H_benign_39steps": {
+      "T": 1.0,
+      "E": 0.1656,
+      "SB": 0.0,
+      "D": 0.0,
+      "C": 1.0,
+      "I": 0,
+      "policy": "ALLOW",
+      "branch": "BENIGN_RECOVERY"
+    },
+    "delta_D_after_38_nominal_steps": 0.0,
+    "explanation": "Confirms that an isolated sub-threshold pulse sheds debt completely back to zero within ceil(0.5693/0.10) = 6 steps, preventing permanent scarring of honest devices."
+  },
+  "multi_cycle_debt_ratchet": {
+    "H_attack_4cycles_D": 0.27704,
+    "H_benign_24steps_D": 0.0,
+    "delta_D_4cycles": 0.27704,
+    "persists_across_cycles": true
+  }
+}

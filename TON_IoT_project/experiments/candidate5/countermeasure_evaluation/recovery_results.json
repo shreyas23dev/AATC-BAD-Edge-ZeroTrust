@@ -1,0 +1,38 @@
+{
+  "isolated_overt_event": {
+    "sequence_length": 21,
+    "B0_non_allow_steps": 4,
+    "C_non_allow_steps": 4,
+    "C_max_Q": 1.233397,
+    "C_final_Q": 0.442155,
+    "Q_eventually_decays": true,
+    "device_recovered_to_allow": true
+  },
+  "two_nearby_overt_events": {
+    "sequence_length": 24,
+    "B0_non_allow_steps": 9,
+    "C_non_allow_steps": 9,
+    "C_max_Q": 2.29088,
+    "C_final_Q": 0.821248,
+    "Q_eventually_decays": true,
+    "device_recovered_to_allow": true
+  },
+  "benign_micro_burst": {
+    "sequence_length": 23,
+    "B0_non_allow_steps": 0,
+    "C_non_allow_steps": 0,
+    "C_max_Q": 1.89445,
+    "C_final_Q": 0.679134,
+    "Q_eventually_decays": true,
+    "device_recovered_to_allow": true
+  },
+  "continuous_nominal_baseline": {
+    "sequence_length": 50,
+    "B0_non_allow_steps": 0,
+    "C_non_allow_steps": 0,
+    "C_max_Q": 0.0,
+    "C_final_Q": 0.0,
+    "Q_eventually_decays": true,
+    "device_recovered_to_allow": true
+  }
+}

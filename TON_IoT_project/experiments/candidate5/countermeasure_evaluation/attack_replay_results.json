@@ -1,0 +1,473 @@
+{
+  "Cycle_A": {
+    "schedule": "(1, 10)",
+    "B0": {
+      "survived_cycles": 8,
+      "allow_atk": 8,
+      "verify_atk": 1,
+      "block_atk": 0,
+      "total_atk_delivered": 9,
+      "M_cum": 8.5,
+      "quarantined": true,
+      "quarantine_cycle": 9,
+      "quarantine_phase": "REST",
+      "quarantine_step": 9,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.926182,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 2,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.941367,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.994139,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 3,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.995344,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.999535,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 4,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.99963,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.999963,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 5,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.999971,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.999997,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 6,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.999998,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 1.0,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 7,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.711079,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 8,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.77051,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.977059,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 9,
+          "phase": "REST",
+          "T_post_atk": 0.981778,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.232119,
+          "Q_post_rst": 0.0,
+          "quarantined": true,
+          "quarantine_step": 9
+        }
+      ]
+    },
+    "Family_C": {
+      "survived_cycles": 8,
+      "allow_atk": 8,
+      "verify_atk": 1,
+      "block_atk": 0,
+      "total_atk_delivered": 9,
+      "M_cum": 8.5,
+      "quarantined": true,
+      "quarantine_cycle": 9,
+      "quarantine_phase": "REST",
+      "quarantine_step": 7,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 0.56926,
+          "T_post_rst": 0.926182,
+          "Q_post_rst": 2.080734,
+          "quarantined": false
+        },
+        {
+          "cycle": 2,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.941367,
+          "Q_post_atk": 2.545957,
+          "T_post_rst": 0.994139,
+          "Q_post_rst": 2.358948,
+          "quarantined": false
+        },
+        {
+          "cycle": 3,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.995344,
+          "Q_post_atk": 2.810261,
+          "T_post_rst": 0.999535,
+          "Q_post_rst": 1.682607,
+          "quarantined": false
+        },
+        {
+          "cycle": 4,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.99963,
+          "Q_post_atk": 2.167736,
+          "T_post_rst": 0.999963,
+          "Q_post_rst": 2.50341,
+          "quarantined": false
+        },
+        {
+          "cycle": 5,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.999971,
+          "Q_post_atk": 2.947499,
+          "T_post_rst": 0.999997,
+          "Q_post_rst": 1.764777,
+          "quarantined": false
+        },
+        {
+          "cycle": 6,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.999998,
+          "Q_post_atk": 2.245798,
+          "T_post_rst": 1.0,
+          "Q_post_rst": 2.041272,
+          "quarantined": false
+        },
+        {
+          "cycle": 7,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 2.508469,
+          "T_post_rst": 0.711079,
+          "Q_post_rst": 2.681995,
+          "quarantined": false
+        },
+        {
+          "cycle": 8,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.77051,
+          "Q_post_atk": 3.117155,
+          "T_post_rst": 0.977059,
+          "Q_post_rst": 2.143567,
+          "quarantined": false
+        },
+        {
+          "cycle": 9,
+          "phase": "REST",
+          "T_post_atk": 0.981778,
+          "Q_post_atk": 2.605648,
+          "T_post_rst": 0.267061,
+          "Q_post_rst": 5.202074,
+          "quarantined": true,
+          "quarantine_step": 7
+        }
+      ]
+    }
+  },
+  "Cycle_B": {
+    "schedule": "(1, 25)",
+    "B0": {
+      "survived_cycles": 3,
+      "allow_atk": 4,
+      "verify_atk": 0,
+      "block_atk": 0,
+      "total_atk_delivered": 4,
+      "M_cum": 4.0,
+      "quarantined": true,
+      "quarantine_cycle": 4,
+      "quarantine_phase": "REST",
+      "quarantine_step": 14,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.997667,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 2,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.998147,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.999994,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 3,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.999995,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.908651,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 4,
+          "phase": "REST",
+          "T_post_atk": 0.927442,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.231994,
+          "Q_post_rst": 0.0,
+          "quarantined": true,
+          "quarantine_step": 14
+        }
+      ]
+    },
+    "Family_C": {
+      "survived_cycles": 3,
+      "allow_atk": 4,
+      "verify_atk": 0,
+      "block_atk": 0,
+      "total_atk_delivered": 4,
+      "M_cum": 4.0,
+      "quarantined": true,
+      "quarantine_cycle": 4,
+      "quarantine_phase": "REST",
+      "quarantine_step": 12,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 0.56926,
+          "T_post_rst": 0.997667,
+          "Q_post_rst": 1.609775,
+          "quarantined": false
+        },
+        {
+          "cycle": 2,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.998147,
+          "Q_post_atk": 2.098546,
+          "T_post_rst": 0.999994,
+          "Q_post_rst": 1.303896,
+          "quarantined": false
+        },
+        {
+          "cycle": 3,
+          "phase": "SURVIVED",
+          "T_post_atk": 0.999995,
+          "Q_post_atk": 1.807961,
+          "T_post_rst": 0.908651,
+          "Q_post_rst": 2.095632,
+          "quarantined": false
+        },
+        {
+          "cycle": 4,
+          "phase": "REST",
+          "T_post_atk": 0.927442,
+          "Q_post_atk": 2.56011,
+          "T_post_rst": 0.291337,
+          "Q_post_rst": 4.765834,
+          "quarantined": true,
+          "quarantine_step": 12
+        }
+      ]
+    }
+  },
+  "Cycle_C": {
+    "schedule": "(1, 50)",
+    "B0": {
+      "survived_cycles": 1,
+      "allow_atk": 2,
+      "verify_atk": 0,
+      "block_atk": 0,
+      "total_atk_delivered": 2,
+      "M_cum": 2.0,
+      "quarantined": true,
+      "quarantine_cycle": 2,
+      "quarantine_phase": "REST",
+      "quarantine_step": 39,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.999993,
+          "Q_post_rst": 0.0,
+          "quarantined": false
+        },
+        {
+          "cycle": 2,
+          "phase": "REST",
+          "T_post_atk": 0.999994,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.231836,
+          "Q_post_rst": 0.0,
+          "quarantined": true,
+          "quarantine_step": 39
+        }
+      ]
+    },
+    "Family_C": {
+      "survived_cycles": 1,
+      "allow_atk": 2,
+      "verify_atk": 0,
+      "block_atk": 0,
+      "total_atk_delivered": 2,
+      "M_cum": 2.0,
+      "quarantined": true,
+      "quarantine_cycle": 2,
+      "quarantine_phase": "REST",
+      "quarantine_step": 39,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "SURVIVED",
+          "T_post_atk": 1.0,
+          "Q_post_atk": 0.56926,
+          "T_post_rst": 0.999993,
+          "Q_post_rst": 1.168316,
+          "quarantined": false
+        },
+        {
+          "cycle": 2,
+          "phase": "REST",
+          "T_post_atk": 0.999994,
+          "Q_post_atk": 1.67916,
+          "T_post_rst": 0.178825,
+          "Q_post_rst": 5.352991,
+          "quarantined": true,
+          "quarantine_step": 39
+        }
+      ]
+    }
+  },
+  "Cycle_D": {
+    "schedule": "(5, 25)",
+    "B0": {
+      "survived_cycles": 0,
+      "allow_atk": 3,
+      "verify_atk": 2,
+      "block_atk": 0,
+      "total_atk_delivered": 5,
+      "M_cum": 4.0,
+      "quarantined": true,
+      "quarantine_cycle": 1,
+      "quarantine_phase": "REST",
+      "quarantine_step": 2,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "REST",
+          "T_post_atk": 0.571805,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.239931,
+          "Q_post_rst": 0.0,
+          "quarantined": true,
+          "quarantine_step": 2
+        }
+      ]
+    },
+    "Family_C": {
+      "survived_cycles": 0,
+      "allow_atk": 3,
+      "verify_atk": 2,
+      "block_atk": 0,
+      "total_atk_delivered": 5,
+      "M_cum": 4.0,
+      "quarantined": true,
+      "quarantine_cycle": 1,
+      "quarantine_phase": "REST",
+      "quarantine_step": 2,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "REST",
+          "T_post_atk": 0.571805,
+          "Q_post_atk": 2.13321,
+          "T_post_rst": 0.239931,
+          "Q_post_rst": 3.02476,
+          "quarantined": true,
+          "quarantine_step": 2
+        }
+      ]
+    }
+  },
+  "Cycle_E": {
+    "schedule": "(5, 50)",
+    "B0": {
+      "survived_cycles": 0,
+      "allow_atk": 3,
+      "verify_atk": 2,
+      "block_atk": 0,
+      "total_atk_delivered": 5,
+      "M_cum": 4.0,
+      "quarantined": true,
+      "quarantine_cycle": 1,
+      "quarantine_phase": "REST",
+      "quarantine_step": 2,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "REST",
+          "T_post_atk": 0.571805,
+          "Q_post_atk": 0.0,
+          "T_post_rst": 0.239931,
+          "Q_post_rst": 0.0,
+          "quarantined": true,
+          "quarantine_step": 2
+        }
+      ]
+    },
+    "Family_C": {
+      "survived_cycles": 0,
+      "allow_atk": 3,
+      "verify_atk": 2,
+      "block_atk": 0,
+      "total_atk_delivered": 5,
+      "M_cum": 4.0,
+      "quarantined": true,
+      "quarantine_cycle": 1,
+      "quarantine_phase": "REST",
+      "quarantine_step": 2,
+      "cycle_records": [
+        {
+          "cycle": 1,
+          "phase": "REST",
+          "T_post_atk": 0.571805,
+          "Q_post_atk": 2.13321,
+          "T_post_rst": 0.239931,
+          "Q_post_rst": 3.02476,
+          "quarantined": true,
+          "quarantine_step": 2
+        }
+      ]
+    }
+  }
+}

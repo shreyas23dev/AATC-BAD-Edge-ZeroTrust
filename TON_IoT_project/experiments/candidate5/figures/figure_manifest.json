@@ -1,0 +1,195 @@
+{
+  "project": "BAZT-TON_IoT / Candidate 5 (Strategic Gaming & Moral Hazard)",
+  "target_venue": "3rd India Conference on Information Systems (InCIS 2027)",
+  "generated_at": "2026-09-29T19:25:00Z",
+  "figures_count": 8,
+  "figures": [
+    {
+      "figure_number": 1,
+      "title": "Cyclic Trust Trajectories under Cycle A Schedule (1:10)",
+      "scientific_purpose": "Demonstrate comparative trust trajectories across cycles, highlighting B0 and Family C memoryless recovery vs AATC-BAD dynamic ceiling attenuation and policy demotion to VERIFY.",
+      "source_artifacts": [
+        "experiments/candidate5/countermeasure_evaluation/attack_replay_results.json",
+        "experiments/candidate5/phase10_countermeasure_evaluation/multi_cycle_trace.json"
+      ],
+      "source_variables": [
+        "B0 T_post_atk",
+        "Family_C T_post_atk",
+        "AATC T_post_atk",
+        "AATC C_post_atk"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_1()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure1_cyclic_trust_trajectories.png",
+        "pdf": "experiments/candidate5/figures/figure1_cyclic_trust_trajectories.pdf"
+      },
+      "sha256_png": "dae5a05098e73df8c2b20c9c600562ef0b2e0b21f2c5ad5c75ad43982eb9cdca",
+      "sha256_pdf": "b6084d5d52da5d6498f4bb249c6ac0b9100a51772515364f1d25c7a2a73729d0",
+      "proposed_caption": "Figure 1: Evolution of post-attack trust levels across exploitation cycles under the Cycle A schedule (1 attack pulse per 10 rest steps). While Baseline B0 and Family C restore trust unconditionally to ALLOW (T=1.0) prior to each attack pulse, AATC-BAD progressively attenuates the recovery ceiling C_t below T_allow = 0.80, successfully demoting attack pulses in Cycles 5 and 7 to VERIFY.",
+      "evidence_status": "EMPIRICALLY OBSERVED"
+    },
+    {
+      "figure_number": 2,
+      "title": "Cumulative Attack Exposure and Multi-Schedule Security Comparison",
+      "scientific_purpose": "Illustrate cumulative malicious transaction yield (M_cum) progression during Cycle A, and compare overall yield across all five evaluation schedules.",
+      "source_artifacts": [
+        "experiments/candidate5/countermeasure_evaluation/attack_replay_results.json",
+        "experiments/candidate5/phase10_countermeasure_evaluation/attack_replay_results.json"
+      ],
+      "source_variables": [
+        "M_cum progression (Cycle A)",
+        "M_cum across Schedules A-E"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_2()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure2_cumulative_attack_exposure.png",
+        "pdf": "experiments/candidate5/figures/figure2_cumulative_attack_exposure.pdf"
+      },
+      "sha256_png": "079da9cd8360b4080b809699cd5908f8721302d039b7eb00f2c249445e48d5fb",
+      "sha256_pdf": "b745b077699af7a3a05e372bee369cbca733b8e54a2f5f50f47c55c1c7a1bd7a",
+      "proposed_caption": "Figure 2: Cumulative malicious access yield: (a) Cycle-by-cycle progression under Cycle A showing AATC-BAD reducing cumulative yield from M_cum = 8.5 to 7.5 (-11.8%); (b) Total yield across all five evaluated schedules, confirming identical baseline survival and quarantine behavior for Schedules B through E.",
+      "evidence_status": "EMPIRICALLY OBSERVED"
+    },
+    {
+      "figure_number": 3,
+      "title": "Policy-State Profiles on Benign Telemetry vs Malicious Attack Pulses",
+      "scientific_purpose": "Provide visual proof of zero availability degradation on benign telemetry alongside a 25% reduction in high-trust malicious access during attacks.",
+      "source_artifacts": [
+        "experiments/candidate5/countermeasure_evaluation/benign_evaluation_results.json",
+        "experiments/candidate5/phase10_countermeasure_evaluation/benign_evaluation_results.json",
+        "experiments/candidate5/phase10_countermeasure_evaluation/attack_replay_results.json"
+      ],
+      "source_variables": [
+        "ALLOW/VERIFY/BLOCK fractions on evaluation stream (N=7,459)",
+        "ALLOW/VERIFY counts on Cycle A attack pulses"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_3()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure3_policy_state_distributions.png",
+        "pdf": "experiments/candidate5/figures/figure3_policy_state_distributions.pdf"
+      },
+      "sha256_png": "9708b9befbea433845d2df91dd686f3e88c26557d6e7c3e49c950a5d120ec311",
+      "sha256_pdf": "29304d1b613cab2635b90d408156ae28de5d0021639b094172a4972faeb35822",
+      "proposed_caption": "Figure 3: Policy-state distributions: (a) Benign device availability on the untouched evaluation stream (N=7,459) showing exact parity between Baseline B0 and AATC-BAD (74.09% ALLOW, 15.14% VERIFY, 10.78% BLOCK); (b) Decision distribution on Cycle A attack pulses showing AATC-BAD cutting ALLOW transactions from 8 to 6 (-25%) while tripling VERIFY challenges from 1 to 3.",
+      "evidence_status": "EMPIRICALLY OBSERVED"
+    },
+    {
+      "figure_number": 4,
+      "title": "AATC-BAD Duty-Cycle Operating Envelope",
+      "scientific_purpose": "Characterize the exact range of rest periods and duty cycles over which AATC-BAD provides active security intervention.",
+      "source_artifacts": [
+        "experiments/candidate5/phase11_envelope_analysis/envelope_sweep.json"
+      ],
+      "source_variables": [
+        "tau_r in [5, 60]",
+        "duty_cycle in [0.016, 0.167]",
+        "Delta_M",
+        "AATC_ALLOW_demotion"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_4()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure4_aatc_operating_envelope.png",
+        "pdf": "experiments/candidate5/figures/figure4_aatc_operating_envelope.pdf"
+      },
+      "sha256_png": "231eba75e7f82b626857f4fac4961c44466c99254cbeec07029f155cf15b5d01",
+      "sha256_pdf": "209cb73895dc2664cda067045324a5727d2a1772215d2af7205dfdb178f9a5e8",
+      "proposed_caption": "Figure 4: AATC-BAD operating envelope across rest-window durations tau_r in [5, 60] steps (duty cycles 1.6% to 16.7%). AATC-BAD delivers substantial security gains (Delta M = +4.5 at tau_r=5, Delta M = +1.0 at tau_r=10) within the active exploitation regime (tau_r <= 12). For patient adversaries (tau_r >= 15), B0 native slow-burn quarantine activates first, resulting in Delta M = 0.0.",
+      "evidence_status": "EMPIRICALLY OBSERVED"
+    },
+    {
+      "figure_number": 5,
+      "title": "Security-Availability Trade-Off Surface",
+      "scientific_purpose": "Demonstrate the empirical trade-off between malicious yield reduction and benign availability impact across 20 parameter configurations on the validation partition, showing that the Phase 9 frozen configuration resides on the measured empirical zero-availability-cost boundary (Delta ALLOW = 0.00 pp).",
+      "source_artifacts": [
+        "experiments/candidate5/phase11_envelope_analysis/sensitivity_grid.json"
+      ],
+      "source_variables": [
+        "delta_D",
+        "K_allow",
+        "Delta_M_vs_B0",
+        "delta_allow_pp",
+        "is_phase9_frozen"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_5()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure5_security_availability_tradeoff.png",
+        "pdf": "experiments/candidate5/figures/figure5_security_availability_tradeoff.pdf"
+      },
+      "sha256_png": "aa1228b40d4d541a98194ef41f633d1b88bd4a2618ec411a9da296144a3c4550",
+      "sha256_pdf": "683fc853da36db11036e4526e2f8133de7759712f7b1f1d0e4964af431370fce",
+      "proposed_caption": "Figure 5: Empirical security-availability trade-off surface on the validation partition across 20 parameter configurations (delta_D in [0.05, 0.20], K_allow in [1.20, 2.30]). The Phase 9 frozen operating point (delta_D=0.10, K_allow=1.70, marked with a red star) sits on the measured empirical zero-availability-cost boundary (Delta ALLOW = 0.00 pp under the tested validation configuration). Aggressive configurations (delta_D=0.05) increase security but impose a measured 2.2 to 2.9 pp availability penalty.",
+      "evidence_status": "EMPIRICALLY OBSERVED"
+    },
+    {
+      "figure_number": 6,
+      "title": "State-Variable Dynamics of AATC-BAD under Cycle A (1:10)",
+      "scientific_purpose": "Explain the micro-level mechanism of AATC-BAD by showing how authorization debt D_t accumulates past K_allow = 1.70, triggering ceiling contraction C_t below T_allow = 0.80 and forcing attack pulses into VERIFY.",
+      "source_artifacts": [
+        "experiments/candidate5/phase10_countermeasure_evaluation/multi_cycle_trace.json"
+      ],
+      "source_variables": [
+        "D_post_atk",
+        "D_post_rst",
+        "C_post_atk",
+        "C_post_rst",
+        "T_post_atk",
+        "policies"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_6()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure6_debt_and_ceiling_dynamics.png",
+        "pdf": "experiments/candidate5/figures/figure6_debt_and_ceiling_dynamics.pdf"
+      },
+      "sha256_png": "6b0edee8da08092ffb52e0cff7e4a9d036ea5146bd59be64d4da7f795af84c11",
+      "sha256_pdf": "b42a4643dad1e5d9a55bebd09efc3e0fdd5ad7d665895699d58dc1a665ec89a1",
+      "proposed_caption": "Figure 6: Internal state-variable dynamics of AATC-BAD during Cycle A exploitation: (a) Authorization debt D_t ratcheting past the allowance buffer K_allow = 1.70 across repeated cycles despite partial inter-cycle relaxation; (b) Asymptotic ceiling C_t attenuating below T_allow = 0.80, capping trust recovery and demoting attack pulses in Cycles 5 and 7 to VERIFY.",
+      "evidence_status": "EMPIRICALLY OBSERVED"
+    },
+    {
+      "figure_number": 7,
+      "title": "Sensitivity Grid Heatmaps across Parameter Space",
+      "scientific_purpose": "Present comprehensive robustness heatmaps demonstrating parameter stability and the topological structure of the security and availability surfaces.",
+      "source_artifacts": [
+        "experiments/candidate5/phase11_envelope_analysis/sensitivity_grid.json"
+      ],
+      "source_variables": [
+        "Delta_M_grid",
+        "Delta_ALLOW_grid",
+        "delta_D in [0.05, 0.20]",
+        "K_allow in [1.20, 2.30]"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_7()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure7_robustness_sensitivity_grid.png",
+        "pdf": "experiments/candidate5/figures/figure7_robustness_sensitivity_grid.pdf"
+      },
+      "sha256_png": "b3576f1d0f7bd3ea2689c7c3b9e462b164aa9dc8541af5e96eec2d05bad25257",
+      "sha256_pdf": "46c573a7116cc32dc56441117abf08d7c2bacb2274c1e2cfd1ae0cea83915d1d",
+      "proposed_caption": "Figure 7: Parameter sensitivity heatmaps evaluated on the validation partition (rows 5,000-9,999): (a) Security gain Delta M showing active gains concentrated in the low-relaxation, tight-buffer quadrant; (b) Availability impact Delta ALLOW (percentage points) demonstrating wide robustness and exact zero-cost preservation across all configurations with delta_D >= 0.10 and K_allow >= 1.50.",
+      "evidence_status": "EMPIRICALLY OBSERVED"
+    },
+    {
+      "figure_number": 8,
+      "title": "Dual-Regime Defense Architecture: B0 Quarantine vs AATC Intervention",
+      "scientific_purpose": "Synthesize the multi-regime defense architecture showing how native B0 slow-burn quarantine and AATC-BAD authorization debt provide complementary protection across the evaluated pacing intervals (tau_r in [5, 60] steps).",
+      "source_artifacts": [
+        "experiments/candidate5/phase11_envelope_analysis/envelope_sweep.json"
+      ],
+      "source_variables": [
+        "tau_r in [5, 60]",
+        "B0_survived in [1, 17]",
+        "Delta_M in [0.0, 4.5]"
+      ],
+      "plotting_script": "experiments/candidate5/figures/scripts/plot_all_figures.py:plot_figure_8()",
+      "output_paths": {
+        "png": "experiments/candidate5/figures/figure8_dual_regime_defense_dynamics.png",
+        "pdf": "experiments/candidate5/figures/figure8_dual_regime_defense_dynamics.pdf"
+      },
+      "sha256_png": "11161c8362c5328fa4a565120008815b69fb42ca6b9749ad7154eb885122524a",
+      "sha256_pdf": "37d0d81f9b77b617c28e1200d030461d5a04d531d8807b3a162bdc66d9e82e7f",
+      "proposed_caption": "Figure 8: Defense architecture across evaluated attacker rest periods tau_r. In Regime I (tau_r <= 12, higher duty cycle), the adversary exploits B0 rapid recovery to survive 8-17 cycles; here AATC-BAD actively intervenes via ceiling attenuation (Delta M up to +4.5). In Regime II (tau_r >= 15, lower duty cycle), ambient network perturbations in the Edge-IIoTset telemetry push B0 slow-burn over threshold, quarantining the attacker within 1-4 cycles under the tested environment.",
+      "evidence_status": "SUPPORTED BUT CONDITIONAL"
+    }
+  ],
+  "provenance_audit": "VERIFIED_ZERO_HARDCODING_DIRECT_FROM_ARTIFACTS"
+}

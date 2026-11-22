@@ -1,0 +1,74 @@
+{
+  "claims_audit": [
+    {
+      "id": 1,
+      "statement": "8 cycles of attack and rehabilitation were observed.",
+      "classification": "EMPIRICALLY DEMONSTRATED",
+      "justification": "Under non-shuffled chronological replay of Schedule Cycle A (1:10), cycles 1 through 8 completed fully without quarantine, achieving R_rec = 82.64% and delivering 8.5 access-weighted attack actions under ALLOW and VERIFY."
+    },
+    {
+      "id": 2,
+      "statement": "Termination occurred because of benign chronological telemetry.",
+      "classification": "EMPIRICALLY DEMONSTRATED",
+      "justification": "In Cycle 9 rest window, rows 83, 86, and 88 of DNN-EdgeIIoT-dataset.csv (verified Attack_label == 0) emitted scores >= 0.4554, repeatedly invoking the multiplicative penalty branch T <- T*(1-A) and reducing trust from 0.9909 to 0.2321 (BLOCK)."
+    },
+    {
+      "id": 3,
+      "statement": "The engine did not detect the cyclic adversary.",
+      "classification": "MATHEMATICALLY DERIVABLE",
+      "justification": "The frozen TrustEngine state vector contains no cycle counters or transition frequency meters; memory resets completely when SB -> 0 and T -> 1. Termination was triggered solely by instantaneous threshold exceedances in benign telemetry, not pattern recognition."
+    },
+    {
+      "id": 4,
+      "statement": "Three overt false positives in the final rest window caused BLOCK.",
+      "classification": "EMPIRICALLY DEMONSTRATED",
+      "justification": "Exact step trace confirms indices 83 (A=0.5811), 86 (A=0.5083), and 88 (A=0.4866) arrived within 4.7 ms, sequentially degrading trust: 0.9909 -> 0.4150 -> 0.3102 -> 0.2321."
+    },
+    {
+      "id": 5,
+      "statement": "A true infinite periodic orbit exists when benign overt noise is absent.",
+      "classification": "MATHEMATICALLY DERIVABLE",
+      "justification": "Proven for Schedules A, B, C under nominal A_rest = mu_0 = 0.1656 (and A_rest = 0.0). For Cycle A, E contracts at rate 0.60^11 = 0.0036 to fixed point E* = 0.166193, while SB = 0.0 and T = 1.0 are exactly invariant for all time."
+    },
+    {
+      "id": 6,
+      "statement": "The observed 3-FP cluster has probability 0.57%.",
+      "classification": "UNSUPPORTED / MUST REMOVE",
+      "sub_classification": "UNSUPPORTED_GENERALIZATION",
+      "justification": "The figure 0.57% was an empirical sample frequency of sliding, heavily overlapping 10-step windows (99 / 17,450) across a single bursty IoT capture. Extrapolating this as a stationary probability of independent clusters is mathematically invalid and must be removed."
+    },
+    {
+      "id": 7,
+      "statement": "The cluster occurs once every ~176 cycles.",
+      "classification": "UNSUPPORTED / MUST REMOVE",
+      "sub_classification": "UNSUPPORTED_GENERALIZATION",
+      "justification": "Derived trivially as 1 / 0.0057 \u2248 175.4. This assumes independent Bernoulli cycle trials, which is invalidated by the temporal autocorrelation and packet burstiness of real network flows."
+    },
+    {
+      "id": 8,
+      "statement": "Multi-cycle rehabilitation gaming is feasible.",
+      "classification": "EMPIRICALLY DEMONSTRATED",
+      "justification": "Demonstrated for 8 consecutive cycles under strict chronological ordering without data shuffling, delivering 8 attacks under ALLOW and 1 under VERIFY."
+    },
+    {
+      "id": 9,
+      "statement": "The observed termination is not a security property of the architecture.",
+      "classification": "MATHEMATICALLY DERIVABLE",
+      "justification": "The TrustEngine's overt branch T <- T*(1-A) has no attribution mechanism. It penalizes honest device noise and overt attack traffic identically; the termination was an environmental false-positive event, not an architectural containment."
+    },
+    {
+      "id": 10,
+      "statement": "24.04% false quarantine was observed on the tested benign block.",
+      "classification": "EMPIRICALLY DEMONSTRATED",
+      "justification": "Across all 17,459 consecutive benign steps in the raw Edge-IIoTset slice, policy state was BLOCK in exactly 4,197 steps (4,197 / 17,459 = 24.0392%)."
+    }
+  ],
+  "screening_gate_audit": {
+    "gate_id": "Gate_2_Steady_State_Noise_Floor",
+    "nominal_protocol_threshold": "p_fp <= 0.030 (3.0%)",
+    "measured_empirical_value": "P(A >= A_thr) = 5.03% (878 / 17,459)",
+    "gate_status": "FAILED (Screening Threshold Exceeded)",
+    "scientific_resolution": "SCREENING_GATE_EXCEEDED_PHENOMENON_CHARACTERIZED",
+    "rationale": "The contiguous benign telemetry block exceeded the pre-specified 3% screening threshold. Rather than invalidating the study or retroactively tuning thresholds, this exceedance directly explains the finite survival of Cycle A: the elevated ambient noise floor that causes a 24.04% false quarantine rate on honest devices is the exact mechanism that terminates the adversary."
+  }
+}

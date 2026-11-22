@@ -1,0 +1,95 @@
+2026-09-28 22:31:54,730 [INFO] Starting Phase 2A.3 — ToN-IoT Network Modality Leakage & Suitability Audit
+2026-09-28 22:31:54,730 [INFO] Start time: 2026-09-28T22:31:54.730884
+2026-09-28 22:31:54,730 [INFO] Loading Network_dataset_1.csv from C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\network_processed\Network_dataset_1.csv...
+2026-09-28 22:31:57,987 [INFO] [STAGE A] Executing comprehensive leakage & provenance audit across all 46 columns...
+2026-09-28 22:32:01,729 [INFO] 
+======================================================================
+2026-09-28 22:32:01,730 [INFO] NETWORK DETECTOR AUDIT RUN 1 (seed=42)
+2026-09-28 22:32:01,730 [INFO] ======================================================================
+2026-09-28 22:32:02,047 [INFO]   TRAIN rows      :    165,322 (attacks: 0)
+2026-09-28 22:32:02,047 [INFO]   CALIBRATION rows:     35,576 (attacks: 0)
+2026-09-28 22:32:02,047 [INFO]   EVALUATION rows :    799,102 (normal: 7,781, attacks: 791,321)
+2026-09-28 22:32:02,048 [INFO]   [OK] Temporal precedence and benign purity strictly verified.
+2026-09-28 22:32:03,392 [INFO]   [OK] Isolation Forest fitted on benign train.
+2026-09-28 22:32:12,856 [INFO]   Normalization: s_min=0.31783122, s_max=0.88573765
+2026-09-28 22:32:12,857 [INFO]   A_thr (normalized) = 0.75453870 (raw equiv = 0.74633860)
+2026-09-28 22:32:13,364 [INFO] 
+============================================================
+2026-09-28 22:32:13,364 [INFO] EVALUATION POINT METRICS (Network Flow Telemetry)
+2026-09-28 22:32:13,364 [INFO] ============================================================
+2026-09-28 22:32:13,365 [INFO]   Attack Prevalence : 0.9903 (791,321 / 799,102)
+2026-09-28 22:32:13,365 [INFO]   ROC-AUC           : 0.091918
+2026-09-28 22:32:13,365 [INFO]   PR-AUC            : 0.967433
+2026-09-28 22:32:13,365 [INFO]   Precision         : 0.315315
+2026-09-28 22:32:13,365 [INFO]   Recall            : 0.000487
+2026-09-28 22:32:13,365 [INFO]   F1-Score          : 0.000972
+2026-09-28 22:32:13,365 [INFO]   FPR               : 0.107441
+2026-09-28 22:32:13,365 [INFO]   Specificity       : 0.892559
+2026-09-28 22:32:13,365 [INFO]   Balanced Accuracy : 0.446523
+2026-09-28 22:32:13,365 [INFO] ============================================================
+
+2026-09-28 22:32:13,416 [INFO]   Benign Mean A_t   : 0.388323 (median: 0.343222)
+2026-09-28 22:32:13,416 [INFO]   Attack Mean A_t   : 0.070521 (median: 0.040438)
+2026-09-28 22:32:13,416 [INFO]   Score Separation  : -0.317802
+2026-09-28 22:32:13,422 [INFO]   Sub-threshold attacks : 790,936 (99.95%)
+2026-09-28 22:32:13,423 [INFO]   Above-threshold attacks: 385 (0.05%)
+2026-09-28 22:32:13,532 [INFO]   Score SHA-256         : 184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0
+2026-09-28 22:32:13,593 [INFO] 
+======================================================================
+2026-09-28 22:32:13,593 [INFO] NETWORK DETECTOR AUDIT RUN 2 (seed=42)
+2026-09-28 22:32:13,593 [INFO] ======================================================================
+2026-09-28 22:32:13,938 [INFO]   TRAIN rows      :    165,322 (attacks: 0)
+2026-09-28 22:32:13,938 [INFO]   CALIBRATION rows:     35,576 (attacks: 0)
+2026-09-28 22:32:13,939 [INFO]   EVALUATION rows :    799,102 (normal: 7,781, attacks: 791,321)
+2026-09-28 22:32:13,939 [INFO]   [OK] Temporal precedence and benign purity strictly verified.
+2026-09-28 22:32:15,404 [INFO]   [OK] Isolation Forest fitted on benign train.
+2026-09-28 22:32:24,909 [INFO]   Normalization: s_min=0.31783122, s_max=0.88573765
+2026-09-28 22:32:24,910 [INFO]   A_thr (normalized) = 0.75453870 (raw equiv = 0.74633860)
+2026-09-28 22:32:25,395 [INFO] 
+============================================================
+2026-09-28 22:32:25,395 [INFO] EVALUATION POINT METRICS (Network Flow Telemetry)
+2026-09-28 22:32:25,397 [INFO] ============================================================
+2026-09-28 22:32:25,397 [INFO]   Attack Prevalence : 0.9903 (791,321 / 799,102)
+2026-09-28 22:32:25,397 [INFO]   ROC-AUC           : 0.091918
+2026-09-28 22:32:25,397 [INFO]   PR-AUC            : 0.967433
+2026-09-28 22:32:25,397 [INFO]   Precision         : 0.315315
+2026-09-28 22:32:25,397 [INFO]   Recall            : 0.000487
+2026-09-28 22:32:25,397 [INFO]   F1-Score          : 0.000972
+2026-09-28 22:32:25,397 [INFO]   FPR               : 0.107441
+2026-09-28 22:32:25,397 [INFO]   Specificity       : 0.892559
+2026-09-28 22:32:25,397 [INFO]   Balanced Accuracy : 0.446523
+2026-09-28 22:32:25,397 [INFO] ============================================================
+
+2026-09-28 22:32:25,448 [INFO]   Benign Mean A_t   : 0.388323 (median: 0.343222)
+2026-09-28 22:32:25,448 [INFO]   Attack Mean A_t   : 0.070521 (median: 0.040438)
+2026-09-28 22:32:25,448 [INFO]   Score Separation  : -0.317802
+2026-09-28 22:32:25,452 [INFO]   Sub-threshold attacks : 790,936 (99.95%)
+2026-09-28 22:32:25,452 [INFO]   Above-threshold attacks: 385 (0.05%)
+2026-09-28 22:32:25,561 [INFO]   Score SHA-256         : 184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0
+2026-09-28 22:32:25,618 [INFO] 
+======================================================================
+2026-09-28 22:32:25,620 [INFO] CROSS-RUN REPRODUCIBILITY VERIFICATION
+2026-09-28 22:32:25,620 [INFO] ======================================================================
+2026-09-28 22:32:25,620 [INFO]   [PASS]     n_train: 165322
+2026-09-28 22:32:25,620 [INFO]   [PASS]     n_calib: 35576
+2026-09-28 22:32:25,620 [INFO]   [PASS]     n_eval: 799102
+2026-09-28 22:32:25,620 [INFO]   [PASS]     s_min: 0.31783122443520645
+2026-09-28 22:32:25,620 [INFO]   [PASS]     s_max: 0.8857376492474537
+2026-09-28 22:32:25,620 [INFO]   [PASS]     A_thr: 0.7545387001350601
+2026-09-28 22:32:25,620 [INFO]   [PASS]     score_sha256: 184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0
+2026-09-28 22:32:25,620 [INFO] Overall Reproducibility: VERIFIED
+2026-09-28 22:32:25,620 [INFO] 
+======================================================================
+2026-09-28 22:32:25,620 [INFO] SUITABILITY CLASSIFICATION (Network Modality)
+2026-09-28 22:32:25,620 [INFO] ======================================================================
+2026-09-28 22:32:25,620 [INFO]   ROC-AUC          : 0.091918
+2026-09-28 22:32:25,620 [INFO]   PR-AUC           : 0.967433
+2026-09-28 22:32:25,620 [INFO]   Score Separation : -0.317802
+2026-09-28 22:32:25,620 [INFO]   VERDICT  : NETWORK_SIGNAL_INSUFFICIENT
+2026-09-28 22:32:25,620 [INFO]   RATIONALE: Network flow telemetry exhibits severe pathological inversion (ROC-AUC=0.0919, score separation=-0.3178). The Isolation Forest isolates high-variance normal traffic as anomalous (mean A=0.3883) while assigning ultra-low anomaly scores to dense scanning probe bursts (mean A=0.0705). Without IP/port identity leakage, point-level Isolation Forest completely fails on network flows.
+2026-09-28 22:32:25,620 [INFO] ======================================================================
+2026-09-28 22:32:25,620 [INFO] 
+[ARTIFACTS] Writing JSON artifacts to experiments/ton_iot/phase2a3_network_modality_audit/...
+2026-09-28 22:32:25,673 [INFO] [ARTIFACTS] All artifacts written successfully.
+2026-09-28 22:32:25,673 [INFO] 
+PHASE_2A3_NETWORK_MODALITY_AUDIT_COMPLETE

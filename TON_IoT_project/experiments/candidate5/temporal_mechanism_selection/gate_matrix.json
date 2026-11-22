@@ -1,0 +1,155 @@
+{
+  "phase": 6,
+  "title": "Mandatory Selection Gate Matrix for Temporal Evidence Families",
+  "gates_definition": {
+    "G1_Identifiability": "Can the mechanism distinguish histories that B0 aliases? (B0(H_atk) == B0(H_ben) while Q(H_atk) != Q(H_ben))",
+    "G2_Non_Redundancy": "Does it add temporal information absent from B0 without merely duplicating EWMA, sliding windows, or slow burn?",
+    "G3_O1_Implementation": "Constant memory (scalar registers) and constant-time per-step updates (no packet history buffers).",
+    "G4_Benign_Measurability": "Can its benign noise floor and stationary distribution be empirically characterized from the available chronological telemetry?",
+    "G5_Pacing_Robustness": "Does it avoid trivial evasion under simple timing delays within the tested cyclic exploitation model?",
+    "G6_Interpretability": "Does the state variable have a clear, auditable operational meaning suitable for a Zero-Trust architecture?"
+  },
+  "matrix": {
+    "Family_A_Count": {
+      "G1_Identifiability": {
+        "result": "PASS",
+        "evidence": "Q_attack=1 vs Q_benign=0 under aliased B0 state"
+      },
+      "G2_Non_Redundancy": {
+        "result": "PASS",
+        "evidence": "Count of threshold events is not an EWMA of magnitude"
+      },
+      "G3_O1_Implementation": {
+        "result": "PASS",
+        "evidence": "Single 32-bit integer register"
+      },
+      "G4_Benign_Measurability": {
+        "result": "FAIL",
+        "evidence": "Under 5.03% benign overt rate, unreset count grows unboundedly to infinity; with epoch reset, creates blind boundaries"
+      },
+      "G5_Pacing_Robustness": {
+        "result": "FAIL",
+        "evidence": "If reset epoch W is introduced, attacker paces at W+1; if unreset, violates benign stability"
+      },
+      "G6_Interpretability": {
+        "result": "PASS",
+        "evidence": "Total count of suspicious events"
+      },
+      "overall_status": "REJECTED (Fails G4, G5)"
+    },
+    "Family_B_Exponential": {
+      "G1_Identifiability": {
+        "result": "PASS",
+        "evidence": "Differentiates aliased histories via recency weighting"
+      },
+      "G2_Non_Redundancy": {
+        "result": "FAIL",
+        "evidence": "Under linear f(A), is mathematically identical to EWMA (E_t) operating at different timescale; redundant with Paper 1 architecture"
+      },
+      "G3_O1_Implementation": {
+        "result": "PASS",
+        "evidence": "Single float multiply-add"
+      },
+      "G4_Benign_Measurability": {
+        "result": "PASS",
+        "evidence": "Stationary distribution under benign traffic easily characterized (mean=1.65 for rho=0.90)"
+      },
+      "G5_Pacing_Robustness": {
+        "result": "CONDITIONAL",
+        "evidence": "Pacing sensitive if rest exceeds decay horizon, but holds within Cycle A duty cycle"
+      },
+      "G6_Interpretability": {
+        "result": "PASS",
+        "evidence": "Leaky accumulator of recent anomaly magnitude"
+      },
+      "overall_status": "REJECTED (Fails G2: Redundant with E_t unless non-linearized into Family C)"
+    },
+    "Family_C_Threshold_Offset": {
+      "G1_Identifiability": {
+        "result": "PASS",
+        "evidence": "Q_attack accumulates across Cycle A pulses while Q_benign stays near zero due to q_low deadband"
+      },
+      "G2_Non_Redundancy": {
+        "result": "PASS",
+        "evidence": "Non-linear proximity function with deadband; not an EWMA of A_t; explicitly coupled to decision boundary A_thr"
+      },
+      "G3_O1_Implementation": {
+        "result": "PASS",
+        "evidence": "Single float register, O(1) time complexity (clamp, subtract, multiply-add)"
+      },
+      "G4_Benign_Measurability": {
+        "result": "PASS",
+        "evidence": "Empirically measured on N=17,459: for rho=0.95, q_low=0.35, benign median Q is 0.0000, 95th percentile is 0.4042, max is 3.518"
+      },
+      "G5_Pacing_Robustness": {
+        "result": "PASS",
+        "evidence": "Robust within tested cyclic model: rho^10 = 0.5987 retains sufficient evidence across the 10-step rehabilitation rest window to build periodic accumulation"
+      },
+      "G6_Interpretability": {
+        "result": "PASS",
+        "evidence": "Quantifies 'near-threshold probing exposure' \u2014 measuring sustained hovering near the authorization boundary without crossing it"
+      },
+      "overall_status": "SURVIVES (Passes all 6 gates)"
+    },
+    "Family_D_Inter_Arrival": {
+      "G1_Identifiability": {
+        "result": "PASS",
+        "evidence": "Separates histories based on timing of sub-threshold events"
+      },
+      "G2_Non_Redundancy": {
+        "result": "PASS",
+        "evidence": "Temporal inter-arrival statistic is distinct from magnitude EWMA"
+      },
+      "G3_O1_Implementation": {
+        "result": "PASS",
+        "evidence": "Two scalar registers (Q_t, t_last)"
+      },
+      "G4_Benign_Measurability": {
+        "result": "FAIL",
+        "evidence": "Benign IoT telemetry contains packet micro-bursts with inter-arrival=1, creating massive spurious spikes in Q"
+      },
+      "G5_Pacing_Robustness": {
+        "result": "FAIL",
+        "evidence": "Trivially evadable: adversary simply delays attack pulse by tau_crit + 1 steps to drive Q to zero"
+      },
+      "G6_Interpretability": {
+        "result": "PASS",
+        "evidence": "Reciprocal inter-event timing"
+      },
+      "overall_status": "REJECTED (Fails G4, G5)"
+    },
+    "Family_E_Rate": {
+      "G1_Identifiability": {
+        "result": "PASS",
+        "evidence": "Distinguishes attack duty cycle from baseline if window W spans cycle"
+      },
+      "G2_Non_Redundancy": {
+        "result": "FAIL",
+        "evidence": "Textbook sliding-window detector; redundant with existing sliding-window rate counters"
+      },
+      "G3_O1_Implementation": {
+        "result": "FAIL",
+        "evidence": "Exact sliding window requires O(W) history buffer, violating O(1) state constraint; EMA approximation reduces to Family B"
+      },
+      "G4_Benign_Measurability": {
+        "result": "PASS",
+        "evidence": "Benign event rate measurable"
+      },
+      "G5_Pacing_Robustness": {
+        "result": "FAIL",
+        "evidence": "Pacing attack pulses at W+1 completely drops rate to 1/W"
+      },
+      "G6_Interpretability": {
+        "result": "PASS",
+        "evidence": "Windowed event rate"
+      },
+      "overall_status": "REJECTED (Fails G2, G3, G5)"
+    }
+  },
+  "surviving_mechanisms": [
+    {
+      "family": "Family_C_Threshold_Offset",
+      "justification": "Family C is the ONLY candidate that satisfies all six mandatory gates. It provides true identifiability on B0-aliased states, introduces a non-redundant proximity metric with a benign deadband, runs in O(1) time and space, possesses a clean empirical benign noise floor, resists pacing within the tested 1:10 exploit schedule, and conveys an intuitive Zero-Trust operational meaning (near-threshold probing exposure)."
+    }
+  ]
+}

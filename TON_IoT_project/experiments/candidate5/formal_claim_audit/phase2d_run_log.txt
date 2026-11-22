@@ -1,0 +1,14 @@
+================================================================================
+STARTING PHASE 2D: FORMAL DYNAMICAL-SYSTEM CONSISTENCY AUDIT
+================================================================================
+Executing Audit Run 1...
+Saved state transitions to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\formal_claim_audit\phase2d_state_transitions.csv (5236 total step transitions)
+Saved orbit verification to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\formal_claim_audit\phase2d_orbit_verification.json
+Executing Audit Run 2 for bit-for-bit reproducibility check...
+Reproducibility verification:
+  CSV table identical:  True
+  JSON summary identical: True
+Saved reproducibility hashes to C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_project\experiments\candidate5\formal_claim_audit\phase2d_reproducibility.json
+================================================================================
+PHASE 2D AUDIT COMPLETE: C5_PHASE2D_DYNAMICS_CORRECTION_REQUIRED
+================================================================================

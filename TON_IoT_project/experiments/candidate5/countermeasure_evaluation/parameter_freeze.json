@@ -1,0 +1,59 @@
+{
+  "phase": 7,
+  "timestamp": "2026-09-29T08:17:59Z",
+  "provenance": {
+    "dataset": "benign_chronological_scores.csv",
+    "dataset_sha256": "b4babfa3723c17fbe71e4b96994af927b3fa69b25d1dfd5bba6d66f1a88bf617",
+    "attack_profile_sha256": "694d27c497f06db789b334cd59ffca22d0318fb8418affc44ad621a7d3e1621c",
+    "partitioning": {
+      "calibration_rows": [
+        0,
+        4999
+      ],
+      "calibration_timestamps": [
+        "2021-01-01 11:44:10.081753",
+        "2021-01-01 11:49:21.898958"
+      ],
+      "validation_rows": [
+        5000,
+        9999
+      ],
+      "validation_timestamps": [
+        "2021-01-01 11:49:21.902448",
+        "2021-01-01 11:54:34.915203"
+      ],
+      "evaluation_rows": [
+        10000,
+        17458
+      ],
+      "evaluation_timestamps": [
+        "2021-01-01 11:54:35.905279",
+        "2021-01-01 12:02:24.882968"
+      ]
+    }
+  },
+  "B0_parameters": {
+    "A_thr": 0.4554,
+    "beta": 0.4,
+    "gamma": 0.335,
+    "theta": 1.0,
+    "lambda": 0.55,
+    "delta": 0.05,
+    "P_pen": 0.25,
+    "alpha_0": 0.2057,
+    "T_allow": 0.8,
+    "T_quar": 0.3
+  },
+  "Family_C_parameters": {
+    "rho": 0.95,
+    "q_low": 0.35,
+    "Q_0": 0.0,
+    "coupling_derivation": {
+      "source": "Uncompromised CALIBRATION partition (rows 0-4,999) 99th percentile",
+      "P_Q": 0.25,
+      "tau_Q": 4.4364,
+      "g_Q_formula": "min(1.0, max(0.0, Q_t - tau_Q) / tau_Q)",
+      "trust_update_formula": "T_{t+1}^C = max(0.0, T_{t+1}^{B0} - P_Q * g(Q_t))"
+    }
+  }
+}

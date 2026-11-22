@@ -1,0 +1,205 @@
+{
+  "phase": 6,
+  "title": "Empirical Benign Temporal Reference Quantities",
+  "dataset": "benign_chronological_scores.csv (Edge-IIoTset)",
+  "N_observations": 17459,
+  "disclaimer": "CRITICAL METHODOLOGICAL GUARANTEE: These distributions are characterized strictly on the uncompromised chronological benign block. No detector threshold is tuned against the attack replay. This serves exclusively as the environmental baseline.",
+  "marginal_probabilities": {
+    "P(A >= A_thr=0.4554)": 0.050289,
+    "count_overt": 878,
+    "P(0.40 <= A < A_thr)": 0.05911,
+    "count_near_40": 1032,
+    "P(0.35 <= A < A_thr)": 0.124062,
+    "count_near_35": 2166,
+    "P(A < 0.35)": 0.825649
+  },
+  "inter_arrival_step_distributions": {
+    "overt_events_A_ge_04554": {
+      "count": 877,
+      "mean": 19.8712,
+      "std": 19.3567,
+      "min": 2,
+      "p25": 12.0,
+      "median": 16.0,
+      "p75": 19.0,
+      "p95": 61.0,
+      "p99": 98.24,
+      "max": 169
+    },
+    "near_threshold_040_to_04554": {
+      "count": 1031,
+      "mean": 16.9273,
+      "std": 12.3756,
+      "min": 1,
+      "p25": 11.0,
+      "median": 16.0,
+      "p75": 19.0,
+      "p95": 38.0,
+      "p99": 60.7,
+      "max": 91
+    },
+    "sub_threshold_035_to_04554": {
+      "count": 2165,
+      "mean": 8.061,
+      "std": 6.2788,
+      "min": 1,
+      "p25": 2.0,
+      "median": 6.0,
+      "p75": 14.0,
+      "p95": 17.0,
+      "p99": 23.36,
+      "max": 46
+    }
+  },
+  "burst_length_distributions": {
+    "overt_consecutive_runs": {
+      "count": 878,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "p95": 1.0,
+      "p99": 1.0,
+      "max": 1
+    },
+    "near_40_consecutive_runs": {
+      "count": 1028,
+      "mean": 1.0039,
+      "std": 0.0623,
+      "min": 1,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "p95": 1.0,
+      "p99": 1.0,
+      "max": 2
+    },
+    "near_35_consecutive_runs": {
+      "count": 2092,
+      "mean": 1.0354,
+      "std": 0.1847,
+      "min": 1,
+      "p25": 1.0,
+      "median": 1.0,
+      "p75": 1.0,
+      "p95": 1.0,
+      "p99": 2.0,
+      "max": 2
+    },
+    "key_structural_finding": "In 17,459 benign rows, consecutive overt events (diff=1) occur 0 times (max run length = 1). The 5.03% overt FP rate consists entirely of isolated spikes separated by at least 1 sub-threshold step."
+  },
+  "candidate_benign_Q_distributions": {
+    "Family_C_grid": {
+      "Family_C_rho_0.9_qlow_0.3": {
+        "rho": 0.9,
+        "q_low": 0.3,
+        "mean": 1.536681,
+        "std": 0.650279,
+        "median": 1.464001,
+        "p95": 2.722294,
+        "p99": 3.421818,
+        "max": 4.591706
+      },
+      "Family_C_rho_0.9_qlow_0.35": {
+        "rho": 0.9,
+        "q_low": 0.35,
+        "mean": 1.27784,
+        "std": 0.67466,
+        "median": 1.160167,
+        "p95": 2.546955,
+        "p99": 3.334585,
+        "max": 4.632187
+      },
+      "Family_C_rho_0.9_qlow_0.4": {
+        "rho": 0.9,
+        "q_low": 0.4,
+        "mean": 1.161409,
+        "std": 0.855031,
+        "median": 0.930022,
+        "p95": 2.876068,
+        "p99": 4.027313,
+        "max": 6.161463
+      },
+      "Family_C_rho_0.95_qlow_0.3": {
+        "rho": 0.95,
+        "q_low": 0.3,
+        "mean": 3.071844,
+        "std": 0.928262,
+        "median": 2.95404,
+        "p95": 4.800943,
+        "p99": 5.826288,
+        "max": 7.626931
+      },
+      "Family_C_rho_0.95_qlow_0.35": {
+        "rho": 0.95,
+        "q_low": 0.35,
+        "mean": 2.554411,
+        "std": 0.979701,
+        "median": 2.398695,
+        "p95": 4.389895,
+        "p99": 5.520508,
+        "max": 7.376991
+      },
+      "Family_C_rho_0.95_qlow_0.4": {
+        "rho": 0.95,
+        "q_low": 0.4,
+        "mean": 2.321724,
+        "std": 1.283059,
+        "median": 2.053479,
+        "p95": 4.79167,
+        "p99": 6.46214,
+        "max": 9.339216
+      },
+      "Family_C_rho_0.98_qlow_0.3": {
+        "rho": 0.98,
+        "q_low": 0.3,
+        "mean": 7.668738,
+        "std": 1.854699,
+        "median": 7.418317,
+        "p95": 11.324197,
+        "p99": 13.157997,
+        "max": 15.809089
+      },
+      "Family_C_rho_0.98_qlow_0.35": {
+        "rho": 0.98,
+        "q_low": 0.35,
+        "mean": 6.377035,
+        "std": 1.937099,
+        "median": 6.092315,
+        "p95": 10.137588,
+        "p99": 11.984306,
+        "max": 14.542978
+      },
+      "Family_C_rho_0.98_qlow_0.4": {
+        "rho": 0.98,
+        "q_low": 0.4,
+        "mean": 5.796339,
+        "std": 2.567931,
+        "median": 5.329456,
+        "p95": 10.860845,
+        "p99": 13.660651,
+        "max": 16.974302
+      }
+    },
+    "Family_B_grid": {
+      "Family_B_linear_rho_0.9": {
+        "rho": 0.9,
+        "f": "linear A_t",
+        "mean": 2.105328,
+        "std": 0.283587,
+        "p95": 2.570997,
+        "max": 3.097594
+      },
+      "Family_B_linear_rho_0.95": {
+        "rho": 0.95,
+        "f": "linear A_t",
+        "mean": 4.208369,
+        "std": 0.425156,
+        "p95": 4.915604,
+        "max": 5.627095
+      }
+    }
+  }
+}

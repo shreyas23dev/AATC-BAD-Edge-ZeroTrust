@@ -1,0 +1,11 @@
+{
+  "verdict": "UNSUITABLE",
+  "rationale": "ROC-AUC=0.4999 is near-random or detector fails minimum suitability criteria. Recommend investigation before TrustEngine phase.",
+  "roc_auc": 0.49988712857964224,
+  "pr_auc": 0.36901611152257024,
+  "point_recall": 0.011097468098664885,
+  "point_f1": 0.02149501761146401,
+  "sub_thr_pct": 98.8902531901335,
+  "has_score_separation": false,
+  "has_continuous_signal": false
+}

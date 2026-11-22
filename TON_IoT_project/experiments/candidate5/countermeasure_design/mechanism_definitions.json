@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "title": "Candidate 5 Phase 3 Mechanism Definitions",
+    "version": "1.0",
+    "venue": "InCIS 2027",
+    "status": "Theoretical Specification (Pre-Implementation)"
+  },
+  "mechanisms": {
+    "B0": {
+      "name": "Memoryless Rehabilitation (Frozen Baseline)",
+      "description": "Paper 1 TrustEngine unchanged. Accumulator clears to zero; trust recovers with fixed alpha = 0.2057; policy mapping is memoryless.",
+      "state_vector": "(T, E, SB) in [0, 1] x [0, 1] x [0, inf)",
+      "recovery_rule": "T_{t+1} = T_t + alpha_0 * (1 - T_t), alpha_0 = 0.2057",
+      "clearance_rule": "SB_{t+1} = max(0, SB_t - delta)",
+      "per_event_complexity": "O(1)",
+      "state_storage_bytes": "24 bytes (3 floats)"
+    },
+    "M1": {
+      "name": "Persistent Evidence Floor",
+      "description": "Retains a bounded fraction of accumulated slow-burn suspicion as an evidentiary floor h_t, preventing SB from completely zeroing across cycles.",
+      "state_vector": "(T, E, SB, h) in [0, 1] x [0, 1] x [0, inf) x [0, h_max]",
+      "new_state_variable": "h_t: Persistent evidence retention floor",
+      "update_rule": "h_{t+1} = min(h_max, max(h_t, kappa * SB_{accum})) if E > gamma else max(0, h_t - delta_h)",
+      "clearance_rule": "SB_{t+1} = max(h_{t+1}, SB_t - delta)",
+      "parameters": {
+        "kappa": 0.5,
+        "h_max": 0.8,
+        "delta_h": 0.001
+      },
+      "bounds": "h in [0.0, 0.80]",
+      "per_event_complexity": "O(1)",
+      "state_storage_bytes": "32 bytes (4 floats)"
+    },
+    "M2": {
+      "name": "History-Dependent Recovery Rate",
+      "description": "Dynamically scales the trust recovery rate alpha as a function of cumulative adverse incidents k_inc. Preserves alpha > 0 for all finite k.",
+      "state_vector": "(T, E, SB, k_inc, clean_counter) in [0, 1] x [0, 1] x [0, inf) x {0..k_max} x {0..n_clean_req}",
+      "new_state_variables": "k_inc: Incident counter; clean_counter: Continuous ALLOW streak counter",
+      "recovery_rule": "alpha(k_inc) = alpha_0 / (1 + eta * k_inc)",
+      "incident_update": "k_inc increments when policy drops from ALLOW; decrements when clean_counter reaches n_clean_req",
+      "parameters": {
+        "eta": 0.5,
+        "k_max": 10,
+        "n_clean_req": 100
+      },
+      "bounds": "alpha in [0.0343, 0.2057]",
+      "per_event_complexity": "O(1)",
+      "state_storage_bytes": "32 bytes (3 floats + 2 ints)"
+    },
+    "M3": {
+      "name": "Rehabilitation Hysteresis",
+      "description": "Imposes temporal hysteresis on policy restoration. When trust drops, device enters probation; re-attaining ALLOW requires H_req consecutive clean steps.",
+      "state_vector": "(T, E, SB, probation, streak) in [0, 1] x [0, 1] x [0, inf) x {0, 1} x {0..H_req}",
+      "new_state_variables": "probation in {0, 1}; streak: consecutive clean steps (A < A_thr and E <= gamma)",
+      "hysteresis_rule": "Policy is VERIFY while probation == 1, even if T >= T_ALLOW. Probation clears only when streak >= H_req.",
+      "parameters": {
+        "H_req": 15
+      },
+      "bounds": "H_req = 15 steps",
+      "per_event_complexity": "O(1)",
+      "state_storage_bytes": "26 bytes (3 floats + 1 bool + 1 int)"
+    }
+  }
+}

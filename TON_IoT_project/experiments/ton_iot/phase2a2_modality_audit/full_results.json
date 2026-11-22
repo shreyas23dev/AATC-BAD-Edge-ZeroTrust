@@ -1,0 +1,116 @@
+{
+  "run1": {
+    "run_id": 1,
+    "seed": 42,
+    "n_train": 427936,
+    "n_calib": 28200,
+    "n_eval": 193049,
+    "eval_normal": 102525,
+    "eval_attacks": 90524,
+    "eval_start": "2019-04-23 11:51:47",
+    "eval_end": "2019-04-29 14:47:38",
+    "features": [
+      "temperature",
+      "pressure",
+      "humidity"
+    ],
+    "scaler": {
+      "feature_names": [
+        "temperature",
+        "pressure",
+        "humidity"
+      ],
+      "medians": [
+        36.51948634,
+        1.22627469,
+        55.11095691
+      ],
+      "iqrs": [
+        13.925957195000002,
+        2.678795783,
+        47.740519427500004
+      ]
+    },
+    "normalization": {
+      "s_min": 0.40378812964994204,
+      "s_max": 0.691126731020775
+    },
+    "calibration": {
+      "A_thr": 0.9455121232239233,
+      "raw_thr_equiv": 0.6754702607162708
+    },
+    "point_metrics": {
+      "TP": 1,
+      "TN": 102525,
+      "FP": 0,
+      "FN": 90523,
+      "precision": 1.0,
+      "recall": 1.1046794220317263e-05,
+      "f1": 2.2093344380005524e-05,
+      "FPR": 0.0,
+      "FNR": 0.9999889532057796,
+      "specificity": 1.0,
+      "balanced_accuracy": 0.5000055233971101,
+      "roc_auc": 0.5153889361558435,
+      "pr_auc": 0.5001091063156999,
+      "attack_prevalence": 0.4689172179084067
+    },
+    "score_distributions": {
+      "eval_benign": {
+        "label": "eval_benign",
+        "n": 102525,
+        "mean": 0.2698651266032077,
+        "std": 0.1452331362873627,
+        "min": 0.006030475621382863,
+        "p25": 0.15687404158461932,
+        "median": 0.2468610768499844,
+        "p75": 0.35968883312800937,
+        "p90": 0.4669281522434508,
+        "p95": 0.5400555378460739,
+        "p99": 0.6766116314819858,
+        "max": 0.8843050799412667
+      },
+      "eval_attack": {
+        "label": "eval_attack",
+        "n": 90524,
+        "mean": 0.28264584192959996,
+        "std": 0.16396582883393362,
+        "min": 0.0018892197469735285,
+        "p25": 0.15168026321970285,
+        "median": 0.25851684278551657,
+        "p75": 0.39084681187414994,
+        "p90": 0.5166908466169818,
+        "p95": 0.5955731905062148,
+        "p99": 0.6985083246948297,
+        "max": 0.9461374938082822
+      },
+      "score_separation": 0.012780715326392245
+    },
+    "sub_threshold": {
+      "n_attack_sub_thr": 90523,
+      "n_attack_above_thr": 1,
+      "n_benign_sub_thr": 102525,
+      "n_benign_above_thr": 0,
+      "pct_attack_sub_thr": 99.99889532057797
+    },
+    "temporal_characteristics": {
+      "lag1_autocorr": 0.25177224523622493,
+      "first_diff_volatility": 0.18891632967463534,
+      "n_above_thr_runs": 1,
+      "mean_run_length": 1.0,
+      "max_run_length": 1
+    },
+    "episode_analysis": {
+      "n_episodes": 1100,
+      "episodes_crossing_A_thr": 1,
+      "episodes_entirely_sub_thr": 1099,
+      "pct_episodes_crossing_A_thr": 0.09090909090909091,
+      "median_episode_mean_A": 0.2612374611146079,
+      "median_episode_max_A": 0.43076065222930904,
+      "median_episode_duration": 11.0
+    },
+    "score_sha256": "fcfeeb3150d18554df5fbc7e39e2c58f9eb0072b98e4fcb5e337b02d6c9ea95e"
+  },
+  "verdict": "SIGNAL_LIMITED",
+  "reproducibility": true
+}

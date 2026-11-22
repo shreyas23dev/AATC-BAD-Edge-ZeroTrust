@@ -1,0 +1,145 @@
+{
+  "source_artifact": "experiments\\candidate5\\phase11_envelope_analysis\\sensitivity_grid.json",
+  "points": [
+    {
+      "delta_D": 0.05,
+      "K_allow": 1.2,
+      "Delta_M": 1.0,
+      "Delta_ALLOW_pp": -2.88,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.05,
+      "K_allow": 1.5,
+      "Delta_M": 1.0,
+      "Delta_ALLOW_pp": -2.22,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.05,
+      "K_allow": 1.7,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": -1.58,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.05,
+      "K_allow": 2.0,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": -1.12,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.05,
+      "K_allow": 2.3,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": -0.86,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.1,
+      "K_allow": 1.2,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": -0.08,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.1,
+      "K_allow": 1.5,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.1,
+      "K_allow": 1.7,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": true
+    },
+    {
+      "delta_D": 0.1,
+      "K_allow": 2.0,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.1,
+      "K_allow": 2.3,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.15,
+      "K_allow": 1.2,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.15,
+      "K_allow": 1.5,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.15,
+      "K_allow": 1.7,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.15,
+      "K_allow": 2.0,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.15,
+      "K_allow": 2.3,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.2,
+      "K_allow": 1.2,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.2,
+      "K_allow": 1.5,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.2,
+      "K_allow": 1.7,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.2,
+      "K_allow": 2.0,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    },
+    {
+      "delta_D": 0.2,
+      "K_allow": 2.3,
+      "Delta_M": 0.0,
+      "Delta_ALLOW_pp": 0.0,
+      "is_phase9_frozen": false
+    }
+  ]
+}

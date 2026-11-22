@@ -1,0 +1,8 @@
+{
+  "exact_row_duplicates_full_dataset": 0,
+  "train_feature_vector_duplicates": 141718,
+  "train_feature_vector_duplicate_pct": 85.72240839089777,
+  "eval_feature_vector_duplicates": 741177,
+  "eval_feature_vector_duplicate_pct": 92.7512382649524,
+  "explanation": "Exact row duplicates are zero because timestamps differentiate connections. However, feature vector duplicates are 92.8% in evaluation because scanning attacks produce hundreds of thousands of identical zero-payload 1-packet probe flows."
+}

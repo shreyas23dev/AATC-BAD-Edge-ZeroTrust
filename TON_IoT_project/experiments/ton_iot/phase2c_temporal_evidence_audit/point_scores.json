@@ -1,0 +1,24 @@
+{
+  "s_min": -7458.109466039667,
+  "s_max": 32.83600534430661,
+  "A_thr": 0.9964289692980755,
+  "sha256": "405d658d238f9d63ae170cfe0bd13723ffbea1dc29b3d66e507285c6deb0786a",
+  "metrics": {
+    "threshold": 0.9964289692980755,
+    "TP": 2704,
+    "TN": 0,
+    "FP": 0,
+    "FN": 796398,
+    "precision": 1.0,
+    "recall": 0.003383798313607024,
+    "f1": 0.0067447736734322266,
+    "FPR": 0.0,
+    "FNR": 0.996616201686393,
+    "specificity": 1.0,
+    "balanced_accuracy": 0.5016918991568036,
+    "roc_auc": NaN,
+    "pr_auc": 1.0,
+    "pct_attack_sub_threshold": 99.6616201686393,
+    "pct_benign_above_threshold": NaN
+  }
+}

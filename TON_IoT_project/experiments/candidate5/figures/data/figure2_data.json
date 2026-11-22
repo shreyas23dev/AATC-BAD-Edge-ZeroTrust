@@ -1,0 +1,88 @@
+{
+  "source_artifacts": [
+    "experiments\\candidate5\\phase10_countermeasure_evaluation\\multi_cycle_trace.json",
+    "experiments\\candidate5\\phase10_countermeasure_evaluation\\attack_replay_results.json",
+    "experiments\\candidate5\\countermeasure_evaluation\\attack_replay_results.json"
+  ],
+  "cycles": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "B0_cum_M": [
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    5.0,
+    6.0,
+    7.0,
+    7.5,
+    8.5
+  ],
+  "Family_C_cum_M": [
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    5.0,
+    6.0,
+    7.0,
+    7.5,
+    8.5
+  ],
+  "AATC_cum_M": [
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    4.5,
+    5.5,
+    6.0,
+    6.5,
+    7.5
+  ],
+  "schedules_summary": {
+    "schedule_keys": [
+      "Cycle_A",
+      "Cycle_B",
+      "Cycle_C",
+      "Cycle_D",
+      "Cycle_E"
+    ],
+    "schedules": [
+      "Cycle A",
+      "Cycle B",
+      "Cycle C",
+      "Cycle D",
+      "Cycle E"
+    ],
+    "B0_M": [
+      8.5,
+      4.0,
+      2.0,
+      4.0,
+      4.0
+    ],
+    "Family_C_M": [
+      8.5,
+      4.0,
+      2.0,
+      4.0,
+      4.0
+    ],
+    "AATC_M": [
+      7.5,
+      4.0,
+      2.0,
+      4.0,
+      4.0
+    ]
+  }
+}

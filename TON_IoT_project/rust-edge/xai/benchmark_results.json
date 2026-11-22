@@ -1,0 +1,23 @@
+{
+  "isolation_forest_onnx": {
+    "latency_ms": 1.4238949969999908,
+    "fps": 702.29897717662,
+    "size_kb": 588.873046875
+  },
+  "isolation_forest_treeshap": {
+    "latency_ms": 8.402519579999959,
+    "fps": 119.01192142178917
+  },
+  "autoencoder_f32": {
+    "latency_ms": 0.018062428999989777,
+    "fps": 55363.539422110174,
+    "size_kb": 68.572265625
+  },
+  "autoencoder_int8": {
+    "latency_ms": 0.05576161800001955,
+    "fps": 17933.48248968761,
+    "size_kb": 28.849609375
+  },
+  "speedup_vs_treeshap": 150.68643775718655,
+  "table_5_text": "\n========================================================================================\nTABLE 5: Empirical Comparison of Edge Explainability Overhead (Journal Paper)\n========================================================================================\n| Method                                | Latency / frame | Throughput | Model Size | XAI Type       |\n|---------------------------------------|-----------------|------------|------------|----------------|\n| Isolation Forest alone (InCIS 2027)   |    1.424 ms    |    702.3 fps |    588.9 KB | None           |\n| Isolation Forest + TreeSHAP (Baseline)|    8.403 ms    |    119.0 fps |    588.9 KB | Post-hoc Tree  |\n| Autoencoder Float32 (Proposed)        |    0.018 ms    |  55363.5 fps |     68.6 KB | Single-Pass    |\n| Autoencoder INT8 (Proposed Deploy)    |    0.056 ms    |  17933.5 fps |     28.8 KB | Single-Pass Q8 |\n========================================================================================\nKey Finding: Proposed Single-Pass INT8 Autoencoder provides per-packet local attribution\n             150.7x faster than TreeSHAP, maintaining real-time edge line rate (> 17933 fps).\n========================================================================================\n"
+}

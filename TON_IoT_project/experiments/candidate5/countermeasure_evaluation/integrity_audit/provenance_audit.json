@@ -1,0 +1,23 @@
+{
+  "title": "Provenance Audit of Family C and Data Partitioning",
+  "classification": "NEW MECHANISM \u2014 POST-PHASE-3",
+  "lineage_audit": {
+    "first_defined_in": "docs/CANDIDATE5_PHASE5_SUBTHRESHOLD_EVIDENCE_FORMALIZATION.md (Section 6.3)",
+    "json_provenance": "experiments/candidate5/subthreshold_formalization/temporal_evidence_families.json",
+    "selection_provenance": "docs/CANDIDATE5_PHASE6_TEMPORAL_MECHANISM_SELECTION.md (survived all 6 gates)",
+    "relationship_to_phase3_mechanisms": {
+      "is_M1": false,
+      "is_M2": false,
+      "is_M3": false,
+      "explanation": "Family C is NOT M1 (Persistent Floor), NOT M2 (Recovery Dilation), and NOT M3 (Hysteresis). It is a distinct temporal evidence accumulator Q_t tracking near-threshold proximity in [q_low, A_thr]."
+    }
+  },
+  "data_leakage_audit": {
+    "calibration_rows": "0 to 4,999 (N=5,000)",
+    "tau_Q_derivation": "Derived strictly as 99th percentile of Q on rows 0-4,999: round(np.percentile(Q_cal, 99), 4) = 4.4364",
+    "validation_leakage": "ZERO: validation rows (5000:10000) not used for tau_Q",
+    "evaluation_leakage": "ZERO: evaluation rows (10000:17459) not used for tau_Q",
+    "attack_replay_leakage": "ZERO: attack replay data not used for tau_Q",
+    "leakage_status": "VERIFIED_NO_LEAKAGE"
+  }
+}

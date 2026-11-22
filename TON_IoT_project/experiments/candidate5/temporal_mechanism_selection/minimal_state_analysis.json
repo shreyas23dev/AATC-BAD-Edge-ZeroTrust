@@ -1,0 +1,46 @@
+{
+  "phase": 6,
+  "title": "Minimal State Requirement and Computational Complexity Analysis",
+  "architecture_constraints": {
+    "max_state_overhead": "O(1) scalar registers",
+    "max_step_complexity": "O(1) elementary arithmetic operations",
+    "packet_history_storage": "STRICTLY PROHIBITED (violates IoT edge memory budget)"
+  },
+  "families_evaluation": {
+    "Family_A": {
+      "minimal_state": "1 scalar integer register (Q_t, 32-bit)",
+      "memory_bytes": 4,
+      "complexity_time": "O(1) comparison and increment",
+      "passes_minimality": true,
+      "limitation": "Without bounded horizon, integer register will overflow on long-running deployments unless wrapped or clamped"
+    },
+    "Family_B": {
+      "minimal_state": "1 scalar IEEE-754 float (Q_t, 32-bit or 64-bit)",
+      "memory_bytes": 4,
+      "complexity_time": "O(1) multiply-add",
+      "passes_minimality": true,
+      "limitation": "None from a computational standpoint"
+    },
+    "Family_C": {
+      "minimal_state": "1 scalar IEEE-754 float (Q_t, 32-bit or 64-bit)",
+      "memory_bytes": 4,
+      "complexity_time": "O(1) subtract, clamp, multiply-add",
+      "passes_minimality": true,
+      "limitation": "None from a computational standpoint; ideal for edge microcontrollers (e.g. ARM Cortex-M)"
+    },
+    "Family_D": {
+      "minimal_state": "1 scalar float (Q_t) + 1 integer timestamp (t_last)",
+      "memory_bytes": 8,
+      "complexity_time": "O(1) subtraction and reciprocal",
+      "passes_minimality": true,
+      "limitation": "Requires maintaining a monotonically increasing clock or step counter t"
+    },
+    "Family_E": {
+      "minimal_state_exact": "Ring buffer of W entries (bits or floats) + 1 pointer + 1 running sum = O(W) storage",
+      "memory_bytes_exact": "At least W/8 bytes (packed bits) or 4*W bytes (floats). For W=100: 100-400 bytes.",
+      "complexity_time_exact": "O(1) per step via circular ring buffer",
+      "passes_minimality": false,
+      "failure_reason": "Exact sliding window violates the O(1) state requirement by requiring history storage proportional to window length W. The EMA approximation reduces to Family B, which is evaluated separately."
+    }
+  }
+}

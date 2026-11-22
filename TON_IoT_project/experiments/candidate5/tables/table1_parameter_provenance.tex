@@ -1,0 +1,36 @@
+\begin{table*}[t]
+\centering
+\caption{Experimental Parameters and Formal Provenance across Evaluated Architectures}
+\label{tab:parameter_provenance}
+\small
+\begin{tabular}{lllll}
+\hline
+\textbf{Parameter} & \textbf{Symbol} & \textbf{Value} & \textbf{Architectural Role} & \textbf{Derivation Provenance} \\
+\hline
+\multicolumn{5}{l}{\textit{Baseline B0 TrustEngine (Paper 1 Frozen Constants)}} \\
+Overt Detection Threshold & $A_{\rm thr}$ & 0.4554 & Boundary for multiplicative penalty & Isolation Forest 99.9th percentile \\
+Energy Decay Factor & $\beta$ & 0.40 & Weight on current anomaly score & Paper 1 EWMA smoothing \\
+Slow-Burn Energy Threshold & $\gamma$ & 0.335 & Activates slow-burn accumulation & Paper 1 calibrated baseline \\
+Slow-Burn Accumulator Threshold & $\theta$ & 1.00 & Triggers slow-burn quarantine indicator & Paper 1 unit accumulator trip \\
+Slow-Burn Growth Quantum & $\lambda$ & 0.55 & Per-step accumulation when $E > \gamma$ & Paper 1 rapid escalation rate \\
+Slow-Burn Relaxation Rate & $\delta$ & 0.05 & Per-step accumulator decay & Paper 1 linear recovery rate \\
+Slow-Burn Penalty Quantum & $P_{\rm pen}$ & 0.25 & Trust penalty under slow-burn & Paper 1 discrete penalty quantum \\
+Trust Recovery Rate & $\alpha_0$ & 0.2057 & Exponential benign trust recovery & Paper 1 nominal restoration rate \\
+Policy Authorization Threshold & $T_{\rm allow}$ & 0.80 & Minimum trust for nominal ALLOW & Paper 1 operational policy \\
+Quarantine Threshold & $T_{\rm quar}$ & 0.30 & Boundary between VERIFY and BLOCK & Paper 1 operational policy \\
+\hline
+\multicolumn{5}{l}{\textit{Family C: Proximity Evidence Accumulator (Phase 6/7 Frozen Constants)}} \\
+Evidence Low-Cut Threshold & $q_{\rm low}$ & 0.35 & Lower bound of sub-threshold region & Separates 82.88\% of nominal traffic \\
+Evidence Retention Factor & $\rho$ & 0.95 & Autoregressive memory parameter & Phase 6 derivation ($H \approx 20$ frames) \\
+Evidence Penalty Threshold & $\tau_Q$ & 4.4364 & 99th percentile of benign calibration & Derived strictly on Calibration (rows 0--4,999) \\
+Evidence Penalty Quantum & $P_Q$ & 0.25 & Trust deduction when $Q > \tau_Q$ & Paper 1 penalty quantum parity \\
+\hline
+\multicolumn{5}{l}{\textit{AATC-BAD: Adaptive Asymptotic Ceiling with Borderline Debt (Phase 9/10/11 Frozen Constants)}} \\
+Debt Lower Cutoff & $q_{\rm low}$ & 0.35 & High-trust borderline lower bound & Frozen from Phase 6/8 diagnosis \\
+Debt Relaxation Rate & $\delta_D$ & 0.10 & Per-step linear debt shedding on nominal & Guarantees $\mathbb{E}[\Delta D_{\rm benign}] < 0$ on Calibration \\
+Allowance Debt Buffer & $K_{\rm allow}$ & 1.70 & Debt threshold triggering ceiling contraction & 99th percentile of Calibration debt ($P_{99} = 1.67$) \\
+Ceiling Contraction Slope & $\eta_C$ & 0.30 & Rate of asymptotic ceiling suppression & Ensures 2 Cycle A pulses demote below $T_{\rm allow}$ \\
+Minimum Asymptotic Ceiling & $C_{\rm floor}$ & 0.70 & Lower bound on trust recovery asymptote & Guarantees no false quarantine to BLOCK \\
+\hline
+\end{tabular}
+\end{table*}

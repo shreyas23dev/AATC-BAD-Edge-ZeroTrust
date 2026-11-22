@@ -1,0 +1,177 @@
+{
+  "phase": 10,
+  "schedule": "Cycle_A (1 atk, 10 rest)",
+  "comparison": [
+    {
+      "cycle": 1,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 1.0,
+        "T_post_rst": 0.926182,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 1.0,
+        "D_post_atk": 0.56926,
+        "C_post_atk": 1.0,
+        "T_post_rst": 0.926182,
+        "D_post_rst": 0.589109,
+        "C_post_rst": 1.0,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 2,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.941367,
+        "T_post_rst": 0.994139,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.941367,
+        "D_post_atk": 1.158368,
+        "C_post_atk": 1.0,
+        "T_post_rst": 0.975947,
+        "D_post_rst": 1.560937,
+        "C_post_rst": 1.0,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 3,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.995344,
+        "T_post_rst": 0.999535,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.870941,
+        "D_post_atk": 2.130197,
+        "C_post_atk": 0.870941,
+        "T_post_rst": 0.980213,
+        "D_post_rst": 1.130197,
+        "C_post_rst": 1.0,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 4,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.99963,
+        "T_post_rst": 0.999963,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.984283,
+        "D_post_atk": 1.699456,
+        "C_post_atk": 1.0,
+        "T_post_rst": 0.794034,
+        "D_post_rst": 2.307122,
+        "C_post_rst": 0.817863,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 5,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.999971,
+        "T_post_rst": 0.999997,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.798936,
+        "D_post_atk": 2.307122,
+        "C_post_atk": 0.817863,
+        "T_post_rst": 0.962726,
+        "D_post_rst": 1.307122,
+        "C_post_rst": 1.0,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 6,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.999998,
+        "T_post_rst": 1.0,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.947085,
+        "D_post_atk": 1.876382,
+        "C_post_atk": 0.947085,
+        "T_post_rst": 0.813577,
+        "D_post_rst": 2.057354,
+        "C_post_rst": 0.892794,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 7,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 1.0,
+        "T_post_rst": 0.711079,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.722016,
+        "D_post_atk": 2.626614,
+        "C_post_atk": 0.722016,
+        "T_post_rst": 0.633406,
+        "D_post_rst": 1.826614,
+        "C_post_rst": 0.962016,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 8,
+      "B0": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.77051,
+        "T_post_rst": 0.977059,
+        "quarantined": false
+      },
+      "AATC": {
+        "phase": "SURVIVED",
+        "T_post_atk": 0.701001,
+        "D_post_atk": 1.826614,
+        "C_post_atk": 0.962016,
+        "T_post_rst": 0.963524,
+        "D_post_rst": 1.228138,
+        "C_post_rst": 1.0,
+        "quarantined": false
+      }
+    },
+    {
+      "cycle": 9,
+      "B0": {
+        "phase": "REST",
+        "T_post_atk": 0.981778,
+        "T_post_rst": 0.232119,
+        "quarantined": true
+      },
+      "AATC": {
+        "phase": "REST",
+        "T_post_atk": 0.965017,
+        "D_post_atk": 1.797398,
+        "C_post_atk": 0.970781,
+        "T_post_rst": 0.231674,
+        "D_post_rst": 1.197398,
+        "C_post_rst": 1.0,
+        "quarantined": true
+      }
+    }
+  ]
+}

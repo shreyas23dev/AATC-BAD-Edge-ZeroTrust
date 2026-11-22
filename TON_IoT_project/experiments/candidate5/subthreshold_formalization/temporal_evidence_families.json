@@ -1,0 +1,108 @@
+{
+  "phase": 5,
+  "description": "Analysis of five mathematical families for a new sub-threshold temporal evidence variable Q_t. No family is selected; this is an analytical enumeration.",
+  "notation": {
+    "Q_t": "sub-threshold temporal evidence accumulator",
+    "I_sub(A)": "indicator: A >= q (near-threshold lower bound, 0 <= q < A_thr)",
+    "rho": "decay factor in (0,1), controls memory timescale",
+    "f(A_t)": "accumulation contribution from current observation",
+    "Delta_t": "inter-arrival time between consecutive sub-threshold events"
+  },
+  "families": {
+    "A_count_based": {
+      "update_equation": "Q_{t+1} = Q_t + I(A_t >= q)  for some 0 <= q < A_thr",
+      "information_captured": "Cumulative count of events above lower bound q. Records total exposure above q since reset or initialization.",
+      "memory_requirement": "O(1): one counter Q and one parameter q",
+      "sensitivity_to_burstiness": "LOW: does not distinguish 10 events in 10 steps from 10 events in 1000 steps. Total count is path-independent of event timing.",
+      "sensitivity_to_benign_periodic_traffic": "HIGH if q is low: many IoT protocols (MQTT keepalive, CoAP observation, Modbus polling) generate regular sub-threshold activity. Q grows at a rate proportional to protocol polling frequency, regardless of adversarial intent.",
+      "susceptibility_to_attacker_pacing": "MODERATE: attacker can limit the rate of events (pacing strategy) to keep Q below detection threshold, but cannot suppress count entirely. A sufficiently low detection threshold catches slow pacing.",
+      "O1_implementation": true,
+      "duplicates_sliding_window": "YES (with decay or reset): without a reset mechanism, Q grows unboundedly. Adding a periodic reset is equivalent to a non-overlapping count window. An exponential decay transforms it to Family B.",
+      "relationship_to_E_t": "Not redundant: E_t = beta*A + (1-beta)*E is a magnitude average; Family A counts events above a binary threshold. Family A with q close to A_thr would count near-threshold events specifically.",
+      "key_limitation": "No temporal concentration: a single burst of 10 events and 10 events spread over a day are treated identically."
+    },
+    "B_exponential_decay": {
+      "update_equation": "Q_{t+1} = rho * Q_t + f(A_t)  for rho in (0,1)",
+      "information_captured": "Recency-weighted accumulated sub-threshold evidence. Events closer to the current step contribute more. Provides a continuous-valued running estimate of recent sub-threshold activity.",
+      "memory_requirement": "O(1): single float Q, two parameters rho and f-specification",
+      "sensitivity_to_burstiness": "MODERATE-HIGH: a burst of N events in N steps produces Q ~ N*f_val * (1+rho+...+rho^N) while N events spread over T steps produce smaller Q. Sensitivity controlled by rho: small rho captures short-term bursts; large rho captures long-term persistence.",
+      "sensitivity_to_benign_periodic_traffic": "MODERATE: under constant periodic benign input with A=A_periodic, Q reaches steady state Q* = f(A_periodic) / (1-rho). If f(A_periodic) > 0 (benign events contribute), honest devices will maintain nonzero Q* permanently.",
+      "susceptibility_to_attacker_pacing": "MODERATE: attacker can space events such that each decay brings Q below detection threshold before next event. The pacing period is approximately tau_pace >= -log(threshold / f_val) / log(rho). This is a solvable evasion strategy if rho is known.",
+      "O1_implementation": true,
+      "duplicates_sliding_window": "NOT EXACTLY: exponential decay differs from uniform window. Family B is the exact form of the existing E_t accumulator. To avoid redundancy with E_t, f must be chosen carefully.",
+      "relationship_to_E_t": "CRITICAL: E_t = beta*A_t + (1-beta)*E_t is EXACTLY Family B with rho=1-beta=0.60 and f(A_t) = beta*A_t = 0.40*A_t. A new Q_t in Family B must use different f or rho to be non-redundant. Example: f(A_t) = I(A_t in R_sub) * (A_t - q) makes Q accumulate ONLY sub-threshold near-threshold events, unlike E_t which integrates all A values.",
+      "key_limitation": "Steady-state response to benign periodic traffic could create nonzero Q baseline, requiring careful threshold calibration."
+    },
+    "C_recency_weighted_threshold_offset": {
+      "update_equation": "Q_{t+1} = rho * Q_t + f(A_t, A_thr)  where f encodes near-threshold proximity",
+      "information_captured": "Recency-weighted accumulation where the contribution of each event is a function of BOTH its magnitude AND its proximity to A_thr. Events very close to A_thr (near-miss events) contribute more than low-magnitude events, distinguishing strategic near-threshold probing from incidental sub-threshold activity.",
+      "candidate_f_functions": [
+        {
+          "name": "threshold-gap proximity",
+          "formula": "f(A, A_thr) = max(0, A - q_low)  for some q_low < A_thr",
+          "properties": "Zero for A <= q_low; linear growth toward A_thr. Ignores events far below A_thr. Cycle A: f(0.41, 0.4554) = 0.41 - q_low for q_low < 0.41."
+        },
+        {
+          "name": "normalized proximity",
+          "formula": "f(A, A_thr) = max(0, A - q_low) / (A_thr - q_low)",
+          "properties": "Normalized to [0,1]. Cycle A at A=0.41 with q_low=0.35: f = 0.06/0.1054 = 0.569. Strongly responsive to near-threshold events."
+        }
+      ],
+      "memory_requirement": "O(1): single float Q, parameters rho, q_low",
+      "sensitivity_to_burstiness": "MODERATE-HIGH (same as Family B, plus magnitude weighting)",
+      "sensitivity_to_benign_periodic_traffic": "LOWER than Family B if q_low is set above typical benign traffic levels. IoT devices in normal operation rarely produce A values near A_thr. q_low can be calibrated from observed benign A distribution.",
+      "susceptibility_to_attacker_pacing": "SAME as Family B: pacing can keep Q below threshold. Additional concern: adversary can tune A to maximize f while remaining below A_thr (strategic near-threshold positioning).",
+      "O1_implementation": true,
+      "duplicates_sliding_window": "NOT EXACTLY: threshold-offset weighting is qualitatively different from a simple count or uniform window.",
+      "relationship_to_E_t": "Non-redundant if f is nonzero ONLY for A in a restricted sub-interval of (0, A_thr). E_t integrates all A values; Family C with q_low > 0 integrates only near-threshold events.",
+      "key_limitation": "Requires careful calibration of q_low. If set too low, benign near-threshold events inflate Q. If set too high, attacker can stay below q_low."
+    },
+    "D_inter_arrival_based": {
+      "update_equation": "Q_{t+1} = g(Q_t, Delta_t)  where Delta_t = steps since last sub-threshold event",
+      "information_captured": "Temporal concentration: how frequently sub-threshold events occur. Short inter-arrival times (high frequency) indicate concentrated adversarial pacing; long inter-arrival times indicate sporadic benign events.",
+      "memory_requirement": "O(1): one counter for last event timestep t_last, plus Q. Delta_t = t_current - t_last is computable at each step.",
+      "candidate_g_functions": [
+        {
+          "name": "reciprocal rate",
+          "formula": "Q = 1/Delta_t  (instantaneous rate at event)",
+          "properties": "Captures event frequency directly. Spiky, resets between events."
+        },
+        {
+          "name": "decay-to-zero between events",
+          "formula": "Q_{t+1} = Q_t * rho  (no event), Q_{t+1} = 1/(1+Delta_t)  (on event)",
+          "properties": "Accumulates short inter-arrival evidence, decays between events."
+        }
+      ],
+      "sensitivity_to_burstiness": "HIGH: small Delta_t => large Q response. Most directly captures temporal concentration.",
+      "sensitivity_to_benign_periodic_traffic": "HIGH RISK: many IoT protocols operate at fixed polling intervals. A device with a 1-second MQTT keepalive has a fixed inter-arrival time for sub-threshold events. This could create a large persistent Q for perfectly legitimate devices.",
+      "susceptibility_to_attacker_pacing": "VERY HIGH: this is the most attackable family. An adversary who knows the detection inter-arrival threshold tau_detect simply sets Delta_t > tau_detect between every event. Family D is trivially defeatable by patient adversaries.",
+      "O1_implementation": true,
+      "duplicates_sliding_window": "PARTIALLY: inter-arrival analysis is complementary to count-based sliding windows, but does not require counting over a window. However, a simple event-rate estimator would be equivalent.",
+      "key_limitation": "Highly susceptible to attacker pacing; high false alarm risk for legitimate periodic protocols; least information-rich of the five families."
+    },
+    "E_rate_based": {
+      "update_equation": "Q_t = N_sub(t, t-W) / W  (events in window W divided by window size)",
+      "information_captured": "Event rate: number of sub-threshold events per unit time in a recent window. Directly measures the frequency property that characterizes Cycle A's 1:10 duty cycle (1 event per 11 steps = 0.091 events/step).",
+      "memory_requirement": "NOT O(1) in pure form: requires storing all event timestamps in the window. O(1) exponential rate estimator approximation exists: R_{t+1} = rho * R_t + (1-rho) * I(A_t in R_sub), which approximates rate over exponentially-weighted window.",
+      "sensitivity_to_burstiness": "HIGH for pure rate; MODERATE for exponential approximation. Window choice W controls temporal resolution.",
+      "sensitivity_to_benign_periodic_traffic": "HIGH: a device transmitting sub-threshold events at fixed rate R_benign will have Q_t = R_benign constantly. Detection requires Q_t > threshold_Q where threshold_Q > R_benign. If R_benign is close to R_attack, discrimination fails.",
+      "susceptibility_to_attacker_pacing": "MODERATE: attacker controls rate by controlling inter-arrival times. Setting attack rate below threshold_Q evades detection. For Cycle A (1:11 = 0.091 events/step), the attacker rate is fixed by the rehabilitation schedule, not freely adjustable.",
+      "O1_implementation": "NO in exact form; YES with exponential approximation. Pure sliding-window requires O(W) storage.",
+      "duplicates_sliding_window": "YES: rate estimation over a fixed window IS a sliding-window detector. The exponential approximation is a standard EMA-based rate estimator, which is operationally identical to a sliding-window count with exponential weights. This family does not add architectural novelty beyond existing EMA-based detection.",
+      "relationship_to_E_t": "PARTIALLY REDUNDANT: E_t already tracks a recency-weighted average of A values. Family E tracks a recency-weighted indicator function of sub-threshold membership. These are conceptually similar and their information content overlaps significantly in the sub-threshold regime.",
+      "key_limitation": "Duplicates sliding-window detection in its most informative form; does not provide novel representational capacity beyond what a carefully tuned E_t or Family B accumulator would offer."
+    }
+  },
+  "synthesis": {
+    "families_without_architectural_redundancy": [
+      "B",
+      "C"
+    ],
+    "families_with_architectural_novelty": [
+      "B_with_restricted_f",
+      "C"
+    ],
+    "note": "Family B with f restricted to I(A in R_sub)*(A-q_low) and Family C are the most promising non-redundant candidates. Family A lacks temporal concentration sensitivity. Family D is highly susceptible to attacker pacing and benign periodic traffic. Family E duplicates sliding-window detection. NO FAMILY IS SELECTED. Selection deferred to Phase 6.",
+    "common_failure_mode_for_all_families": "Every family can be defeated by an adversary who: (1) knows the Q detection threshold, (2) paces events to keep Q below threshold, (3) uses the natural benign Q baseline to mask attack events. Robustness against informed adversaries requires designing Q such that its steady-state value is MUCH lower for benign-rate traffic than for Cycle A attack traffic \u2014 requiring knowledge of the benign A distribution."
+  }
+}

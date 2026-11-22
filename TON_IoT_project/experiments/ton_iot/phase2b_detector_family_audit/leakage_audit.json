@@ -1,0 +1,13 @@
+{
+  "no_ip_features": true,
+  "no_labels_in_input": true,
+  "no_attack_type_in_input": true,
+  "no_future_values_used": true,
+  "no_evaluation_fitting": true,
+  "scaler_train_only": true,
+  "normalization_train_only": true,
+  "thresholds_calibration_only": true,
+  "no_supervised_detector_selection": true,
+  "no_evaluation_based_tuning": true,
+  "leakage_detected": false
+}

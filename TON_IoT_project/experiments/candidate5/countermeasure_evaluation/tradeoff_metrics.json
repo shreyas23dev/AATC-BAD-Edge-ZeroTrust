@@ -1,0 +1,86 @@
+{
+  "B0": {
+    "mechanism": "B0",
+    "classification": "BASELINE",
+    "interpretation": "Memoryless baseline with 8-cycle survival and 24.04% legitimate false BLOCK.",
+    "security_cycle_a": {
+      "survived_cycles": 8,
+      "malicious_yield_M_cum": 8.5,
+      "delta_yield_vs_B0": 0.0,
+      "delta_cycles_vs_B0": 0
+    },
+    "availability_benign": {
+      "allow_fraction": 0.6224,
+      "verify_fraction": 0.1372,
+      "block_fraction": 0.2404,
+      "delta_allow_vs_B0": 0.0,
+      "delta_verify_vs_B0": 0.0,
+      "delta_block_vs_B0": 0.0,
+      "block_transitions": 42,
+      "mean_recovery_steps": 14.18
+    }
+  },
+  "M1": {
+    "mechanism": "M1",
+    "classification": "NO_SECURITY_GAIN_WITH_AVAILABILITY_COST",
+    "interpretation": "No security improvement on Cycle A, while false BLOCK increased by 10.8%.",
+    "security_cycle_a": {
+      "survived_cycles": 8,
+      "malicious_yield_M_cum": 8.5,
+      "delta_yield_vs_B0": 0.0,
+      "delta_cycles_vs_B0": 0
+    },
+    "availability_benign": {
+      "allow_fraction": 0.5101,
+      "verify_fraction": 0.142,
+      "block_fraction": 0.3479,
+      "delta_allow_vs_B0": -0.1123,
+      "delta_verify_vs_B0": 0.0048,
+      "delta_block_vs_B0": 0.1075,
+      "block_transitions": 175,
+      "mean_recovery_steps": 20.76
+    }
+  },
+  "M2": {
+    "mechanism": "M2",
+    "classification": "NEUTRAL_TRADE_OFF",
+    "interpretation": "Mixed marginal trade-offs.",
+    "security_cycle_a": {
+      "survived_cycles": 8,
+      "malicious_yield_M_cum": 8.5,
+      "delta_yield_vs_B0": 0.0,
+      "delta_cycles_vs_B0": 0
+    },
+    "availability_benign": {
+      "allow_fraction": 0.1769,
+      "verify_fraction": 0.5363,
+      "block_fraction": 0.2868,
+      "delta_allow_vs_B0": -0.4455,
+      "delta_verify_vs_B0": 0.3991,
+      "delta_block_vs_B0": 0.0464,
+      "block_transitions": 192,
+      "mean_recovery_steps": 124.56
+    }
+  },
+  "M3": {
+    "mechanism": "M3",
+    "classification": "SECURITY_GAIN_WITH_AVAILABILITY_COST",
+    "interpretation": "Yield reduced by 1.5 units, but legitimate ALLOW dropped by 32.6%.",
+    "security_cycle_a": {
+      "survived_cycles": 8,
+      "malicious_yield_M_cum": 7.0,
+      "delta_yield_vs_B0": -1.5,
+      "delta_cycles_vs_B0": 0
+    },
+    "availability_benign": {
+      "allow_fraction": 0.296,
+      "verify_fraction": 0.4637,
+      "block_fraction": 0.2404,
+      "delta_allow_vs_B0": -0.3264,
+      "delta_verify_vs_B0": 0.3265,
+      "delta_block_vs_B0": 0.0,
+      "block_transitions": 42,
+      "mean_recovery_steps": 66.8
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "unique_src_ip_train": 69,
+  "unique_src_ip_eval_total": 33,
+  "unique_src_ip_eval_benign": 23,
+  "unique_src_ip_eval_attack": 19,
+  "src_ip_overlap_train_eval": 15,
+  "src_ip_attack_in_train": 9,
+  "unique_dst_ip_train": 840,
+  "unique_dst_ip_eval": 918,
+  "dst_ip_overlap_train_eval": 294,
+  "critical_finding": "The primary attacker source IPs (192.168.1.30, 192.168.1.32, 192.168.1.31) generate 743,000+ attack flows and NEVER appear in the training baseline. Including src_ip would create trivial identity memorization leakage."
+}

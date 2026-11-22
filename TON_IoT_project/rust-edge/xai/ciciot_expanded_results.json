@@ -1,0 +1,233 @@
+{
+  "summary": [
+    {
+      "category": "Normal",
+      "total": 10000,
+      "allow": 570,
+      "verify": 9067,
+      "block": 363,
+      "pure_block_pct": 3.63,
+      "mitigated_pct": 94.3
+    },
+    {
+      "category": "DDoS_ICMP",
+      "total": 2001,
+      "allow": 0,
+      "verify": 1,
+      "block": 2000,
+      "pure_block_pct": 99.95,
+      "mitigated_pct": 100.0
+    },
+    {
+      "category": "SYN_Flood",
+      "total": 2002,
+      "allow": 0,
+      "verify": 0,
+      "block": 2002,
+      "pure_block_pct": 100.0,
+      "mitigated_pct": 100.0
+    },
+    {
+      "category": "SlowLoris",
+      "total": 2002,
+      "allow": 0,
+      "verify": 0,
+      "block": 2002,
+      "pure_block_pct": 100.0,
+      "mitigated_pct": 100.0
+    },
+    {
+      "category": "Mirai",
+      "total": 2002,
+      "allow": 9,
+      "verify": 1720,
+      "block": 273,
+      "pure_block_pct": 13.64,
+      "mitigated_pct": 99.55
+    },
+    {
+      "category": "DDoS_UDP",
+      "total": 2001,
+      "allow": 26,
+      "verify": 1960,
+      "block": 15,
+      "pure_block_pct": 0.75,
+      "mitigated_pct": 98.7
+    },
+    {
+      "category": "Port_Scanning",
+      "total": 2001,
+      "allow": 28,
+      "verify": 1019,
+      "block": 954,
+      "pure_block_pct": 47.68,
+      "mitigated_pct": 98.6
+    },
+    {
+      "category": "Password",
+      "total": 2001,
+      "allow": 9,
+      "verify": 675,
+      "block": 1317,
+      "pure_block_pct": 65.82,
+      "mitigated_pct": 99.55
+    },
+    {
+      "category": "Vulnerability_scanner",
+      "total": 2001,
+      "allow": 91,
+      "verify": 1910,
+      "block": 0,
+      "pure_block_pct": 0.0,
+      "mitigated_pct": 95.45
+    }
+  ],
+  "fingerprints": {
+    "DDoS_ICMP": [
+      {
+        "feature": "mean(Number)",
+        "error": 0.9821978807449341
+      },
+      {
+        "feature": "mean(ICMP)",
+        "error": 0.8643211722373962
+      },
+      {
+        "feature": "mean(Rate)",
+        "error": 0.7714575529098511
+      },
+      {
+        "feature": "mean(UDP)",
+        "error": 0.4750711917877197
+      }
+    ],
+    "SYN_Flood": [
+      {
+        "feature": "mean(Number)",
+        "error": 0.9507320523262024
+      },
+      {
+        "feature": "mean(rst_count)",
+        "error": 0.7411643266677856
+      },
+      {
+        "feature": "mean(rst_flag_number)",
+        "error": 0.7212045192718506
+      },
+      {
+        "feature": "std(rst_flag_number)",
+        "error": 0.7025120258331299
+      }
+    ],
+    "SlowLoris": [
+      {
+        "feature": "mean(Number)",
+        "error": 0.9921354651451111
+      },
+      {
+        "feature": "mean(Tot sum)",
+        "error": 0.599778413772583
+      },
+      {
+        "feature": "std(HTTP)",
+        "error": 0.46812888979911804
+      },
+      {
+        "feature": "std(Tot sum)",
+        "error": 0.420664519071579
+      }
+    ],
+    "Mirai": [
+      {
+        "feature": "mean(Number)",
+        "error": 0.9997457265853882
+      },
+      {
+        "feature": "mean(Tot sum)",
+        "error": 0.35204795002937317
+      },
+      {
+        "feature": "mean(Min)",
+        "error": 0.32266607880592346
+      },
+      {
+        "feature": "std(syn_count)",
+        "error": 0.12119972705841064
+      }
+    ],
+    "DDoS_UDP": [
+      {
+        "feature": "mean(Number)",
+        "error": 0.9996325969696045
+      },
+      {
+        "feature": "mean(Rate)",
+        "error": 0.7571929693222046
+      },
+      {
+        "feature": "mean(AVG)",
+        "error": 0.06059608981013298
+      },
+      {
+        "feature": "mean(Tot size)",
+        "error": 0.05628193914890289
+      }
+    ],
+    "Port_Scanning": [
+      {
+        "feature": "mean(Rate)",
+        "error": 0.32247087359428406
+      },
+      {
+        "feature": "std(Rate)",
+        "error": 0.25090909004211426
+      },
+      {
+        "feature": "mean(psh_flag_number)",
+        "error": 0.2104521244764328
+      },
+      {
+        "feature": "mean(syn_count)",
+        "error": 0.17745287716388702
+      }
+    ],
+    "Password": [
+      {
+        "feature": "std(SSH)",
+        "error": 0.4851042628288269
+      },
+      {
+        "feature": "mean(SSH)",
+        "error": 0.48102566599845886
+      },
+      {
+        "feature": "std(IAT)",
+        "error": 0.22661225497722626
+      },
+      {
+        "feature": "std(fin_flag_number)",
+        "error": 0.1340460628271103
+      }
+    ],
+    "Vulnerability_scanner": [
+      {
+        "feature": "std(SSH)",
+        "error": 0.06915423274040222
+      },
+      {
+        "feature": "mean(SSH)",
+        "error": 0.059341493993997574
+      },
+      {
+        "feature": "std(DHCP)",
+        "error": 0.05657562240958214
+      },
+      {
+        "feature": "mean(DNS)",
+        "error": 0.04780248552560806
+      }
+    ]
+  },
+  "overall_attack_mitigated_pct": 98.98,
+  "high_impact_mitigated_pct": 99.49
+}

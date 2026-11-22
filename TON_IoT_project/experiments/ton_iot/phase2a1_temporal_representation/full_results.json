@@ -1,0 +1,193 @@
+{
+  "run1": {
+    "run_id": 1,
+    "seed": 42,
+    "static_baseline": {
+      "representation_name": "STATIC_BASELINE",
+      "n_features": 4,
+      "feature_names": [
+        "FC1_Read_Input_Register",
+        "FC2_Read_Discrete_Value",
+        "FC3_Read_Holding_Register",
+        "FC4_Read_Coil"
+      ],
+      "s_min": 0.44705100738580633,
+      "s_max": 0.6608747851971484,
+      "A_thr": 0.6892296769106134,
+      "raw_thr_equiv": 0.5944247006825244,
+      "point_metrics": {
+        "TP": 714,
+        "TN": 107786,
+        "FP": 1381,
+        "FN": 63625,
+        "precision": 0.34081145584725536,
+        "recall": 0.011097468098664885,
+        "f1": 0.02149501761146401,
+        "FPR": 0.012650343052387627,
+        "FNR": 0.9889025319013351,
+        "specificity": 0.9873496569476123,
+        "balanced_accuracy": 0.4992235625231386,
+        "roc_auc": 0.49988712857964224,
+        "pr_auc": 0.36901611152257024
+      },
+      "score_distributions": {
+        "eval_benign": {
+          "label": "STATIC_BASELINE eval_benign",
+          "n": 109167,
+          "mean": 0.3103378156993121,
+          "std": 0.15582767648825893,
+          "min": 0.0,
+          "p25": 0.18758479621270382,
+          "median": 0.29706340503053763,
+          "p75": 0.4147047586277159,
+          "p90": 0.5248962156318697,
+          "p95": 0.5891458743272209,
+          "p99": 0.7051876511718483,
+          "max": 1.0
+        },
+        "eval_attack": {
+          "label": "STATIC_BASELINE eval_attack",
+          "n": 64339,
+          "mean": 0.3098042477559969,
+          "std": 0.15438020349444623,
+          "min": 0.0,
+          "p25": 0.18915167753540335,
+          "median": 0.2966573390194739,
+          "p75": 0.41476552846700826,
+          "p90": 0.5219329674003129,
+          "p95": 0.5829955116789467,
+          "p99": 0.6952022317190283,
+          "max": 1.0
+        }
+      },
+      "sub_threshold": {
+        "n_attack_sub_thr": 63625,
+        "n_attack_above_thr": 714,
+        "pct_attack_sub_thr": 98.8902531901335
+      },
+      "temporal_characteristics": {
+        "lag1_autocorr": 0.49205407218728026,
+        "first_diff_volatility": 0.15652192284867578,
+        "n_above_thr_runs": 1073,
+        "mean_run_length": 1.9524697110904008,
+        "max_run_length": 11
+      },
+      "episode_analysis": {
+        "n_episodes": 1002,
+        "episodes_crossing_A_thr": 89,
+        "episodes_entirely_sub_thr": 913,
+        "pct_episodes_crossing_A_thr": 8.882235528942116,
+        "median_episode_mean_A": 0.30988137053687553,
+        "median_episode_max_A": 0.46470995837619977
+      },
+      "score_sha256": "362c107d879b2a5f6604b0b135c3939af99d47e7d3af5830d8f4a0234f9c98b5"
+    },
+    "temporal_representation": {
+      "representation_name": "TEMPORAL_REPRESENTATION",
+      "n_features": 29,
+      "feature_names": [
+        "FC1_Read_Input_Register",
+        "FC2_Read_Discrete_Value",
+        "FC3_Read_Holding_Register",
+        "FC4_Read_Coil",
+        "diff_FC1_Read_Input_Register",
+        "abs_diff_FC1_Read_Input_Register",
+        "diff_FC2_Read_Discrete_Value",
+        "abs_diff_FC2_Read_Discrete_Value",
+        "diff_FC3_Read_Holding_Register",
+        "abs_diff_FC3_Read_Holding_Register",
+        "diff_FC4_Read_Coil",
+        "abs_diff_FC4_Read_Coil",
+        "inter_arrival_time",
+        "roll_mean_w5_FC1_Read_Input_Register",
+        "roll_var_w5_FC1_Read_Input_Register",
+        "roll_mean_w5_FC2_Read_Discrete_Value",
+        "roll_var_w5_FC2_Read_Discrete_Value",
+        "roll_mean_w5_FC3_Read_Holding_Register",
+        "roll_var_w5_FC3_Read_Holding_Register",
+        "roll_mean_w5_FC4_Read_Coil",
+        "roll_var_w5_FC4_Read_Coil",
+        "roll_mean_w20_FC1_Read_Input_Register",
+        "roll_var_w20_FC1_Read_Input_Register",
+        "roll_mean_w20_FC2_Read_Discrete_Value",
+        "roll_var_w20_FC2_Read_Discrete_Value",
+        "roll_mean_w20_FC3_Read_Holding_Register",
+        "roll_var_w20_FC3_Read_Holding_Register",
+        "roll_mean_w20_FC4_Read_Coil",
+        "roll_var_w20_FC4_Read_Coil"
+      ],
+      "s_min": 0.38581212282498856,
+      "s_max": 0.6289604521138386,
+      "A_thr": 0.6623135872399162,
+      "raw_thr_equiv": 0.5468525650276792,
+      "point_metrics": {
+        "TP": 937,
+        "TN": 107432,
+        "FP": 1735,
+        "FN": 63402,
+        "precision": 0.35067365269461076,
+        "recall": 0.014563484045446775,
+        "f1": 0.027965557893480174,
+        "FPR": 0.015893081242500023,
+        "FNR": 0.9854365159545532,
+        "specificity": 0.9841069187575,
+        "balanced_accuracy": 0.4993352014014734,
+        "roc_auc": 0.45389940989175376,
+        "pr_auc": 0.3463229181082486
+      },
+      "score_distributions": {
+        "eval_benign": {
+          "label": "TEMPORAL_REPRESENTATION eval_benign",
+          "n": 109167,
+          "mean": 0.3393816125206524,
+          "std": 0.13306299763750284,
+          "min": 0.009213514683865314,
+          "p25": 0.24138531302883987,
+          "median": 0.32611228812587245,
+          "p75": 0.4239055367508269,
+          "p90": 0.5205017789691982,
+          "p95": 0.5789708621695914,
+          "p99": 0.6893719702424832,
+          "max": 1.0
+        },
+        "eval_attack": {
+          "label": "TEMPORAL_REPRESENTATION eval_attack",
+          "n": 64339,
+          "mean": 0.3191991677448179,
+          "std": 0.13695008558946659,
+          "min": 0.004554281250895547,
+          "p25": 0.21665244219897078,
+          "median": 0.30351834189924487,
+          "p75": 0.40531255326326177,
+          "p90": 0.5066425841600586,
+          "p95": 0.5708373117059026,
+          "p99": 0.6832533210688455,
+          "max": 1.0
+        }
+      },
+      "sub_threshold": {
+        "n_attack_sub_thr": 63402,
+        "n_attack_above_thr": 937,
+        "pct_attack_sub_thr": 98.54365159545532
+      },
+      "temporal_characteristics": {
+        "lag1_autocorr": 0.43532699910762085,
+        "first_diff_volatility": 0.14332776876957426,
+        "n_above_thr_runs": 2184,
+        "mean_run_length": 1.2234432234432235,
+        "max_run_length": 9
+      },
+      "episode_analysis": {
+        "n_episodes": 1002,
+        "episodes_crossing_A_thr": 200,
+        "episodes_entirely_sub_thr": 802,
+        "pct_episodes_crossing_A_thr": 19.960079840319363,
+        "median_episode_mean_A": 0.30905908558909057,
+        "median_episode_max_A": 0.509640045348434
+      },
+      "score_sha256": "a6d838243580c7e2759db7dcf64afa885862658a8d05444e1bf11480690c4bc3"
+    }
+  },
+  "reproducibility": true,
+  "verdict": "TEMPORAL_SIGNAL_PARTIALLY_IMPROVED"
+}

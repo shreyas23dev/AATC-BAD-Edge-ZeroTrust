@@ -1,0 +1,8 @@
+{
+  "classification": "C5_PASS_WITH_TEMPORAL_LIMITATION",
+  "justification": "The empirical scores are genuine observations from the Edge-IIoTset test partition scored through the pre-trained Isolation Forest, and the sub-threshold attack profile is verified from Paper 1 Table 6. However, because train_test_split with random_state=42 was used, the 15,000 benign observations are shuffled random draws containing 7,548 negative timestamp jumps rather than an unbroken chronological time series. The results rigorously validate TrustEngine state-response rehabilitation feasibility under real benign score distributions, but do NOT constitute an empirical claim of temporally contiguous attack/rest cycling.",
+  "state_response_evidence": "VERIFIED_FEASIBLE",
+  "temporal_empirical_evidence": "LIMITED_DUE_TO_SPLIT_SHUFFLE",
+  "cyclic_attack_evidence": "VERIFIED_EMPIRICAL_NO_POSTHOC",
+  "cleared_for_formal_model_design": true
+}

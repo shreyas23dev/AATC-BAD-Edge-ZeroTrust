@@ -1,0 +1,27 @@
+{
+  "phase": 6,
+  "title": "Formal Research Hypotheses for Candidate 5 (Phase 7 Evaluation)",
+  "context": "Formulated following the rigorous gate-based elimination of Families A, B, D, and E, establishing Family C (Recency-Weighted Threshold Offset Proximity) as the sole mathematically and architecturally defensible candidate.",
+  "hypotheses": {
+    "H1_Identifiability_Resolution": {
+      "statement": "Adding an O(1) recency-weighted threshold-offset temporal evidence state Q_t resolves the state aliasing of B0 under cyclic sub-threshold attacks (Cycle A), producing an accumulated signal Q_t that separates adversarial rehabilitation cycling from uncompromised baseline recovery.",
+      "testable_prediction": "Under Cycle A attack replay, Q_t will accumulate across successive 1:10 attack/rest cycles, reaching a periodic orbit peak significantly higher than the benign stationary baseline Q*.",
+      "falsification_condition": "If Q_t decays to zero within the 10-step rest window (Q_t(t=11) == Q_t(t=0)), or if the accumulated Q_t cannot be distinguished from ambient benign fluctuations."
+    },
+    "H2_Minimality_and_Determinism": {
+      "statement": "The temporal evidence state Q_t can be maintained with strictly O(1) additional state (a single 32-bit floating-point register) and deterministic O(1) arithmetic updates per step, without requiring packet history buffers or external timestamps.",
+      "testable_prediction": "Memory overhead is bounded by 4 bytes per device state, and per-step computation requires at most 4 elementary operations (clamp, subtract, multiply, add).",
+      "falsification_condition": "If accurate temporal tracking requires storing past event timestamps, maintaining a ring buffer, or non-constant per-step memory."
+    },
+    "H3_Benign_Characterizability_and_Availability": {
+      "statement": "There exists a parameter regime (rho, q_low) for Q_t such that its stationary distribution under pure chronological benign telemetry has a bounded upper percentile (e.g., 99th percentile), enabling the definition of an evidence threshold that maintains honest device availability without inflating false block transitions.",
+      "testable_prediction": "On the 17,459-step chronological benign telemetry stream, setting q_low = 0.35 places 82.56% of benign traffic in the deadband (f(A)=0), resulting in a median benign Q of 0.0000 and preventing the cascading rate collapse observed in M2.",
+      "falsification_condition": "If the benign telemetry contains sustained near-threshold bursts that drive Q_t above the adversarial accumulation level, causing false quarantine inflation comparable to M1 (+10.75 pp) or M2 (+4.64 pp)."
+    }
+  },
+  "roadmap_to_phase_7": {
+    "step_1": "Formal state-space augmentation: S_t = (T_t, E_t, SB_t, Q_t)",
+    "step_2": "Coupling function definition: how Q_t interacts with trust update and quarantine gating",
+    "step_3": "Two-run bit-for-bit deterministic evaluation against attack schedules A-E and 17,459 benign observations"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "point_wise": {
+    "n_episodes": 1,
+    "n_detected": 1,
+    "n_missed": 0,
+    "detection_pct": 100.0,
+    "median_detection_delay_rows": 4.0,
+    "mean_detection_delay_rows": 4.0,
+    "max_detection_delay_rows": 4
+  },
+  "roll_mean_100": {
+    "n_episodes": 1,
+    "n_detected": 1,
+    "n_missed": 0,
+    "detection_pct": 100.0,
+    "median_detection_delay_rows": 4.0,
+    "mean_detection_delay_rows": 4.0,
+    "max_detection_delay_rows": 4
+  },
+  "roll_max_100": {
+    "n_episodes": 1,
+    "n_detected": 1,
+    "n_missed": 0,
+    "detection_pct": 100.0,
+    "median_detection_delay_rows": 18722.0,
+    "mean_detection_delay_rows": 18722.0,
+    "max_detection_delay_rows": 18722
+  },
+  "exceedance_100": {
+    "n_episodes": 1,
+    "n_detected": 1,
+    "n_missed": 0,
+    "detection_pct": 100.0,
+    "median_detection_delay_rows": 10392.0,
+    "mean_detection_delay_rows": 10392.0,
+    "max_detection_delay_rows": 10392
+  },
+  "persistence": {
+    "n_episodes": 1,
+    "n_detected": 1,
+    "n_missed": 0,
+    "detection_pct": 100.0,
+    "median_detection_delay_rows": 4.0,
+    "mean_detection_delay_rows": 4.0,
+    "max_detection_delay_rows": 4
+  },
+  "ewma_b10": {
+    "n_episodes": 1,
+    "n_detected": 1,
+    "n_missed": 0,
+    "detection_pct": 100.0,
+    "median_detection_delay_rows": 4.0,
+    "mean_detection_delay_rows": 4.0,
+    "max_detection_delay_rows": 4
+  },
+  "ewma_b05": {
+    "n_episodes": 1,
+    "n_detected": 1,
+    "n_missed": 0,
+    "detection_pct": 100.0,
+    "median_detection_delay_rows": 79495.0,
+    "mean_detection_delay_rows": 79495.0,
+    "max_detection_delay_rows": 79495
+  }
+}

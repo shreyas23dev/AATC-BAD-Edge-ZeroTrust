@@ -1,0 +1,18 @@
+{
+  "static_baseline": {
+    "n_episodes": 1002,
+    "episodes_crossing_A_thr": 89,
+    "episodes_entirely_sub_thr": 913,
+    "pct_episodes_crossing_A_thr": 8.882235528942116,
+    "median_episode_mean_A": 0.30988137053687553,
+    "median_episode_max_A": 0.46470995837619977
+  },
+  "temporal_representation": {
+    "n_episodes": 1002,
+    "episodes_crossing_A_thr": 200,
+    "episodes_entirely_sub_thr": 802,
+    "pct_episodes_crossing_A_thr": 19.960079840319363,
+    "median_episode_mean_A": 0.30905908558909057,
+    "median_episode_max_A": 0.509640045348434
+  }
+}

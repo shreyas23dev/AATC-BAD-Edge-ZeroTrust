@@ -1,0 +1,7 @@
+{
+  "lag1_autocorr": 0.25177224523622493,
+  "first_diff_volatility": 0.18891632967463534,
+  "n_above_thr_runs": 1,
+  "mean_run_length": 1.0,
+  "max_run_length": 1
+}

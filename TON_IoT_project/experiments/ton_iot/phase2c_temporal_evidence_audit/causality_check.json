@@ -1,0 +1,10 @@
+{
+  "beta_used": 0.1,
+  "full_stream_sha256": "729e160eee16f0feb0b00de409fcdc5ef99a550f9829716f1d4dc5dbb7c38a24",
+  "chunked_sha256": "fbbaeb82c56cb8ac27da5ba8f7d6d3810f97007ed330358636a72c909e4e6081",
+  "max_abs_diff_full_vs_chunked": 1.1102230246251565e-16,
+  "full_vs_chunked_match": true,
+  "shuffled_differs_from_full": true,
+  "causality_verified": true,
+  "note": "Full-stream and chunked EWMA agree within 1e-10 tolerance, confirming strict causal computation. Shuffled stream produces a different result, confirming temporal ordering dependency."
+}

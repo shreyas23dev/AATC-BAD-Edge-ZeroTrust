@@ -1,0 +1,86 @@
+{
+  "title": "Phase 7 Results Integrity Comparison: Phase 7 Published vs Authoritative Replay",
+  "classification": "C5_PHASE7_RESULTS_VALID",
+  "trajectory_fidelity": {
+    "B0_trajectory_max_abs_diff_T": 1.1102230246251565e-16,
+    "B0_trajectory_max_abs_diff_E": 9.71445146547012e-17,
+    "B0_trajectory_max_abs_diff_SB": 8.881784197001252e-16,
+    "B0_policy_mismatches_out_of_7459": 0,
+    "Family_C_trajectory_max_abs_diff_T": 1.1102230246251565e-16,
+    "Family_C_trajectory_max_abs_diff_E": 9.71445146547012e-17,
+    "Family_C_trajectory_max_abs_diff_SB": 8.881784197001252e-16,
+    "Family_C_trajectory_max_abs_diff_Q": 8.881784197001252e-16,
+    "Family_C_policy_mismatches_out_of_7459": 0
+  },
+  "security_metrics_comparison": {
+    "Cycle_A": {
+      "B0_new": {
+        "S": 8,
+        "M_cum": 8.5
+      },
+      "C_new": {
+        "S": 8,
+        "M_cum": 8.5
+      },
+      "Delta_S": 0,
+      "Delta_M": 0.0
+    },
+    "Cycle_B": {
+      "B0_new": {
+        "S": 3,
+        "M_cum": 4.0
+      },
+      "C_new": {
+        "S": 3,
+        "M_cum": 4.0
+      },
+      "Delta_S": 0,
+      "Delta_M": 0.0
+    },
+    "Cycle_C": {
+      "B0_new": {
+        "S": 1,
+        "M_cum": 2.0
+      },
+      "C_new": {
+        "S": 1,
+        "M_cum": 2.0
+      },
+      "Delta_S": 0,
+      "Delta_M": 0.0
+    },
+    "Cycle_D": {
+      "B0_new": {
+        "S": 0,
+        "M_cum": 4.0
+      },
+      "C_new": {
+        "S": 0,
+        "M_cum": 4.0
+      },
+      "Delta_S": 0,
+      "Delta_M": 0.0
+    },
+    "Cycle_E": {
+      "B0_new": {
+        "S": 0,
+        "M_cum": 4.0
+      },
+      "C_new": {
+        "S": 0,
+        "M_cum": 4.0
+      },
+      "Delta_S": 0,
+      "Delta_M": 0.0
+    }
+  },
+  "availability_comparison": {
+    "B0_ALLOW_fraction": 0.74085,
+    "B0_BLOCK_fraction": 0.107789,
+    "Family_C_ALLOW_fraction": 0.740448,
+    "Family_C_BLOCK_fraction": 0.10846,
+    "Delta_ALLOW_pp": -0.0402,
+    "Delta_BLOCK_pp": 0.0671
+  },
+  "substantive_conclusion": "The substantive conclusion of Phase 7 (C5_COUNTERMEASURE_NO_EFFECT) is 100% sound and verified. Across all 5 schedules, Family C produces identical survival count S and cumulative malicious access M_cum as B0, because the attack pulses never raise Q above the uncompromised calibration noise threshold tau_Q = 4.4364."
+}

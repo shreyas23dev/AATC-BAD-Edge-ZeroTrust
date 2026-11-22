@@ -1,0 +1,17 @@
+{
+  "dataset_file": "C:\\Users\\Shreyas A\\PROJECTS\\Behavior-Adaptive-Zero-Trust-IoT\\edge-iiot-anomaly-detection\\data\\raw\\DNN-EdgeIIoT-dataset.csv",
+  "start_row": 0,
+  "end_row": 17458,
+  "N": 17459,
+  "start_timestamp": "2021-01-01 11:44:10.081753",
+  "end_timestamp": "2021-01-01 12:02:24.882968",
+  "all_benign": true,
+  "negative_jumps": 0,
+  "zero_jumps": 0,
+  "positive_jumps": 17458,
+  "median_delta_sec": 0.0001315,
+  "mean_delta_sec": 0.06271057480811089,
+  "min_delta_sec": 3e-06,
+  "max_delta_sec": 4.267853,
+  "pct_gaps_gt_5x_median": 33.10803070225685
+}

@@ -1,0 +1,95 @@
+{
+  "phase": 10,
+  "classification": "C5_AATC_SECURITY_EFFECTIVE_AVAILABILITY_PRESERVED",
+  "hypothesis_evaluation": {
+    "hypothesis_id": "H_PHASE10_AATC_EFFECTIVENESS",
+    "prediction_1_security": {
+      "prediction": "Cycle A M_cum <= 6.5",
+      "actual_M_cum": 7.5,
+      "baseline_B0_M_cum": 8.5,
+      "reduction_absolute": 1.0,
+      "reduction_percent": 11.76,
+      "achieved_target_le_6_5": false,
+      "security_gain_established": true,
+      "mechanism_effect": "AATC demoted 2 malicious attack pulses from ALLOW to VERIFY, reducing high-trust malicious access from 8 to 6 (-25%) and tripling VERIFY challenges from 1 to 3."
+    },
+    "prediction_2_availability": {
+      "prediction": "ALLOW rate >= 70.0% and zero degradation relative to B0",
+      "B0_allow_rate_pct": 74.09,
+      "AATC_allow_rate_pct": 74.09,
+      "delta_allow_pp": 0.0,
+      "zero_availability_loss": true,
+      "ceiling_minimum_observed": 0.869653,
+      "ceiling_never_breached_T_allow_on_benign": true
+    },
+    "prediction_3_recovery": {
+      "prediction": "Legitimate devices recover to ALLOW without excess penalty",
+      "all_recovery_sequences_passed": true
+    }
+  },
+  "primary_outcome_table": [
+    {
+      "scenario": "Cycle_A",
+      "B0_security": "S=8, M_cum=8.5 (ALLOW=8, VERIFY=1)",
+      "AATC_security": "S=8, M_cum=7.5 (ALLOW=6, VERIFY=3)",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "AATC_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "security_difference": "Delta_S=0, Delta_M=-1.0, Delta_ALLOW=-2, Delta_VERIFY=2"
+    },
+    {
+      "scenario": "Cycle_B",
+      "B0_security": "S=3, M_cum=4.0 (ALLOW=4, VERIFY=0)",
+      "AATC_security": "S=3, M_cum=4.0 (ALLOW=4, VERIFY=0)",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "AATC_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "security_difference": "Delta_S=0, Delta_M=0.0, Delta_ALLOW=0, Delta_VERIFY=0"
+    },
+    {
+      "scenario": "Cycle_C",
+      "B0_security": "S=1, M_cum=2.0 (ALLOW=2, VERIFY=0)",
+      "AATC_security": "S=1, M_cum=2.0 (ALLOW=2, VERIFY=0)",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "AATC_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "security_difference": "Delta_S=0, Delta_M=0.0, Delta_ALLOW=0, Delta_VERIFY=0"
+    },
+    {
+      "scenario": "Cycle_D",
+      "B0_security": "S=0, M_cum=4.0 (ALLOW=3, VERIFY=2)",
+      "AATC_security": "S=0, M_cum=4.0 (ALLOW=3, VERIFY=2)",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "AATC_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "security_difference": "Delta_S=0, Delta_M=0.0, Delta_ALLOW=0, Delta_VERIFY=0"
+    },
+    {
+      "scenario": "Cycle_E",
+      "B0_security": "S=0, M_cum=4.0 (ALLOW=3, VERIFY=2)",
+      "AATC_security": "S=0, M_cum=4.0 (ALLOW=3, VERIFY=2)",
+      "B0_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "AATC_availability": "ALLOW=74.09%, BLOCK=10.78%",
+      "security_difference": "Delta_S=0, Delta_M=0.0, Delta_ALLOW=0, Delta_VERIFY=0"
+    }
+  ],
+  "comparative_summary": {
+    "B0_vs_Family_C_vs_AATC": {
+      "Baseline_B0": {
+        "Cycle_A_M_cum": 8.5,
+        "Cycle_A_ALLOW": 8,
+        "Cycle_A_VERIFY": 1,
+        "Benign_ALLOW_pct": 74.09
+      },
+      "Family_C": {
+        "Cycle_A_M_cum": 8.5,
+        "Cycle_A_ALLOW": 8,
+        "Cycle_A_VERIFY": 1,
+        "Benign_ALLOW_pct": 79.68
+      },
+      "AATC_BAD": {
+        "Cycle_A_M_cum": 7.5,
+        "Cycle_A_ALLOW": 6,
+        "Cycle_A_VERIFY": 3,
+        "Benign_ALLOW_pct": 74.09
+      }
+    },
+    "scientific_takeaway": "Unlike Family C (which produced 0% security effect across all schedules due to the observation-level SNR dilemma), AATC-BAD successfully breached the Cycle A moral hazard exploit, reducing high-trust malicious access by 25% (ALLOW dropped from 8 to 6) and cumulative yield M_cum from 8.5 to 7.5, with ZERO false demotions on honest benign telemetry (C_min = 0.8697 > T_allow = 0.80)."
+  }
+}

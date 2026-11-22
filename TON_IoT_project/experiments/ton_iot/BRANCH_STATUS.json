@@ -1,0 +1,11 @@
+{
+  "branch": "ton_iot_network",
+  "status": "CLOSED",
+  "reason": "Point-wise and simple temporal unsupervised evidence were insufficient under the current leakage-controlled representation.",
+  "trust_engine_integration": false,
+  "further_detector_tuning": false,
+  "further_temporal_tuning": false,
+  "evaluation_validity": "verified_after_correction",
+  "causality": "verified",
+  "reproducibility": "verified"
+}

@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "title": "Candidate 5 Exploitability Metrics & Baseline Models Specification",
+    "version": "1.0",
+    "target_venue": "InCIS 2027",
+    "specification_type": "Formal Metrics & Benchmarks (Pre-Implementation)"
+  },
+  "metrics": [
+    {
+      "id": "M1",
+      "name": "Rehabilitation Ratio",
+      "symbol": "R_rec",
+      "formula": "R_rec^(k) = (T_{post_rest}^(k) - T_{post_attack}^(k)) / (1.0 - T_{post_attack}^(k)) if T_{post_attack} < 1.0 else 1.0",
+      "unit": "Dimensionless ratio",
+      "domain": "[0.0, 1.0]",
+      "target_vulnerable": "1.0000 (Complete Trust Restoration)",
+      "target_defended": "< 0.2000 (Suppressed Restoration)",
+      "operational_meaning": "Fraction of attack-induced trust deficit forgiven during rest window"
+    },
+    {
+      "id": "M2",
+      "name": "Cycle Survival Count",
+      "symbol": "S",
+      "formula": "max { k in {0..M} | P_t != BLOCK for all t <= k*(tau_a + tau_r) }",
+      "unit": "Integer count",
+      "domain": "{0, 1, ..., 20}",
+      "target_vulnerable": "20 (Unconstrained Indefinite Cycling)",
+      "target_defended": "<= 2 (Immediate Quarantine of Repeat Offender)",
+      "operational_meaning": "Total complete attack/rest cycles sustained before permanent quarantine"
+    },
+    {
+      "id": "M3",
+      "name": "Sustainable Attack Throughput",
+      "symbol": "Phi_atk",
+      "formula": "(S * tau_a) / (S * (tau_a + tau_r)) = tau_a / (tau_a + tau_r)",
+      "unit": "Percentage / Fraction",
+      "domain": "[0.0, 1.0]",
+      "target_vulnerable": ">= 0.0909 (High Sustained Malicious Activity)",
+      "target_defended": "0.0000 (Total Elimination of Malicious Capacity)",
+      "operational_meaning": "Effective duty cycle of malicious operations delivered under valid access"
+    },
+    {
+      "id": "M4",
+      "name": "Residual Evidence Ratio",
+      "symbol": "R_SB",
+      "formula": "SB_{post_rest}^(k) / max(1e-6, SB_{post_attack}^(k))",
+      "unit": "Dimensionless ratio",
+      "domain": "[0.0, Infinity)",
+      "target_vulnerable": "0.0000 (Complete Evidentiary Erasure)",
+      "target_defended": ">= 0.5000 (Latent Evidence Latching Across Cycles)",
+      "operational_meaning": "Proportion of accumulated slow-burn suspicion retained after rest"
+    },
+    {
+      "id": "M5",
+      "name": "Cycle Stability Metric",
+      "symbol": "C_var",
+      "formula": "Var({ T_{post_rest}^(k) }_{k=S-W+1}^S), where W = min(5, S)",
+      "unit": "Variance",
+      "domain": "[0.0, 1.0]",
+      "target_vulnerable": "< 0.0001 (Stationary Periodic Orbit)",
+      "target_defended": "N/A (Transient Non-Stationary Collapse to BLOCK)",
+      "operational_meaning": "Variance of post-rest trust state; low variance confirms fixed-point periodic attractor"
+    },
+    {
+      "id": "M6",
+      "name": "Cumulative Damage Delivered",
+      "symbol": "M_cum",
+      "formula": "sum_{t=1}^{T_term} u_t * omega(P_t), where omega(ALLOW)=1.0, omega(VERIFY)=0.5, omega(BLOCK)=0.0",
+      "unit": "Effective malicious transactions",
+      "domain": "[0.0, M * tau_a]",
+      "target_vulnerable": "20.0 (Full Authorized Privilege Exploitation)",
+      "target_defended": "<= 1.0 (Strict Damage Containment)",
+      "operational_meaning": "Total access-weighted attack actions processed by system prior to quarantine"
+    }
+  ],
+  "countermeasure_classes": [
+    {
+      "class": "Class_A",
+      "name": "Non-Memoryless Hysteresis Recovery",
+      "mechanism": "Expands recovery horizon geometrically with cumulative historical incidents: k(n) = k_0 * gamma_hys^n, alpha(n) = alpha_0 * gamma_hys^(-n)",
+      "primary_effect": "Lengthens required rest window exponentially, driving sustainable throughput Phi_atk -> 0"
+    },
+    {
+      "class": "Class_B",
+      "name": "Evidence Floor Retention",
+      "mechanism": "Imposes non-zero retention floor in accumulator: SB_{floor}(n) = theta * (1 - exp(-kappa * n)), SB_{t+1} = max(SB_{floor}(n), SB_t - delta)",
+      "primary_effect": "Retains latent evidence debt; subsequent attack bursts trip theta=1.0 on step 1"
+    },
+    {
+      "class": "Class_C",
+      "name": "Dynamic Duty-Cycle Metering",
+      "mechanism": "Tracks transition frequency using leaky-bucket meter: M_{t+1} = max(0, M_t - mu_leak) + Delta_M_t; trips BLOCK if M > M_max",
+      "primary_effect": "Strictly bounds allowable cyclic frequency regardless of scalar trust restoration"
+    },
+    {
+      "class": "Class_D",
+      "name": "Asymmetric Quarantine Locking",
+      "mechanism": "Enforces finite-strike policy (e.g., 3 transitions to VERIFY locks device into permanent BLOCK)",
+      "primary_effect": "Eliminates multi-episode exploitation by requiring out-of-band administrative intervention"
+    }
+  ],
+  "conceptual_baselines": [
+    {
+      "id": "B1",
+      "name": "Memoryless ZTA (Paper 1 Baseline)",
+      "alpha_rule": "alpha = 0.2057 (Constant)",
+      "sb_reset_rule": "SB_{t+1} = max(0.0, SB_t - delta)",
+      "role": "Vulnerable reference establishing periodic orbit exploitability"
+    },
+    {
+      "id": "B2",
+      "name": "Persistent Evidence ZTA",
+      "alpha_rule": "alpha = 0.2057 (Constant)",
+      "sb_reset_rule": "SB_{t+1} = max(SB_floor(n), SB_t - delta)",
+      "role": "Evaluates effectiveness of retaining latent evidence across rest windows"
+    },
+    {
+      "id": "B3",
+      "name": "Exponential Hysteresis ZTA",
+      "alpha_rule": "alpha(n) = alpha_0 * gamma_hys^(-n)",
+      "sb_reset_rule": "SB_{t+1} = max(0.0, SB_t - delta)",
+      "role": "Evaluates effectiveness of geometrically lengthening recovery latency"
+    },
+    {
+      "id": "B4",
+      "name": "Static Zero-Trust (Zero Forgiveness)",
+      "alpha_rule": "alpha = 0.0 (No recovery)",
+      "sb_reset_rule": "N/A",
+      "role": "Quantifies operational availability penalty of non-rehabilitative security"
+    }
+  ]
+}

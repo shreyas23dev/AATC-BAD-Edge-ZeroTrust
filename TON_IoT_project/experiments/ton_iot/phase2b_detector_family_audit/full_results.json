@@ -1,0 +1,443 @@
+{
+  "run1": {
+    "run_id": 1,
+    "seed": 42,
+    "n_train": 165322,
+    "n_calib": 35576,
+    "n_eval": 799102,
+    "scaler": {
+      "feature_names": [
+        "duration",
+        "src_bytes",
+        "dst_bytes",
+        "src_pkts",
+        "dst_pkts",
+        "src_ip_bytes",
+        "dst_ip_bytes",
+        "missed_bytes"
+      ],
+      "medians": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "iqrs": [
+        3.5e-05,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        63.0,
+        1.0,
+        1.0
+      ]
+    },
+    "detectors": {
+      "IsolationForest": {
+        "detector_name": "IsolationForest",
+        "family": "Tree-based Ensemble Isolation",
+        "params": {
+          "n_estimators": 300,
+          "max_samples": 256,
+          "max_features": 1.0,
+          "bootstrap": false,
+          "random_state": 42,
+          "n_jobs": -1
+        },
+        "fit_time_seconds": 1.1534395217895508,
+        "score_time_seconds": 7.277910232543945,
+        "normalization": {
+          "s_min": 0.31783122443520645,
+          "s_max": 0.8857376492474537
+        },
+        "calibration": {
+          "A_thr": 0.7545387001350601,
+          "raw_thr_equiv": 0.7463386000113887
+        },
+        "point_metrics": {
+          "TP": 385,
+          "TN": 6945,
+          "FP": 836,
+          "FN": 790936,
+          "precision": 0.3153153153153153,
+          "recall": 0.0004865282230599213,
+          "f1": 0.000971557343333224,
+          "FPR": 0.10744120293021463,
+          "FNR": 0.99951347177694,
+          "specificity": 0.8925587970697854,
+          "balanced_accuracy": 0.44652266264642265,
+          "roc_auc": 0.09191821430630143,
+          "pr_auc": 0.9674325963663148,
+          "attack_prevalence": 0.9902628200154674,
+          "pct_attack_sub_threshold": 99.951347177694,
+          "pct_attack_above_threshold": 0.048652822305996324,
+          "score_separation": -0.3178015311860588
+        },
+        "score_distributions": {
+          "eval_benign": {
+            "label": "IsolationForest eval_benign",
+            "n": 7781,
+            "mean": 0.38832276899851503,
+            "std": 0.23491231629543988,
+            "min": 0.0,
+            "p25": 0.27714696734813715,
+            "median": 0.3432218574246482,
+            "p75": 0.5130959990987863,
+            "p90": 0.7861543511371378,
+            "p95": 0.8920613280756929,
+            "p99": 0.966939473966537,
+            "max": 1.0
+          },
+          "eval_attack": {
+            "label": "IsolationForest eval_attack",
+            "n": 791321,
+            "mean": 0.07052123781245623,
+            "std": 0.06725391648268074,
+            "min": 0.029693235821016916,
+            "p25": 0.040437578404728655,
+            "median": 0.040437578404728655,
+            "p75": 0.040437578404728655,
+            "p90": 0.1785507275729243,
+            "p95": 0.1816222697755962,
+            "p99": 0.27560038530998127,
+            "max": 0.9604119441476683
+          }
+        },
+        "dense_probe_analysis": {
+          "matching_rows": 482518,
+          "matching_proportion_of_eval": 60.38252938923942,
+          "attack_proportion_among_matching": 100.0,
+          "dense_probe_score_stats": {
+            "label": "IsolationForest dense_probes",
+            "n": 482518,
+            "mean": 0.040437578404728655,
+            "std": 0.0,
+            "min": 0.040437578404728655,
+            "p25": 0.040437578404728655,
+            "median": 0.040437578404728655,
+            "p75": 0.040437578404728655,
+            "p90": 0.040437578404728655,
+            "p95": 0.040437578404728655,
+            "p99": 0.040437578404728655,
+            "max": 0.040437578404728655
+          },
+          "pct_matching_sub_threshold": 100.0,
+          "treats_dense_cluster_as_anomalous": false
+        },
+        "temporal_characteristics": {
+          "lag1_autocorr": 0.23711495635528415,
+          "first_diff_volatility": 0.09560197639813156,
+          "n_above_thr_runs": 1126,
+          "mean_run_length": 1.0843694493783305,
+          "max_run_length": 6
+        },
+        "score_sha256": "184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0",
+        "suitability_classification": "SIGNAL_INSUFFICIENT",
+        "suitability_rationale": "IsolationForest produces uninformative or pathologically inverted discrimination (ROC-AUC=0.0919, score separation=-0.3178, sub-threshold attack %=99.95%)."
+      },
+      "OneClassSVM": {
+        "detector_name": "OneClassSVM",
+        "family": "Kernel Support Vector Boundary",
+        "params": {
+          "kernel": "rbf",
+          "nu": 0.05,
+          "gamma": "scale"
+        },
+        "fit_time_seconds": 113.29689359664917,
+        "score_time_seconds": 596.2345788478851,
+        "normalization": {
+          "s_min": -7491.945471383973,
+          "s_max": -1.0
+        },
+        "calibration": {
+          "A_thr": 0.007220780561396144,
+          "raw_thr_equiv": -7437.854997937726
+        },
+        "point_metrics": {
+          "TP": 65,
+          "TN": 7493,
+          "FP": 288,
+          "FN": 791256,
+          "precision": 0.18413597733711048,
+          "recall": 8.214112856855814e-05,
+          "f1": 0.00016420900522184638,
+          "FPR": 0.037013237373088294,
+          "FNR": 0.9999178588714315,
+          "specificity": 0.9629867626269117,
+          "balanced_accuracy": 0.48153445187774013,
+          "roc_auc": 0.8783740566854953,
+          "pr_auc": 0.9977670080314254,
+          "attack_prevalence": 0.9902628200154674,
+          "pct_attack_sub_threshold": 99.99178588714314,
+          "pct_attack_above_threshold": 0.008214112856862243,
+          "score_separation": -0.004752057991432531
+        },
+        "score_distributions": {
+          "eval_benign": {
+            "label": "OneClassSVM eval_benign",
+            "n": 7781,
+            "mean": 0.00913641551940113,
+            "std": 0.05336498566852018,
+            "min": 0.0,
+            "p25": 0.004346195135949534,
+            "median": 0.004379617863596007,
+            "p75": 0.0043832705948291814,
+            "p90": 0.004383426040706945,
+            "p95": 0.004383426040819252,
+            "p99": 0.09003542594757717,
+            "max": 1.0
+          },
+          "eval_attack": {
+            "label": "OneClassSVM eval_attack",
+            "n": 791321,
+            "mean": 0.004384357527968599,
+            "std": 0.00148576807979812,
+            "min": 1.841404195757245e-06,
+            "p25": 0.004383426040724064,
+            "median": 0.004383426040724064,
+            "p75": 0.004383426040724064,
+            "p90": 0.00438342604072795,
+            "p95": 0.004383426040731713,
+            "p99": 0.004383426040731713,
+            "max": 0.2996312393491277
+          }
+        },
+        "dense_probe_analysis": {
+          "matching_rows": 482518,
+          "matching_proportion_of_eval": 60.38252938923942,
+          "attack_proportion_among_matching": 100.0,
+          "dense_probe_score_stats": {
+            "label": "OneClassSVM dense_probes",
+            "n": 482518,
+            "mean": 0.004383426040724061,
+            "std": 3.469446951953614e-18,
+            "min": 0.004383426040724064,
+            "p25": 0.004383426040724064,
+            "median": 0.004383426040724064,
+            "p75": 0.004383426040724064,
+            "p90": 0.004383426040724064,
+            "p95": 0.004383426040724064,
+            "p99": 0.004383426040724064,
+            "max": 0.004383426040724064
+          },
+          "pct_matching_sub_threshold": 100.0,
+          "treats_dense_cluster_as_anomalous": false
+        },
+        "temporal_characteristics": {
+          "lag1_autocorr": 0.06626814199380035,
+          "first_diff_volatility": 0.007501553485469429,
+          "n_above_thr_runs": 335,
+          "mean_run_length": 1.0537313432835822,
+          "max_run_length": 3
+        },
+        "score_sha256": "442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155",
+        "suitability_classification": "SIGNAL_LIMITED",
+        "suitability_rationale": "OneClassSVM demonstrates limited or weak anomaly discrimination."
+      },
+      "LocalOutlierFactor": {
+        "detector_name": "LocalOutlierFactor",
+        "family": "k-NN Density-based Novelty",
+        "params": {
+          "n_neighbors": 20,
+          "contamination": 0.01,
+          "novelty": true,
+          "n_jobs": -1
+        },
+        "fit_time_seconds": 159.45914912223816,
+        "score_time_seconds": 226.16087460517883,
+        "normalization": {
+          "s_min": 0.868571428918,
+          "s_max": 1915565213366.4114
+        },
+        "calibration": {
+          "A_thr": 4.317380120309088e-13,
+          "raw_thr_equiv": 1.695593746052003
+        },
+        "point_metrics": {
+          "TP": 187683,
+          "TN": 4037,
+          "FP": 3744,
+          "FN": 603638,
+          "precision": 0.9804416304909965,
+          "recall": 0.23717682204819535,
+          "f1": 0.38195549622080127,
+          "FPR": 0.4811720858501478,
+          "FNR": 0.7628231779518047,
+          "specificity": 0.5188279141498522,
+          "balanced_accuracy": 0.37800236809902377,
+          "roc_auc": 0.3074592373551183,
+          "pr_auc": 0.9901250454093009,
+          "attack_prevalence": 0.9902628200154674,
+          "pct_attack_sub_threshold": 76.28231779518046,
+          "pct_attack_above_threshold": 23.71768220481954,
+          "score_separation": -0.0025625987014620726
+        },
+        "score_distributions": {
+          "eval_benign": {
+            "label": "LocalOutlierFactor eval_benign",
+            "n": 7781,
+            "mean": 0.0025909552017204305,
+            "std": 0.045390918358429413,
+            "min": 3.714395705413153e-14,
+            "p25": 1.2009528488355385e-13,
+            "median": 3.91952687417303e-13,
+            "p75": 3.64418890466647e-12,
+            "p90": 1.1106223999452743e-11,
+            "p95": 6.94071736005941e-10,
+            "p99": 8.45206213128559e-05,
+            "max": 1.0
+          },
+          "eval_attack": {
+            "label": "LocalOutlierFactor eval_attack",
+            "n": 791321,
+            "mean": 2.8356500258357966e-05,
+            "std": 0.0010166328128231143,
+            "min": 3.394627197680716e-14,
+            "p25": 6.86108570801864e-14,
+            "median": 6.86108570801864e-14,
+            "p75": 3.552440714176614e-13,
+            "p90": 0.00016966271769377846,
+            "p95": 0.00016966271769377846,
+            "p99": 0.00016966271769377846,
+            "max": 0.9025841968573215
+          }
+        },
+        "dense_probe_analysis": {
+          "matching_rows": 482518,
+          "matching_proportion_of_eval": 60.38252938923942,
+          "attack_proportion_among_matching": 100.0,
+          "dense_probe_score_stats": {
+            "label": "LocalOutlierFactor dense_probes",
+            "n": 482518,
+            "mean": 6.861085708018639e-14,
+            "std": 1.262177448353619e-29,
+            "min": 6.86108570801864e-14,
+            "p25": 6.86108570801864e-14,
+            "median": 6.86108570801864e-14,
+            "p75": 6.86108570801864e-14,
+            "p90": 6.86108570801864e-14,
+            "p95": 6.86108570801864e-14,
+            "p99": 6.86108570801864e-14,
+            "max": 6.86108570801864e-14
+          },
+          "pct_matching_sub_threshold": 100.0,
+          "treats_dense_cluster_as_anomalous": false
+        },
+        "temporal_characteristics": {
+          "lag1_autocorr": 0.10181441344861268,
+          "first_diff_volatility": 0.006163674566507038,
+          "n_above_thr_runs": 88698,
+          "mean_run_length": 2.158188459717243,
+          "max_run_length": 7303
+        },
+        "score_sha256": "c2ab12dde1502aafdb96ac4f0ef16c6b7d11ef3465065bece50e03572d867d94",
+        "suitability_classification": "SIGNAL_INSUFFICIENT",
+        "suitability_rationale": "LocalOutlierFactor produces uninformative or pathologically inverted discrimination (ROC-AUC=0.3075, score separation=-0.0026, sub-threshold attack %=76.28%)."
+      },
+      "RobustMahalanobis": {
+        "detector_name": "RobustMahalanobis",
+        "family": "FastMCD Minimum Volume Ellipsoid",
+        "params": {
+          "support_fraction": 0.8,
+          "random_state": 42
+        },
+        "fit_time_seconds": 5.741145372390747,
+        "score_time_seconds": 0.06561899185180664,
+        "normalization": {
+          "s_min": 0.3627286926912513,
+          "s_max": 5534145619022951.0
+        },
+        "calibration": {
+          "A_thr": 1.8406735317487092e-07,
+          "raw_thr_equiv": 1018655536.5405909
+        },
+        "point_metrics": {
+          "TP": 68,
+          "TN": 7671,
+          "FP": 110,
+          "FN": 791253,
+          "precision": 0.38202247191011235,
+          "recall": 8.593225757941467e-05,
+          "f1": 0.00017182586459363815,
+          "FPR": 0.014137000385554556,
+          "FNR": 0.9999140677424205,
+          "specificity": 0.9858629996144455,
+          "balanced_accuracy": 0.49297446593601246,
+          "roc_auc": 0.49554698311354406,
+          "pr_auc": 0.9839355002615108,
+          "attack_prevalence": 0.9902628200154674,
+          "pct_attack_sub_threshold": 99.99140677424207,
+          "pct_attack_above_threshold": 0.00859322575793442,
+          "score_separation": -8.78430122877155e-08
+        },
+        "score_distributions": {
+          "eval_benign": {
+            "label": "RobustMahalanobis eval_benign",
+            "n": 7781,
+            "mean": 8.800002780131703e-08,
+            "std": 3.6137135274153132e-06,
+            "min": 0.0,
+            "p25": 2.589433324124345e-14,
+            "median": 9.171482237117222e-14,
+            "p75": 2.4476310017922055e-12,
+            "p90": 5.2418422023896e-10,
+            "p95": 6.889805034977422e-09,
+            "p99": 3.6479950173048945e-07,
+            "max": 0.0002875842635894219
+          },
+          "eval_attack": {
+            "label": "RobustMahalanobis eval_attack",
+            "n": 791321,
+            "mean": 1.570155136015282e-10,
+            "std": 1.9733618632687095e-08,
+            "min": 0.0,
+            "p25": 6.496310352555188e-14,
+            "median": 6.496310352555188e-14,
+            "p75": 1.0204174841876679e-13,
+            "p90": 1.480635840947069e-13,
+            "p95": 1.480635840947069e-13,
+            "p99": 1.472951084873328e-11,
+            "max": 3.9064931248628604e-06
+          }
+        },
+        "dense_probe_analysis": {
+          "matching_rows": 482518,
+          "matching_proportion_of_eval": 60.38252938923942,
+          "attack_proportion_among_matching": 100.0,
+          "dense_probe_score_stats": {
+            "label": "RobustMahalanobis dense_probes",
+            "n": 482518,
+            "mean": 6.496310352555192e-14,
+            "std": 3.7865323450608567e-29,
+            "min": 6.496310352555188e-14,
+            "p25": 6.496310352555188e-14,
+            "median": 6.496310352555188e-14,
+            "p75": 6.496310352555188e-14,
+            "p90": 6.496310352555188e-14,
+            "p95": 6.496310352555188e-14,
+            "p99": 6.496310352555188e-14,
+            "max": 6.496310352555188e-14
+          },
+          "pct_matching_sub_threshold": 100.0,
+          "treats_dense_cluster_as_anomalous": false
+        },
+        "temporal_characteristics": {
+          "lag1_autocorr": 0.00021347257752374834,
+          "first_diff_volatility": 5.051535463688425e-07,
+          "n_above_thr_runs": 173,
+          "mean_run_length": 1.0289017341040463,
+          "max_run_length": 2
+        },
+        "score_sha256": "e6595096353f6d19f5d7f5f5f2a6db653427781b411b9b9121df8e4fbdb3d9da",
+        "suitability_classification": "SIGNAL_INSUFFICIENT",
+        "suitability_rationale": "RobustMahalanobis produces uninformative or pathologically inverted discrimination (ROC-AUC=0.4955, score separation=-0.0000, sub-threshold attack %=99.99%)."
+      }
+    }
+  },
+  "reproducibility": true
+}

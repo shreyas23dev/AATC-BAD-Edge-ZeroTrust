@@ -1,0 +1,45 @@
+{
+  "phase": 7,
+  "evaluation_dataset": "benign_chronological_scores.csv (FINAL EVALUATION split)",
+  "N_observations": 7459,
+  "timestamps": [
+    "2021-01-01 11:54:35.905279",
+    "2021-01-01 12:02:24.882968"
+  ],
+  "P_A_ge_A_thr": 0.043035,
+  "B0_availability": {
+    "N_total": 7459,
+    "n_allow": 5526,
+    "allow_fraction": 0.74085,
+    "n_verify": 1129,
+    "verify_fraction": 0.151361,
+    "n_block": 804,
+    "block_fraction": 0.107789,
+    "block_transitions": 12,
+    "total_policy_transitions": 464,
+    "longest_continuous_block": 743,
+    "mean_recovery_time_after_overt": 41.7508
+  },
+  "Family_C_availability": {
+    "N_total": 7459,
+    "n_allow": 5523,
+    "allow_fraction": 0.740448,
+    "n_verify": 1127,
+    "verify_fraction": 0.151093,
+    "n_block": 809,
+    "block_fraction": 0.10846,
+    "block_transitions": 13,
+    "total_policy_transitions": 466,
+    "longest_continuous_block": 743,
+    "mean_recovery_time_after_overt": 41.7726
+  },
+  "Family_C_Q_distribution": {
+    "mean": 2.275534,
+    "median": 2.120393,
+    "p90": 3.484975,
+    "p95": 3.953253,
+    "p99": 5.091243,
+    "max": 7.090846,
+    "crossings_above_tau_Q": 184
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "phase": 11,
+  "execution_timestamp": "2026-09-29T16:40:00Z",
+  "evaluation_partition_touched": false,
+  "hashes": {
+    "envelope_sweep.json": "6335dfe528adac4722c96a85a14119d199f5c9d6305722fc0566d77ecef6b443",
+    "sensitivity_grid.json": "89b11d8013ef4b277e83e346659feee794b5a277e2deec069264fe99042f72cc",
+    "debt_dynamics.json": "afc387326c0bdd45f21705922f96fbe0f2483f772c02f0256eb7a7e409db17bf"
+  }
+}

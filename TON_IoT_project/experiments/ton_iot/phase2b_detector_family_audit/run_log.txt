@@ -1,0 +1,225 @@
+2026-09-28 22:49:12,676 [INFO] Starting Phase 2B — Unsupervised Detector-Family Audit
+2026-09-28 22:49:12,676 [INFO] Start time: 2026-09-28T22:49:12.676067
+2026-09-28 22:49:12,677 [INFO] Loading Network_dataset_1.csv from C:\Users\Shreyas A\PROJECTS\BAZT-TON_IoT\TON_IoT_audit\network_processed\Network_dataset_1.csv...
+2026-09-28 22:49:16,029 [INFO] Loaded and sorted 1,000,000 network flow records.
+2026-09-28 22:49:16,029 [INFO] 
+######################################################################
+2026-09-28 22:49:16,030 [INFO] STARTING PHASE 2B EXPERIMENT RUN 1 (seed=42)
+2026-09-28 22:49:16,031 [INFO] ######################################################################
+2026-09-28 22:49:16,770 [INFO] [PREPROCESSING] Fitting RobustScaler strictly on TRAIN partition...
+2026-09-28 22:49:16,836 [INFO] Dense-probe mask identified: 482,518 rows (60.38% of eval)
+2026-09-28 22:49:16,836 [INFO] 
+=================================================================
+2026-09-28 22:49:16,836 [INFO] EVALUATING DETECTOR FAMILY: IsolationForest
+2026-09-28 22:49:16,837 [INFO] Family: Tree-based Ensemble Isolation
+2026-09-28 22:49:16,837 [INFO] Params: {'n_estimators': 300, 'max_samples': 256, 'max_features': 1.0, 'bootstrap': False, 'random_state': 42, 'n_jobs': -1}
+2026-09-28 22:49:16,837 [INFO] =================================================================
+2026-09-28 22:49:16,837 [INFO]   Fitting IsolationForest on 165,322 benign TRAIN samples...
+2026-09-28 22:49:17,990 [INFO]   [OK] IsolationForest fitted in 1.15s.
+2026-09-28 22:49:17,991 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 22:49:25,269 [INFO]   [OK] Scoring completed in 7.28s.
+2026-09-28 22:49:25,279 [INFO]   Normalization bounds (TRAIN-only): s_min=0.31783122, s_max=0.88573765
+2026-09-28 22:49:25,280 [INFO]   Calibration A_thr (99th percentile) = 0.75453870 (raw equiv = 0.74633860)
+2026-09-28 22:49:25,925 [INFO]   ROC-AUC           : 0.091918
+2026-09-28 22:49:25,927 [INFO]   PR-AUC            : 0.967433 (prevalence: 0.9903)
+2026-09-28 22:49:25,927 [INFO]   Recall            : 0.000487 (TP=385, FN=790,936)
+2026-09-28 22:49:25,927 [INFO]   F1-Score          : 0.000972, Precision=0.315315, FPR=0.107441
+2026-09-28 22:49:25,927 [INFO]   Benign Mean A_t   : 0.388323 (median: 0.343222)
+2026-09-28 22:49:25,927 [INFO]   Attack Mean A_t   : 0.070521 (median: 0.040438)
+2026-09-28 22:49:25,927 [INFO]   Score Separation  : -0.317802
+2026-09-28 22:49:25,927 [INFO]   Sub-threshold Atk : 790,936 (99.95%)
+2026-09-28 22:49:25,927 [INFO]   Dense-Probe Mean A: 0.040438 (Sub-threshold %: 100.00%)
+2026-09-28 22:49:25,927 [INFO]   Score SHA-256     : 184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0
+2026-09-28 22:49:25,927 [INFO]   CLASSIFICATION    : SIGNAL_INSUFFICIENT
+2026-09-28 22:49:25,929 [INFO] 
+=================================================================
+2026-09-28 22:49:25,929 [INFO] EVALUATING DETECTOR FAMILY: OneClassSVM
+2026-09-28 22:49:25,929 [INFO] Family: Kernel Support Vector Boundary
+2026-09-28 22:49:25,929 [INFO] Params: {'kernel': 'rbf', 'nu': 0.05, 'gamma': 'scale'}
+2026-09-28 22:49:25,929 [INFO] =================================================================
+2026-09-28 22:49:25,929 [INFO]   Fitting OneClassSVM on 165,322 benign TRAIN samples...
+2026-09-28 22:51:19,226 [INFO]   [OK] OneClassSVM fitted in 113.30s.
+2026-09-28 22:51:19,226 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 23:01:15,461 [INFO]   [OK] Scoring completed in 596.23s.
+2026-09-28 23:01:15,471 [INFO]   Normalization bounds (TRAIN-only): s_min=-7491.94547138, s_max=-1.00000000
+2026-09-28 23:01:15,472 [INFO]   Calibration A_thr (99th percentile) = 0.00722078 (raw equiv = -7437.85499794)
+2026-09-28 23:01:16,199 [INFO]   ROC-AUC           : 0.878374
+2026-09-28 23:01:16,199 [INFO]   PR-AUC            : 0.997767 (prevalence: 0.9903)
+2026-09-28 23:01:16,199 [INFO]   Recall            : 0.000082 (TP=65, FN=791,256)
+2026-09-28 23:01:16,199 [INFO]   F1-Score          : 0.000164, Precision=0.184136, FPR=0.037013
+2026-09-28 23:01:16,200 [INFO]   Benign Mean A_t   : 0.009136 (median: 0.004380)
+2026-09-28 23:01:16,200 [INFO]   Attack Mean A_t   : 0.004384 (median: 0.004383)
+2026-09-28 23:01:16,200 [INFO]   Score Separation  : -0.004752
+2026-09-28 23:01:16,200 [INFO]   Sub-threshold Atk : 791,256 (99.99%)
+2026-09-28 23:01:16,200 [INFO]   Dense-Probe Mean A: 0.004383 (Sub-threshold %: 100.00%)
+2026-09-28 23:01:16,200 [INFO]   Score SHA-256     : 442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155
+2026-09-28 23:01:16,200 [INFO]   CLASSIFICATION    : SIGNAL_LIMITED
+2026-09-28 23:01:16,202 [INFO] 
+=================================================================
+2026-09-28 23:01:16,202 [INFO] EVALUATING DETECTOR FAMILY: LocalOutlierFactor
+2026-09-28 23:01:16,202 [INFO] Family: k-NN Density-based Novelty
+2026-09-28 23:01:16,202 [INFO] Params: {'n_neighbors': 20, 'contamination': 0.01, 'novelty': True, 'n_jobs': -1}
+2026-09-28 23:01:16,202 [INFO] =================================================================
+2026-09-28 23:01:16,202 [INFO]   Fitting LocalOutlierFactor on 165,322 benign TRAIN samples...
+2026-09-28 23:03:55,662 [INFO]   [OK] LocalOutlierFactor fitted in 159.46s.
+2026-09-28 23:03:55,662 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 23:07:41,822 [INFO]   [OK] Scoring completed in 226.16s.
+2026-09-28 23:07:41,831 [INFO]   Normalization bounds (TRAIN-only): s_min=0.86857143, s_max=1915565213366.41137695
+2026-09-28 23:07:41,832 [INFO]   Calibration A_thr (99th percentile) = 0.00000000 (raw equiv = 1.69559375)
+2026-09-28 23:07:42,605 [INFO]   ROC-AUC           : 0.307459
+2026-09-28 23:07:42,605 [INFO]   PR-AUC            : 0.990125 (prevalence: 0.9903)
+2026-09-28 23:07:42,605 [INFO]   Recall            : 0.237177 (TP=187,683, FN=603,638)
+2026-09-28 23:07:42,606 [INFO]   F1-Score          : 0.381955, Precision=0.980442, FPR=0.481172
+2026-09-28 23:07:42,606 [INFO]   Benign Mean A_t   : 0.002591 (median: 0.000000)
+2026-09-28 23:07:42,606 [INFO]   Attack Mean A_t   : 0.000028 (median: 0.000000)
+2026-09-28 23:07:42,606 [INFO]   Score Separation  : -0.002563
+2026-09-28 23:07:42,606 [INFO]   Sub-threshold Atk : 603,638 (76.28%)
+2026-09-28 23:07:42,606 [INFO]   Dense-Probe Mean A: 0.000000 (Sub-threshold %: 100.00%)
+2026-09-28 23:07:42,606 [INFO]   Score SHA-256     : c2ab12dde1502aafdb96ac4f0ef16c6b7d11ef3465065bece50e03572d867d94
+2026-09-28 23:07:42,606 [INFO]   CLASSIFICATION    : SIGNAL_INSUFFICIENT
+2026-09-28 23:07:42,613 [INFO] 
+=================================================================
+2026-09-28 23:07:42,613 [INFO] EVALUATING DETECTOR FAMILY: RobustMahalanobis
+2026-09-28 23:07:42,613 [INFO] Family: FastMCD Minimum Volume Ellipsoid
+2026-09-28 23:07:42,613 [INFO] Params: {'support_fraction': 0.8, 'random_state': 42}
+2026-09-28 23:07:42,613 [INFO] =================================================================
+2026-09-28 23:07:42,613 [INFO]   Fitting RobustMahalanobis on 165,322 benign TRAIN samples...
+2026-09-28 23:07:48,355 [INFO]   [OK] RobustMahalanobis fitted in 5.74s.
+2026-09-28 23:07:48,355 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 23:07:48,420 [INFO]   [OK] Scoring completed in 0.07s.
+2026-09-28 23:07:48,428 [INFO]   Normalization bounds (TRAIN-only): s_min=0.36272869, s_max=5534145619022951.00000000
+2026-09-28 23:07:48,428 [INFO]   Calibration A_thr (99th percentile) = 0.00000018 (raw equiv = 1018655536.54059088)
+2026-09-28 23:07:49,100 [INFO]   ROC-AUC           : 0.495547
+2026-09-28 23:07:49,100 [INFO]   PR-AUC            : 0.983936 (prevalence: 0.9903)
+2026-09-28 23:07:49,100 [INFO]   Recall            : 0.000086 (TP=68, FN=791,253)
+2026-09-28 23:07:49,101 [INFO]   F1-Score          : 0.000172, Precision=0.382022, FPR=0.014137
+2026-09-28 23:07:49,101 [INFO]   Benign Mean A_t   : 0.000000 (median: 0.000000)
+2026-09-28 23:07:49,101 [INFO]   Attack Mean A_t   : 0.000000 (median: 0.000000)
+2026-09-28 23:07:49,101 [INFO]   Score Separation  : -0.000000
+2026-09-28 23:07:49,101 [INFO]   Sub-threshold Atk : 791,253 (99.99%)
+2026-09-28 23:07:49,101 [INFO]   Dense-Probe Mean A: 0.000000 (Sub-threshold %: 100.00%)
+2026-09-28 23:07:49,101 [INFO]   Score SHA-256     : e6595096353f6d19f5d7f5f5f2a6db653427781b411b9b9121df8e4fbdb3d9da
+2026-09-28 23:07:49,101 [INFO]   CLASSIFICATION    : SIGNAL_INSUFFICIENT
+2026-09-28 23:07:49,194 [INFO] 
+######################################################################
+2026-09-28 23:07:49,195 [INFO] STARTING PHASE 2B EXPERIMENT RUN 2 (seed=42)
+2026-09-28 23:07:49,195 [INFO] ######################################################################
+2026-09-28 23:07:50,052 [INFO] [PREPROCESSING] Fitting RobustScaler strictly on TRAIN partition...
+2026-09-28 23:07:50,114 [INFO] Dense-probe mask identified: 482,518 rows (60.38% of eval)
+2026-09-28 23:07:50,114 [INFO] 
+=================================================================
+2026-09-28 23:07:50,114 [INFO] EVALUATING DETECTOR FAMILY: IsolationForest
+2026-09-28 23:07:50,115 [INFO] Family: Tree-based Ensemble Isolation
+2026-09-28 23:07:50,115 [INFO] Params: {'n_estimators': 300, 'max_samples': 256, 'max_features': 1.0, 'bootstrap': False, 'random_state': 42, 'n_jobs': -1}
+2026-09-28 23:07:50,115 [INFO] =================================================================
+2026-09-28 23:07:50,115 [INFO]   Fitting IsolationForest on 165,322 benign TRAIN samples...
+2026-09-28 23:07:51,353 [INFO]   [OK] IsolationForest fitted in 1.24s.
+2026-09-28 23:07:51,354 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 23:07:58,831 [INFO]   [OK] Scoring completed in 7.48s.
+2026-09-28 23:07:58,840 [INFO]   Normalization bounds (TRAIN-only): s_min=0.31783122, s_max=0.88573765
+2026-09-28 23:07:58,841 [INFO]   Calibration A_thr (99th percentile) = 0.75453870 (raw equiv = 0.74633860)
+2026-09-28 23:07:59,514 [INFO]   ROC-AUC           : 0.091918
+2026-09-28 23:07:59,514 [INFO]   PR-AUC            : 0.967433 (prevalence: 0.9903)
+2026-09-28 23:07:59,514 [INFO]   Recall            : 0.000487 (TP=385, FN=790,936)
+2026-09-28 23:07:59,514 [INFO]   F1-Score          : 0.000972, Precision=0.315315, FPR=0.107441
+2026-09-28 23:07:59,514 [INFO]   Benign Mean A_t   : 0.388323 (median: 0.343222)
+2026-09-28 23:07:59,515 [INFO]   Attack Mean A_t   : 0.070521 (median: 0.040438)
+2026-09-28 23:07:59,515 [INFO]   Score Separation  : -0.317802
+2026-09-28 23:07:59,515 [INFO]   Sub-threshold Atk : 790,936 (99.95%)
+2026-09-28 23:07:59,515 [INFO]   Dense-Probe Mean A: 0.040438 (Sub-threshold %: 100.00%)
+2026-09-28 23:07:59,515 [INFO]   Score SHA-256     : 184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0
+2026-09-28 23:07:59,515 [INFO]   CLASSIFICATION    : SIGNAL_INSUFFICIENT
+2026-09-28 23:07:59,517 [INFO] 
+=================================================================
+2026-09-28 23:07:59,517 [INFO] EVALUATING DETECTOR FAMILY: OneClassSVM
+2026-09-28 23:07:59,517 [INFO] Family: Kernel Support Vector Boundary
+2026-09-28 23:07:59,517 [INFO] Params: {'kernel': 'rbf', 'nu': 0.05, 'gamma': 'scale'}
+2026-09-28 23:07:59,517 [INFO] =================================================================
+2026-09-28 23:07:59,518 [INFO]   Fitting OneClassSVM on 165,322 benign TRAIN samples...
+2026-09-28 23:09:53,518 [INFO]   [OK] OneClassSVM fitted in 114.00s.
+2026-09-28 23:09:53,518 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 23:16:37,626 [INFO]   [OK] Scoring completed in 404.11s.
+2026-09-28 23:16:37,633 [INFO]   Normalization bounds (TRAIN-only): s_min=-7491.94547138, s_max=-1.00000000
+2026-09-28 23:16:37,634 [INFO]   Calibration A_thr (99th percentile) = 0.00722078 (raw equiv = -7437.85499794)
+2026-09-28 23:16:38,439 [INFO]   ROC-AUC           : 0.878374
+2026-09-28 23:16:38,439 [INFO]   PR-AUC            : 0.997767 (prevalence: 0.9903)
+2026-09-28 23:16:38,439 [INFO]   Recall            : 0.000082 (TP=65, FN=791,256)
+2026-09-28 23:16:38,439 [INFO]   F1-Score          : 0.000164, Precision=0.184136, FPR=0.037013
+2026-09-28 23:16:38,440 [INFO]   Benign Mean A_t   : 0.009136 (median: 0.004380)
+2026-09-28 23:16:38,440 [INFO]   Attack Mean A_t   : 0.004384 (median: 0.004383)
+2026-09-28 23:16:38,440 [INFO]   Score Separation  : -0.004752
+2026-09-28 23:16:38,440 [INFO]   Sub-threshold Atk : 791,256 (99.99%)
+2026-09-28 23:16:38,440 [INFO]   Dense-Probe Mean A: 0.004383 (Sub-threshold %: 100.00%)
+2026-09-28 23:16:38,440 [INFO]   Score SHA-256     : 442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155
+2026-09-28 23:16:38,440 [INFO]   CLASSIFICATION    : SIGNAL_LIMITED
+2026-09-28 23:16:38,444 [INFO] 
+=================================================================
+2026-09-28 23:16:38,445 [INFO] EVALUATING DETECTOR FAMILY: LocalOutlierFactor
+2026-09-28 23:16:38,445 [INFO] Family: k-NN Density-based Novelty
+2026-09-28 23:16:38,445 [INFO] Params: {'n_neighbors': 20, 'contamination': 0.01, 'novelty': True, 'n_jobs': -1}
+2026-09-28 23:16:38,445 [INFO] =================================================================
+2026-09-28 23:16:38,446 [INFO]   Fitting LocalOutlierFactor on 165,322 benign TRAIN samples...
+2026-09-28 23:19:18,375 [INFO]   [OK] LocalOutlierFactor fitted in 159.93s.
+2026-09-28 23:19:18,377 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 23:23:05,469 [INFO]   [OK] Scoring completed in 227.09s.
+2026-09-28 23:23:05,477 [INFO]   Normalization bounds (TRAIN-only): s_min=0.86857143, s_max=1915565213366.41137695
+2026-09-28 23:23:05,478 [INFO]   Calibration A_thr (99th percentile) = 0.00000000 (raw equiv = 1.69559375)
+2026-09-28 23:23:06,245 [INFO]   ROC-AUC           : 0.307459
+2026-09-28 23:23:06,245 [INFO]   PR-AUC            : 0.990125 (prevalence: 0.9903)
+2026-09-28 23:23:06,246 [INFO]   Recall            : 0.237177 (TP=187,683, FN=603,638)
+2026-09-28 23:23:06,246 [INFO]   F1-Score          : 0.381955, Precision=0.980442, FPR=0.481172
+2026-09-28 23:23:06,246 [INFO]   Benign Mean A_t   : 0.002591 (median: 0.000000)
+2026-09-28 23:23:06,246 [INFO]   Attack Mean A_t   : 0.000028 (median: 0.000000)
+2026-09-28 23:23:06,246 [INFO]   Score Separation  : -0.002563
+2026-09-28 23:23:06,246 [INFO]   Sub-threshold Atk : 603,638 (76.28%)
+2026-09-28 23:23:06,246 [INFO]   Dense-Probe Mean A: 0.000000 (Sub-threshold %: 100.00%)
+2026-09-28 23:23:06,246 [INFO]   Score SHA-256     : c2ab12dde1502aafdb96ac4f0ef16c6b7d11ef3465065bece50e03572d867d94
+2026-09-28 23:23:06,246 [INFO]   CLASSIFICATION    : SIGNAL_INSUFFICIENT
+2026-09-28 23:23:06,252 [INFO] 
+=================================================================
+2026-09-28 23:23:06,252 [INFO] EVALUATING DETECTOR FAMILY: RobustMahalanobis
+2026-09-28 23:23:06,252 [INFO] Family: FastMCD Minimum Volume Ellipsoid
+2026-09-28 23:23:06,253 [INFO] Params: {'support_fraction': 0.8, 'random_state': 42}
+2026-09-28 23:23:06,253 [INFO] =================================================================
+2026-09-28 23:23:06,253 [INFO]   Fitting RobustMahalanobis on 165,322 benign TRAIN samples...
+2026-09-28 23:23:11,783 [INFO]   [OK] RobustMahalanobis fitted in 5.53s.
+2026-09-28 23:23:11,783 [INFO]   Scoring TRAIN, CALIBRATION, and EVALUATION streams...
+2026-09-28 23:23:11,849 [INFO]   [OK] Scoring completed in 0.07s.
+2026-09-28 23:23:11,856 [INFO]   Normalization bounds (TRAIN-only): s_min=0.36272869, s_max=5534145619022951.00000000
+2026-09-28 23:23:11,857 [INFO]   Calibration A_thr (99th percentile) = 0.00000018 (raw equiv = 1018655536.54059088)
+2026-09-28 23:23:12,512 [INFO]   ROC-AUC           : 0.495547
+2026-09-28 23:23:12,512 [INFO]   PR-AUC            : 0.983936 (prevalence: 0.9903)
+2026-09-28 23:23:12,512 [INFO]   Recall            : 0.000086 (TP=68, FN=791,253)
+2026-09-28 23:23:12,512 [INFO]   F1-Score          : 0.000172, Precision=0.382022, FPR=0.014137
+2026-09-28 23:23:12,512 [INFO]   Benign Mean A_t   : 0.000000 (median: 0.000000)
+2026-09-28 23:23:12,512 [INFO]   Attack Mean A_t   : 0.000000 (median: 0.000000)
+2026-09-28 23:23:12,512 [INFO]   Score Separation  : -0.000000
+2026-09-28 23:23:12,512 [INFO]   Sub-threshold Atk : 791,253 (99.99%)
+2026-09-28 23:23:12,512 [INFO]   Dense-Probe Mean A: 0.000000 (Sub-threshold %: 100.00%)
+2026-09-28 23:23:12,513 [INFO]   Score SHA-256     : e6595096353f6d19f5d7f5f5f2a6db653427781b411b9b9121df8e4fbdb3d9da
+2026-09-28 23:23:12,513 [INFO]   CLASSIFICATION    : SIGNAL_INSUFFICIENT
+2026-09-28 23:23:12,611 [INFO] 
+======================================================================
+2026-09-28 23:23:12,611 [INFO] CROSS-RUN REPRODUCIBILITY VERIFICATION
+2026-09-28 23:23:12,611 [INFO] ======================================================================
+2026-09-28 23:23:12,612 [INFO]   [PASS] IsolationForest     : SHA-256 = 184a80210bba765cc77fa9721b7331cf2e9fcbfaa03fc9df003d6ea984aeefc0
+2026-09-28 23:23:12,612 [INFO]   [PASS] OneClassSVM         : SHA-256 = 442b467bebdb12ff85a33fe63cae93c50ae1523f2f4d062f17141aa0ad589155
+2026-09-28 23:23:12,612 [INFO]   [PASS] LocalOutlierFactor  : SHA-256 = c2ab12dde1502aafdb96ac4f0ef16c6b7d11ef3465065bece50e03572d867d94
+2026-09-28 23:23:12,612 [INFO]   [PASS] RobustMahalanobis   : SHA-256 = e6595096353f6d19f5d7f5f5f2a6db653427781b411b9b9121df8e4fbdb3d9da
+2026-09-28 23:23:12,612 [INFO] 
+Overall Reproducibility: VERIFIED
+2026-09-28 23:23:12,612 [INFO] 
+===============================================================================================
+2026-09-28 23:23:12,612 [INFO] DETECTOR-FAMILY AUDIT COMPARATIVE SUMMARY
+2026-09-28 23:23:12,612 [INFO] ===============================================================================================
+2026-09-28 23:23:12,612 [INFO] Detector Family        ROC-AUC    PR-AUC     Recall     Benign A   Attack A   Separation   Verdict             
+2026-09-28 23:23:12,612 [INFO] -----------------------------------------------------------------------------------------------
+2026-09-28 23:23:12,612 [INFO] IsolationForest        0.0919     0.9674     0.0005     0.3883     0.0705     -0.3178      SIGNAL_INSUFFICIENT 
+2026-09-28 23:23:12,612 [INFO] OneClassSVM            0.8784     0.9978     0.0001     0.0091     0.0044     -0.0048      SIGNAL_LIMITED      
+2026-09-28 23:23:12,612 [INFO] LocalOutlierFactor     0.3075     0.9901     0.2372     0.0026     0.0000     -0.0026      SIGNAL_INSUFFICIENT 
+2026-09-28 23:23:12,612 [INFO] RobustMahalanobis      0.4955     0.9839     0.0001     0.0000     0.0000     -0.0000      SIGNAL_INSUFFICIENT 
+2026-09-28 23:23:12,612 [INFO] 
+[ARTIFACTS] Writing JSON artifacts to experiments/ton_iot/phase2b_detector_family_audit/...
+2026-09-28 23:23:12,627 [INFO] [ARTIFACTS] All artifacts written successfully.
+2026-09-28 23:23:12,627 [INFO] 
+PHASE_2B_DETECTOR_FAMILY_AUDIT_COMPLETE

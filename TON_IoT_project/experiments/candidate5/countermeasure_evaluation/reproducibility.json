@@ -1,0 +1,16 @@
+{
+  "phase": 7,
+  "execution_timestamp": "2026-09-29T08:18:00Z",
+  "deterministic_verification": "VERIFIED_DETERMINISTIC",
+  "classification": "C5_COUNTERMEASURE_NO_EFFECT",
+  "hashes": {
+    "parameter_freeze.json": "d79092ef98aa2b3f4f260b0a7126355d5fa0c732b2c073c5920244157de5a774",
+    "benign_evaluation_results.json": "e470af53aed4f9b86503897b824cf4cd4d915f78739a9bd57704353bb2907b31",
+    "attack_replay_results.json": "3c8e8952071393126f7e273a4659bc5ef98ded023d77587cca5e76dbf7cfc648",
+    "state_aliasing_results.json": "f875b7d4b76b6485865e287c1073bee64275b0a0a5ed027a059e1cedf7d6db0d",
+    "recovery_results.json": "3973edb8b05c101e6d28a070b66f6528b95271fa94cc025fb73b7504283b4540",
+    "trajectory_b0.csv": "aaf0b9d0dd0ba58d78a8c1847bc617db67a50af594f9547253f77f8c3bf507d9",
+    "trajectory_family_c.csv": "08b3f4a7eb8ea4c74b520ea582abcc6d05c2ca87c935537fe2f7943ab515b983",
+    "metrics.json": "cc35c6a4b364412c83360b31fedf50c679d90b596d76e9fe975da9182263405e"
+  }
+}

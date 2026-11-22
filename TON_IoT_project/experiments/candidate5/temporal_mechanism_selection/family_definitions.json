@@ -1,0 +1,103 @@
+{
+  "phase": 6,
+  "title": "Exact Definitions and Property Matrix of the Five Temporal Evidence Families",
+  "retrieved_from": "docs/CANDIDATE5_PHASE5_SUBTHRESHOLD_EVIDENCE_FORMALIZATION.md",
+  "families": {
+    "Family_A_Count_Based": {
+      "name": "Count-Based Temporal Evidence",
+      "state_variables": [
+        "Q_t (non-negative integer counter)"
+      ],
+      "parameters": [
+        "q (sub-threshold activation lower bound, 0 <= q < A_thr)"
+      ],
+      "update_equation": "Q_{t+1} = Q_t + I(A_t >= q)",
+      "memory_horizon": "Infinite (monotonic accumulator without reset) or Epoch W (with periodic reset)",
+      "computational_complexity": "O(1) time per step, O(1) space",
+      "is_event_count_based": true,
+      "is_inter_arrival_based": false,
+      "is_concentration_proximity_based": false,
+      "vulnerable_to_attacker_pacing": "Pacing-sensitive if reset/decay is introduced; pacing-robust within tested model if unbounded (at cost of eventual benign overflow)",
+      "duplicates_existing_mechanism": "Duplicates sliding-window count if reset periodically; duplicates simple cumulative counter if unbounded",
+      "can_distinguish_cycle_a_from_benign": "Yes under deterministic rest; challenged under benign noise if q is set below ambient benign scores"
+    },
+    "Family_B_Exponential_Decay": {
+      "name": "Exponential Decay Recency-Weighted Evidence",
+      "state_variables": [
+        "Q_t (continuous non-negative float)"
+      ],
+      "parameters": [
+        "rho (decay factor in (0,1))",
+        "f(A_t) (mapping function)"
+      ],
+      "update_equation": "Q_{t+1} = rho * Q_t + f(A_t)",
+      "memory_horizon": "Effective memory horizon H = 1 / (1 - rho) steps",
+      "computational_complexity": "O(1) time per step, O(1) space (single float multiply-add)",
+      "is_event_count_based": false,
+      "is_inter_arrival_based": false,
+      "is_concentration_proximity_based": "Depends on f(A_t); concentration-weighted if f is non-linear",
+      "vulnerable_to_attacker_pacing": "Pacing-sensitive: an attacker with inter-arrival tau > -ln(threshold/f_atk)/ln(rho) allows Q to decay below detection threshold",
+      "duplicates_existing_mechanism": "REDUNDANT if f(A_t) is linear (mathematically identical to an EWMA of A_t, exactly mirroring E_t with a different decay constant); NON-REDUNDANT only if f(A_t) is non-linear or threshold-restricted",
+      "can_distinguish_cycle_a_from_benign": "Yes, if f(A_atk) > 0 and memory horizon H exceeds the 10-step rest interval"
+    },
+    "Family_C_Recency_Weighted_Threshold_Offset": {
+      "name": "Recency-Weighted Threshold Offset Proximity Accumulator",
+      "state_variables": [
+        "Q_t (continuous non-negative float)"
+      ],
+      "parameters": [
+        "rho (decay factor in (0,1))",
+        "q_low (lower bound of near-threshold band, 0 < q_low < A_thr)",
+        "A_thr (frozen = 0.4554)"
+      ],
+      "update_equation": "Q_{t+1} = rho * Q_t + max(0, A_t - q_low) / (A_thr - q_low)",
+      "memory_horizon": "Effective memory horizon H = 1 / (1 - rho) steps",
+      "computational_complexity": "O(1) time per step, O(1) space (single float, bounded [0, 1/(1-rho)])",
+      "is_event_count_based": false,
+      "is_inter_arrival_based": false,
+      "is_concentration_proximity_based": true,
+      "vulnerable_to_attacker_pacing": "Pacing-sensitive to arbitrarily sparse attacks, but pacing-robust within tested model for schedules where tau_r < H",
+      "duplicates_existing_mechanism": "NON-REDUNDANT: incorporates a deadband [0, q_low] where benign traffic contributes zero, and normalizes proximity specifically relative to the decision boundary A_thr",
+      "can_distinguish_cycle_a_from_benign": "Yes: Cycle A pulse (A=0.4100) generates f(0.4100) = (0.4100 - q_low)/(0.4554 - q_low) > 0, accumulating across cycles if rho^10 preserves residual evidence"
+    },
+    "Family_D_Inter_Arrival_Based": {
+      "name": "Inter-Arrival Timing Evidence",
+      "state_variables": [
+        "Q_t (continuous float or rate estimate)",
+        "t_last (integer step of last sub-threshold event)"
+      ],
+      "parameters": [
+        "rho (decay rate between events)",
+        "tau_crit (critical inter-arrival spacing)"
+      ],
+      "update_equation": "Q_{t+1} = rho * Q_t (if no event); Q_{t+1} = 1 / (1 + (t - t_last)) (on event)",
+      "memory_horizon": "Variable, determined by inter-event duration Delta_t",
+      "computational_complexity": "O(1) time per step, O(1) space (two scalar registers: Q_t and t_last)",
+      "is_event_count_based": false,
+      "is_inter_arrival_based": true,
+      "is_concentration_proximity_based": false,
+      "vulnerable_to_attacker_pacing": "Pacing-sensitive: highly vulnerable. Any attacker who knows tau_crit can set tau_r > tau_crit, driving Delta_t large and completely suppressing Q_t",
+      "duplicates_existing_mechanism": "NON-REDUNDANT with magnitude EWMA, but duplicates standard point-process inter-arrival statistics",
+      "can_distinguish_cycle_a_from_benign": "Fragile: benign burst traffic naturally exhibits small inter-arrival times, creating false temporal clustering"
+    },
+    "Family_E_Rate_Based": {
+      "name": "Sliding-Window Event Rate Estimator",
+      "state_variables": [
+        "Window buffer of size W (timestamps or boolean indicators) in exact form; or R_t (scalar rate) in EMA approximation"
+      ],
+      "parameters": [
+        "W (window length in steps)",
+        "q (threshold for counting)"
+      ],
+      "update_equation": "Q_t = (1/W) * sum_{i=0}^{W-1} I(A_{t-i} >= q)",
+      "memory_horizon": "Strict finite window of W steps",
+      "computational_complexity": "Exact: O(W) space and O(1) time with circular buffer; Approximation: O(1) space and O(1) time",
+      "is_event_count_based": true,
+      "is_inter_arrival_based": false,
+      "is_concentration_proximity_based": false,
+      "vulnerable_to_attacker_pacing": "Pacing-sensitive: adversary paces events such that count in window W remains below alarm threshold",
+      "duplicates_existing_mechanism": "REDUNDANT: exact form is textbook sliding-window detector; EMA approximation is mathematically identical to Family B with binary indicator f(A) = I(A >= q)",
+      "can_distinguish_cycle_a_from_benign": "Yes, if window W spans multiple cycles and threshold is calibrated above benign rate"
+    }
+  }
+}

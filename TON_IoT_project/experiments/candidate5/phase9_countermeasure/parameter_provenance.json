@@ -1,0 +1,69 @@
+{
+  "title": "Parameter Provenance and Rationale for AATC-BAD",
+  "parameter_table": {
+    "A_thr": {
+      "value": 0.4554,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "gamma": {
+      "value": 0.335,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "theta": {
+      "value": 1.0,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "beta": {
+      "value": 0.4,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "lambda": {
+      "value": 0.55,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "delta": {
+      "value": 0.05,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "P_pen": {
+      "value": 0.25,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "alpha_0": {
+      "value": 0.2057,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "T_allow": {
+      "value": 0.8,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "T_quar": {
+      "value": 0.3,
+      "provenance": "Paper 1 (frozen verbatim)"
+    },
+    "q_low": {
+      "value": 0.35,
+      "provenance": "Candidate 5 Phase 5/6 (frozen verbatim, separates 82.56% of benign traffic)"
+    },
+    "delta_D": {
+      "value": 0.1,
+      "provenance": "Derived analytically on CALIBRATION partition: guarantees negative expected debt drift under pure benign traffic (E[Delta D] = -0.071 < 0)",
+      "derivation": "E[Delta D_benign] = P(A in [q_low, A_thr)) * mean_f - P(A < q_low) * delta_D = 0.0888 * 0.48 - 0.8256 * 0.10 = 0.0426 - 0.0826 = -0.0400 < 0"
+    },
+    "K_allow": {
+      "value": 1.7,
+      "provenance": "Derived strictly as the 99th percentile of D_t on the uncompromised CALIBRATION partition (rows 0-4,999) under delta_D = 0.10",
+      "derivation": "P99(D_cal) = 1.6691 -> rounded to 1.70 to ensure <= 1% false ceiling trigger on honest devices"
+    },
+    "eta_C": {
+      "value": 0.3,
+      "provenance": "Derived to ensure that 2 unexplained excess borderline cycles demote the ceiling below T_allow = 0.80",
+      "derivation": "Delta C = eta_C * (D - K_allow) >= 0.20 requires D - K_allow >= 0.67 -> exactly 2 Cycle A pulses (2 * 0.5693 = 1.139 > 0.67)"
+    },
+    "C_floor": {
+      "value": 0.7,
+      "provenance": "Design constraint: C_floor must reside in [T_quar, T_allow) = [0.30, 0.80)",
+      "derivation": "Setting C_floor = 0.70 holds exploited devices in VERIFY policy (0.30 <= T <= 0.70) while strictly preventing false quarantine to BLOCK on ceiling alone"
+    }
+  }
+}
